@@ -1,80 +1,46 @@
 <?php	
-	define("CURRENT_DIR", dirname(__FILE__) ."/");
-	define("ROOT_DIR_NONE", dirname(__FILE__));	
-	define("ROOT_DIR",CURRENT_DIR);
+	define("ROOT_DIR",dirname(__FILE__));
+	define('LIB_DIR',ROOT_DIR . "/lib");
+	define('PROJECT_LIB_DIR', ROOT_DIR . "/project_lib");
 	define("FRAME_VERSION",'1.0');
-	define("FRAME_ROOT", dirname(__FILE__));
-	require('config/config.php');
-	include_once(CURRENT_DIR ."lib/pubfun.php");
-	include_once(CURRENT_DIR ."lib/article_fun.php");
-	include_once(CURRENT_DIR ."lib/table_class.php");
-	include_once(CURRENT_DIR ."lib/category_class.php");
-	include_once(CURRENT_DIR ."lib/table_images_class.php");
-	include_once(CURRENT_DIR ."lib/upload_file_class.php");
-	require_once CURRENT_DIR ."lib/image_handler_class.php";
-	if(file_exists(ROOT_DIR ."inc/project_pubfun.php")){
-		require_once CURRENT_DIR ."inc/project_pubfun.php";
+	include_once ROOT_DIR .'/config/config.php';
+	include_once LIB_DIR ."/pubfun.php";
+	global $_g_admin_dir;
+	define('ADMIN_DIR',ROOT_DIR ."/".$_g_admin_dir);
+	define('ADMIN_PATH',"/{$_g_admin_dir}");
+	if(file_exists(ROOT_DIR ."/inc/project_pubfun.php")){
+		require_once ROOT_DIR ."/inc/project_pubfun.php";
 	}
 	
 	function __autoload($class_name){
-		if(file_exists(ROOT_DIR .'lib/' . $class_name .'.class.php')){
-			require_once ROOT_DIR .'lib/' . $class_name .'.class.php';
+		if(file_exists(PROJECT_LIB_DIR .'/ActiveRecord/' . $class_name .'.class.php')){
+			require_once PROJECT_LIB_DIR .'/ActiveRecord/' . $class_name .'.class.php';
 			return ;
 		}
-		if(file_exists(ROOT_DIR .'inc/' . $class_name .'.class.php')){
-			require_once ROOT_DIR .'inc/' . $class_name .'.class.php';
+		if(file_exists(LIB_DIR .'/' . $class_name .'.class.php')){
+			require_once LIB_DIR .'/' . $class_name .'.class.php';
 			return ;
 		}
-		if(file_exists(ROOT_DIR .'inc/active_record/' . $class_name .'.class.php')){
-			require_once ROOT_DIR .'inc/active_record/' . $class_name .'.class.php';
+		if(file_exists(PROJECT_LIB_DIR .'/' . $class_name .'.class.php')){
+			require_once PROJECT_LIB_DIR .'/' . $class_name .'.class.php';
 			return ;
 		}
 	}
 	
-	function get_config($var,$path=''){
-		if(empty($path)){$path = LIB_PATH .'../config/config.php';}
-		include_once($path);
-		global $$var;
-		return $$var;
-	}	
-	
 	function &get_db() {
-		global $g_db;
-		if(!is_object($g_db)){
-			#if(get_config('db_type') == 'mssql'){
-			#	$g_db = new database_connection_mssql_class();
-			#}else
-			#{
-			$g_db = new DataBase();
-			#}
-			
+		global $_g_db;		
+		if(!is_object($_g_db)){
+			$_g_db = new DataBase();
 		}
-		if($g_db->connected) return $g_db;
-		$servername = get_config('db_server_name');
-		$dbname = get_config('db_database_name');
-		$username = get_config('db_user_name');
-		$password = get_config('db_password');
-		$code = get_config('db_code');
-		$note_emails = "chenlong@xun-ao.com, sunyoujie@xun-ao.com, shengzhifeng@xun-ao.com, zhanghao@xun-ao.com";
-		if($g_db->connect($servername,$dbname,$username,$password,$code)===false){			
-			$last_time = file_get_contents(dirname(__FILE__) .'/config/last_disconnect.txt');
-			
-			if($last_time == ''){				
-				write_to_file(dirname(__FILE__) .'/config/last_disconnect.txt',now(),'w');
-				@mail($note_emails,'数据库连接失败','主备数据库均无法连接，请立即检查'.$this->servername);
-			}
-			/*
-			$servername = get_config('db_server_name_bak');
-			$dbname = get_config('db_database_name_bak');
-			$username = get_config('db_user_name_bak');
-			$password = get_config('db_password_bak');
-			$code = get_config('db_code_bak');
-			if($g_db->connect($servername,$dbname,$username,$password,$code)===false){
-				
-			}
-			*/
-		};	
-		return $g_db;
+		if($_g_db->connected) return $_g_db;
+		global $_g_db_server;
+		global $_g_db_user;
+		global $_g_db_database;
+		global $_g_db_password;
+		global $_g_db_code;
+		
+		$_g_db->connect($_g_db_server,$_g_db_database,$_g_db_user,$_g_db_password,$_g_db_code);		
+		return $_g_db;
 	}
 	
 	function close_db() {
@@ -92,17 +58,12 @@
 		css_include_tag('jquery_ui');
 	}
 	
-	function validate_form($form_name) {
-		js_include_once_tag('jquery');
-		js_include_once_tag('jquery.validate');
-		?>
-		<script>
-			$(function(){
-				$("#<?php echo $form_name;?>").validate();
-			});
-		</script>
-		<?php
+	function use_ckeditor(){
+		include_once(ROOT_DIR . '/ckeditor/ckeditor_php5.php');
+		include_once(ROOT_DIR . '/ckfinder/ckfinder.php');
+		echo '<script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js"></script>';
 	}
+	
 	function js_include_tag($js){
 		if (func_num_args()>1) {
 			foreach (func_get_args() as $v){
@@ -195,9 +156,7 @@
 	}
 	
 	function show_fckeditor($name,$toolbarset='Admin',$expand_toolbar=true,$height="200",$value="",$width = null) {
-		include_once(ROOT_DIR . 'ckeditor/ckeditor_php5.php');
-		include_once(ROOT_DIR . 'ckfinder/ckfinder.php');
-		$editor = new CKEditor(ROOT_DIR . 'ckeditor');
+		$editor = new CKEditor(ROOT_DIR . '/ckeditor');
 		$editor->config['toolbar'] = $toolbarset;
 		$editor->config['toolbarStartupExpanded'] = $expand_toolbar;
 		$editor->config['height'] = $height;
@@ -391,7 +350,7 @@ function require_login($type="redirect"){
 }
 
 function search_content($key,$table_name='eb_news',$conditions=null,$page_count = 10, $order='',$full_text=false){
-	$db = get_db();
+	$db = &get_db();
 	if($key){
 		$change = array('('=>'\(',')' => '\)');
 		strtr($key,$change);
@@ -435,6 +394,5 @@ function write_log($msg){
 	$msg = now() . ": " .$msg .chr(13).chr(10);
 	write_to_file($file,$msg);
 }
-
 
 ?>
