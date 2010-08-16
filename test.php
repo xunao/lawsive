@@ -4,11 +4,8 @@
 <html>
 	<head>
 		<?php
-			use_ckeditor();
-			$test = new Table('test');
-			$test->find(1);
-			#var_dump($test);
-			echo md5('xunao');
+			$user = AdminUser::login('admin', 'xunao');
+			var_dump($user);
 		?>
 	</head>
 </html>

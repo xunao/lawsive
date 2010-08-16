@@ -1,16 +1,21 @@
-<?php
-	session_start();
-	include_once('../frame.php');
-	require_role('admin');
-?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
+	<?php
+		session_start();
+		include_once('../frame.php');
+	//require_role('admin');
+	?>
 	<title><?php echo $_g_site_name; ?>-后台</title>
 	<?php	
-		css_include_tag('admin','colorbox');
+		$user = AdminUser::current_user();
+		if(!$user){
+			redirect('login.php');
+			die();
+		}
+		css_include_tag('admin/index','colorbox');
 		use_jquery();
   ?>
 </head>
@@ -18,16 +23,15 @@
 <div id=ibody>
 		<div id=top>
 			<div id=site><?php echo $site_name; ?>后台管理</div>
-			<div id=login>欢迎你：  <?php echo $_SESSION["admin_nick_name"]; ?> [<a href="/login/logout.post.php">退出</a>]</div>
+			<div id=login>欢迎你：  <?php echo $user->nick_name; ?> [<a href="/login/logout.post.php">退出</a>]</div>
 		</div>
 		<div id=nav1>
 			<?php 
 				$db = get_db();
-				if($_SESSION['admin_menu_rights']){
-					$sub_menu_ids = implode(',',$_SESSION['admin_menu_rights']);
-					$sub_menus = $db->query("select * from eb_admin_menu where id in({$sub_menu_ids}) order by parent_id, priority asc");
-				}
-				$main_menus = $db->query("select * from eb_admin_menu where parent_id =0 order by priority asc");
+				$sub_menu_ids = $user->get_admin_menu();
+				$sub_menu_ids = join(',',$sub_menu_ids);
+				$sub_menus = $db->query("select * from admin_menu where id in({$sub_menu_ids}) order by parent_id, priority asc");
+				$main_menus = $db->query("select * from admin_menu where parent_id =0 order by priority asc");
 				$main_menu_id = $_REQUEST['main_menu_id'] ? $_REQUEST['main_menu_id'] : $main_menus[0]->id;
 				$sub_menu_id = $_REQUEST['sub_menu_id'] ? $_REQUEST['sub_menu_id'] : $sub_menus[0]->id;
 				$i=0;

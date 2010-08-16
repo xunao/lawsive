@@ -133,7 +133,7 @@ class ActiveRecord {
 	static public function &find(){
 		$db = get_db();
 		$params = func_get_args();
-		$class_name = self::table_name();
+		$class_name = self::class_name();
 		$item = new $class_name();	
 		return call_user_func_array(array($item,"_find"), $params);
 	}
@@ -147,6 +147,10 @@ class ActiveRecord {
 
 	
 	protected static function table_name(){
+		return static::$s_table_name ? static::$s_table_name : get_called_class();
+	}
+	
+	protected static function class_name(){
 		return get_called_class();
 	}
 	
@@ -238,7 +242,7 @@ class ActiveRecord {
 				if(array_key_exists('limit', $param)){
 					$limit = intval($param['limit']);
 				}
-				if(array_key_exists('conditions', $param)){
+				if(array_key_exists('conditions', $param) && $param['conditions']){
 					$conditions[] = $param['conditions'];
 				}
 				if(array_key_exists('order', $param)){
@@ -269,7 +273,7 @@ class ActiveRecord {
 		}else{
 			$tmp_result = $db->query($sql);
 		}
-		if (!$tmp_result) return false;
+		if ($tmp_result === false) return false;
 		if($limit == 1){
 			if ($db->record_count <= 0) return null;
 			
