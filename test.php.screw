@@ -1,0 +1,11 @@
+<?php
+	include 'frame.php';
+?>
+<html>
+	<head>
+		<?php
+			#eaccelerator_encode();
+			phpinfo();
+		?>
+	</head>
+</html>

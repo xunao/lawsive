@@ -309,7 +309,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 }
 
 function redirect_login($type='js',$referer=true){
-	$url = '/login/login.php';
+	$url = '/admin/login.php';
 	if($referer){
 		$url .= '?last_url=' .get_current_url();		
 	}
