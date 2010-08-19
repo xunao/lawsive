@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+body {font-size:12px; font-family:宋体,Arial; color:#000000; margin:0 auto; padding:0;}
+td{word-break:break-all}
+a{text-decoration:none; color:black;}
+p{margin:0; padding:0;}
+ul{margin:0; padding:0;}
+li{margin:0; padding:0;} 
+div{margin:0; padding:0; float:left; display:inline;}
+
+#ibody{width:1050px; margin:0 auto; float:none; display:block;}
+#top{width:1050px; height:54px; margin-top:5px; background:url(/images/admin/top.jpg) repeat-x; }
+	#site{width:600px; height:25px; margin-top:12px; margin-left:10px; font-size:25px; font-weight:bold; color:#ffffff; }
+	#login{width:360px; height:30px; text-align:right; margin-top:20px; margin-right:15px; color:#ffffff; float:right;}
+		#login a{color:#ffffff; text-decoration:none;}
+	#index{width:100px; float:right;}
+		#index a{color:#0000ff; text-decoration:underline;}
+
+#nav1{width:1046px; background:#f0f0f0; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; }
+#nav1 .selected{font-weight:bold; border-left:1px solid #E7EDDF; border-right:1px solid #E7EDDF; background:#E7EDDF;}
+.nav1_menu{width:81px; height:23px; padding-top:5px; text-align:center; line-height:20px; border-top:1px solid #ffffff; border-bottom:1px solid #d8d8d8; border-left:1px solid #ffffff; border-right:1px solid #d8d8d8; cursor:pointer;display:none; }
+.nav1_menu .selected{font-weight:bold; border-left:1px solid #E7EDDF; border-right: 1px solid #E7EDDF; background:#E7EDDF;}
+#nav1_index{width:50px; height:23px; margin-top:5px; margin-right:10px; line-height:20px;  float:right;}
+#nav1_index a{color:#ff0000;}
+#nav2{width:1046px;  background:#ffffff; padding-bottom:5px;  border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE;}
+.nav2_menu{width:83px; height:20px; margin-top:5px; color:#0000ff; text-align:center; line-height:20px; cursor:pointer; float:left; display:none;}
+.nav2_menu a{color:#0000ff;}
+
+#admin_content{width:1046px; padding-top:10px; text-align:center; background:#ffffff; border-top:1px solid #cccccc; border-left:2px solid #A0CBEE; border-right:2px solid #A0CBEE; border-bottom:2px solid #A0CBEE;   }

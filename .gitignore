@@ -24,3 +24,5 @@ htmldir
 test1.php
 review
 .cache
+test
+*.screw
