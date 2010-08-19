@@ -30,6 +30,7 @@
 			die('创建db_migrate失败');
 		}else{
 			echo "创建表db_migrate成功";
+			include_once 'admin/dbadmin/index.php';
 		}
 	?>
 </body>
