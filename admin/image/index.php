@@ -63,7 +63,7 @@
 </div>
 <div id=isearch>
 		<input id="key" type="text" value="<?php echo $filter_search;?>"><span id="span_category"></span>
-		<select id="adopt" style="width:100px" class="select_new">
+		<select id="adopt" style="width:100px" class="sau_search">
 					<option value="-1">发布状况</option>
 					<option value="1">已发布</option>
 					<option value="0">未发布</option>
@@ -71,7 +71,7 @@
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
 		</script>
-		<input type="hidden" value="<?php echo $filter_category;?>" id="category">
+		<input type="hidden" value="<?php echo $filter_category;?>" id="search_botton">
 		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>

@@ -10,8 +10,8 @@
 	<title>迅傲信息</title>
 	<?php 
 		css_include_tag('admin/base');
-		use_jquery_ui();
-		js_include_tag('CATEGORY.js');
+		use_jquery();
+		js_include_tag('admin/pub','category','admin/pub/search','admin/image/index');
 	?>
 </head>
 <?php 
@@ -19,10 +19,11 @@
 	$category = new Category('image');
 	$category->echo_jsdata();
 ?>
+
 <body>
 <div id=icaption>
     <div id=title>发布图片</div>
-	  <a href="image_list.php" id=btn_back></a>
+	  <a href="index.php" id=btn_back></a>
 </div>	
 	
 <div id=itable>
@@ -70,16 +71,14 @@
 			</td>
 		</tr>	
 	</table>
-	</form>
-</div>
-<script>
+	<script>
 	$(function(){
 		category.display_select('category_select',$('#span_category'),<?php echo $category_id;?>,'', function(id){			
 		});
 		
 		$("#submit").click(function(){
 			var title = $("#pic_title").val();
-			if(title==""){
+			if(title!=""){
 				alert("请输入标题！");
 				return false;
 			}
@@ -111,5 +110,8 @@
 		}); 
 	});
 </script>
+	</form>
+</div>
+
 </body>
 </html>
