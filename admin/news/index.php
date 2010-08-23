@@ -1,36 +1,3 @@
-<?php
-	/*
-	$category = new Category('news');
-	$title = $_REQUEST['title'];
-	$category_id = $_REQUEST['category'] ? $_REQUEST['category'] : -1;
-	$is_adopt = $_REQUEST['adopt'];
-	$up = $_REQUEST['up'];
-	$language_tag = $_REQUEST['language_tag'] ? $_REQUEST['language_tag'] : 0;
-	
-	$db = get_db();
-	$c = array();
-	array_push($c, "language_tag=$language_tag");
-	if($title!= ''){
-		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%' or author like '%{$title}%'");
-	}
-	if($category_id > 0){
-		$cate_ids = implode(',',$category->children_map($category_id));
-		array_push($c, "category_id in($cate_ids)");
-	}
-	if($is_adopt!=''){
-		array_push($c, "is_adopt=$is_adopt");
-	}
-	if($up!=''){
-		array_push($c, "set_up=$up");
-	}
-	if(role_name() == 'column_editor' || role_name()=='column_writer'){
-		$c[] = "publisher={$_SESSION['admin_user_id']}";
-	}
-	$news = new table_class($tb_news);
-	$record = $news->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'created_at desc,category_id'),30);
-	*/
-?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html>
 <head>

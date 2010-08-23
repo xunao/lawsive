@@ -1,6 +1,6 @@
 <?php 
 include 'frame.php';
+$db = get_db();
+#$db->echo_sql = true;
 $user = AdminUser::find(1,array('include'=>true));
-#var_dump(AdminUser::$s_virtual_fields);
-var_dump($user);
-#var_dump(AdminUser::$s_table_name);
+var_dump($user->rights);

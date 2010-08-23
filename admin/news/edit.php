@@ -10,6 +10,7 @@
 	<title><?php echo $_g_sitename;?>发布新闻</title>
 	<?php 
 		$user = AdminUser::current_user();
+		
 		css_include_tag('admin/base');
 		use_jquery_ui();
 		#validate_form("news_edit");
@@ -36,13 +37,13 @@
 <body>
 	<div id="icaption">
 	    <div id="title">发布新闻</div>
-		  <a href="news_list.php" id="btn_back"></a>
+		  <a href="index.php" id="btn_back"></a>
 	</div>
 	<div id="itable">
-		<form id="news_edit" enctype="multipart/form-data" action="news.post.php" method="post"> 
+		<form id="news_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 		<table cellspacing="1" align="center">
 			
-			<?php if(has_right('schedule_news')){?>
+			<?php if($user->has_rights('schedule_news')){?>
 			<tr class="tr4">
 				<td class="td1" width="15%" >定时发布</td>
 				<td width="85%"><input type="text" name="publish_schedule_date" id="publish_schedule" class="publish_schedule" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date;?>"></input><input style="width:20px;" type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input>(格式：2010-03-03 16:00:00)</td>
@@ -136,9 +137,9 @@
 			<tr class="tr4 normal news_content">
 				<td class="td1">上传封面图片</td>
 				<td>
-					<input type="file" name="news_pic">
-					<?php if($news->video_photo_src){?>
-					<a href="<?php echo $news->video_photo_src?>" target="_blank">查看</a> <a href="#" id="a_delete_pic">删除</a>
+					<input type="file" name="news[photo_src]">
+					<?php if($news->photo_src){?>
+					<a href="<?php echo $news->photo_src?>" target="_blank">查看</a> <a href="#" id="a_delete_pic">删除</a>
 					<?php }?>
 					<span style="color:blue;">支持格式：jpg,png,gif，小于100K</span>
 				</td>
