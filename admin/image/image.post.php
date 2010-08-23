@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<?php
-			$image = new table_images_class();
+			$image = new TableImage();
 			if($_POST['id']!=''){
 				$image->find($_POST['id']);
 			}else{
@@ -24,9 +24,9 @@
 			if($_POST['image']["priority"]==null){$image->update_attribute("priority","100");}
 			$image->update_attributes($_POST['image']);
 			if($image->category_id!=''){
-				redirect('image_list.php?category=' .$image->category_id);
+				redirect('index.php?category=' .$image->category_id);
 			}else{
-				redirect('image_list.php');
+				redirect('index.php');
 			}
 		?>
 	</body>

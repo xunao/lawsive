@@ -89,7 +89,6 @@ function category_class(){
 						}							
 						callback(tid,max_len);
 					}
-									
 				});		
 				$(ob).find('select').not($(ob).find('select:first')).change(function(){
 					othis.display_select(name,$(ob),$(this).attr('value'),this,callback);

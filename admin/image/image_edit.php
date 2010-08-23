@@ -7,15 +7,25 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>迅傲信息</title>
-	<?php 
-		css_include_tag('admin/base');
-		use_jquery();
-		js_include_tag('admin/pub','category','admin/pub/search','admin/image/index');
-	?>
+	<title><?php echo $_g_sitename;?>发布新闻</title>
 </head>
 <?php 
 //initialize the categroy;
+	$user = AdminUser::current_user();
+	css_include_tag('admin/base');
+	use_jquery_ui();
+	js_include_tag('category', 'pubfun');
+	use_ckeditor();
+	
+	$id = $_GET['id'];
+	if($id!='')	{
+		$image = new table_class($tb_images);
+		$image->find($id);
+		$category_id = $image->category_id;
+	}else{
+		$category_id = 0;
+	}
+	
 	$category = new Category('image');
 	$category->echo_jsdata();
 ?>
@@ -44,7 +54,8 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1>分　类</td>
-			<td><span id="span_category"></span></td>
+			<td><span id="span_category"></span>
+		</td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1>图片链接</td>
@@ -60,7 +71,7 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1>简短描述</td>
-			<td><textarea cols="80" rows="8" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>
+			<td><textarea cols="80" rows="8"id="description" name="image[description]" class="required" ><?php echo $image->description;?></textarea></td>
 		</tr>
 		<tr class="btools">
 			<td colspan="10">
@@ -78,7 +89,7 @@
 		
 		$("#submit").click(function(){
 			var title = $("#pic_title").val();
-			if(title!=""){
+			if(title==""){
 				alert("请输入标题！");
 				return false;
 			}

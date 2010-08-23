@@ -1,6 +1,4 @@
 <?php
-	session_start();
-	include_once('../../frame.php');
 //	judge_role();
 //	
 //	$title = $_GET['title'];
@@ -29,6 +27,10 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
+	<?php session_start();
+	include_once('../../frame.php');
+	?>
+		<title><?php echo $_g_site_name;?>-图片管理</title>
 	<?php 
 		css_include_tag('admin/base');
 		use_jquery();
@@ -51,10 +53,10 @@
 		if($filter_search){
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
-		$items = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		if($items === false) die('数据库执行失败');
+		$image = new TableImage();
+		$images = Images::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>12));
+		if($images === false) die('数据库执行失败');
 	?>
-	<title><?php echo $_g_site_name;?>-图片管理</title>
 </head>
 <body>
 <div id=icaption>
@@ -62,7 +64,7 @@
 	  <a href="image_edit.php" id=btn_add></a>
 </div>
 <div id=isearch>
-		<input id="key" type="text" value="<?php echo $filter_search;?>"><span id="span_category"></span>
+		<input id="filter_search" type="text" value="<?php echo $filter_search;?>"><span id="span_category"></span>
 		<select id="adopt" style="width:100px" class="sau_search">
 					<option value="-1">发布状况</option>
 					<option value="1">已发布</option>
@@ -112,55 +114,6 @@
 		</tr>
   </table>
 </div>	
-<script>
-function search_image(){
-	var url = new Array();	
-	var filter_category = $('.category_select:last').val();
-	var category_count = $('.category_select').length;
-	if(filter_category == -1 && category_count > 1){
-		filter_category = $('.category_select:eq('+ (category_count - 2) + ')').val();
-	}
-		url.push('filter_category='+filter_category);
-		url.push('filter_adopt=' + $('#adopt').val());
-		url.push('filter_search=' + encodeURI($('#filter_search').val()));
-		url = "?" + url.join('&');
-		window.location.href=url;	
-	}
-	$(function(){
-		category.display_select('category_select',$('#span_category'),$('#filter_category').val(),'', function(id){
-			$('#category').val(id);
-			var category_id = $('.category_select:last').val();
-			if(category_id <= 0){
-				var count = $('.category_select').length;
-				for(var i=count-1;i>=0;i--){
-					if($('.category_select:eq(' + i +')').val() > 0 ){
-						category_id = $('.category_select:eq(' + i +')').val();
-						break;
-					}
-				}
-			}
-			$('#search_category').val(category_id);
-			search_image();
-		});
-		
-		$('#search_button').click(function(){
-			search_image();
-		});
-		$('select.sau_search').change(function(){
-			search_image();
-		});
-		$('input[name=title]').keypress(function(e){
-			if(e.keyCode == 13){
-				search_image();
-			}
-		});
-		
-	});
-	
-	function search(){
-		window.location.href = "?title=" + encodeURI($("#key").val()) +  "&category=" + $("#category").attr('value') + "&adopt=" + $("#adopt").attr('value');
-	}
-</script>
 </body>
 </html>
 
