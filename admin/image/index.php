@@ -54,7 +54,8 @@
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
 		$image = new TableImage();
-		$images = Images::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>12));
+		$images = $image->paginate('all',array('conditions' => join(' and ', $conditions)),12);
+		
 		if($images === false) die('数据库执行失败');
 	?>
 </head>
