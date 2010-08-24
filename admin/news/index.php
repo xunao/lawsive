@@ -118,7 +118,7 @@
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
 				<input type="hidden" id="relation" value="news">
-				<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
+				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
 			</td>
 		</tr>
   </table>

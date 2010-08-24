@@ -53,9 +53,8 @@
 		if($filter_search){
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
-		$image = new TableImage();
-		$images = Images::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>12));
-		if($images === false) die('数据库执行失败');
+		$items = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>12));
+		if($items === false) die('数据库执行失败');
 	?>
 </head>
 <body>
@@ -108,7 +107,7 @@
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
-				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+				<input type="hidden" id="db_table" value="<?php echo $tb_image;?>">
 				<input type="hidden" id="relation" value="image">
 			</td>
 		</tr>
