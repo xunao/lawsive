@@ -398,5 +398,3 @@ function write_log($msg){
 function admin_log($msg){
 	$db = get_db();
 }
-
-?>
