@@ -16,10 +16,10 @@
 		#validate_form("news_edit");
 		js_include_tag('category', 'admin/news/edit','pubfun');
 		use_ckeditor();
-		
+		$news = new News();
 		$id = intval($_GET['id']);
 		if($id){
-			$news->find($id);
+			$news = $news->find($id);
 			$category_id = $news->category_id;
 		}
 		if(empty($category_id)) $category_id = -1;

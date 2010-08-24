@@ -134,6 +134,11 @@ $(function(){
 		delete_keyword();
 	});
 	$('#submit').click(function(){
+		var keywords = new Array();
+		$('#sel_keywords option').each(function(){
+			keywords.push($(this).val());
+		});
+		$('#news_keywords').val(keywords.join('||'));
 		return valid_input();
 	});
 	$('#sel_news_type').change();

@@ -35,8 +35,8 @@
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
 		
-		$items = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		if($items === false) die('数据库执行失败');		
+		$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
+		if($record === false) die('数据库执行失败');		
 	?>
 </head>
 <body>
@@ -76,10 +76,10 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<td><a href="?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $category->find($record[$i]->category_id)->name;?></a></td>
+			<td><a href="index.php?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $record[$i]->category_name;?></a></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
-					<a href="news_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
+					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
 					<?php 
 						if(has_right('delete_news')){
 					?>
@@ -101,7 +101,6 @@
 					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
 					}?>
-					<a title="静态页面" href="<?php echo get_news_url($record[$i],'static');?>" target="_blank"><img src="/images/admin/btn_static.png" border="0"></a>
 					<?php if(has_right('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>
 					<?php }?>
