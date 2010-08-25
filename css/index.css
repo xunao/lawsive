@@ -1,10 +1,10 @@
 @CHARSET "UTF-8"; 
-body{width:1200px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial;  background:#00121E; }
+body{width:1000px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial;  background:#00121E; }
 body div{float:left;  display:inline; }
 body a{text-decoration:none; color:#666666}
-#ibody{width:1000px; background:#00121E; margin: 0 100px; }
-#title{width:1000px; margin:135px 0 0 0;  ; background:#00121E; }
-#title_log{width:1000px; height:56px; }
+#ibody{width:1000px; background:#00121E; }
+#title{width:1000px; margin:15px 0 0 0; padding-bottom:10px; background:#00121E; border-bottom:8px solid  #002135; }
+#title_log{width:1000px; height:56px; margin-top:20px;}
 #t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
 #t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:16px;  font-weight:600; color:white; }
 #t_l_c font{margin-left:10px; }
@@ -23,41 +23,32 @@ body a{text-decoration:none; color:#666666}
 #people_j{width:180px; height:83px; margin:15px 5px 0 0; }
 #people_j font{color:#F0F0F0; font-size:12px; line-height; 15px; }
 #people_j_t{width:100%; font-size:14px; line-height:20px; color:red; font-weight:bold; margin-bottom:5px; }
-#mes{width:326px; height:109px; margin-top:25px; float:right; font-size:12px; line-height:20px; color:#D7D7D7; }
+#mes{width:326px; height:109px; margin-top:25px; float:right; font-size:12px; line-height:16px; color:#D7D7D7; }
 #mes_u_f{font-size:14px; line-height:20px; color:#D7D7D7; font-weight:bold; margin-left:5px; }
 #mes_up a{text-decoration:underline}
 #mes_c{width:300px; font-size:12px; line-height:15px;margin-top:10px; }
-#mes_c font{margin-left:13px; }
+#mes_c  font{margin-left:10px; font-size:12px; line-height:15px;}
 #mes_down{width:325px; height:20px;  margin-top:5px; }
-#search{height:20px; width:230px; }
+#search{height:20px; width:230px; margin-top:1px;}
 #search input{padding:0; border:0px;height:20px; background:#E6E8E9; width:230px; }
-#search_add{width:20px; height:20px; margin-top:0px;}
+#search_add{width:20px; height:20px; margin-top:1px;}
 #search_r{width:56px; height:23px; margin:0 0 0 8px; }
 
-#hr{width:1000px; height:15px; }
-
-#head{width:1000px; height:40px; }
-#head_l{width:1000px; height:30px; background:#203F53; font-size:16px; line-height:30px; font-weight:bold;text-align:center; }
+#head{width:1000px; height:41px; }
+#head_l{width:910px; height:30px;  font-size:16px; line-height:30px; font-weight:bold;text-align:center; }
 #head_l  div{color:#DBF6FB;text-align:center;}
 #head_l  a{color:#DBF6FB; float:left;padding:0 11px;}
 #head_l a:link{color:#DBF6FB}
-#head_l a:hover{background:#335368;}
+#head_l_l {width:910px;background:#203F53;}
+#head_l_l a:hover{background:#335368;}
 #head_r{width:90px; height:41px; background:url("/images/index/head_r.jpg"); font-size:17px; line-height:40px; font-weight:bold; float:right; color:#DBF6FB; text-align:center}
-#head_r a{padding:0 6px;; text-align:center;}
-#center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px; color:#666666; letter-spacing:1px; }
+#head_r a{padding:0 6px; text-align:center; color:#DBF6FB;}
+#center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px;padding-bottom:20px; color:#666666; letter-spacing:1px; }
 #center_h{width:970px; margin-left:30px; color:black; height:20px; }
 #center_h a{margin:0 10px; color:black}
 #center_h font{margin-left:10px; }
-#center_l{width:585px; margin:16px; }
+#center_l{width:585px; margin:16px 0 0 16px; }
 #new_ad{margin-bottom:30px; }
-.c_title{width:100%; height:22px; font-weight:bold; line-height:16px; ; font-size:14px; margin-bottom:18px; }
-.c_title img{float:left; }
-.c_title font{float:left; }
-.r_title{width:100%; height:22px; font-weight:bold; line-height:16px; ; font-size:12px; color:black}
-.r_title img{float:left; }
-.r_title font{float:left; }
-.c_t_n{width:566px; height:22px; border-bottom:1px solid #8B8C8D; color:black;font-size:16px;line-height:22px; }
-.c_t_n img{float:right; margin:2px 10px 0 0; }
 #c_people{width:585px; }
 #c_p_i{float:left; margin:0 10px 14px 0; }
 #c_p_r{width:370px; height:130px; }
@@ -71,20 +62,22 @@ body a{text-decoration:none; color:#666666}
 #c_p_r_l{margin-bottom:5px;width:370px; }
 .c_p_r_r{margin-top:5px; color:black; width:100%}
 #view{margin-top:15px; width:350px; }
-#change{margin-top:15px; width:210px; margin-left:25px; }
+#change{margin-top:15px; width:210px; float:right; }
 .v_i{float:left; margin:0 0px 4px 0; }
 .v_c{float:left; margin-left:2px; width:260px; margin-bottom:5px; }
-.v_c_b{float:left; margin: 5px  0  5px 0; width:100%;}
-.v_c_b font{float:left; margin-top: 5px ;}
+.v_c_b{float:left; padding: 5px  0  5px 0; width:100%;}
+.v_c_b font{float:left; margin: 5px  0;}
 .v_c_p{float:left; margin:15px  0  0 2px; width:100%; }
-.v_c_t_1{width:220px;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left; }
-.v_c_t_2{margin-top:5px; float:left;font-size:14px; line-height:18px; margin-top:5px; }
+.v_c_t_1{width:210px;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left; }
+.v_c_t_2{width:100%;margin-top:5px; float:left;font-size:14px; line-height:18px; margin-top:5px; }
 .l_add{font-size:12px;margin-left:10px;float:left;}
-#change img{float:left; margin-right:5px; }
+.change_b{background:#E1EADB; padding:5px 0;}
+.change_t{float:left; padding: 5px ; width:200px;}
+.change_t font{float:left; margin: 5px  0;}
 .change_t1{width:210px;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left; }
 .cha_tt{font-size:14px; line-height:24px; color:black;font-weight:600;width:100%;}
 .change_h{width:144px; height:24px; background:#5088AA; color:white;font-size:14px; line-height:24px; text-indent:10px; font-weight:bold; }
-#lecture{margin-top:15px; width:210px; margin-left:25px; }
+#lecture{margin-top:15px; width:350px; float:left; }
 
 
 #lec_i{color:black; height:65px; margin:20px 5px 0 0; line-height:16px; ; font-size:14px}
@@ -106,44 +99,58 @@ body a{text-decoration:none; color:#666666}
 .talk_h{width:100px; height:24px; background:#5088AA; color:white;font-size:16px; line-height:24px;font-weight:bold; text-align:center; }
 .talk_c{width:100%;margin-top:10px;}
 .talk_c img{float:left;}
-.talk1{color:black; margin-left:5px; font-weight:bold; width:200px; }
-.talk2{color:#666666; margin-top:5px; width:200px; }
+.talk1{color:black; margin-left:10px; font-weight:bold; width:200px; }
+.talk2{color:#666666; margin-left:10px;  margin-top:5px; width:200px; }
 .ylawyer{width:585px; margin-top:20px;}
-.ylawyer img{float:left}
 .ylaw{width:285px; }
-.ylaw img{margin:10px 0; }
-.ylaw1{color:black; margin-left:5px; font-weight:bold; width:280px; }
-.ylaw2{color:#666666;  width:150px; margin:10px 5px;}
-#cl_ad{margin:100px 0 20px 0;}
+.ylaw img{float:left;}
+.ylaw1{color:black; margin-left:5px; margin-bottom:10px; font-weight:bold; width:280px; }
+.ylaw2{color:#666666;  width:200px; margin:0 5px 10px 5px;}
+#cl_ad{margin:20px 0 0px 0;}
+
+/*the title of center_l*/
+.c_title{width:100%; height:22px; font-weight:bold; line-height:16px; ; font-size:14px; margin-bottom:10px; }
+.c_title img{float:left; }
+.c_title font{float:left; }
+.r_title{width:100%; height:22px; font-weight:bold; line-height:16px; ; font-size:12px; color:black}
+.r_title img{float:left; }
+.r_title font{float:left; }
+.c_t_n{width:100%; height:22px; color:#9E2F2F;font-size:16px;line-height:22px; }
+.c_t_n font{float:left;}
+.c_t_n img{float:right; margin:4px 5px 0 5px; }
+.c_t_b{height:22px; margin-left:5px; color:#9E2F2F; background:url("/images/index/c_t_b.jpg"); }
 
 #expert{width:355px; }
-#exp_h{width:155px; height:24px; font-size:12px; font-weight:600; line-height:24px; color:white; background:url("/images/index/lawyer_h.jpg");  text-align:center;}
+#exp_h{width:230px; height:24px; font-size:12px; font-weight:600; line-height:24px; color:white; background:url("/images/index/lawyer_h.jpg");  text-align:center;}
 #exp_h  div{height:24px; width:67px; margin-left: 8px; text-align:center;}
+#exp_h  div a{  text-align:center;  color:white;  }
+#exp_h  div a:hover{   color:black;  }
 #exp_h  div:hover{background:url("/images/index/lawyer_h_q.jpg"); color:black;}
 #exp_h  div:hover font{margin-top:14px; color:black;}
-#exp_h  div a{  text-align:center;  color:white;  }
+
 #exp_c{width:355px;}
 #exp_c img{margin:20px 0  10px 30px; }
-#exp_d{width:100%;}
-#exp_d font{margin:0 15px 0px 45px;float:left;}
-#s_l{margin:20px 20px 10px 10px; width:100%; font-weight:bold; padding-bottom:10px; font-size:12px;line-height:16px;}
+#exp_d{width:100%; font-size:12px; line-height:14px; font-weight:bold;}
+#exp_d font{margin:0 5px 0px 32px;float:left;}
+#s_l{margin:0px 0px 10px 0px; width:330px;; font-weight:bold; padding:10px; font-size:12px;line-height:16px;background:#E6ECFB; }
 #s_l div{margin-top:10px; width:150px; }
 #s_l_i{margin-top:16px; width:300px; }
 #s_l a{margin-right:10px; margin-top:16px; }
-#s_l font{float:left; }
+#s_l font{float:left; ; font-size:12px;line-height:16px;}
 #s_r{margin:20px 20px ; width:100%; }
 #s_r  font{margin:5px; }
 #s_r  hr{float:left}
 .s_r_h{font-size:13px; line-height:15px; font-weight:bold; width:20%; color:black; font-weight:bold; }
 .s_r_h  font{float:left; margin-left:5px; }
-#center_r{width:355px; margin:16px 16px 16px 10px; border-left:1px solid #CED7DF; border-top:1px solid #CED7DF}
+#center_r{width:355px; margin:16px 16px 0 0; border-left:1px solid #CED7DF; border-top:1px solid #CED7DF; float:right;}
 .lecture{width:160px; margin:0px 8px 16px 8px; }
 #food  font{font-size:13px; margin-top:5px; }
 #lawyer{width:355px; }
-#law_h{width:355px; height:24px; background:url("/images/index/lawyer_h.jpg"); color:white; margin-bottom:10px; }
-#law_h div:hover{ background:url("/images/index/lawyer_h_q.jpg");  color:black}
-#law_h div{width:67px; height:24px; margin:0 2px;  color:white; text-align:center; font-size:12px; font-weight:bold; line-height:24px; }
+#law_h{width:355px; height:24px; font-size:12px;  line-height:24px;  background:url("/images/index/lawyer_h.jpg"); color:white; margin-bottom:10px; }
 #law_h a{color:white}
+#law_h a:hover{color:black}
+#law_h div{width:67px; height:24px; margin:0 2px;  color:white; text-align:center; font-weight:bold;}
+#law_h div:hover{ background:url("/images/index/lawyer_h_q.jpg");  color:black}
 #law_tt{margin:10px 20px 5px  10px; }
 .lawyer1{width:325px; height:58px; line-height:52px; color:red; border-bottom:1px dotted #666666 ; }
 .lawyer1 img{margin-left:10px; float:left; }
@@ -161,6 +168,7 @@ body a{text-decoration:none; color:#666666}
 .buss_b1{background:#DFE2E9}
 .buss_b2{background:#E6E8EF}
 #meeting{width:355px; margin:2px 0; font-size:12px; line-height:20px; text-align:center}
+#meeting a{color:#003869;}
 #job{width:355px; margin:2px 0; font-size:12px; line-height:20px; text-align:center}
 #rss{width:355px; height:40px; margin:10px 0; border:1px solid #8EAFC7}
 #rss_in{width:350px; height:35px; background:#BDD8EB; margin:2.5px; }
@@ -176,8 +184,8 @@ body a{text-decoration:none; color:#666666}
 #bom_up{width:1000px; height:85px; background:#203F53; }
 #b_u_u{width:385px; height:25px; float:left; margin:10px 0 0 80px ; color:#BBBBBB}
 #b_u_u input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#203F53}
-#b_u_d{width:900px; height:30px; margin:10px 50px; font-size:14px; line-height:30px; color:white; text-align:center; }
-#b_u_d font{color:white; margin-left:15px; margin-right:15px; }
+#b_u_d{width:920px; height:30px; margin:10px 40px; font-size:14px; line-height:30px; color:white; text-align:center; }
+#b_u_d font{color:white; margin-left:17px; margin-right:20px; }
 #bottom{width:1000px; background:#0D2031; color:#999999; font-size:13px; line-height:15px; }
 #bom_down{margin:0 50px; width:90%; }
 .b_d{width:66px; font-size:14px; line-height:20px; margin:20px 30px 20px  35px; }
@@ -185,7 +193,7 @@ body a{text-decoration:none; color:#666666}
 .b_d_h{font-weight:bold; }
 .b_d_x{width:12px; height:180px; margin-top:40px ;background:url("/images/index/b_d_x.jpg");}
 #b_d_d{width:890px;font-size:16px;line-height:24px;font-weight:bold;color:white;margin-left:20px;}
-#b_d_d a{font-size:15px; line-height:24px; font-weight:200; margin-left:25px;color:#A6C3DA; }
+#b_d_d a{font-size:14px; line-height:24px; font-weight:200; margin-left:25px;color:#A6C3DA; }
 #bottom1{margin-top:25px; margin-left:275px; }
 #bottom2{margin-top:5px; margin-left:345px; }
 #bottom3{margin-top:5px; margin-left:385px;margin-bottom:10px; }
