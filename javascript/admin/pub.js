@@ -66,6 +66,7 @@ $(function(){
 					$("#"+data).remove();
 				});
 			}else{
+				alert('post');
 				$.post("/admin/pub.post.php",{'del_id':$(this).attr('name'),'db_table':$('#db_table').attr('value'),'post_type':'del'},function(data){
 					$("#"+data).remove();
 				});

@@ -34,7 +34,7 @@
 	<?php 
 		css_include_tag('admin/base');
 		use_jquery();
-		js_include_tag('admin/pub','category','admin/pub/search','admin/image/index');
+		js_include_tag('admin/pub','category','admin/image/index');
 		$category = new Category('image');
 		$category->echo_jsdata();
 		$filter_category = intval($_GET['filter_category']);
@@ -53,8 +53,9 @@
 		if($filter_search){
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
-		$items = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>12));
-		if($items === false) die('数据库执行失败');
+		$images = new TableImage($tb_images);
+		$images = $images->paginate('all',array('conditions' => join(' and ', $conditions)),12);
+		if($images === false) die('数据库执行失败');
 	?>
 </head>
 <body>
@@ -107,7 +108,7 @@
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
-				<input type="hidden" id="db_table" value="<?php echo $tb_image;?>">
+				<input type="hidden" id="db_table" value="<?php echo images?>">
 				<input type="hidden" id="relation" value="image">
 			</td>
 		</tr>

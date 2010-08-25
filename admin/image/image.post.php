@@ -16,7 +16,6 @@
 				$image->find($_POST['id']);
 			}else{
 				$image->created_at = date("Y-m-d H:i:s");
-				
 			}
 			$image->publisher = $_SESSION['admin_user_id'];
 			

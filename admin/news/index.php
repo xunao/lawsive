@@ -35,7 +35,7 @@
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
 		
-		$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
+		$record = News::paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');		
 	?>
 </head>
