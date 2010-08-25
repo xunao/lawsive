@@ -94,7 +94,6 @@
 			}
 			
 			category_id = $('.category_select:last').attr('value');
-			alert(category_id);
 			if(category_id == -1){
 				alert('请选择分类!');
 				return false;

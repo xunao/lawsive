@@ -1,13 +1,11 @@
 function search_image(){
 	var url = new Array();	
 	var filter_category = $('.category_select:last').val();
-	var category_count = $('.category_select').length;
-	if(filter_category == -1 && category_count > 1){
-		filter_category = $('.category_select:eq('+ (category_count - 2) + ')').val();
-	}
+	//alert(filter_category);
 	url.push('filter_category='+filter_category);
 	url.push('filter_adopt=' + $('#adopt').val());
 	url.push('filter_search=' + encodeURI($('#filter_search').val()));
+	//url.push('filter_select=' + $('#category_select_0').val());
 	url = "?" + url.join('&');
 	window.location.href=url;	
 }

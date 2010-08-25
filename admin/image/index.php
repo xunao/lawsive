@@ -1,5 +1,5 @@
 <?php
-//	judge_role();
+	
 //	
 //	$title = $_GET['title'];
 //	$filter_category = $_GET['category'] ? $_GET['category'] : -1;
@@ -29,6 +29,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<?php session_start();
 	include_once('../../frame.php');
+//	judge_role();
 	?>
 		<title><?php echo $_g_site_name;?>-图片管理</title>
 	<?php 
@@ -39,6 +40,7 @@
 		$category->echo_jsdata();
 		$filter_category = intval($_GET['filter_category']);
 		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
+		$filter_select = isset($_GET['filter_select']) ?  intval($_GET['filter_select']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
 		if($filter_category > 0){
@@ -58,6 +60,7 @@
 		$images = $images->paginate('all',array('conditions' => join(' and ', $conditions)),12);
 //		echo_sql = true;
 		if($images === false) die('数据库执行失败');
+		
 	?>
 </head>
 <body>
@@ -74,6 +77,7 @@
 		</select>
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
+			$('#category_select_0').attr('parent_id','1');
 		</script>
 		<input type="hidden" value="<?php echo $filter_category;?>" id="search_botton">
 		<input type="button" value="搜索" id="search_button">

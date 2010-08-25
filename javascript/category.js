@@ -17,7 +17,7 @@ function category_item_class(id,name,parent_id,priority){
 	
 }
 
-function category_class(){
+function Category(){
 	var items = new Array();
 	this.class_name;
 	this.push = function(item){
