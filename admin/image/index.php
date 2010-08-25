@@ -51,10 +51,12 @@
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
 		if($filter_search){
-			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
+			$conditions[] = "title like '%$filter_search%' or keywords like '%$filter_search%' or description like '%$filter_search%'";
 		}
+		
 		$images = new TableImage($tb_images);
 		$images = $images->paginate('all',array('conditions' => join(' and ', $conditions)),12);
+//		echo_sql = true;
 		if($images === false) die('数据库执行失败');
 	?>
 </head>

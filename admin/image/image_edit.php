@@ -25,7 +25,6 @@
 	}else{
 		$category_id = 0;
 	}
-	alert($category_id);
 	$category = new Category('image');
 	$category->echo_jsdata();
 ?>
@@ -95,6 +94,7 @@
 			}
 			
 			category_id = $('.category_select:last').attr('value');
+			alert(category_id);
 			if(category_id == -1){
 				alert('请选择分类!');
 				return false;

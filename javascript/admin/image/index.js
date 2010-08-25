@@ -34,6 +34,9 @@ $(function(){
 	$('select.sau_search').change(function(){
 		search_image();
 	});
+	$('select.category_select').change(function(){
+		search_image();
+	});
 	$('input[name=title]').keypress(function(e){
 		if(e.keyCode == 13){
 			search_image();
