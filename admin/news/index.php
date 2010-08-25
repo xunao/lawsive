@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<?php 
 		session_start();
-		include_once('../../frame.php');
+		include_once('../../frame.php')
 	?>
 	<title><?php echo $_g_site_name;?>-新闻管理</title>
 	<?php
@@ -35,7 +35,7 @@
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
 		
-		$record = News::paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
+		$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');		
 	?>
 </head>
@@ -117,7 +117,7 @@
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
 				<input type="hidden" id="relation" value="news">
-				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+				<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
 			</td>
 		</tr>
   </table>

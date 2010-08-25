@@ -19,12 +19,13 @@
 	
 	$id = $_GET['id'];
 	if($id!='')	{
-		$image = new TableImage($tb_images);
+		$image = new table_class($tb_images);
 		$image->find($id);
 		$category_id = $image->category_id;
 	}else{
 		$category_id = 0;
 	}
+	
 	$category = new Category('image');
 	$category->echo_jsdata();
 ?>
@@ -75,7 +76,7 @@
 		<tr class="btools">
 			<td colspan="10">
 				<input id="submit" type="submit" value="发布图片">
-				<input type="hidden" name="image[category_id]" id="category_id" value="<?php echo $category_id;?>">
+				<input type="hidden" name="image[category_id]" id="category_id" value="<?php echo $image->category_id;?>">
 				<input type="hidden" id="id" name="id" value="<?php echo $id;?>">
 				<input type="hidden" name="image[is_adopt]" value="1">
 			</td>

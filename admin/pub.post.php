@@ -1,5 +1,6 @@
 ﻿<?php
   include_once('../frame.php');
+	
 	if('del_total'== $_POST['post_type']){
 		$db = get_db();
 		$db->execute("delete from {$_POST['tbname']}");
@@ -24,7 +25,7 @@
 	$post = new Table($_POST['db_table']);
 	if("del"==$_POST['post_type'])
 	{
-		if($_POST['db_table'] == $tb_news){
+			if($_POST['db_table'] == $tb_news){
 				$db = get_db();
 				$post->find($_POST['del_id']);
 				if($post->language_tag==1){
@@ -37,9 +38,9 @@
 						$post->delete($e_id);
 					}
 				}
-			}elseif ($_POST['db_table'] == 'images'){
+			}elseif ($_POST['db_table'] == 'eb_industry'){
 				$db = get_db();
-				$db->execute("delete from images where id = {$_POST['del_id']}");
+				$db->execute("delete from eb_company_industry where industry_id = {$_POST['del_id']}");
 			}elseif ($_POST['db_table'] == 'eb_gs'){
 				$db = get_db();
 				$db->execute("delete from eb_company_industry where company_id = {$_POST['del_id']}");
