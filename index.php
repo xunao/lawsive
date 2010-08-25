@@ -106,27 +106,25 @@
                                                                       <div class="change_b">
 									                                                           <div class="change_t" >
 														                                                          <a href="" ><font class="change_t1" >专栏>余元良 律师</font></a>
-														                                                         <div>
-																	                                                          <font class="cha_tt" >离婚方面的事</font><img alt="qyname" src="/images/index/qy_name.jpg" style="margin-right:5px; float:left;">8月4日，2010年客和份额解放军额外发我会计法可是
+																	                                              <font class="cha_tt" >离婚方面的事</font><img alt="qyname" src="/images/index/qy_name.jpg" style="margin-right:5px; float:left;">8月4日，2010年客和份额解放军额外发我会计法可是
 																	                                                          能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌国接近开关了结果 积分卡附加费空间打开放的积分
-																	                                              </div> 
 												                                                 </div>
 												                                                 <div class="change_t">
 																	                                              <a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a>
-														                                                         <div> <font class="cha_tt" >离婚方面的事</font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</div> 
+														                                                          <font class="cha_tt" >离婚方面的事</font><font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</font>
 												                                                 </div>
 												                                                 <div class="change_t">
 																	                                              <a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a>
-														                                                         <div> <font class="cha_tt" >离婚方面的事</font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</div> 
+														                                                         <font class="cha_tt" >离婚方面的事</font><font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌 </font>
 												                                                 </div>
 						                                                 </div>
 						                                                   <div class="change_t">
 											                                              <a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a>
-								                                                         <div> <font class="cha_tt" >离婚方面的事</font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</div> 
+								                                                          <font class="cha_tt" >离婚方面的事</font><font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</font> 
 						                                                 </div>
 						                                                 <div class="change_t">
 											                                              <a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a>
-								                                                         <div> <font class="cha_tt" >离婚方面的事</font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</div> 
+								                                                         <font class="cha_tt" >离婚方面的事</font> <font>8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌 </font>
 						                                                 </div>
 						                    </div>
 						                    <div id="lecture">
