@@ -90,7 +90,7 @@
 				show_category($category,0,$type,'',0);
 			?>
 			<tr class=btools>
-				<td colspan="10"><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><input type="hidden" id="relation" value="category"><input type="hidden" id="db_table" value="<?php echo $tb_category?>"></td>
+				<td colspan="10"><?php paginate();?> <button id="edit_priority">编辑优先级</button> <button id="clear_priority">清空优先级</button><input type="hidden" id="relation" value="category"><input type="hidden" id="db_table" value="category"></td>
 			</tr>
 		</table>
 	</div>

@@ -1,10 +1,9 @@
 <?php
-
 $filter_pic = array('jpg','png','bmp','gif','icon');
 $filter_video = array('flv','wmv','wav','mp3','mp4','avi','rm','wma');
 $filter_pdf = array('pdf');
 
-class upload_file
+class upload_file 
 {
 	var $save_dir;
 	var $save_type=1;
@@ -72,7 +71,6 @@ class upload_file
 					$extension = $path_info['extension'];
 					if(!empty($filter)){
 						global $$filter;
-						print in_array(strtolower($extension),$$filter);
 						if(!in_array(strtolower($extension),$$filter)){
 							debug_info('unknow file type');
 							return false;

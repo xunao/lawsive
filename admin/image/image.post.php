@@ -24,7 +24,7 @@
 			if($_POST['image']["priority"]==null){$image->update_attribute("priority","100");}
 			$image->update_attributes($_POST['image']);
 			if($image->category_id!=''){
-				redirect('index.php?category=' .$image->category_id);
+				redirect('index.php?filter_category=' .$image->category_id);
 			}else{
 				redirect('index.php');
 			}
