@@ -6,8 +6,8 @@ body a{text-decoration:none; color:#666666}
 #title{width:1000px; margin:15px 0 0 0; padding-bottom:10px; background:#00121E; border-bottom:8px solid  #002135; }
 #title_log{width:1000px; height:56px; margin-top:20px;}
 #t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
-#t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:16px;  font-weight:600; color:white; }
-#t_l_c font{margin-left:10px; }
+#t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:14px;  font-weight:600; color:white; }
+#t_l_c font{margin-left:9px; }
 #t_l_r{width:385px; height:25px; float:right; margin:11px 0 0 0; color:#BBBBBB}
 #t_l_r  input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#00121E}
 .t_l_r_c{line-height:21px; font-size:12px; margin-left:7px; }
@@ -131,7 +131,7 @@ body a{text-decoration:none; color:#666666}
 #exp_c{width:355px;}
 #exp_c img{margin:20px 0  10px 30px; }
 #exp_d{width:100%; font-size:12px; line-height:14px; font-weight:bold;}
-#exp_d font{margin:0 5px 0px 32px;float:left;}
+#exp_d font{margin:0 5px 0px 32px;float:left;font-size:12px; line-height:14px; }
 #s_l{margin:0px 0px 10px 0px; width:330px;; font-weight:bold; padding:10px; font-size:12px;line-height:16px;background:#E6ECFB; }
 #s_l div{margin-top:10px; width:150px; }
 #s_l_i{margin-top:16px; width:300px; }
@@ -187,8 +187,8 @@ body a{text-decoration:none; color:#666666}
 #b_u_d{width:920px; height:30px; margin:10px 40px; font-size:14px; line-height:30px; color:white; text-align:center; }
 #b_u_d font{color:white; margin-left:17px; margin-right:20px; }
 #bottom{width:1000px; background:#0D2031; color:#999999; font-size:13px; line-height:15px; }
-#bom_down{margin:0 50px; width:90%; }
-.b_d{width:66px; font-size:14px; line-height:20px; margin:20px 30px 20px  35px; }
+#bom_down{margin:0 40px; width:920px;; }
+.b_d{width:66px; font-size:14px; line-height:20px; margin:20px 25px 20px  30px; }
 .b_d font{margin-top:10px; float:left; width:80px; color:white; }
 .b_d_h{font-weight:bold; }
 .b_d_x{width:12px; height:180px; margin-top:40px ;background:url("/images/index/b_d_x.jpg");}
