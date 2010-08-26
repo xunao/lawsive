@@ -3,6 +3,8 @@ body{width:1000px; margin: 0 auto;  line-height:14px;  font-size:12px; font-fami
 body div{float:left;  display:inline; }
 body a{text-decoration:none; color:#666666}
 #ibody{width:1000px; background:#00121E; }
+
+/*title*/
 #title{width:1000px; margin:15px 0 0 0; padding-bottom:10px; background:#00121E; border-bottom:8px solid  #002135; }
 #title_log{width:1000px; height:56px; margin-top:20px;}
 #t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
@@ -20,7 +22,7 @@ body a{text-decoration:none; color:#666666}
 #people{width:318px; height:119px; margin-left:18px; margin-top:15px; }
 #people_t{width:318px; height:25px; color:#F0F0F0; font-size:14px; line-height:20px; font-weight:bold; border-bottom:1px solid #2B4F69; letter-spacing:1px;}
 .people_t_r{float:right; margin:6px 10px 0 0 ; }
-#people_a{background:url("/images/index/jp_ad.jpg"); float:right; width:80px; height:83px; margin:10px 5px 0 0 ; }
+#people_a{float:right; width:80px; height:83px; margin:10px 5px 0 0 ; }
 #people_j{width:180px; height:83px; margin:15px 5px 0 0; }
 #people_j font{color:#F0F0F0; font-size:12px; line-height; 15px; }
 #people_j_t{width:100%; font-size:14px; line-height:20px; color:red; font-weight:bold; margin-bottom:5px; }
@@ -35,6 +37,7 @@ body a{text-decoration:none; color:#666666}
 #search_add{width:20px; height:20px; margin-top:1px;}
 #search_r{width:56px; height:23px; margin:0 0 0 8px; }
 
+/*center_head*/
 #head{width:1000px; height:41px; }
 #head_l{width:910px; height:30px;  font-size:16px; line-height:30px; font-weight:bold;text-align:center; }
 #head_l  div{color:#DBF6FB;text-align:center;}
@@ -44,12 +47,14 @@ body a{text-decoration:none; color:#666666}
 #head_l_l a:hover{background:#335368;}
 #head_r{width:90px; height:41px; background:url("/images/index/head_r.jpg"); font-size:17px; line-height:40px; font-weight:bold; float:right; color:#DBF6FB; text-align:center}
 #head_r a{padding:0 6px; text-align:center; color:#DBF6FB;}
+
 #center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px;padding-bottom:20px; color:#666666; letter-spacing:1px; }
 #center_h{width:970px; margin-left:30px; color:black; height:20px; }
 #center_h a{margin:0 10px; color:black}
 #center_h font{margin-left:10px; }
 #center_l{width:585px; margin:16px 0 0 16px; }
 #new_ad{margin-bottom:30px; }
+
 #c_people{width:585px; }
 #c_p_i{float:left; margin:0 10px 14px 0; }
 #c_p_r{width:370px; height:130px; }
@@ -128,11 +133,11 @@ body a{text-decoration:none; color:#666666}
 #exp_h  div:hover{background:url("/images/index/lawyer_h_q.jpg"); }
 #exp_h   a{  text-align:center;  color:white;  padding:0 5px;height:24px;}
 #exp_h   a:hover{color:black;  }
-
 #exp_c{width:355px;}
 #exp_c img{margin:20px 0  10px 30px; }
 #exp_d{width:100%; font-size:12px; line-height:14px; font-weight:bold;}
 #exp_d font{margin:0 5px 0px 32px;float:left;font-size:12px; line-height:14px; }
+
 #s_l{margin:0px 0px 10px 0px; width:330px;; font-weight:bold; padding:10px; font-size:12px;line-height:16px;background:#E6ECFB; }
 #s_l div{margin-top:10px; width:150px; }
 #s_l_i{margin-top:16px; width:300px; }
@@ -143,9 +148,9 @@ body a{text-decoration:none; color:#666666}
 #s_r  hr{float:left}
 .s_r_h{font-size:13px; line-height:15px; font-weight:bold; width:20%; color:black; font-weight:bold; }
 .s_r_h  font{float:left; margin-left:5px; }
+
 #center_r{width:355px; margin:16px 16px 0 0; border-left:1px solid #CED7DF; border-top:1px solid #CED7DF; float:right;}
 .lecture{width:160px; margin:0px 8px 16px 8px; }
-#food  font{font-size:13px; margin-top:5px; }
 #lawyer{width:355px; }
 #law_h{width:355px; height:24px; font-size:12px;  line-height:24px;  background:url("/images/index/lawyer_h.jpg"); color:white; margin-bottom:10px; }
 #law_h a{color:white}
@@ -184,14 +189,16 @@ body a{text-decoration:none; color:#666666}
 .rank img{margin-left:5px;}
 .rank1{width:255px; font-size:14px; line-height:16px; font-weight:600; color:black; letter-spacing:1px; float:left; margin-top:5px; }
 .rank2{margin-top:5px; float:left; font-size:12px; line-height:14px; float:left;}
+
+/*bottom*/
 #bom_up{width:1000px; height:85px; background:#203F53; }
 #b_u_u{width:385px; height:25px; float:left; margin:10px 0 0 80px ; color:#BBBBBB}
 #b_u_u input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#203F53}
 #b_u_d{width:920px; height:30px; margin:10px 40px; font-size:14px; line-height:30px; color:white; text-align:center; }
 #b_u_d font{color:white; margin-left:17px; margin-right:20px; }
 #bottom{width:1000px; background:#0D2031; color:#999999; font-size:13px; line-height:15px; }
-#bom_down{margin:0 20px; width:960px;; }
-.b_d{width:66px; font-size:14px; line-height:20px; margin:20px 35px 20px  39px; }
+#bom_down{margin:0 20px 0 20px; width:960px;; }
+.b_d{width:66px; font-size:14px; line-height:20px; margin:20px 35px 20px  35px; }
 .b_d font{margin-top:10px; float:left; width:80px; color:white; }
 .b_d_h{font-weight:bold; }
 .b_d_x{width:12px; height:180px; margin-top:40px ;background:url("/images/index/b_d_x.jpg");}
