@@ -19,11 +19,11 @@
 	
 	$id = $_GET['id'];
 	if($id!='')	{
-		$image = new table_class($tb_images);
+		$image = new TableImage();
 		$image->find($id);
 		$category_id = $image->category_id;
 	}else{
-		$category_id = 0;
+		$category_id = -1;
 	}
 	
 	$category = new Category('image');
@@ -114,10 +114,10 @@
 					return false;
 				}
 			}
-			if($("#description").val()==''){
-				alert('请输入简短描述！');
-				return false;
-			}
+//			if($("#description").val()==''){
+//				alert('请输入简短描述！');
+//				return false;
+//			}
 		}); 
 	});
 </script>
