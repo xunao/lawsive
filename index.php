@@ -11,7 +11,7 @@
                              <div id="title_ad"><a href=""><img src="/images/index/title_ad.jpg" border="0"></a></div>
                              <div id="title_log">
                                          <div id="t_l_l"></div>
-                                         <div id="t_l_c"><font>咨询</font><font>|</font><font>中文网</font><font>|</font><font>法学院</font><font>|</font><font>个人服务</font></div>
+                                         <div id="t_l_c"><a href=""><font>咨询</font></a><font>|</font><a href=""><font>中文网</font></a><font>|</font><a href=""><font>法学院</font></a><font>|</font><a href=""><font>个人服务</font></a></div>
                                          <div id="t_l_r">
                                                   <form action="" method="post">
 			                                                  <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input type=""text" name="user_name" size=10/></div>
@@ -101,7 +101,7 @@
                                             </div>
 			                                <div id="change">
 			                                                          <div class="c_title">
-                                                                                         <div class="c_t_n" ><font>观点·专栏</font><div class="c_t_b" style="width:65px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div>
+                                                                                         <div class="c_t_n" ><font>观点·专栏</font><div class="c_t_b" style="width:60px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div>
                                                                       </div>
                                                                       <div class="change_b">
 									                                                           <div class="change_t" >
@@ -141,7 +141,7 @@
                                             <div id="award"><a href=""><img alt="aa" src="/images/index/award_p.jpg" border="0"></a></div>
 		                                    <div id="column">
 		                                                           <div class="c_title">
-                                                                                         <div class="c_t_n" ><font>专栏</font><div class="c_t_b" style="width:490px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div>
+                                                                                         <div class="c_t_n" ><font>专栏</font><div class="c_t_b" style="width:485px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div>
                                                                    </div>
 		                                                          <div id="column_c">
 						                                                        <div class="column_d" ><font class="column_d_h">邵子文</font><img alt="" src="/images/index/talk.jpg"><div class="v_c_t"><font class="column_d_h">邵子文</font><font class="v_c_t_2">8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿  </font></div> </div>  
@@ -151,13 +151,13 @@
 		                                        </div>
 		                                        <div class="talk">
 		                                                        <div class="talk_t">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
 		                                                        </div>
 		                                                         <div class="talk_t" style="float:right">
-		                                                                          <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
+		                                                                          <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
 		                                                                         <div class="talk_c"><img src="/images/index/talk_p.jpg"><div class="talk1">邵子力</div><div class="talk2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div></div>
@@ -165,13 +165,13 @@
 		                                        </div>
 		                                        <div class="ylawyer">
 		                                                         <div class="ylaw">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                         </div>
 		                                                         <div class="ylaw" style="float:right">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
@@ -179,13 +179,13 @@
 		                                         </div>
 		                                           <div class="ylawyer">
 		                                                         <div class="ylaw">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                         </div>
 		                                                         <div class="ylaw" style="float:right">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
@@ -193,20 +193,20 @@
 		                                         </div>
 		                                           <div class="ylawyer">
 		                                                         <div class="ylaw">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>高端访谈</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                         </div>
 		                                                         <div class="ylaw" style="float:right">
-		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
+		                                                                         <div class="c_title"><div class="c_t_n" ><font>青年律师</font><div class="c_t_b" style="width:145px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div> </div>
 		                                                                         <div class="ylaw1">邵子力</div><img src="/images/index/lawyer_p.jpg">
 		                                                                         <div class="ylaw2">经济开发健康减肥卡斯放就尽快康复了 金额近阿卡软件阿卡软件俄既然人家加入</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                                         <div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div><div class="c_p_r_r"><font class="point">·</font>侵犯知识产权罪中“非法经营数额”</div>
 		                                                         </div>
 		                                         </div>
                             </div>
-                            <div id="center_r">
+                            <div id="center_r" >
                                                  <div id="expert">
 		                                                       <div id="exp_h"><div ><a href="">热点案例</a></div><div ><a href="">专家库</a></div><div><a href="">专业指南</a></div></div>  
 		                                                       <div id="exp_c"><a href=""><img src="/images/index/alb.jpg" border="0"></a><a href=""><img src="/images/index/alb.jpg" border="0"></a><a href=""><img src="/images/index/alb.jpg" border="0"></a></div>
@@ -275,14 +275,14 @@
                                                </div>
                                                <img alt="" src="/images/index/add.jpg" id="add">
                                                <div class="rank" >
-                                                               <div class="r_title"><div class="on_lec_h" style="width:357px;"> 法律市场调查和排名</div></div>
-                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><br><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
-                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><br><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
+                                                               <div class="r_title"><div class="on_lec_h" style="width:357px;"> <font>法律市场调查和排名</font></div></div>
+                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
+                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
                                                </div>
                                                <div class="rank" style="border:0">
-                                                               <div class="r_title"><div class="on_lec_h" style="width:357px;"> 法律市场调查和排名</div></div>
-                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><br><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
-                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><br><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
+                                                               <div class="r_title"><div class="on_lec_h" style="width:357px;"><font> 法律市场调查和排名</font></div></div>
+                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
+                                                                 <div class="block"><img class="v_i" src="/images/index/rank.jpg"><div class="v_c"><div class="v_c_t"><font class="rank1" size="5">一名资深顾问和</font><font class="rank2">8月4日，2010年客和份额解放军额外发我会计法 </font></div></div></div>
                                                </div>
                                                 <img alt="" src="/images/index/add.jpg" id="add">
                             </div>
@@ -306,11 +306,11 @@
                                                                <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
                                                               <div class="b_d_x"></div>
                                                                <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                                                              <div class="b_d_x"></div>
+                                                              <div class="b_d_x" ></div>
                                                                <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                                                              <div class="b_d_x"></div>
+                                                              <div class="b_d_y"></div>
                                                                <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                                                                <div class="b_d_x"></div>
+                                                                <div class="b_d_y"></div>
                                                                <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
                                                                <div id="b_d_d">友情链接：<a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a><a href="">通通律所</a></div>
                                            </div>
