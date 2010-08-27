@@ -17,5 +17,5 @@ CREATE TABLE `lawsive`.`member_resume` (
   PRIMARY KEY (`id`)
 )
 ENGINE = MyISAM
-COMMENT = '个人简历';
+ COMMENT = '个人简历';
 

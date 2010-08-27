@@ -26,5 +26,5 @@ CREATE TABLE `lawsive`.`member_base_info` (
   PRIMARY KEY (`id`)
 )
 ENGINE = MyISAM
-COMMENT = '用户基础信息表';
+ COMMENT = '用户基础信息表';
 
