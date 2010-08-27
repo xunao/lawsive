@@ -30,9 +30,9 @@
 			}
 			#$cate->update_file_attributes();
 			if($_FILES['show_image']['name'] != ''){
-				$upload = new upload_file_class();
+				$upload = new upload_file();
 				$upload->save_dir = '/upload/';
-				$cate->show_image = '/upload/' .$upload->handle('show_image','filter_pic');
+				$cate->image = '/upload/' .$upload->handle('show_image','filter_pic');
 			}
 			//$cate->echo_sql = true;
 			$cate->save();

@@ -5,7 +5,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<?php 
 		session_start();
-		include_once('../../frame.php');
+		include_once('../../frame.php')
 	?>
 	<title><?php echo $_g_site_name;?>-新闻管理</title>
 	<?php

@@ -255,7 +255,7 @@ function paginate($url="",$ajax_dom=null,$page_var="page",$force_show = false,$t
 			$ourl = get_page_url($url, $i, $page_var,$type);
 		?>
 			<option <?php if($pageindex== $i) echo 'selected="selected"';?> value="<?php echo $ourl;?>" ><?php echo $i;?></option>
-			<?php	
+			<?php
 		}
 		?>
 		</select>页　共<?php echo $pagecount;?>页
@@ -349,7 +349,7 @@ function require_login($type="redirect"){
 	}
 }
 
-function search_content($key,$table_name='eb_news',$conditions=null,$page_count = 10, $order='',$full_text=false){
+function search_content($key,$table_name='news',$conditions=null,$page_count = 10, $order='',$full_text=false){
 	$db = &get_db();
 	if($key){
 		$change = array('('=>'\(',')' => '\)');

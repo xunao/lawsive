@@ -5,9 +5,11 @@ function search_image(){
 	if(filter_category == -1 && category_count > 1){
 		filter_category = $('.category_select:eq('+ (category_count - 2) + ')').val();
 	}
+	
 	url.push('filter_category='+filter_category);
 	url.push('filter_adopt=' + $('#adopt').val());
 	url.push('filter_search=' + encodeURI($('#filter_search').val()));
+	url.push('category_id=' +filter_category);
 	url = "?" + url.join('&');
 	window.location.href=url;	
 }
@@ -24,6 +26,7 @@ $(function(){
 				}
 			}
 		}
+		
 		$('#search_category').val(category_id);
 		search_image();
 	});

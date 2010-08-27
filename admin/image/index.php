@@ -1,27 +1,3 @@
-<?php
-//	judge_role();
-//	
-//	$title = $_GET['title'];
-//	$filter_category = $_GET['category'] ? $_GET['category'] : -1;
-//	$is_adopt = $_GET['adopt'];
-//	$db = get_db();
-//	$c = array();
-//	if($title!= ''){
-//		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
-//	}
-//	if($filter_category > 0){
-//		array_push($c, "filter_category=$filter_category");
-//	}
-//	if($is_adopt!=''){
-//		array_push($c, "is_adopt=$is_adopt");
-//	}
-//	if(role_name() == 'column_editor' || role_name()=='column_writer'){
-//		$c[] = "publisher={$_SESSION['admin_user_id']}";
-//	}
-//	$image = new table_images_class();
-//	$images = $image->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),12);
-?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -41,6 +17,7 @@
 		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
+		
 		if($filter_category > 0){
 			$cats = join(',',$category->children_map($filter_category));
 			if($cats){
@@ -51,18 +28,17 @@
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
 		if($filter_search){
-			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
+			$conditions[] = "(title like '%$filter_search%' or keywords like '%$filter_search%' or description like '%$filter_search%')";
 		}
 		$image = new TableImage();
 		$images = $image->paginate('all',array('conditions' => join(' and ', $conditions)),12);
-		
-		if($images === false) die('数据库执行失败');
+		if($image === false) die('数据库执行失败');
 	?>
 </head>
 <body>
 <div id=icaption>
     <div id=title>图片管理</div>
-	  <a href="image_edit.php" id=btn_add></a>
+	  <a href="edit.php" id=btn_add></a>
 </div>
 <div id=isearch>
 		<input id="filter_search" type="text" value="<?php echo $filter_search;?>"><span id="span_category"></span>
@@ -74,7 +50,7 @@
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
 		</script>
-		<input type="hidden" value="<?php echo $filter_category;?>" id="search_botton">
+		<input type="hidden" value="<?php echo $filter_category;?>" id="filter_category">
 		<input type="button" value="搜索" id="search_button">
 </div>
 <div id=itable>
@@ -89,10 +65,10 @@
 			<td><?php echo $images[$i]->created_at;?></td>
 			<td>
 				<?php if($images[$i]->is_adopt=="1"){?>
-					<span class="revocation" name="<?php echo $images[$i]->id;?>" title="撤消"><img src="/images/admin/btn_unapply.png" border=0></span>
+					<span class="revocation" name="<?php echo $images[$i]->id;?>" title="撤消"><img src="/images/admin/btn_apply.png" border=0></span>
 				<?php }?>
 				<?php if($images[$i]->is_adopt=="0"){?>
-					<span class="publish" name="<?php echo $images[$i]->id;?>" title="发布"><img src="/images/admin/btn_apply.png" border=0></span>
+					<span class="publish" name="<?php echo $images[$i]->id;?>" title="发布"><img src="/images/admin/btn_unapply.png" border=0></span>
 				<?php }?>
 				<a href="image_edit.php?id=<?php echo $images[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border=0></a> 
 				<span class="del" name="<?php echo $images[$i]->id;?>" title="删除"><img src="/images/admin/btn_delete.png" border=0></span>
@@ -109,7 +85,7 @@
 				<?php paginate("",null,"page",true);?>
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
-				<input type="hidden" id="db_table" value="<?php echo $tb_images;?>">
+				<input type="hidden" id="db_table" value="images">
 				<input type="hidden" id="relation" value="image">
 			</td>
 		</tr>

@@ -37,7 +37,7 @@
 </div>	
 	
 <div id=itable>
-	<form id="picture_edit" enctype="multipart/form-data" action="image.post.php" method="post"> 
+	<form id="picture_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 	<table cellspacing="1"  align="center">
 	
 		<tr class=tr4>
