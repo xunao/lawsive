@@ -5,5 +5,5 @@ CREATE TABLE `lawsive`.`member_rights` (
   PRIMARY KEY (`id`)
 )
 ENGINE = MyISAM
-COMMENT = '用户权限表';
+ COMMENT = '用户权限表';
 

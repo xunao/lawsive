@@ -5,5 +5,5 @@ CREATE TABLE `lawsive`.`member_role` (
   PRIMARY KEY (`id`)
 )
 ENGINE = MyISAM
-COMMENT = '用户角色表';
+ COMMENT = '用户角色表';
 
