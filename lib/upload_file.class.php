@@ -1,5 +1,5 @@
 <?php
-global  $filter_pic;
+global $filter_pic;
 global $filter_video;
 global $filter_pdf;
 $filter_pic = array('jpg','png','bmp','gif','icon');
@@ -43,7 +43,6 @@ class upload_file
 			$path_info = pathinfo($_FILES[$field_name]['name']);
 			$extension = $path_info['extension'];
 			if(!empty($filter)){
-				
 				global $$filter;
 				if(!in_array(strtolower($extension),$$filter)){
 					alert('unknow file type');
