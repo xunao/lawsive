@@ -5,53 +5,16 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <link href="./css/index.css" rel="stylesheet" type="text/css"/>
+<link href="./css/public.css" rel="stylesheet" type="text/css"/>
 <body>
       <div id="ibody">
-             <div id="title">
-                    <div id="title_ad"><a href=""><img src="/images/index/title_ad.jpg" border="0"></a></div>
-                    <div id="title_log">
-                              <div id="t_l_l"></div><div id="t_l_c"><a href=""><font>咨询</font></a><font>|</font><a href=""><font>中文网</font></a><font>|</font><a href=""><font>法学院</font></a><font>|</font><a href=""><font>个人服务</font></a></div>
-                              <div id="t_l_r">
-                                      <form action="" method="post">
-			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input type=""text" name="user_name" size=10/></div>
-			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input type=""psssword" name="user_password"/></div>
-			                                 <div class="t_l_r_c"><a href=""><img src="/images/index/log_in.jpg" border=0/></a></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>
-                                       </form>
-                              </div>
-                     </div>
-                     <div id="title_b">
-                             <div id="logo"><a href=""><img src="/images/index/logo_lawsive.jpg" border="0"></a></div>
-                             <div id="people">
-	                                 <div id="people_t"><div>>人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
-	                                 <div id="people_j"><div id="people_j_t">日本地产商觊觎中国市场</div><a href=""><font>他们认为，自己在经验和声誉上具有相对的优势，他们认为，自己在经验和声誉上具有</font></a></div>
-	                                 <div id="people_a"><a href=""><img src="/images/index/jp_ad.jpg" border="0"></a></div>
-                              </div>
-                              <div id="mes">
-                                     <div id="mes_up">
-                                           <div id="mes_u_f">会员信息：</div><div style="width:230px;"><div><a href="" ><font color="#D7D7D7">中国东方集团将发行美元债发行美元债</font></a></div>
-		                                   <div style="margin:10px 0 10px 0;width:100%;"><a href="" ><font color="#D7D7D7">中国东方集团将发行美元债发行美元债</font></a></div></div>
-                                     </div>  
-                                     <div id="mes_c"><font style="color:white;">文章</font><font>|</font><font>日期</font></div>
-                                     <div id="mes_down">
-                                           <div id="search"><input type="text" name="search" ></div><div id="search_add"><img src="/images/index/search.jpg" /></div>
-                                           <div id="search_r"><a href=""><img src="/images/index/search_r.jpg" border="0"/></a></div>
-                                     </div>
-                              </div> 
-                        </div>
-              </div>
+              <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
               <div id="center">
-                       <div id="head">
-				            <div id="head_l">
-				                     <div id="head_l_l"><a href="" style="margin-left:25px">首页</a><a href="">动态</a><a href="">人物</a><a href="">观点</a><a href="">
-				                     专家库</a><a href="">专业</a><a href="">会议</a><a href="">职位</a><a href="">研究中心</a><a href="">法学院</a><a href="">订阅</a><a href="">榜单</a><a href="">会员</a><a href="">律所</a></div>
-				            </div>
-				            <div id="head_r"><a href="">我的律氏</a></div>
-                       </div>
-                       <div id="center_h"><a href="" >交易</a>|<a href="">律所</a>|<a href="">律师</a>|<a href="">媒体</a>|<a href="">专题报道</a>|<a href="">新闻</a></div>
+                       
                        <div id="center_l">
                                 <div id="c_people"> 
                                         <div class="c_title" ><div class="c_t_n" ><font>本期人物</font><div class="c_t_b" style="width:450px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
-                                        <img id="c_p_i" src="/images/index/people.jpg">
+                                       <a href="" ><img id="c_p_i" src="/images/index/people.jpg" border="0"></a>
                                         <div id="c_p_r">
                                                 <div id="c_p_r_l">
 			                                             <font id="c_p_r_1" >坚持理想的青年律师</font><font id="c_p_r_2">余元良律师专访：</font><font  id="c_p_r_3">金石律师事务所</font>
@@ -206,27 +169,8 @@
                               <img alt="" src="/images/index/add.jpg" id="add">
                        </div>
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>
-             </div>
-             <div id="bom_up">
-                       <div id="b_u_u">
-						       <form action="" method="post">
-									 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input type=""text" name="user_name" size=10/></div><div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input type=""psssword" name="user_password"/></div>
-									 <div class="t_l_r_c"><a href=""><img src="/images/index/log_in.jpg" border=0/></a></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>    
-						       </form>
-                       </div>
-                       <div id="b_u_d"><a href=""><font>关于律氏中文网</font></a>-<a href=""><font>动态新闻</font></a>-<a href=""><font>广告服务</font></a>-<a href=""><font>诚聘英才</font></a>-<a href=""><font>会员活动</font></a>-<a href=""><font>隐私声明</font></a>-<a href=""><font>网站声明</font></a>-<a href=""><font>联系我们</font></a></div>
-             </div>
-             <div id="bottom">
-                     <div id="bom_down">
-                              <div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                              <div class="b_d_x"></div><div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                              <div class="b_d_x"></div><div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                              <div class="b_d_x" ></div><div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                              <div class="b_d_x"></div><div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                              <div class="b_d_x"></div><div class="b_d"><a href="" class="b_d_h"><font>[动态]</font></a><br><a href=""><font>最新案件</font></a><br><a href=""><font>律所</font></a><br><a href=""><font>律师</font></a><br><a href=""><font>专题报道</font></a><br><a href=""><font>新闻</font></a></div>
-                     </div>      
-                     <div id="bottom1">电话：010-52550331 传真：010-51411547 E-mail：editor@legalweek.cn</div><div id="bottom2">ⓒCopyright 北京新华律讯商业咨询有限公司 2008</div><div id="bottom3">网络备案许可证：京ICP备09001622号</div>
-            </div>               
+             </div>      
+            <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
       </div>
 </body>
 </html>

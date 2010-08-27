@@ -70,7 +70,7 @@
 				<?php if($images[$i]->is_adopt=="0"){?>
 					<span class="publish" name="<?php echo $images[$i]->id;?>" title="发布"><img src="/images/admin/btn_unapply.png" border=0></span>
 				<?php }?>
-				<a href="image_edit.php?id=<?php echo $images[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border=0></a> 
+				<a href="edit.php?id=<?php echo $images[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border=0></a> 
 				<span class="del" name="<?php echo $images[$i]->id;?>" title="删除"><img src="/images/admin/btn_delete.png" border=0></span>
 				<input type="hidden" class="priority" name="<?php echo $images[$i]->id;?>" value="<?php if($images[$i]->priority!=100){echo $images[$i]->priority;}?>" style="width:40px;">
 				<input type="hidden" id="priorityh<? echo $p;?>" value="<?php echo $images[$i]->id;?>" style="width:40px;">	
