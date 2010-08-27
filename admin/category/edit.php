@@ -47,7 +47,7 @@
 			</tr>
 			<tr class=tr4>
 				<td class=td1>显示图片</td>
-				<td><input type="file" style="width:400px" name="show_image" id="upfile"><?php if($cate->show_image!=""){ ?><a target="_blank" href="<?php echo $cate->show_image ?>">查看</a><?php } ?></td>
+				<td><input type="file" style="width:400px" name="show_image" id="upfile"><?php if($cate->image){ ?><a target="_blank" href="<?php echo $cate->image ?>">查看</a><?php } ?></td>
 			</tr>
 			<tr class=btools>
 				<td colspan="10"><button id="btnsub" type="submit">提 交</button> 		

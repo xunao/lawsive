@@ -1,27 +1,3 @@
-<?php
-//	judge_role();
-//	
-//	$title = $_GET['title'];
-//	$filter_category = $_GET['category'] ? $_GET['category'] : -1;
-//	$is_adopt = $_GET['adopt'];
-//	$db = get_db();
-//	$c = array();
-//	if($title!= ''){
-//		array_push($c, "title like '%".trim($title)."%' or keywords like '%".trim($title)."%' or description like '%".trim($title)."%'");
-//	}
-//	if($filter_category > 0){
-//		array_push($c, "filter_category=$filter_category");
-//	}
-//	if($is_adopt!=''){
-//		array_push($c, "is_adopt=$is_adopt");
-//	}
-//	if(role_name() == 'column_editor' || role_name()=='column_writer'){
-//		$c[] = "publisher={$_SESSION['admin_user_id']}";
-//	}
-//	$image = new table_images_class();
-//	$images = $image->paginate('all',array('conditions' => implode(' and ', $c),'order' => 'priority asc,created_at desc'),12);
-?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -62,7 +38,7 @@
 <body>
 <div id=icaption>
     <div id=title>图片管理</div>
-	  <a href="image_edit.php" id=btn_add></a>
+	  <a href="edit.php" id=btn_add></a>
 </div>
 <div id=isearch>
 		<input id="filter_search" type="text" value="<?php echo $filter_search;?>"><span id="span_category"></span>

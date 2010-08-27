@@ -1,4 +1,7 @@
 <?php
+global  $filter_pic;
+global $filter_video;
+global $filter_pdf;
 $filter_pic = array('jpg','png','bmp','gif','icon');
 $filter_video = array('flv','wmv','wav','mp3','mp4','avi','rm','wma');
 $filter_pdf = array('pdf');
@@ -14,7 +17,7 @@ class upload_file
 		if($_SERVER['REQUEST_METHOD'] != 'POST') return;
 		$field_name  = empty($field_name) ? $this->field_name : $field_name;
 		if($this->save_dir{0} == '/'){
-			$this->save_dir = ROOT_DIR_NONE . $this->save_dir;
+			$this->save_dir = ROOT_DIR . $this->save_dir;
 		}
 		if(is_dir($this->save_dir)===false){
 			mkdir($this->save_dir);
@@ -40,6 +43,7 @@ class upload_file
 			$path_info = pathinfo($_FILES[$field_name]['name']);
 			$extension = $path_info['extension'];
 			if(!empty($filter)){
+				
 				global $$filter;
 				if(!in_array(strtolower($extension),$$filter)){
 					alert('unknow file type');
