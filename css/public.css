@@ -37,7 +37,7 @@
 #head{width:1000px; height:41px;background:#ECF1FF; }
 #head_l{width:910px; height:30px;  font-size:16px; line-height:30px; font-weight:bold;text-align:center; }
 #head_l  div{color:#DBF6FB;text-align:center;}
-#head_l  a{color:#DBF6FB; float:left;padding:0 11px;}
+#head_l  a{color:#DBF6FB; float:left;padding:0 12px;}
 #head_l a:link{color:#DBF6FB}
 #head_l_l {width:910px;background:#203F53;}
 #head_l_l a:hover{background:#335368;}
