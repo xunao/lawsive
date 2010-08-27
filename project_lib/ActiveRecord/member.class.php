@@ -28,4 +28,23 @@
 	 */
 	static $s_virtual_fields = array();
 										
+	
+	static function login($login_name, $password, $expire){
+		$s_expire=$_POST("expire")*86400;
+		$md5_password=md5($password);
+		$record=$db->query("select * from lawsive.member where password='{$md5_password}' and login_name='{$login_name}'");
+		if(count($record)==1){
+			$cache_name=rand_str(20);
+			if ($s_expire!=0){
+				@setcookie("cache_name",$cache_name,time(),'/');
+				@setcookie("login_name",$login_name,time()+$s_expire,'/');
+				@setcookie("password",$password,time()+$s_expire,'/');
+			}
+			return member::find(array('conditions' => "login_name='$login_name'"));
+			
+		}else{
+				return NULL;
+			}	
 	}
+	}
+	?>
