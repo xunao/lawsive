@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+/*title*/
+#title{width:1000px; margin:15px 0 0 0;  background:#00121E; }
+#title_log{width:1000px; height:56px; margin-top:20px;}
+#t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
+#t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:14px;  font-weight:600; color:white; }
+#t_l_c font{margin-left:9px; }
+#t_l_c a{color:white;}
+#t_l_r{width:385px; height:25px; float:right; margin:11px 0 0 0; color:#BBBBBB}
+#t_l_r  input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#00121E}
+.t_l_r_c{line-height:21px; font-size:12px; margin-left:7px; }
+.t_l_r_c  input{color:white; }
+#log_in{width:46px; height:21px; margin-left:10px; }
+#zhuce{text-decoration:none; font-size:12px; line-height:21px; margin-left:7px; font-weight:bold; }
+#title_b{width:1000px; padding-bottom:10px; border-bottom:8px solid  #002135;  }
+#logo{width:298px; height:142px; }
+#people{width:318px; height:119px; margin-left:18px; margin-top:15px; }
+#people_t{width:318px; height:25px; color:#F0F0F0; font-size:14px; line-height:20px; font-weight:bold; border-bottom:1px solid #2B4F69; letter-spacing:1px;}
+.people_t_r{float:right; margin:6px 10px 0 0 ; }
+#people_a{float:right; width:80px; height:83px; margin:10px 5px 0 0 ; }
+#people_j{width:180px; height:83px; margin:15px 5px 0 0; }
+#people_j font{color:#F0F0F0; font-size:12px; line-height; 15px; }
+#people_j_t{width:100%; font-size:14px; line-height:20px; color:red; font-weight:bold; margin-bottom:5px; }
+#mes{width:326px; height:109px; margin-top:25px; float:right; font-size:12px; line-height:16px; color:#D7D7D7; }
+#mes_u_f{font-size:14px; line-height:20px; color:#D7D7D7; font-weight:bold; margin-left:5px; }
+#mes_up a{text-decoration:underline}
+#mes_c{width:300px; font-size:12px; line-height:15px;margin-top:10px; }
+#mes_c  font{margin-left:10px; font-size:12px; line-height:15px;}
+#mes_down{width:325px; height:23px;  margin-top:5px; }
+#search{height:20px; width:230px; margin-top:1px;}
+#search input{padding:0; border:0px;height:20px; background:#E6E8E9; width:230px; }
+#search_add{width:20px; height:20px;  margin-top:1px !important; *margin-top:2px;*margin-top:2px !important;}
+#search_add button{width:20px; height:20px; border:0px; cursor:pointer; background:url('/images/index/search.jpg') no-repeat;}
+#search_r{width:56px; height:23px; margin:0 0 0 8px; }
+
+/*center_head*/
+#head{width:1000px; height:41px;background:#ECF1FF; }
+#head_l{width:910px; height:30px;  font-size:16px; line-height:30px; font-weight:bold;text-align:center; }
+#head_l  div{color:#DBF6FB;text-align:center;}
+#head_l  a{color:#DBF6FB; float:left;padding:0 12px;}
+#head_l a:link{color:#DBF6FB}
+#head_l_l {width:910px;background:#203F53;}
+#head_l_l a:hover{background:#335368;}
+#head_r{width:90px; height:41px; background:url("/images/index/head_r.jpg"); font-size:17px; line-height:40px; font-weight:bold; float:right; color:#DBF6FB; text-align:center}
+#head_r a{padding:0 6px; text-align:center; color:#DBF6FB;}
+#center_h{width:970px; padding-left:30px; color:black; height:20px;background:#ECF1FF; }
+#center_h a{margin:0 10px; color:black}
+#center_h font{margin-left:10px; }
+
+/*bottom*/
+#bom_up{width:1000px; height:85px; background:#203F53; }
+#b_u_u{width:385px; height:25px; float:left; margin:10px 0 0 80px ; color:#BBBBBB}
+#b_u_u input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#203F53}
+#b_u_d{width:920px; height:30px; margin:10px 40px; font-size:14px; line-height:30px; color:white; text-align:center; }
+#b_u_d font{color:white; margin-left:17px; margin-right:20px; }
+#bottom{width:1000px; background:#0D2031; color:#999999; font-size:13px; line-height:15px; }
+#bom_down{margin:0 20px 0 20px; width:960px;; }
+.b_d{width:66px; font-size:14px; line-height:20px; margin:20px 35px 20px  35px; }
+.b_d font{margin-top:10px; float:left; width:80px; color:white; }
+.b_d_h{font-weight:bold; }
+.b_d_x{width:12px; height:180px; margin-top:40px ;background:url("/images/index/b_d_x.jpg");}
+#b_d_d{width:890px;font-size:16px;line-height:24px;font-weight:bold;color:white;margin-left:20px;}
+#b_d_d a{font-size:14px; line-height:24px; font-weight:200; margin-left:25px;color:#A6C3DA; }
+#bottom1{margin-top:25px; margin-left:275px; }
+#bottom2{margin-top:5px; margin-left:345px; }
+#bottom3{margin-top:5px; margin-left:385px;margin-bottom:10px; }
+
