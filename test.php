@@ -1,6 +1,8 @@
 <?php 
 include 'frame.php';
-$db = get_db();
-#$db->echo_sql = true;
-$user = AdminUser::find(1,array('include'=>true));
-var_dump($user->rights);
+?>
+<form method="post" enctype="multipart/form-data" action="test.post.php">
+	<input type="text" name="test[name]" />
+	<input type="file" name="test[file]" />
+	<input type="submit" />
+</form>

@@ -1,9 +1,9 @@
-<?php
-class News extends ActiveRecord {
+<?php 
+	class test extends ActiveRecord {
 	static $s_primary_key = "id";
 	static $s_database = '';
 	static $s_fields_info;
-	static $s_table_name = 'news';
+	static $s_table_name = '';
 	static $s_belongs_to = array();
 	/*
 	 * static $s_has_many = array(
@@ -26,15 +26,6 @@ class News extends ActiveRecord {
 												)
 										);
 	 */
-	static $s_virtual_fields = array(
-											array(
-												"table"=>"category",
-												"fields"=>array(
-																array("name"=>"name",
-																	  "alias" => "category_name"
-																	  )
-														       )
-												)
-										);
-	
-}
+	static $s_virtual_fields = array();
+										
+	}
