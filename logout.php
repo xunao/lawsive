@@ -10,10 +10,10 @@ $member = new member();
 $user = $member->current();
 $member->logout();
 alert('您已安全退出!');
-<<<<<<< HEAD
-redirect("/login.php")
-=======
+
+redirect("/login.php");
+
 redirect("/");
->>>>>>> 4d16ee7480fc0412f9bbc07b6cc747b3e898ef64
+
 ?>
 </html>
