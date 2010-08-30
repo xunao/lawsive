@@ -59,6 +59,8 @@
 	}
 											
 	static function login($login_name, $password, $expire){
+	    if(mb_strlen($login_name)>48 or mb_strlen($login_name)<6){return null;}
+	    if(mb_strlen($password)>50 or mb_strlen($password)<6){return null;}
 		$s_expire=$expire*86400;
 		$md5_password=md5($password);
 		$record=member::find(array('conditions' => "password='$md5_password' and login_name='$login_name'"));
