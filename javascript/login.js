@@ -34,5 +34,9 @@ $(function(){
 		});
 	});
 	$('.logout').click(function(){
+		window.location.href ("/")
+//		$.post("logout.post.php",function(){
+//			
+//		});
 	});
 });
