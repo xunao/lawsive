@@ -4,8 +4,8 @@ use_jquery_ui();
 js_include_tag('login');
 $login_name =$_POST['login_name'];
 $password =$_POST['password'];
-$expire =$_POST['time'];
-if($expire=NULL){$expire=0;}else{$expire=7;}
+$expire =$_POST['expire'];
+if($expire=NULL or $expire=0){$expire=0;}else{$expire=7;}
 $member = new member();
 $record = $member->login($login_name,$password,$expire);
 $user = $record[0];

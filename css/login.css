@@ -1,5 +1,5 @@
 @CHARSET "UTF-8"; 
-body{width:1200px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial;  background:#FFFFFF; }
+body{width:1200px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial; background:#FFFFFF; }
 body div{float:left;  display:inline; }
 body a{text-decoration:none; color:#666666}
 #ibody{width:1000px; margin:0 100px; letter-spacing:1px;}
@@ -7,7 +7,7 @@ body a{text-decoration:none; color:#666666}
 #title{width:1000px; height:57px; background:#FF6A00;}
 #title img{margin:0 25px 0 45px; float:left;}
 #title a{color:#FFFFFF; }
-#tt_l{height:18px; margin-top:20px; font-size:14px; line-height:16px;color:white; font-weight:600;}
+#tt_l{height:16px; margin-top:20px; font-size:14px; line-height:16px;color:white; font-weight:600;}
 #tt_l a{margin:0 20px;font-size:14px; line-height:16px;}
 #tt_r{height:14px; margin-top:21px; font-size:12px; line-height:14px; margin-right:30px; color:white; float:right;}
 #tt_r a{margin:0 10px;font-size:12px; line-height:14px;}
