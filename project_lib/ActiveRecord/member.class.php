@@ -67,16 +67,18 @@
 		if(count($record)==1){
 			$cache_name=rand_str(20);
 			@setcookie("cache_name",$cache_name,time(),'/');
+			$db = get_db();
+			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record->id}'");
 			if ($s_expire!=0){
 				@setcookie("login_name",$login_name,time()+$s_expire,'/');
 				@setcookie("password",$password,time()+$s_expire,'/');
 			}
 			return $record;
 			
-		}else{
+		    }else{
 				return NULL;
 			}	
-	}
+	    }
 	
 	//just test
 	static function delete($member_id,$member_name){
