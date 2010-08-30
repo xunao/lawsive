@@ -54,7 +54,11 @@
 			?>
 		</div>
 		<div id="admin_content">
+<<<<<<< HEAD
 		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="#" width="1046" height="1300"></iframe>
+=======
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="/admin/news/" width="1046" height="1300"></iframe>
+>>>>>>> 1490f3958f873573ec4105dee289e3772fe7cfd6
 		</div>
 	</div>
 </body>
