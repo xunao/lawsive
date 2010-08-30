@@ -4,8 +4,8 @@
                               <div id="t_l_l"></div><div id="t_l_c"><a href=""><font>咨询</font></a><font>|</font><a href=""><font>中文网</font></a><font>|</font><a href=""><font>法学院</font></a><font>|</font><a href=""><font>个人服务</font></a></div>
                               <?php if($user == ''){?>
                               <div id="t_l_r">
-			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input id="name0" type=""text" name="user_name" size=10/></div>
-			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password0" type=""psssword" name="user_password"/></div>
+			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input id="name0" type="text" name="user_name" size=10/></div>
+			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password0" type="password" name="user_password"/></div>
 			                                 <div class="t_l_r_c" id="login_btn0"><img src="/images/index/log_in.jpg" border=0/></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>
                               </div>
                               <?php }else{?>
