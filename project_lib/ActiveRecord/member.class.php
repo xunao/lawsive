@@ -49,7 +49,7 @@
 		
 		$db = get_db();
 		$password = md5($password);
-		$sql = $db->execute("insert into member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
+		$sql = $db->execute("insert into lawsiv.member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
 		if($sql){
 			return 1;
 			}else{
@@ -77,7 +77,7 @@
 		    }else{
 				return NULL;
 			}	
-	    }
+	}
 	
 	//just test
 	static function delete($member_id,$member_name){

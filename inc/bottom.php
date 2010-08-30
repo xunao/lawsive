@@ -1,8 +1,8 @@
  <div id="bom_up">
                        <div id="b_u_u">
 						       <form action="" method="post">
-									 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input type=""text" name="user_name" size=10/></div><div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input type=""psssword" name="user_password"/></div>
-									 <div class="t_l_r_c"><a href=""><img src="/images/index/log_in.jpg" border=0/></a></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>    
+									 <div class="t_l_r_c">用户名：</div><div class="t_l_r_c"><input id="name1" type=""text" name="user_name" size=10/></div><div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password1" type=""psssword" name="user_password"/></div>
+									 <div class="t_l_r_c" id="login_btn1"><img src="/images/index/log_in.jpg" border=0/></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>    
 						       </form>
                        </div>
                        <div id="b_u_d"><a href=""><font>关于律氏中文网</font></a>-<a href=""><font>动态新闻</font></a>-<a href=""><font>广告服务</font></a>-<a href=""><font>诚聘英才</font></a>-<a href=""><font>会员活动</font></a>-<a href=""><font>隐私声明</font></a>-<a href=""><font>网站声明</font></a>-<a href=""><font>联系我们</font></a></div>

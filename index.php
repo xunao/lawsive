@@ -4,8 +4,14 @@
 <title>律氏中文网</title>
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
-<link href="./css/index.css" rel="stylesheet" type="text/css"/>
-<link href="./css/public.css" rel="stylesheet" type="text/css"/>
+<!--<link href="./css/index.css" rel="stylesheet" type="text/css"/>-->
+<!--<link href="./css/public.css" rel="stylesheet" type="text/css"/>-->
+<?php	
+		include ('./frame.php');
+		use_jquery_ui();
+		css_include_tag('index','public');
+		js_include_tag('login');
+  	?>
 <body>
       <div id="ibody">
               <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
