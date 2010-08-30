@@ -23,7 +23,7 @@
                                      <div id="mes_c"><font style="color:white;">文章</font><font>|</font><font>日期</font></div>
                                      <div id="mes_down">
                                            <div id="search"><input type="text" name="search" ></div><div id="search_add"><button type="submit"></button></div>
-                                           <div id="search_r"><a href=""><img src="/images/index/search_r.jpg" border="0"/></a></div>
+                                           <div id="search_r"><a href="#"><img src="/images/index/search_r.jpg" border="0"/></a></div>
                                      </div>
                               </div> 
                      </div>

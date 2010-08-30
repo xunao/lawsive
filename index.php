@@ -4,8 +4,6 @@
 <title>律氏中文网</title>
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
-<!--<link href="./css/index.css" rel="stylesheet" type="text/css"/>-->
-<!--<link href="./css/public.css" rel="stylesheet" type="text/css"/>-->
 <?php	
 		include ('./frame.php');
 		use_jquery_ui();
@@ -16,7 +14,6 @@
       <div id="ibody">
               <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
               <div id="center">
-                       
                        <div id="center_l">
                                 <div id="c_people"> 
                                         <div class="c_title" ><div class="c_t_n" ><font>本期人物</font><div class="c_t_b" style="width:450px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>

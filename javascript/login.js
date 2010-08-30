@@ -11,7 +11,7 @@ $(function(){
 			alert('请输入密码');
 			return false;
 		}
-		$.post("login.post.php",{"login_name":login_name,"password":password},function(data){
+		$.post("_ajax.login.post.php",{"login_name":login_name,"password":password},function(data){
 			$('#t_l_r').html(data);
 			$('#b_u_u').html(data);
 		});
@@ -28,15 +28,17 @@ $(function(){
 			alert('请输入密码');
 			return false;
 		}
-		$.post("login.post.php",{"login_name":login_name,"password":password},function(data){
+		$.post("_ajax.login.post.php",{"login_name":login_name,"password":password},function(data){
 			$('#t_l_r').html(data);
 			$('#b_u_u').html(data);
 		});
 	});
 	$('.logout').click(function(){
-		window.location.href ("/")
-//		$.post("logout.post.php",function(){
-//			
-//		});
+		alert('kk');
+		
+		$.post("logout.php",function(){
+			window.location.href="/login.php/";
+		});
+		
 	});
 });

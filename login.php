@@ -4,7 +4,10 @@
 <title>律氏中文网-登录</title>
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
-<link href="./css/login.css" rel="stylesheet" type="text/css"/>
+<?php	
+		include ('./frame.php');
+		css_include_tag('login');
+  	?>
 <body>
 	<div id="ibody">
 		<div id="title">
