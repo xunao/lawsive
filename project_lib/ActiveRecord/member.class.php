@@ -30,10 +30,7 @@
 	
 	static function register($login_name,$name,$password,$email,$level,$role){
 		if(mb_strlen($login_name)>48){return -3;}
-		elseif(mb_strlen($login_name)<6){return -4;}
-			else{
-				if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
-			}
+		if(mb_strlen($login_name)<6){return -4;}
 		
 		if(mb_strlen($name)>50){return -6;}
 		
@@ -46,10 +43,12 @@
 		
 		if(mb_strlen($email)>256){return -9;}
 		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$email)){return -5;}
-		if(member::find(array('conditions' => "email='$email'"))){return -2;}
 		
-		$password = md5($password);
+		if(member::find(array('conditions' => "email='$email'"))){return -2;}
+		if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
+		
 		$db = get_db();
+		$password = md5($password);
 		$sql = $db->execute("insert into member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
 		if($sql){
 			return 1;
@@ -84,7 +83,6 @@
 			$db->execute("delete lawsive.member  where id='{$member_id} '");
 			return true;
 		}else return false;
-		
 	}
 	
 	
