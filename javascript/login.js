@@ -28,17 +28,12 @@ $(function(){
 			alert('请输入密码');
 			return false;
 		}
-		$.post("_ajax.login.post.php",{"login_name":login_name,"password":password},function(data){
+		$.post("_ajax.login.post.php",{"login_name":login_name,"password":password,"time":7;},function(data){
 			$('#t_l_r').html(data);
 			$('#b_u_u').html(data);
 		});
 	});
 	$('.logout').click(function(){
-		alert('kk');
-		
-		$.post("logout.php",function(){
-			window.location.href="/login.php/";
-		});
-		
+			window.location.href="/logout.php/";
 	});
 });

@@ -8,6 +8,6 @@ include 'frame.php';
 $login_name =$_POST['login_name'];
 $password =$_POST['password'];
 $member = new member();
-$record = $member->login($login_name,$password,0);
+$record = $member->login($login_name,$password,null);
 var_dump($record[0]->id);
 ?>
