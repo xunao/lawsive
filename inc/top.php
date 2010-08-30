@@ -2,11 +2,19 @@
                     <div id="title_ad"><a href=""><img src="/images/index/title_ad.jpg" border="0"></a></div>
                     <div id="title_log">
                               <div id="t_l_l"></div><div id="t_l_c"><a href=""><font>咨询</font></a><font>|</font><a href=""><font>中文网</font></a><font>|</font><a href=""><font>法学院</font></a><font>|</font><a href=""><font>个人服务</font></a></div>
+                              <?php if($user == ''){?>
                               <div id="t_l_r">
 			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input id="name0" type=""text" name="user_name" size=10/></div>
 			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password0" type=""psssword" name="user_password"/></div>
 			                                 <div class="t_l_r_c" id="login_btn0"><img src="/images/index/log_in.jpg" border=0/></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>
                               </div>
+                              <?php }else{?>
+                              <div id="t_l_r">
+								      <div class="t_l_r_c" >欢迎您，<?php $level = $user->member_level; if($level==1){echo '普通会员';}elseif($level==2){echo '二级会员';}elseif($level==3){echo '三级会员';}elseif($level==4){echo '四级会员';};?><?php if($user->name == ''){echo $user->name;}else{echo $user->login_name;} ;?></div>
+									  <div class="t_l_r_c" >用户ID：<?php echo $user->id;?></div>
+									  <div class="logout">退出登录</div>
+								</div>
+                              <?php }?>
                      </div>
                      <div id="title_b">
                              <div id="logo"><a href=""><img src="/images/index/logo_lawsive.jpg" border="0"></a></div>

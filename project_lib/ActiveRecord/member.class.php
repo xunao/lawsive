@@ -92,10 +92,10 @@
 	
 	//just test
 	static function current(){
-		$cache_name=$_COOKIE(cache_name);
+		$cache_name = $_COOKIE[cache_name];
 	    $record=member::find(array('conditions' => "cache_name='$cache_name'"));
 		if(count($record)==1){
-			return $record;
+			return $record[0];
 		}else{
 			return NULL;
 			}
