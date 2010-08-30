@@ -58,22 +58,26 @@
 	}
 	
 	static function login($login_name, $password, $expire){
+	    if(mb_strlen($login_name)>48 or mb_strlen($login_name)<6){return null;}
+	    if(mb_strlen($password)>50 or mb_strlen($password)<6){return null;}
 		$s_expire=$expire*86400;
 		$md5_password=md5($password);
 		$record=member::find(array('conditions' => "password='$md5_password' and login_name='$login_name'"));
 		if(count($record)==1){
 			$cache_name=rand_str(20);
 			@setcookie("cache_name",$cache_name,time(),'/');
+			$db = get_db();
+			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record->id}'");
 			if ($s_expire!=0){
 				@setcookie("login_name",$login_name,time()+$s_expire,'/');
 				@setcookie("password",$password,time()+$s_expire,'/');
 			}
 			return $record;
 			
-		}else{
+		    }else{
 				return NULL;
 			}	
-	}
+	    }
 	
 	//just test
 	static function delete($member_id,$member_name){
