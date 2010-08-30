@@ -54,7 +54,7 @@
 			?>
 		</div>
 		<div id="admin_content">
-		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="/admin/welcome.php" width="1046" height="1300"></iframe>
+		  <iframe id=admin_iframe name="admin_iframe" scrolling="auto" frameborder="0" src="/admin/news/" width="1046" height="1300"></iframe>
 		</div>
 	</div>
 </body>

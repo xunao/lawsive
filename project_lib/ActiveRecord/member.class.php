@@ -27,5 +27,35 @@
 										);
 	 */
 	static $s_virtual_fields = array();
-										
+	
+	static function register($login_name,$name,$password,$email,$level,$role){
+		if(!empty($login_name) and !empty($login_name) and !empty($name) and !empty($password) and !empty($email) and !empty($level) and !empty($role)){
+			if(mb_strlen($login_name)>48){return -3;}
+			elseif(mb_strlen($login_name)<6){return -4;}
+			else{
+				if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
+			}
+			if(mb_strlen($name)>50){return -6;}
+			if(mb_strlen($password)>50){return -8;}
+			if(mb_strlen($password)<6){return -7;}
+			if(mb_strlen($email)>256){return -9;}
+			if(intval($level)){return -12;}
+			if(intval($role)){return -13;}
+			if($level>4){return -10;}
+			if($role>10){return -11;}
+			if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$email)){return -5;}
+			if(member::find(array('conditions' => "email='$email'"))){return -2;}
+			$password = md5($password);
+			$db = get_db();
+			$sql = $db->execute("insert into member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
+			if($sql){
+				return 1;
+			}else{
+				return -15;
+			}
+		}else{
+			return -14;
+		}
 	}
+	}
+?>
