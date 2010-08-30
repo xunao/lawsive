@@ -8,9 +8,11 @@ body a{text-decoration:none; color:#336699;}
 #title img{margin:0 25px 0 45px; float:left;}
 #title a{color:#FFFFFF; }
 #tt_l{height:16px; margin-top:20px; font-size:14px; line-height:16px;color:white; font-weight:600;}
-#tt_l a{margin:0 20px;font-size:14px; line-height:16px;}
+#tt_l a{margin:0 20px;}
+#tt_l font{font-size:14px; line-height:16px;}
 #tt_r{height:14px; margin-top:21px; font-size:12px; line-height:14px; margin-right:30px; color:white; float:right;}
 #tt_r a{margin:0 10px;font-size:12px; line-height:14px;}
+#tt_r font{font-size:12px; line-height:14px;}
 
 #center{width:1000px; border-bottom:2px solid #C4C4C4;}
 #cen_l{width:245px; padding-bottom:300px; background:#EFEFEF;}
@@ -23,7 +25,8 @@ body a{text-decoration:none; color:#336699;}
 #submit a{margin:10px 0 0 20px; color:#336699; text-decoration:underline;float:left;}
 #rigister{width:190px;padding:20px 0;margin:0 27px;border-top:1px solid #DDDDDD;}
 #rig_t{width:190px;margin-bottom:10px;font-size:12px; line-height:14px;}
-#rig_t font{margin-left:5px;}
+#rig_t font{margin-left:5px;font-size:12px; line-height:14px;}
+#rig_d font{font-size:12px; line-height:14px;}
 #rig_d a{margin-left:12px; font-size:12px; line-height:14px;}
 #rigister a{color:#336699; text-decoration:underline;}
 #rig_key{width:200px;height:30px;margin:0 22px; font-size:14px; line-height:30px; text-align:center; background:#85B5DA; }
