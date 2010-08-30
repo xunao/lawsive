@@ -28,4 +28,55 @@
 	 */
 	static $s_virtual_fields = array();
 										
+	
+	static function login($login_name, $password, $expire){
+		$s_expire=$expire*86400;
+		$md5_password=md5($password);
+		$record=$db->query("select * from lawsive.member where password='{$md5_password}' and login_name='{$login_name}'");
+		if(count($record)==1){
+			$cache_name=rand_str(20);
+			@setcookie("cache_name",$cache_name,time(),'/');
+			if ($s_expire!=0){
+				@setcookie("login_name",$login_name,time()+$s_expire,'/');
+				@setcookie("password",$password,time()+$s_expire,'/');
+			}
+			return member::find(array('conditions' => "login_name='$login_name'"));
+			
+		}else{
+			return NULL;
+		}	
 	}
+	
+	//just test
+	static function delete($param){
+		$db = get_db();
+		if(is_numeric($param)){
+			return $db->execute("delete from member where id=$param");
+		}elseif(is_string($param)){
+			return $db->execute("delete from member where login_name='$param'");
+		}else {
+			return false;
+		}
+		
+	}
+	
+	
+	//just test
+	static function current(){
+		$cache_name=$_COOKIE(cache_name);
+		$record=$db->query("select * from lawsive.member where cache_name='{$cache_name}'");
+		if(count($record)==1){
+			return member::find(array('conditions' => "cache_name='$cache_name'"));
+		}else{
+			return NULL;
+			}
+	}
+	
+	//just test
+	function logout(){
+		$db->execute("update lawsive.member set cache_name=null where id='{$user->id}' ");
+		@setcookie("cache_name",null,0,'/');
+	}
+	
+	}
+	?>
