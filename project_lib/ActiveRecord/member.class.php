@@ -65,7 +65,7 @@
 		$record=member::find(array('conditions' => "password='$md5_password' and login_name='$login_name'"));
 		if(count($record)==1){
 			$cache_name=rand_str(20);
-			@setcookie("cache_name",$cache_name,time(),'/');
+			@setcookie("cache_name",$cache_name,0,'/');
 			$db = get_db();
 			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record[0]->id}'");
 			if ($s_expire!=0){

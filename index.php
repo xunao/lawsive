@@ -9,7 +9,7 @@
 		use_jquery_ui();
 		css_include_tag('index','public');
 		js_include_tag('login');
-//		$member = new member();
+		$member = new member();
 //		$user =$member->current();
 		
   	?>
