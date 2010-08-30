@@ -61,7 +61,7 @@
 	static function login($login_name, $password, $expire){
 		$s_expire=$expire*86400;
 		$md5_password=md5($password);
-		$record=$db->query("select * from lawsive.member where password='{$md5_password}' and login_name='{$login_name}'");
+		$record=member::find(array('conditions' => "password='$md5_password' and login_name='$login_name'"));
 		if(count($record)==1){
 			$cache_name=rand_str(20);
 			@setcookie("cache_name",$cache_name,time(),'/');
@@ -69,7 +69,7 @@
 				@setcookie("login_name",$login_name,time()+$s_expire,'/');
 				@setcookie("password",$password,time()+$s_expire,'/');
 			}
-			return member::find(array('conditions' => "login_name='$login_name'"));
+			return $record;
 			
 		}else{
 				return NULL;
@@ -78,6 +78,7 @@
 	
 	//just test
 	static function delete($member_id,$member_name){
+		$db = get_db();
 		$sql=$db->query("select * from lawsive.member where id='{$member_id}' and login_name='{$member_name}'");
 		if($sql){
 			$db->execute("delete lawsive.member  where id='{$member_id} '");
@@ -90,9 +91,9 @@
 	//just test
 	static function current(){
 		$cache_name=$_COOKIE(cache_name);
-		$record=$db->query("select * from lawsive.member where cache_name='{$cache_name}'");
+	    $record=member::find(array('conditions' => "cache_name='$cache_name'"));
 		if(count($record)==1){
-			return member::find(array('conditions' => "cache_name='$cache_name'"));
+			return $record;
 		}else{
 			return NULL;
 			}
@@ -100,7 +101,6 @@
 	
 	//just test
 	function logout(){
-		$db->execute("update lawsive.member set cache_name=null where id='{$user->id}' ");
 		@setcookie("cache_name",null,0,'/');
 	}
 	
