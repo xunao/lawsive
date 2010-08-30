@@ -17,7 +17,7 @@
 		    	<div id="login"><form action="login.post.php" method="post">
 				     <div><div class="log_t" >帐号：</div><div class="log_in"><input type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input type="psssword" name="password"/></div></div>
-				     <div id="chc_box"><input type="checkbox" name="time" >记住登录状态</div>
+				     <div id="chc_box"><input type="checkbox" name="time" value="1">记住登录状态</div>
 				     <div id="submit"><button type="submit"></button><a href="">忘记密码？</a></div>
 	            </form></div>
 	            <div id="rigister">
