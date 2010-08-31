@@ -1,8 +1,8 @@
  <div id="bom_up">
                        <?php if($user == ''){?>
                               <div id="b_u_u">
-			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input id="name0" type="text" name="user_name" size=10/></div>
-			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password0" type="password" name="user_password"/></div>
+			                                 <div class="t_l_r_c" >用户名：</div><div class="t_l_r_c"><input id="name1" type="text" name="login_name" size=10/></div>
+			                                 <div class="t_l_r_c" >密码：</div><div class="t_l_r_c"><input id="password1" type="password" name="password"/></div>
 			                                 <div class="t_l_r_c" id="login_btn0"><img src="/images/index/log_in.jpg" border=0/></div><div id="zhuce"><a href=""><font  color=#BBBBBB>注册</font></a></div>
                               </div>
                               <?php }else{?>

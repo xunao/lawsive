@@ -72,7 +72,7 @@
 				@setcookie("email",$login_name,time()+$s_expire,'/');
 				@setcookie("password",$password,time()+$s_expire,'/');
 			}
-			return $record;
+			return $record[0];
 			
 		    }else{
 				return NULL;

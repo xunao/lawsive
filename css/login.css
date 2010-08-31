@@ -21,8 +21,8 @@ body a{text-decoration:none; color:#336699;}
 .log_in{margin:5px 0 5px 5px; border:1px black;}
 .log_in input{height:21px;width:140px; border:1px solid black;}
 #chc_box{width:190px;height:20px;margin:20px 0; line-height:20px; text-align:center;}
-#submit button{width:72px; height:27px; margin-left:45px; border:0px; cursor:pointer; background:url("/images/login/login.jpg"); float:left; }
-#submit a{margin:10px 0 0 20px; color:#336699; text-decoration:underline;float:left;}
+#login_btn2 button{width:72px; height:27px; margin-left:45px; border:0px; cursor:pointer; background:url("/images/login/login.jpg"); float:left; }
+#login_btn2 a{margin:10px 0 0 20px; color:#336699; text-decoration:underline;float:left;}
 #rigister{width:190px;padding:20px 0;margin:0 27px;border-top:1px solid #DDDDDD;}
 #rig_t{width:190px;margin-bottom:10px;font-size:12px; line-height:14px;}
 #rig_t font{margin-left:5px;font-size:12px; line-height:14px;}

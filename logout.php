@@ -6,9 +6,8 @@
 	<meta name="description" content="律氏" />
 <?php
 include_once './frame.php';
-$member = new member();
-$user = $member->current();
-$member->logout();
+$user = member::current();
+member::logout();
 alert('您已安全退出!');
 
 redirect("/login.php");
