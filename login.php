@@ -18,7 +18,7 @@
 	    <div id="center">
 	    	<div id="cen_l">
 		    	<div id="login"><form action="login.post.php" method="post">
-				     <div><div class="log_t" >帐号：</div><div class="log_in"><input type="text" name="email" /></div></div>
+				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input type="text" name="email" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input type="password" name="password"/></div></div>
 				     <div id="chc_box"><input type="checkbox" name="expire" value="1">记住登录状态</div>
 				     <div id="submit"><button type="submit"></button><a href="">忘记密码？</a></div>
