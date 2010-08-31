@@ -9,7 +9,7 @@ if($expire=NULL){$expire=0;}else{$expire=7;}
 $user= member::login($login_name,$password,$expire);
 if($user == null){
 	alert(您的帐号或密码输入有误！);
-	redirect("/login.php/");
+	redirect("/login.php");
 }
 ?>
 <div id="t_l_r">

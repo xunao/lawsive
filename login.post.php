@@ -1,8 +1,11 @@
 <?php
 include_once './frame.php';
+use_jquery_ui();
+js_include_tag('login');
 $login_name =$_POST['email'];
 $password =$_POST['password'];
 $expire =$_POST['time'];
+<<<<<<< HEAD
 <<<<<<< HEAD
 if($expire=NULL){$expire=0;}else{$expire=7;}
 $user = member::login($login_name,$password,$expire);
@@ -16,9 +19,15 @@ if($user == null){
 
 =======
 if($expire=NULL){$expire=0;}else{$expire=7;}/*登录时选择记住登录状态默认保存帐号密码在COOKIE里7天*/
+=======
+if($expire==NULL){$expire=0;}else{$expire=7;}/*登录时选择记住登录状态默认保存帐号密码在COOKIE里7天*/
+>>>>>>> 8ed6f0685055939b8dd50abb6d04f3ae56c167fa
 $member = new member();
-$record = $member->login($login_name,$password,$expire);
+$record = $member->login($login_name,$password,0);
 $user = $record[0];
+<<<<<<< HEAD
 redirect("/")
 >>>>>>> 54e4a280f81d60fc399672f325f73a399999f968
+=======
+>>>>>>> 8ed6f0685055939b8dd50abb6d04f3ae56c167fa
 ?>
