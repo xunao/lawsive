@@ -27,6 +27,7 @@ $(function(){
 	$("#login_btn1").click(function(){
 		var login_name = $("#name1");
 		var password = $("#password1");
+		
 		if(checkInput(login_name,password) != false){
 		$.post("_ajax.login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
 			$('#t_l_r').html(data);
@@ -36,31 +37,36 @@ $(function(){
 			return false;
 		}
 	});
-	$("#submit").click(function(){
+	$("#login_btn2").click(function(){
 		var login_name = $("#name");
 		var password = $("#password");
+		var time=$("#time");
 		if(checkInput(login_name,password) != false){
-		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
-			$("#test").html(data);
+		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),"time":time.val()},function(data){
+			alert(data);
+			if(data !="true"){alert('您的用户名或密码输入有误！');}else{window.location.href = "/";};
 			});
-		}else{
+		}
+	else{
 			return false;
 		}
 	});
+	
+	
 	$('.logout').click(function(){
-			window.location.href="/logout.php/";
+		alert('no');
+		$.post("logout.php",function(data){
+			$("#logout").html(data);
+		});
 	});
 	
-	document.onkeydown = function(e){ 
-		  var ev = document.all ? window.event : e;
+	document.onkeydown = function(c){ 
+		if($("#name1").val() == ''){
+			  button = $("#login_btn0");
+		  }else{button = $("#login_btn1");} 
+		var ev = document.all ? window.event : c;
 		  if(ev.keyCode==13 || ev.ctrlKey) {
-			$("#login_btn0").click();
-		  }
-	};
-	document.onkeydown = function(e){ 
-		  var ev = document.all ? window.event : e;
-		  if(ev.keyCode==13 || ev.ctrlKey) {
-			$("#submit").click();
+			button.click();
 		  }
 	};
 });

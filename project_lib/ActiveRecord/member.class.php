@@ -31,6 +31,7 @@
 	static function register($login_name,$name,$password,$email,$level,$role){
 		if(mb_strlen($login_name)>48){return -3;}
 		if(mb_strlen($login_name)<6){return -4;}
+		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$login_name)){return -5;}
 		
 		if(mb_strlen($name)>50){return -6;}
 		

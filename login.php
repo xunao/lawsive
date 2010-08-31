@@ -23,7 +23,7 @@
 				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
 				     <div id="chc_box"><input type="checkbox" name="time" value="1">记住登录状态</div>
-				     <div id="submit"><img src = "/images/login/login.jpg" /><a href="">忘记密码？</a></div><div id="test"></div>
+				     <div id="login_btn2"><img src = "/images/login/login.jpg" /></div><div id="subbmit"><a href="#">忘记密码</a></div>
 	            </div>
 	            <div id="rigister">
 	            	<div id="rig_t"><img src="/images/login/point.jpg"><font>还没有开通律氏？点这里</font></div>
