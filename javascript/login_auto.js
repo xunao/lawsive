@@ -25,10 +25,15 @@ $(function(){
 			alert('请输入密码');
 			return false;
 		}
-		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",email)){
-			alert('请输入正确的邮箱地址');
+		if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email.value))
+		{
+			alert('请输入正确的EMAIL');
 			return false;
 		}
+//		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",email)){
+//			alert('请输入正确的邮箱地址');
+//			return false;
+//		}
 		$.post("login.post.php",{"email":email,"password":password},function(){
 			window.location.href="/";
 	});

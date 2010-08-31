@@ -19,12 +19,12 @@
 		</div>
 	    <div id="center">
 	    	<div id="cen_l">
-		    	<div id="login"><form action="login.post.php" method="post">
-				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="email" type="text" name="email" /></div></div>
+		    	<div id="login">
+				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
 				     <div id="chc_box"><input type="checkbox" name="time" value="1">记住登录状态</div>
-				     <div id="submit"><button id="l_submit" type="submit"></button><a href="">忘记密码？</a></div>
-	            </form></div>
+				     <div id="submit"><img src = "/images/login/login.jpg" /><a href="">忘记密码？</a></div><div id="test"></div>
+	            </div>
 	            <div id="rigister">
 	            	<div id="rig_t"><img src="/images/login/point.jpg"><font>还没有开通律氏？点这里</font></div>
 	            	<div id="rig_d"><a href=""><font>立即注册</font></a></div>
