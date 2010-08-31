@@ -23,11 +23,15 @@ if($expire=NULL){$expire=0;}else{$expire=7;}/*登录时选择记住登录状态�
 if($expire==NULL){$expire=0;}else{$expire=7;}/*登录时选择记住登录状态默认保存帐号密码在COOKIE里7天*/
 >>>>>>> 8ed6f0685055939b8dd50abb6d04f3ae56c167fa
 $member = new member();
-$record = $member->login($login_name,$password,0);
+$record = $member->login($login_name,$password,$expire);
 $user = $record[0];
+<<<<<<< HEAD
 <<<<<<< HEAD
 redirect("/")
 >>>>>>> 54e4a280f81d60fc399672f325f73a399999f968
 =======
 >>>>>>> 8ed6f0685055939b8dd50abb6d04f3ae56c167fa
+=======
+redirect("/")
+>>>>>>> 5e14aff58aee87fd7a0f3f3cba7560287539d36e
 ?>
