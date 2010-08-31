@@ -1,8 +1,8 @@
 @CHARSET "UTF-8"; 
-body{width:1200px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial; background:#FFFFFF; }
+body{width:1000px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial; background:#FFFFFF; }
 body div{float:left;  display:inline; }
 body a{text-decoration:none; color:#336699;}
-#ibody{width:1000px; margin:0 100px; letter-spacing:1px;}
+#ibody{width:1000px;letter-spacing:1px;}
 
 #title{width:1000px; height:57px; background:#FF6A00;}
 #title img{margin:0 25px 0 45px; float:left;}
