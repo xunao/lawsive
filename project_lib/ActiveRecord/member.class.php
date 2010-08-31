@@ -103,6 +103,7 @@
 	
 	//just test
 	function logout(){
+		@setcookie("password",$cache_name,0,'/');
 		@setcookie("cache_name",null,0,'/');
 	}
 	
