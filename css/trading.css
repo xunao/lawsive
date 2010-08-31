@@ -28,7 +28,7 @@
 #search_trade .select4{width:115px; margin-left:35px;}
 #search_trade button{width:61px; height:22px; margin-top:10px; border:none; color:#ffffff; text-align:center; line-height:22px; background:url(/images/trade/button_bg.gif) no-repeat;}
 
-#trade_image{width:355px; height:99px; margin-top:10px; margin-left:15px;}
+#trade_image{width:355px; height:99px; margin-top:18px; margin-left:15px;}
 #trade_image img{width:355px; height:99px; border:0px;}
 
 #trade_ranking{width:206px;  margin-right:22px; float:right;}
@@ -40,7 +40,7 @@
 #trade_ranking .context_title .rank{width:32px; background:#d3d3d3;}
 #trade_ranking .context_title .law{width:118px; margin-left:3px; background:#d3d3d3;}
 #trade_ranking .context_title .change{width:50px; margin-left:3px; background:#d3d3d3;}
-#trade_ranking .context{width:206px; height:28px; text-align:center; background:#ECF1FF; color:#003869; line-height:28px; overflow:hidden;}
-#trade_ranking .context .rank{width:32px; height:28px; color:#CE231F; background:#e4e8f2;}
-#trade_ranking .context .law{width:118px; height:28px; margin-top:0px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
-#trade_ranking .context .change{width:50px; height:28px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
+#trade_ranking .context{width:206px; height:26px; text-align:center; background:#ECF1FF; color:#003869; line-height:26px; overflow:hidden;}
+#trade_ranking .context .rank{width:32px; height:26px; color:#CE231F; background:#e4e8f2;}
+#trade_ranking .context .law{width:118px; height:26px; margin-top:0px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
+#trade_ranking .context .change{width:50px; height:26px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
