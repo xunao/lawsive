@@ -9,6 +9,10 @@ include_once './frame.php';
 $user = member::current();
 member::logout();
 alert('您已安全退出!');
+
+redirect("/login.php");
+
 redirect("/");
+
 ?>
 </html>
