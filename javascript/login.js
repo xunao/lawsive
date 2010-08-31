@@ -3,7 +3,7 @@ function checkInput(login_name,password){
 		a = password.val();
 		if(login_name != null){
 			if(!u ||u.length == 0){alert('请输入用户名！'); login_name.focus(); return false;}
-			if(u.length >48||u.length <6){alert('请您正确的输入用户名！'); return false;}
+			if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(u)) { alert('请输入正确的用户名'); return false;}
 		}
 		if(password != null){
 			if(!a||a.length == 0){alert('请输入你的密码！'); password.focus(); return false;}
