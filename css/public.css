@@ -4,8 +4,8 @@
 #title_log{width:1000px; height:56px; margin-top:20px;}
 #t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
 #t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:14px;  font-weight:600; color:white; }
-#t_l_c font{margin-left:9px; }
-#t_l_c a{color:white;}
+#t_l_c font{margin-left:11px; line-height:40px; font-size:14px;  font-weight:600;}
+#t_l_c a{color:white; line-height:40px; font-size:14px;  font-weight:600;}
 #t_l_r{width:385px; height:25px; float:right; margin:11px 0 0 0; color:#BBBBBB}
 #t_l_r  input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#00121E}
 .t_l_r_c{line-height:21px; font-size:12px; margin-left:7px;}
@@ -26,8 +26,9 @@
 #people_j_t{width:100%; font-size:14px; line-height:20px; color:red; font-weight:bold; margin-bottom:5px; }
 #mes{width:326px; height:109px; margin-top:25px; float:right; font-size:12px; line-height:16px; color:#D7D7D7; }
 #mes_u_f{font-size:14px; line-height:20px; color:#D7D7D7; font-weight:bold; margin-left:5px; }
+#mes_up{margin-bottom:20px; }
 #mes_up a{text-decoration:underline}
-#mes_c{width:300px; font-size:12px; line-height:15px;margin-top:10px; }
+#mes_c{width:300px; font-size:12px; line-height:15px;}
 #mes_c  font{margin-left:10px; font-size:12px; line-height:15px;}
 #mes_down{width:325px; height:23px;  margin-top:5px; }
 #search{height:20px; width:230px; margin-top:1px;}
