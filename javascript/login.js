@@ -36,31 +36,33 @@ $(function(){
 			return false;
 		}
 	});
-	$("#submit").click(function(){
+	$("#login_btn2").click(function(){
 		var login_name = $("#name");
 		var password = $("#password");
 		if(checkInput(login_name,password) != false){
 		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
-			$("#test").html(data);
+			if(data != true){alert('您的用户名或密码输入有误！');}else{window.location.href = "/"};
 			});
-		}else{
+		}
+	else{
 			return false;
 		}
 	});
+	
+	
 	$('.logout').click(function(){
-			window.location.href="/logout.php/";
+		$.post("logout.php",function(data){
+			$("#logout").html(data);
+		});
 	});
 	
-	document.onkeydown = function(e){ 
-		  var ev = document.all ? window.event : e;
+	document.onkeydown = function(c){ 
+		if($("#name1").val() == ''){
+			  button = $("#login_btn0");
+		  }else{button = $("#login_btn1");} 
+		var ev = document.all ? window.event : c;
 		  if(ev.keyCode==13 || ev.ctrlKey) {
-			$("#login_btn0").click();
-		  }
-	};
-	document.onkeydown = function(e){ 
-		  var ev = document.all ? window.event : e;
-		  if(ev.keyCode==13 || ev.ctrlKey) {
-			$("#submit").click();
+			button.click();
 		  }
 	};
 });

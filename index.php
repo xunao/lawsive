@@ -173,7 +173,8 @@
                               <img alt="" src="/images/index/add.jpg" id="add">
                        </div>
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>
-             </div>      
+             </div>
+             <div id="logout"></div>
             <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
       </div>
 </body>
