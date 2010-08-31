@@ -39,9 +39,11 @@ $(function(){
 	$("#login_btn2").click(function(){
 		var login_name = $("#name");
 		var password = $("#password");
+		var time=$("#time");
 		if(checkInput(login_name,password) != false){
 		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
-			if(data != true){alert('您的用户名或密码输入有误！');}else{window.location.href = "/"};
+			alert(data);
+			if(data !="true"){alert('您的用户名或密码输入有误！');}else{window.location.href = "/";};
 			});
 		}
 	else{
@@ -51,6 +53,7 @@ $(function(){
 	
 	
 	$('.logout').click(function(){
+		alert('no');
 		$.post("logout.php",function(data){
 			$("#logout").html(data);
 		});

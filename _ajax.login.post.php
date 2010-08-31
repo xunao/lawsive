@@ -1,6 +1,7 @@
 <?php
 include_once './frame.php';
 use_jquery_ui();
+js_include_tag('login');
 $login_name =$_POST['login_name'];
 $password =$_POST['password'];
 $expire =$_POST['time'];
