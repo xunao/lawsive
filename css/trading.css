@@ -40,7 +40,7 @@
 #trade_ranking .context_title .rank{width:32px; background:#d3d3d3;}
 #trade_ranking .context_title .law{width:118px; margin-left:3px; background:#d3d3d3;}
 #trade_ranking .context_title .change{width:50px; margin-left:3px; background:#d3d3d3;}
-#trade_ranking .context{width:206px; height:30px; text-align:center; background:#ECF1FF; color:#003869; line-height:30px;}
-#trade_ranking .context .rank{width:32px; height:30px; color:#CE231F; background:#e4e8f2;}
-#trade_ranking .context .law{width:118px; height:30px; margin-top:0px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
-#trade_ranking .context .change{width:50px; height:30px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
+#trade_ranking .context{width:206px; height:28px; text-align:center; background:#ECF1FF; color:#003869; line-height:28px; overflow:hidden;}
+#trade_ranking .context .rank{width:32px; height:28px; color:#CE231F; background:#e4e8f2;}
+#trade_ranking .context .law{width:118px; height:28px; margin-top:0px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
+#trade_ranking .context .change{width:50px; height:28px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
