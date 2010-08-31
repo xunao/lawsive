@@ -1,6 +1,6 @@
 <?php
 include_once './frame.php';
-$login_name =$_POST['login_name'];
+$login_name =$_POST['email'];
 $password =$_POST['password'];
 $expire =$_POST['time'];
 <<<<<<< HEAD
