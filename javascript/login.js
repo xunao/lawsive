@@ -36,6 +36,17 @@ $(function(){
 			return false;
 		}
 	});
+	$("#submit").click(function(){
+		var login_name = $("#name");
+		var password = $("#password");
+		if(checkInput(login_name,password) != false){
+		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
+			$("#test").html(data);
+			});
+		}else{
+			return false;
+		}
+	});
 	$('.logout').click(function(){
 			window.location.href="/logout.php/";
 	});
@@ -45,7 +56,19 @@ $(function(){
 		  if(ev.keyCode==13 || ev.ctrlKey) {
 			$("#login_btn0").click();
 		  }
-	}
+	};
+//	document.onkeydown = function(e){ 
+//		  var ev = document.all ? window.event : e;
+//		  if(ev.keyCode==13 || ev.ctrlKey) {
+//			$("#login_btn0").click();
+//		  }
+//	};
+	document.onkeydown = function(e){ 
+		  var ev = document.all ? window.event : e;
+		  if(ev.keyCode==13 || ev.ctrlKey) {
+			$("#submit").click();
+		  }
+	};
 });
 
 	 
