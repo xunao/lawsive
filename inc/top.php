@@ -26,7 +26,7 @@
                               <div id="mes">
                                      <div id="mes_up">
                                            <div id="mes_u_f">会员信息：</div><div style="width:230px;"><div><a href="" ><font color="#D7D7D7">中国东方集团将发行美元债发行美元债</font></a></div>
-		                                   <div style="margin:10px 0 10px 0;width:100%;"><a href="" ><font color="#D7D7D7">中国东方集团将发行美元债发行美元债</font></a></div></div>
+		                                   <div style="margin:10px 0 0 0;width:100%;"><a href="" ><font color="#D7D7D7">中国东方集团将发行美元债发行美元债</font></a></div></div>
                                      </div>  
                                      <div id="mes_c"><font style="color:white;">文章</font><font>|</font><font>日期</font></div>
                                      <div id="mes_down">
