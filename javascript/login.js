@@ -39,8 +39,9 @@ $(function(){
 	$("#submit").click(function(){
 		var login_name = $("#name");
 		var password = $("#password");
+		var time=$("#time");
 		if(checkInput(login_name,password) != false){
-		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
+		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),"time":time.val},function(data){
 			$("#test").html(data);
 			});
 		}else{
