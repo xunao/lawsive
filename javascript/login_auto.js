@@ -1,4 +1,4 @@
-	$(function(){
+$(function(){
 			var strCookie=document.cookie;
 			var arrCookie=strCookie.split("; ");
 			for(var i=0;i<arrCookie.length;i++){
@@ -12,3 +12,4 @@
 				});
 			}
 		});
+
