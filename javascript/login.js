@@ -57,12 +57,6 @@ $(function(){
 			$("#login_btn0").click();
 		  }
 	};
-//	document.onkeydown = function(e){ 
-//		  var ev = document.all ? window.event : e;
-//		  if(ev.keyCode==13 || ev.ctrlKey) {
-//			$("#login_btn0").click();
-//		  }
-//	};
 	document.onkeydown = function(e){ 
 		  var ev = document.all ? window.event : e;
 		  if(ev.keyCode==13 || ev.ctrlKey) {
