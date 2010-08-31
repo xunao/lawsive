@@ -9,5 +9,4 @@ if($expire==NULL){$expire=0;}else{$expire=7;}/*登录时选择记住登录状态
 $member = new member();
 $record = $member->login($login_name,$password,0);
 $user = $record[0];
-redirect("/")
 ?>
