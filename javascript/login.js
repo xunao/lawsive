@@ -1,5 +1,4 @@
 $(function(){
-	
 	$("#login_btn0").click(function(){
 		var login_name = $("#name0").val();
 		var password = $("#password0").val();
@@ -36,22 +35,5 @@ $(function(){
 	});
 	$('.logout').click(function(){
 			window.location.href="/logout.php/";
-	});
-	$("#l_submit").click(function(){
-		var email = $("#email").val();
-		var password = $("#password").val();
-		
-		if(email == '' ){
-			alert('请输入邮箱');
-			return false;
-		}
-		if(password ==''){
-			alert('请输入密码');
-			return false;
-		}
-		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",email)){
-			alert('请输入正确的邮箱地址');
-			return false;
-		}
 	});
 });
