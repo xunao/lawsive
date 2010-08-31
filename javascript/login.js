@@ -27,6 +27,7 @@ $(function(){
 	$("#login_btn1").click(function(){
 		var login_name = $("#name1");
 		var password = $("#password1");
+		
 		if(checkInput(login_name,password) != false){
 		$.post("_ajax.login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
 			$('#t_l_r').html(data);
@@ -41,7 +42,7 @@ $(function(){
 		var password = $("#password");
 		var time=$("#time");
 		if(checkInput(login_name,password) != false){
-		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
+		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),"time":time.val()},function(data){
 			alert(data);
 			if(data !="true"){alert('您的用户名或密码输入有误！');}else{window.location.href = "/";};
 			});
