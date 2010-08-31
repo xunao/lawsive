@@ -23,7 +23,7 @@
 	              			<div id=case>案件</div>
 	              			<div id=money>金额</div>
 	              		</div>
-	              		<?php for($i=0;$i<6;$i++){ ?>
+	              		<?php for($i=0;$i<7;$i++){ ?>
 	              		<div class=content>
 	              			<div class=time>2010年5月</div>
 	              			<div class=case> 外资所 IPO<br>金石律师事务所  <span>王晓晓</span> 律师</div>
