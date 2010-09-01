@@ -54,12 +54,12 @@
 	           		</div>
            		</div>
            		<?php } ?>
-           		<img src="/images/regulation/image1.jpg">
+           		<a href=""><img class="lawyer_pic" src="/images/regulation/image1.jpg"></a>
            		<div id="more">
            			<a href="">更多>></a>
            		</div>
            	</div>
-           	<a href=""><img class="lawyer_pic" border=0 src="/images/regulation/image2.jpg"></a>
+           	<a href=""><img border=0 src="/images/regulation/image2.jpg"></a>
 		   </div>
 		   <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
           </div>
