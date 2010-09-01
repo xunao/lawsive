@@ -17,7 +17,7 @@
               <div id="center">
                        <div id="center_l">
                             <div id="new">
-                       			<div class="c_title" ><div class="c_t_n" ><font>栏目近期更新</font><div class="c_t_b" style="width:400px;"></div><img src="/images/index/c_t_right.jpg"><div class="new_h">1/4</div><img src="/images/index/c_t_left.jpg"></div></div>
+                       			<div class="c_title" ><div class="c_t_n" ><font>栏目近期更新</font><div class="c_t_b" style="width:395px;"></div><img src="/images/index/c_t_right.jpg"><div class="new_h">1/4</div><img src="/images/index/c_t_left.jpg"></div></div>
                        			<div class="new_t">
                        				<div class="new_t_t">《生活经济学》</div><img alt="" src="/images/view/head.jpg"><div><font color="blue">蓝蓝律师</font><font color="#666666" style="margin-left:15px;">蓝蓝事务所</font></div>
                        				<div class="new_t_b">按照工信部统一要求，从9月1日起，凡购买预付费手机卡的用户，必须提供真实的身份证件，由运营商存入系统留档，过渡期为2年，到2012年将全部完成手机实名登记。</div>
