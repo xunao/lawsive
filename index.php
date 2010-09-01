@@ -157,7 +157,7 @@
                                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">4</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
                                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">5</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
                                            <div class="lawyer2" style="border:0px;"><div class="lawyer_c" style="margin-top:2px;">6</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                                     </div>
+                                     </div> 
                               </div>
                               <img alt="" src="/images/index/add.jpg" id="add">
                               <div class="rank" >
