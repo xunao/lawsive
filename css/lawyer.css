@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.c_t_b{margin-left:5px;}
+#center{width:1000px; background:#ECF1FF; font-size:12px; line-height:18px; padding-bottom:20px; color:#666666;}
+#center_l{width:610px; margin:16px 0 0 16px; overflow:hidden;}
+#regulation_search{width:350px; height:60px;}
+#regulation_search #top{height:20px; padding-left:10px; padding-right:10px; line-height:20px; background:#ECEEF5;}
+#regulation_search #top .content{width:28px; height:20px; text-align:center; color:#777777;}
+#regulation_search #top .content.select{color:#003869;}
+#regulation_search #top .vertical{width:1px; height:12px; margin:4px 10px 0 10px; background:#777777;}
+#regulation_search #bottom{width:270px; height:40px; padding-left:10px; background:#ECEEF5;}
+#regulation_search #bottom input{widht:203px; height:20px; margin-top:10px; border:none;}
+#regulation_search #bottom button{width:46px; height:23px; margin-top:9px; margin-right:20px; border:none; background:url(/images/regulation/search_btn.gif) no-repeat; float:right;}
+
+#law_new{width:280px; margin-top:10px; margin-bottom:30px;}
+.regulation_content{width:280px; line-height:20px; font-size:14px; overflow:hidden;}
+.regulation_content img{width:50px; height:50px; border:0px; float:left;}
+.regulation_content .context{width:280px; margin-top:10px; overflow:hidden;}
+.regulation_content .context p{margin:0px;}
+.regulation_content .context a{color:#306695; text-decoration:none;}
+.regulation_content .context span{color:#666666; font-size:12px;}
+.regulation_content .context .span1{font-weight:bold; font-size:14px;}
+#law_new img{margin-top:5px; margin-bottom:5px; border:0px;}
+#law_new #more{height:26px; margin-top:10px; font-size:14px; line-height:26px; float:right;}
+#law_new #more a{color:#666666;}
+#lawyer_new{width:280px; margin-top:10px; margin-right:25px; float:right;}
+#lawyer_new img{margin-top:5px; margin-bottom:5px; border:0px;}
+#lawyer_new #more{height:26px; margin-top:10px; font-size:14px; line-height:26px; float:right;}
+#lawyer_new #more a{color:#666666;}
