@@ -8,8 +8,10 @@
 #regulation_search #top .content.select{color:#003869;}
 #regulation_search #top .vertical{width:1px; height:12px; margin:4px 10px 0 10px; background:#777777;}
 #regulation_search #bottom{width:270px; height:40px; padding-left:10px; background:#ECEEF5;}
-#regulation_search #bottom input{widht:203px; height:20px; margin-top:10px; border:none;}
-#regulation_search #bottom button{width:46px; height:23px; margin-top:9px; margin-right:20px; border:none; background:url(/images/regulation/search_btn.gif) no-repeat; float:right;}
+#regulation_search #bottom #inp{margin-top:10px;}
+#regulation_search #bottom #btn{margin-top:9px; margin-right:20px; float:right;}
+#regulation_search #bottom input{widht:203px; height:20px; border:none;}
+#regulation_search #bottom button{width:46px; height:23px; border:none; background:url(/images/regulation/search_btn.gif) no-repeat;}
 
 #regulation_update{width:280px; margin-top:10px;}
 .regulation_content{width:280px; height:26px; line-height:26px;  overflow:hidden;}

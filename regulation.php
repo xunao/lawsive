@@ -21,7 +21,8 @@
            			<div class="content select">律师</div><div class="vertical"></div><div class="content">律所</div><div class="vertical"></div><div class="content">日期</div>
            		</div>
            		<div id="bottom">
-           			<input type="text"><button></button>
+           			<div id="inp"><input type="text"></div>
+           			<div id="btn"><button></button></div>
            		</div>
            	</div>
            	<div id="regulation_update">
