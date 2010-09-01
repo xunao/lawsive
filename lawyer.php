@@ -33,7 +33,7 @@
 	           		</div>
            		</div>
            		<?php } ?>
-           		<img src="/images/regulation/image.jpg">
+           		<a href=""><img class="lawyer_pic" src="/images/regulation/image.jpg"></a>
            		<?php for($i=7;$i<14;$i++){ ?>
            		<div class="regulation_content">
            			<div class="context">
@@ -59,7 +59,7 @@
            			<a href="">更多>></a>
            		</div>
            	</div>
-           	<a href=""><img border=0 src="/images/regulation/image2.jpg"></a>
+           	<a href=""><img class="lawyer_pic" border=0 src="/images/regulation/image2.jpg"></a>
 		   </div>
 		   <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
           </div>
