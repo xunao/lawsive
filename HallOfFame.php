@@ -15,7 +15,7 @@
       <div id="ibody">
               <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
               <div id="center">
-              <div id="halloffame">
+              <div id="middlebox">
 	            	  <div class="h_title">高级合伙人</div>
 	            	  <div class="h_intr">我们很有钱！</div>
 	            	  <div class="h_picbox">
