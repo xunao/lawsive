@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+.c_t_b{margin-left:5px;}
+#center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px; padding-bottom:20px; color:#666666;}
+#center_l{width:610px; margin:16px 0 0 16px; overflow:hidden;}
+#expert_Introduction{width:586px;}
+#expert_Introduction #title{width:586px; height:25px; line-height:25px; background:none; font-weight:bold; font-size:16px;}
+#expert_Introduction #title a{color:#003869; text-decoration:none;}
+#expert_Introduction #content{width:586px; margin-top:5px; line-height:20px;}
+#expert_Introduction #content a{color:#666666; text-decoration:none;}
+#expert_Introduction #application{width:586px; font-weight:bold; font-size:12px; line-height:20px; text-align:right; }
+#expert_Introduction #application a{color:#333333; text-decoration:none;}
+
+.expert_title{width:280px; line-height:25px; margin-top:10px; font-weight:bold;}
+.expert_title a{color:#333333; text-decoration:none;}
+.expert_content{width:280px; line-height:20px;}
+.expert_content a{color:#666666; text-decoration:none;}
+.expert_button{width:113px; height:30px; margin-top:20px; border:none; text-align:center; color:#ffffff; font-weight:bold; line-height:30px; background:url(/images/expert/btn_bg.gif) no-repeat;}
+.expert_button.second{width:84px; background:url(/images/expert/btn_bg2.gif) no-repeat;}
+#expert_Consultation{width:280px; margin-top:20px;}
+#expert_Solutions{width:280px; margin-top:20px; margin-right:25px; float:right;}

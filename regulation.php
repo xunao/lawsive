@@ -22,7 +22,7 @@
            		</div>
            		<div id="bottom">
            			<div id="inp"><input type="text"></div>
-           			<div id="btn"><button></button></div>
+           			<div id="btn"><button></button> </div>
            		</div>
            	</div>
            	<div id="regulation_update">

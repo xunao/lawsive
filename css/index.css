@@ -70,16 +70,7 @@ body a{text-decoration:none; color:#666666}
 
 
 
-#expert{width:355px; }
-#exp_h{width:230px; height:24px; font-size:12px; font-weight:600; line-height:24px; color:white; background:url("/images/index/lawyer_h.jpg");  text-align:center;}
-#exp_h   a{  text-align:center;  color:white;  padding:0 5px;height:24px;}
-#exp_h   div a:hover{color:black;  }
-#exp_h  div{height:24px; width:67px; margin-left: 8px; text-align:center;}
-#exp_h  div:hover{background:url("/images/index/lawyer_h_q.jpg"); }
-#exp_c{width:355px;}
-#exp_c img{margin:20px 0  10px 30px; }
-#exp_d{width:100%; font-size:12px; line-height:14px; font-weight:bold;}
-#exp_d font{margin:0 5px 0px 32px;float:left;font-size:12px; line-height:14px; }
+
 
 #s_l{margin:0px 0px 10px 0px; width:330px;; font-weight:bold; padding:10px; font-size:12px;line-height:16px;background:#E6ECFB; }
 #s_l div{margin-top:10px; width:150px; }
