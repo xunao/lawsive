@@ -51,6 +51,7 @@ body a{text-decoration:none; color:#666666}
 .c_t_n font{float:left;}
 .c_t_n img{float:right; margin:4px 5px 0 5px; }
 .c_t_b{height:22px; margin-left:10px; color:#9E2F2F; background:url("/images/index/c_t_b.jpg"); }
+.more{font-size:12px; line-height:14px; float:right;}
 
 /*center_head*/
 #head{width:1000px; height:41px;background:#ECF1FF; }
