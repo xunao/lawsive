@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HallOfFame</title>
+<title>coverperson</title>
 <meta name="keywords" content="律氏" />
 	<meta name="coverperson" content="律氏" />
 <?php	
@@ -15,7 +15,7 @@
       <div id="ibody">
               <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
               <div id="center">
-              <div id="coverperson">
+              <div id="middlebox">
               <div><div class="c_title">本期人物</div><div class="line" style="width:480px;"></div></div>
              	
              	<div id="cp_photo"><img src="/images/c_index/human2.jpg" /></div>
@@ -24,7 +24,7 @@
              		<div id="cp_person">于元良&nbsp;律师专访：<font>金石律师事务所</font></div>
              		<div id="keyword">关键词：个性　理想　专业</div>
              		<div id="cp_words">好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，</div>
-             		<div id="more"><a href="#">更多>></a></div>
+             		<div class="more" style="margin-right:0px; font-size:12px;"><a href="#">更多>></a></div>
              	</div>
               <div><div class="c_title">最近人物</div><div class="line" style="width:430px;"></div><div class="turn_l"><img src="/images/c_index/cp_t_l.jpg" /></div><div class="turn_r"><img src="/images/c_index/cp_t_r.jpg" /></div></div>
              	<div class="c_info">
