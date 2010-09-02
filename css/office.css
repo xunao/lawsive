@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+.c_t_b{margin-left:5px;}
+.c_title.search{width:300px; margin-top:20px;}
+#center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px; padding-bottom:20px; color:#666666;}
+#center_l{width:610px; margin:16px 0 0 16px; overflow:hidden;}
+.office_recommend{width:280px; margin-top:10px; overflow:hidden;}
+.lawyer_recommend{width:280px; margin-top:10px; margin-right:25px; float:right;}
+.office_content{width:280px; margin-top:10px; margin-bottom:10px; line-height:21px;}
+.office_content img{width:103px; height:101px; margin-right:5px; border:none; float:left;}
+.office_content p{margin:0px;}
+.office_content span{font-weight:bold;}
+.office_content a{color:#666666; text-decoration:none;}
+.office_more{float:right;}
+.office_more a{color:#666666; text-decoration:underline;}
+#office_search{width:326px; height:167px; margin-bottom:20px; padding-top:7px; padding-left:10px; background:#e6ecfb;}
+#office_search #title{width:320px; height:20px; margin:0px; background:none; color:#666666; font-size:12px; font-weight:bold; overflow:hidden;}
+#office_search #content{width:320px; height:120px; margin-top:10px; line-height:30px;}
+#office_search #content button{width:61px; height:22px; margin-top:10px; border:none; line-height:22px; font-weight:bold; text-align:center; color:#ffffff; background:url(/images/office/btn_bg.gif) no-repeat;}
+#office_search #content input{width:82px; height:20px; margin-left:5px; border:none;}
+#office_search #content select{width:82px; height:20px; margin-left:5px; border:none;}
+#office_note{width:216px; height:182px; margin-top:55px; margin-right:25px; background:url(/images/office/note_bg.jpg) no-repeat; float:right;}
+#office_note #title{width:195px; height:20px; margin-top:10px; margin-left:16px; background:none; line-height:20px; font-weight:bold; color:#666666; overflow:hidden;}
+#office_note #content{width:195px; height:100px; margin-top:5px; margin-left:16px; line-height:20px;}
+#office_note #application{margin-top:10px; margin-right:10px; float:right;}
+#office_note #application button{width:80px; height:23px; border:none; font-weight:bold; line-height:23px; color:#ffffff; background:url(/images/office/btn_bg1.gif) no-repeat;}
