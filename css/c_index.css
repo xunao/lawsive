@@ -27,7 +27,7 @@
 #keyword{margin-top:5px;font-size:12px;}
 #cp_words{width:400px; margin-top:5px; padding-bottom:5px;color:#333333;font-size:12px; text-align:justify;}
 #cp_person font{color:#ce231f;}
-.more{float:right; margin-right:12px;}
+.more{width:80%; margin-right:12px; text-align:right;}
 .turn_l{margin:30px 10px 0 5px; cursor:pointer;}
 .turn_r{margin-top:30px; cursor:pointer;}
 .c_info{width:277px; margin-left:16px; margin-bottom:18px;}
