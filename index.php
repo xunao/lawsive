@@ -18,7 +18,7 @@
                        <div id="center_l">
                                 <div id="c_people"> 
                                         <div class="c_title" ><div class="c_t_n" ><font>本期人物</font><div class="c_t_b" style="width:450px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
-                                       <a href="" ><img id="c_p_i" src="/images/index/people.jpg" border="0"></a>
+                                        <a href="" ><img id="c_p_i" src="/images/index/people.jpg" border="0"></a>
                                         <div id="c_p_r">
                                                 <div id="c_p_r_l">
 			                                             <font id="c_p_r_1" >坚持理想的青年律师</font><font id="c_p_r_2">余元良律师专访：</font><font  id="c_p_r_3">金石律师事务所</font>
