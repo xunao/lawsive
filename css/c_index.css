@@ -33,8 +33,8 @@
 .c_info{width:277px; margin-left:16px; margin-bottom:18px;}
 .c_info img{width:70px; height:70px; float:left;margin-right:3px;}
 .c_box{width:195px; margin-left:9px;}
-.c_t{width:195px;}
-.c_t font{color:#005c9d;}
+.c_t{width:195px; font-size:14px;}
+.c_t font{color:#005c9d; font-size:14px;}
 .c_key{width:195px; color:#999999;}
 .c_key font{color:#000000;}
 .c_word{text-align:justify;}
@@ -43,11 +43,11 @@
 
 .i_title{width:550px; height:24px; font-weight:bold; font-size:16px; margin-top:25px; margin-left:16px;}
 .i_title a{color:#9e2f2f;}
-.itv{width:165px; font-size:12px; margin:15px 22px 0 16px; text-align:justify;}
+.itv{width:175px; font-size:12px; margin:15px 12px 0 16px; text-align:justify;}
 .itv img{width:165px; height:100px;}
 .itv_from{margin-top:12px;}
 .itv_from font{color:#999999; font-size:12px;}
-.itv_title{font-weight:bold; line-height:14px; margin-top:5px;}
+.itv_title{width:175px; font-weight:bold; line-height:14px; margin-top:5px;}
 .int_box{width:301px;}
 .int_pic img{width:280px; height:60px; margin-left:16px; padding-bottom:20px;}
 .line2{width:1px; height:1100px; margin-top:32px; background:#ced7df; lineheight:0px; font-size:0px;}

@@ -21,8 +21,8 @@
               <div class="itv">
               	<a href="#"><img src="/images/c_index/itv_1.jpg" border="0" /></a>
               	<div class="itv_title">中国国资委应该更进一步</div>
-              	<div class="c_t" style="width:165px;"><font>蓝蓝律师</font>&nbsp;&nbsp;蓝蓝律师事务所</div>
-		        <div class="c_key" style="width:165px;"><font>关键词：</font>蓝蓝律师</div>
+              	<div class="c_t" style="width:175px;"><font>蓝蓝律师</font>&nbsp;&nbsp;蓝蓝律师事务所</div>
+		        <div class="c_key" style="width:175px;"><font>关键词：</font>蓝蓝律师</div>
 		        FT中文网经济评论员吴铮：荣融在国有资产保值增值方面卓有作为。然而，
               </div>
               <?php }?>
