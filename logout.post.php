@@ -5,5 +5,5 @@
 	unset($_SESSION['admin_nick_name']);
 	unset($_SESSION['role_name']);
 	unset($_SESSION['role_level']);
-	redirect('/login/login.php');
+	redirect('/login.php');
 ?>
