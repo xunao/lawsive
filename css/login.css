@@ -6,6 +6,7 @@ body a{text-decoration:none; color:#336699;}
 
 #title{width:755px; height:40px; background:#FF6A00;}
 #title a{color:#FFFFFF; }
+#title img{float:right; }
 #tt_l{height:16px; margin-top:12px; font-size:14px; line-height:16px;color:white; font-weight:600;}
 #tt_l a{margin:0 20px;}
 #tt_l font{font-size:14px; line-height:16px;}
@@ -13,9 +14,9 @@ body a{text-decoration:none; color:#336699;}
 #tt_r a{margin:0 10px;font-size:12px; line-height:14px;}
 #tt_r font{font-size:12px; line-height:14px;}
 
-#center{width:1000px; border-bottom:2px solid #C4C4C4;}
+#left{width:245px;}
 #cen_l{width:245px; padding-bottom:300px; background:#EFEFEF;}
-#login{width:215px;padding:25px 0;margin:0 0 0 30px;border-bottom:1px solid #FFFFFF;}
+#login{width:215px;padding:15px 0 25px 0;margin:0 0 0 30px;border-bottom:1px solid #FFFFFF;}
 .log_t{line-height:25px;margin:5px 0;}
 .log_in{margin:5px 0 5px 5px; border:1px black;}
 .log_in input{height:21px;width:140px; border:1px solid black;}
@@ -25,12 +26,24 @@ body a{text-decoration:none; color:#336699;}
 #rigister{width:190px;padding:20px 0;margin:0 27px;border-top:1px solid #DDDDDD;}
 #rig_t{width:190px;margin-bottom:10px;font-size:12px; line-height:14px;}
 #rig_t font{margin-left:5px;font-size:12px; line-height:14px;}
-#rig_d font{font-size:12px; line-height:14px;}
-#rig_d a{margin-left:12px; font-size:12px; line-height:14px;}
-#rigister a{color:#336699; text-decoration:underline;}
-#rig_key{width:200px;height:30px;margin:0 22px; font-size:14px; line-height:30px; text-align:center; background:#85B5DA; }
+#rig_d font{font-size:14px; line-height:16px; color:#FD6D06; }
+#rig_d a{margin-left:12px; font-size:14px; line-height:16px;}
+#rigister a{color:#336699;}
+#rig_key{width:200px; height:30px; margin:0 22px; font-size:14px; line-height:30px; text-align:center; background:#85B5DA; }
 #rig_key a{color:white;}
-#flash{margin:15px 0 0 25px;}
+#rig_sen{width:130px; margin:25px 0 0 55px;}
+#rig_s_t{ padding-bottom:2px; font-size:14px; line-height:16px; color:#FD6D06; border-bottom:2px solid #F98D40;}
+#rig_s_c{width:100%; }
+.rig_s_l{margin-top:15px; font-size:14px; line-height:16px}
+.rig_s_l img{width:11px; height:11px; margin-right:5px;}
+.rig_s_r{margin-top:15px; font-size:14px; line-height:16px; float:right}
+.rig_s_r img{width:11px; height:11px; margin-right:5px;}
+#flash{margin:35px 0 40px 55px;}
+#lawsive{margin:0 0 60px 100px;}
+#ad{margin:0 55px;}
+#law_t{width:270px; margin-left:20px;}
+#law_t1{width:100%; font-size:16px; line-height:20px; color:black; margin-bottom:10px; }
+.law_t2{width:100%; font-size:14px; line-height:26px; color:#282828; }
 
-#bottom{width:1000px; height:14px; margin:25px 0 25px 0; text-align:center; letter-spacing:1px;  }
+#bottom{width:1000px; height:14px; padding:25px 0 25px 0; text-align:center; letter-spacing:1px; border-top:2px solid #C4C4C4 }
 #bottom a{padding:0 10px;}
