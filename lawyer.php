@@ -25,7 +25,7 @@
            		</div>
            	</div>
            	<div id="law_new">
-           		<div class="c_title"><div class="c_t_n" ><font>律师动态</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
+           		<div class="c_title"><div class="c_t_n" ><font>律所动态</font><div class="c_t_b" style="width:150px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
            		<?php for($i=0;$i<7;$i++){ ?>
            		<div class="regulation_content">
            			<div class="context">

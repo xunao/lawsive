@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body{width:1000px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial;}
+body div{float:left;  display:inline; }
+body a{text-decoration:none;}
+#ibody{width:1000px;}
+
+/*person_top*/
+#logo{width:170px; height:81px; background:url(/images/person/logo.jpg) no-repeat; overflow:hidden;}
+#person_top{width:825px; height:40px; background:#f86f11;}
+#person_side{width:5px; height:40px; background:url(/images/person/top_side.jpg) no-repeat; overflow:hidden;}
+#person_top .jump{width:64px; height:40px; line-height:40px; font-size:16px; font-weight:bold; text-align:center;}
+#person_top .jump a{color:#ffffff;}
+#person_top .jumpvertical{width:1px; height:38px; font-size:16px; line-height:38px; color:#ffffff;}
+#person_search{height:40px; margin-right:20px; line-height:40px; float:right;}
+#person_search #search{width:113px; height:19px; margin-top:9px; border:1px solid #c0dbdb; background:#ffffff; overflow:hidden; float:right;}
+#person_search #search_l{width:95px; height:19px; overflow:hidden;}
+#person_search #search_l input{width:95px; height:19px; border:none;}
+#person_search #search_r{width:18px; height:19px; overflow:hidden; float:right;}
+#person_search #search_r button{width:18px; height:19px; border:none; background:url(/images/person/btn_search.jpg) no-repeat;}
+#person_search #content{margin-right:10px; float:right;}
+#person_search #content .context{width:31px; height:40px; text-align:center;}
+#person_search #content .context a{color:#ffffff;}
+
+/*person_bottom*/
+#person_line{width:1000px; height:2px; margin-top:10px; background:#dedede; overflow:hidden;}
+#person_about{width:1000px; height:16px; text-align:center; margin-top:20px; line-height:16px; color:#666666;}
+#person_about a{color:#666666;}
