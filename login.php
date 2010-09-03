@@ -27,10 +27,10 @@
 	            </div>
 	            <div id="rig_key"><a href="">一键注册，同时拥有四大平台</a></div>
 	            <div id="rig_sen">
-	            	<div id="rig_s_t">高级注册</div>
+	            	<div id="rig_s_t"><a href="">高级注册</a></div>
 	            	<div id="rig_s_c">
-	            		<div class="rig_s_l"><img src="/images/login/talk.jpg">律师</div><div class="rig_s_r"><img src="/images/login/talk.jpg">律所</div>
-	            		<div class="rig_s_l"><img src="/images/login/talk.jpg">学生</div><div class="rig_s_r"><img src="/images/login/talk.jpg">公司</div>
+	            		<div class="rig_s_c_h"><div class="rig_s_l"><img src="/images/login/talk.jpg">律师</div><div class="rig_s_r"><img src="/images/login/talk.jpg">律所</div></div>
+	            		<div class="rig_s_c_h"><div class="rig_s_l"><img src="/images/login/talk.jpg">学生</div><div class="rig_s_r"><img src="/images/login/talk.jpg">公司</div></div>
 	            		<div class="rig_s_l" style="width:100%"><img src="/images/login/talk.jpg">法务</div><div class="rig_s_l"><img src="/images/login/talk.jpg">个人</div>
 	            	</div>
 	            </div>
@@ -41,7 +41,7 @@
 			<img alt="" src="/images/login/title_r.jpg"><div id="tt_r"><a href=""><font>注册</font></a>|<a href=""><font>登录</font></a>|<a href=""><font>帮助</font></a></div>
 		</div>
     	<div id="flash"><a href=""><img src="/images/login/flash.jpg" border="0"></a></div>
-    	<div id="lawsive"><a href=""><img src="/images/login/lawsive.jpg" border="0"></a></div>
+    	<div id="lawsive"><img src="/images/login/lawsive.jpg"></div>
     	<div id="ad"><a href=""><img src="/images/login/ad.jpg" border="0"></a></div>
     	<div id="law_t"><div id="law_t1">我们每天都在进步</div><div class="law_t2">8月30日首页确认</div><div class="law_t2">8月29日注册页面确认</div><div class="law_t2">8月30日内页设计</div></div>
 	    <div id="bottom">
