@@ -138,15 +138,33 @@
       	 		 <div class="title">
       	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">好友动态</div>
       	 			<div class="lable select">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
-      	 			<div class="lable">全部</div>
+      	 			<div class="lable">照片</div>
+      	 			<div class="lable">日记</div>
+      	 			<div class="lable">记录</div>
+      	 			<div class="lable">转帖</div>
+      	 			<div class="lable">状态</div>
+      	 			<div class="lable">对话</div>
+      	 			<div class="lable"><img src="/images/person/flag.jpg">机构</div>
+      	 			<div class="lable2"></div>
       	 			<div class="t_r" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;"></div>
+      	 		 </div>
+      	 		 <div class="context">
+      	 		 	<div class="c_title">
+      	 		 		<a href="">偶尔试着妥协</a>　发表了１篇随便说说<div class="day">今天 09:07</div>
+      	 		 	</div>
+      	 		 	<div class="cc">
+      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
+      	 		 	</div>
+      	 		 	<div class="comment"><a href="">发表评论</a></div>
+      	 		 </div>
+      	 		  <div class="context">
+      	 		 	<div class="c_title">
+      	 		 		<a href="">偶尔试着妥协</a>　发表了１篇随便说说<div class="day"><img src="/images/person/del.jpg"><img src="/images/person/set.jpg">今天 09:07</div>
+      	 		 	</div>
+      	 		 	<div class="cc">
+      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
+      	 		 	</div>
+      	 		 	<div class="comment"><a href="">发表评论</a></div>
       	 		 </div>
       	 	</div>
       	 </div>

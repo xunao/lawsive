@@ -51,9 +51,18 @@
 #person_index_center #info #operate a{color:#336699; text-decoration:underline;}
 #person_index_center #info #from{width:410px; margin-top:10px; float:right;}
 #person_index_center #info .title{width:561px; height:28px; margin-top:20px; line-height:28px; background:#ddf0f8;}
-#person_index_center #info .title .t_l{padding-left:10px; padding-right:10px; color:#000000; font-weight:bold;}
-#person_index_center #info .title .t_r{cursor:pointer; padding-right:10px; color:#999999; float:right;}
-#person_index_center #info .title .lable{width:53px; height:25px; margin-top:3px; text-align:center; color:#336699; background:url(/images/person/lable2.jpg) no-repeat;}
+#person_index_center #info .title .t_l{padding-left:10px; padding-right:30px; color:#000000; font-weight:bold;}
+#person_index_center #info .title .t_r{cursor:pointer; padding-right:22px; color:#999999; float:right;}
+#person_index_center #info .title .lable{width:53px; height:25px; margin-top:3px; text-align:center; line-height:25px; color:#336699; background:url(/images/person/lable2.jpg) no-repeat;}
 #person_index_center #info .title .lable.select{width:54px; height:26px; margin-top:2px; background:url(/images/person/lable1.jpg) no-repeat;}
+#person_index_center #info .title .lable2{width:22px; height:25px; margin-top:3px; text-align:center; line-height:25px; color:#336699; background:url(/images/person/lable3.jpg) no-repeat;}
 #person_index_center #info .content{width:561px; margin-top:10px; color:#757575;}
 #person_index_center #info .content table{margin-left:30px;}
+#person_index_center #info .context{width:552px; margin-top:20px; padding-bottom:10px; border-bottom:1px solid #eeeeee; line-height:25px;}
+#person_index_center #info .context .c_title{width:506px; height:25px; font-size:14px; color:#000000; margin-left:23px; overflow:hidden;}
+#person_index_center #info .context .c_title a{color:#3366CC;}
+#person_index_center #info .context .day{height:25px; font-size:12px; float:right;}
+#person_index_center #info .context .day img{margin-right:5px; cursor:pointer;}
+#person_index_center #info .context .cc{width:506px; margin-left:23px; font-size:14px;}
+#person_index_center #info .context .comment{widht:506px; margin-left:23px;}
+#person_index_center #info .context .comment a{font-size:12px; color:#000000; text-decoration:underline;}
