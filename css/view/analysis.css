@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+body{width:1000px; margin: 0 auto;  line-height:16px;  font-size:14px; font-family:宋体,Arial;  background:#00121E; }
+body div{float:left;  display:inline; }
+body a{text-decoration:none; color:#666666}
+#ibody{width:1000px; background:#00121E; }
+#center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px;padding-bottom:20px; color:#666666; letter-spacing:1px; }
+#center_l{width:585px; margin:16px 0 0 16px; }
+.c_t_b{height:22px; margin-left:5px; color:#9E2F2F; background:url("/images/index/c_t_b.jpg"); }
+.c_title{width:100%; height:22px; font-weight:600; line-height:16px; ; font-size:14px; margin-bottom:10px; }
+
+#analy_top{width:100%; }
+#analy_t_t{width:100%; font-size:16px; line-height:24px; font-weight:bold; color:#003869; }
+#analy_now{width:280px; margin:20px 0;}
+.analysis{width:100%; margin-bottom:15px;}
+.analy1{width:100%; font-size:16px; line-height:18px; color:#003869;}
+.analy_b{height:73px; width:100%; margin-top:15px;}
+.analy_b img{float:left; margin-right:5px; }
+.analy2{width:195px; margin-bottom:10px; line-height:16px;}
+.analy3{width:195px; line-height:16px;}
+.more{font-size:14px; line-height:16px; float:right;}
+
+#analysis_more{width:280px; margin:20px 0; float:right;}
+.analy_m_t{width:100%; color:black; line-height:16px; font-weight:bold; margin-top:10px;}

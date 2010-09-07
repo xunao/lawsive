@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+.select1{width:120px; overflow:hidden;}
+.c_t_b{margin-left:5px;}
+#center{width:1000px; background:#ECF1FF; font-size:12px; line-height:18px; padding-bottom:20px; color:#666666;}
+#center_l{width:620px; margin:16px 0 0 0; overflow:hidden;}
+#new_trade{width:355px; margin-left:13px;}
+#new_trade .c_title{margin-left:2px;}
+#new_trade #title{width:100%; height:26px; margin:0px; margin-bottom:10px; font-size:14px; color:#13435e; line-height:26px; background:#ECF1FF;}
+#new_trade #title #time{width:66px; background:#d2e0ef; text-align:center;}
+#new_trade #title #case{width:214px; margin-left:3px; background:#d2e0ef; text-align:center;}
+#new_trade #title #money{width:69px; margin-left:3px; background:#d2e0ef; text-align:center;}
+#new_trade .content{width:100%; margin-top:5px; padding-bottom:5px;  border-bottom:1px dotted #d2d2d2; line-height:16px;}
+#new_trade .content .time{width:66px; margin-left:14px; color:#ce231f; text-align:center; overflow:hidden;}
+#new_trade .content .case{width:190px; margin-left:13px; overflow:hidden;}
+#new_trade .content .money{width:69px; margin-left:3px; text-align:center; overflow:hidden;}
+#new_trade .content .case span{color:#1a72be;}
+#new_trade .content #more{width:96%; margin-top:20px; text-align:right;}
+#new_trade .content #more a{color:#666666; text-decoration:none;}
+
+#search_trade{width:365px; margin-top:20px; margin-left:5px;}
+#search_trade .c_title{margin-left:10px;}
+#search_trade #content{width:355px; height:208px; padding-left:10px; font-size:14px; color:#666666; background:#e6ecfb; line-height:16px;}
+#search_trade #content #title{width:355px; height:15px; margin:0px; margin-top:5px; margin-bottom:10px;  font-size:12px; line-height:15px; font-weight:bold; background:none; overflow:hidden;}
+#search_trade select{margin-left:8px;}
+#search_trade .space{width:100%; height:10px;}
+#search_trade .select2{width:90px;}
+#search_trade .select3{width:180px;}
+#search_trade .select4{width:115px; margin-left:35px;}
+#search_trade button{width:61px; height:22px; margin-top:10px; border:none; color:#ffffff; text-align:center; line-height:22px; background:url(/images/trade/button_bg.gif) no-repeat;}
+
+#trade_image{width:355px; height:99px; margin-top:18px; margin-left:15px;}
+#trade_image img{width:355px; height:99px; border:0px;}
+
+#trade_ranking{width:206px;  margin-right:22px; float:right;}
+#trade_ranking #title{width:100%; height:20px; margin:0px; background:none;}
+#trade_ranking #title .select5{width:78px;}
+#trade_ranking .content_title{width:200px; height:24px; margin-top:10px; padding-left:6px; background:#d2e0ef; color:#666666; line-height:24px; font-weight:bold;}
+#trade_ranking .content_title .title_r{width:14px; height:12px; margin-top:6px; margin-right:10px; float:right;}
+#trade_ranking .context_title{width:206px; height:24px; margin-top:5px; color:#003869; text-align:center; background:#ECF1FF; line-height:24px; font-weight:bold;}
+#trade_ranking .context_title .rank{width:32px; background:#d3d3d3;}
+#trade_ranking .context_title .law{width:118px; margin-left:3px; background:#d3d3d3;}
+#trade_ranking .context_title .change{width:50px; margin-left:3px; background:#d3d3d3;}
+#trade_ranking .context{width:206px; height:26px; text-align:center; background:#ECF1FF; color:#003869; line-height:26px; overflow:hidden;}
+#trade_ranking .context .rank{width:32px; height:26px; color:#CE231F; background:#e4e8f2;}
+#trade_ranking .context .law{width:118px; height:26px; margin-top:0px; margin-left:3px; background:#e4e8f2; overflow:hidden;}
+#trade_ranking .context .change{width:50px; height:26px; margin-left:3px; background:#e4e8f2; overflow:hidden;}

@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+.c_t_b{margin-left:5px;}
+#center{width:1000px; background:#ECF1FF; font-size:12px; line-height:18px; padding-bottom:20px; color:#666666;}
+#center_l{width:610px; margin:16px 0 0 16px; overflow:hidden;}
+#regulation_search{width:350px; height:60px;}
+#regulation_search #top{height:20px; padding-left:10px; padding-right:10px; line-height:20px; background:#ECEEF5;}
+#regulation_search #top .content{width:28px; height:20px; text-align:center; color:#777777;}
+#regulation_search #top .content.select{color:#003869;}
+#regulation_search #top .vertical{width:1px; height:12px; margin:4px 10px 0 10px; background:#777777;}
+#regulation_search #bottom{width:270px; height:40px; padding-left:10px; background:#ECEEF5;}
+#regulation_search #bottom #inp{margin-top:10px;}
+#regulation_search #bottom #btn{margin-top:9px; margin-right:20px; float:right;}
+#regulation_search #bottom input{widht:203px; height:20px; border:none;}
+#regulation_search #bottom button{width:46px; height:23px; border:none; background:url(/images/regulation/search_btn.gif) no-repeat;}
+
+#regulation_update{width:280px; margin-top:10px;}
+.regulation_content{width:280px; height:26px; line-height:26px;  overflow:hidden;}
+.regulation_content .context{width:80%; height:26px; font-size:14px;  overflow:hidden;}
+.regulation_content .context a{color:#306695; text-decoration:none;}
+.regulation_content .date{width:17%; height:26px; margin-left:8px; color:#666666; overflow:hidden;}
+#regulation_update img{margin-top:5px; margin-bottom:5px; border:0px;}
+#regulation_update #more{height:26px; margin-top:10px; font-size:14px; line-height:26px; float:right;}
+#regulation_update #more a{color:#666666;}
+#regulation_read{width:280px; margin-top:10px; margin-right:25px; float:right;}
+#regulation_read img{margin-top:5px; margin-bottom:5px; border:0px;}
+#regulation_read #more{height:26px; margin-top:10px; font-size:14px; line-height:26px; float:right;}
+#regulation_read #more a{color:#666666;}
+
+#regulation_index{width:586px; margin-top:30px;}
+#regulation_index #left{width:280px; margin-top:10px;  line-height:26px;}
+#regulation_index #right{width:280px; margin-top:10px;  line-height:26px; float:right;}
+#regulation_index .title{width:280px; height:26px; font-size:14px; font-weight:bold; overflow:hidden;}
+#regulation_index a{color:#306695; text-decoration:none;}
+#regulation_index .content{width:280px; margin-top:10px; margin-bottom:10px; font-size:14px; overflow:hidden;}
+#regulation_index img{border:0px; margin-top:30px;}

@@ -29,19 +29,12 @@
 	static $s_virtual_fields = array();
 	
 	static function register($login_name,$name,$password,$email,$level,$role){
-<<<<<<< HEAD
-		
-		
-		if(!empty($login_name) and !empty($login_name) and !empty($name) and !empty($password) and !empty($email) and !empty($level) and !empty($role)){
-			if(mb_strlen($login_name)>48){return -3;}
-			elseif(mb_strlen($login_name)<6){return -4;}
-=======
 		if(mb_strlen($login_name)>48){return -3;}
-		elseif(mb_strlen($login_name)<6){return -4;}
->>>>>>> 985f0b7facc4cffc9f1e4693d14371f995792a10
 			else{
 				if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
 			}
+		if(mb_strlen($login_name)<6){return -4;}
+		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$login_name)){return -5;}
 		
 		if(mb_strlen($name)>50){return -6;}
 		
@@ -54,56 +47,59 @@
 		
 		if(mb_strlen($email)>256){return -9;}
 		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$email)){return -5;}
-		if(member::find(array('conditions' => "email='$email'"))){return -2;}
 		
-		$password = md5($password);
+		if(member::find(array('conditions' => "email='$email'"))){return -2;}
+		if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
+		
 		$db = get_db();
-		$sql = $db->execute("insert into member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
+		$password = md5($password);
+		$sql = $db->execute("insert into lawsiv.member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
 		if($sql){
 			return 1;
 			}else{
 				return -15;
 				}
 	}
-											
+	
 	static function login($login_name, $password, $expire){
+	    if(mb_strlen($login_name)>48 or mb_strlen($login_name)<6){return null;}
+	    if(mb_strlen($password)>50 or mb_strlen($password)<6){return null;}
 		$s_expire=$expire*86400;
 		$md5_password=md5($password);
-		$record=$db->query("select * from lawsive.member where password='{$md5_password}' and login_name='{$login_name}'");
+		$record=member::find(array('conditions' => "password='$md5_password' and login_name='$login_name'"));
 		if(count($record)==1){
 			$cache_name=rand_str(20);
-			@setcookie("cache_name",$cache_name,time(),'/');
+			@setcookie("cache_name",$cache_name,0,'/');
+			$db = get_db();
+			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record[0]->id}'");
 			if ($s_expire!=0){
-				@setcookie("login_name",$login_name,time()+$s_expire,'/');
+				@setcookie("email",$login_name,time()+$s_expire,'/');
 				@setcookie("password",$password,time()+$s_expire,'/');
 			}
-			return member::find(array('conditions' => "login_name='$login_name'"));
+			return $record[0];
 			
-		}else{
-			return NULL;
-		}	
+		    }else{
+				return NULL;
+			}	
 	}
 	
 	//just test
-	static function delete($param){
+	static function delete($member_id,$member_name){
 		$db = get_db();
-		if(is_numeric($param)){
-			return $db->execute("delete from member where id=$param");
-		}elseif(is_string($param)){
-			return $db->execute("delete from member where login_name='$param'");
-		}else {
-			return false;
-		}
-		
+		$sql=$db->query("select * from lawsive.member where id='{$member_id}' and login_name='{$member_name}'");
+		if($sql){
+			$db->execute("delete lawsive.member  where id='{$member_id} '");
+			return true;
+		}else return false;
 	}
 	
 	
 	//just test
 	static function current(){
-		$cache_name=$_COOKIE(cache_name);
-		$record=$db->query("select * from lawsive.member where cache_name='{$cache_name}'");
+		$cache_name = $_COOKIE[cache_name];
+	    $record=member::find(array('conditions' => "cache_name='$cache_name'"));
 		if(count($record)==1){
-			return member::find(array('conditions' => "cache_name='$cache_name'"));
+			return $record[0];
 		}else{
 			return NULL;
 			}
@@ -111,7 +107,7 @@
 	
 	//just test
 	function logout(){
-		$db->execute("update lawsive.member set cache_name=null where id='{$user->id}' ");
+		@setcookie("password",$cache_name,0,'/');
 		@setcookie("cache_name",null,0,'/');
 	}
 	
