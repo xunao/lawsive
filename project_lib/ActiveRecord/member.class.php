@@ -113,7 +113,12 @@
 	
 	//.$byid=1 $param传入为用户id，否则，传入用户名
 	function add_friend($param,$byid=1){
-		
+		if ($byid==1) {
+			$record=member::find(array('conditions' => "id='{$param}'"));
+		}else{
+			$record=member::find(array('conditions' => "name='{$param}'"));	
+		}
+		$db->execute("insert into lawsive.friend (u_id,f_id,f_name,f_login_name,created_at)value('{$this->id}','{$record[0]->id}','{$record[0]->name}','{$record[0]->login_name}',now())");	
 	}
 	
 	function delete_friend($param,$byid=1){
@@ -125,9 +130,8 @@
 	//如果不传入参数，返回所有好友，也可按用户id和用户loginname或者name获得
 	function get_friends($search){
 		if ($search) {
-			$record=member::find(array('conditions' => "id='$search' or name='$search' or login_name='$search'"));
-			return member::find(array('conditions' => "id='$search' or name='$search' or login_name='$search'"));
-		}
+			return friend::find(array('conditions' => "u_id='{$this->id}' and f_id='{$search}' or f_name='{$search}' or f_login_name='{$search}'"));
+		}else{return friend::find(array('conditions' => "u_id='{$this->id}'"));}
 	}
 		
 	}
