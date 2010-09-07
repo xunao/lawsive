@@ -42,12 +42,12 @@ $(function(){
 		var password = $("#password");
 		var time=$("#time");
 		if(checkInput(login_name,password) != false){
-		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),"time":time.val()},function(data){
-			alert(data);
-			if(data !="true"){alert('您的用户名或密码输入有误！');}else{window.location.href = "/";};
+			$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
+				if(data != true){alert('您输入的帐号密码有误！');}else{window.location.href="/";}
 			});
 		}
 	else{
+		alert('no');
 			return false;
 		}
 	});
