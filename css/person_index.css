@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+#person_index_welcome{width:561px; height:27px; margin:10px 0px 5px 15px; background:#fff5cc; line-height:27px;}
+#person_index_welcome #content{width:520px; height:27px; margin-left:9px; line-height:27px; color:#777777;}
+#person_index_welcome #close{width:14px; height:14px; margin-top:7px; margin-right:10px; cursor:pointer; background:url(/images/person/welcome_close.jpg) no-repeat; float:right;}
+#person_index_right{width:234px; height:1000px; border:1px solid #cfcfcf; border-top:none; padding-bottom:10px; background:#f3f3f3; float:right;}
+#person_index_right #title{width:212px; height:23px; margin:15px 0 15px 12px; background:#ddf0f8;}
+#person_index_right #title #t_l{width:170px; height:23px; margin-left:6px; color:#000000; line-height:23px; font-weight:bold; overflow:hidden;}
+#person_index_right #title #t_r{width:30px; height:12px; margin-top:6px; margin-right:6px; float:right;}
+#person_index_right #title #t_r #del{width:12px; height:12px; cursor:pointer; background:url(/images/person/del.gif) no-repeat;}
+#person_index_right #title #t_r #config{width:12px; height:12px; cursor:pointer; background:url(/images/person/config.gif) no-repeat; float:right;}
+#person_index_right #content{width:212px; margin-left:12px;}
+#person_index_right .pic{width:45px; height:70px; margin-top:10px; margin-left:18px; overflow:hidden;}
+#person_index_right .pic .top{width:45px; height:46px; background:url(/images/person/image_bg.jpg) no-repeat; overflow:hidden;}
+#person_index_right .pic .top img{width:39px; height:39px; margin:3px; border:none;}
+#person_index_right .pic .name{width:45px; height:14px; font-size:10px; text-align:center; line-height:14px; overflow:hidden;}
+#person_index_right .pic .name a{color:#3783B6; text-decoration:underline;}
+#person_index_right .pic .lastonline{width:45px; height:10px; font-size:8px; color:#666666; text-align:center; line-height:10px; overflow:hidden;}
+
+
+#person_index_left{width:169px; padding-bottom:10px; background:#666666;}
+#person_index_left #medal{width:125px; height:51px; margin-top:10px; margin-left:22px; background:#f7f2d2;}
+#person_index_left #medal #close{height:12px; margin-top:3px; margin-right:10px; cursor:pointer; float:right;}
+#person_index_left #medal #top{width:110px; height:15px; margin-left:5px; line-height:15px; color:#646362; overflow:hidden;}
+#person_index_left #medal #bottom{width:120px; height:20px; margin-left:2px; line-height:20px; color:#3783B6; overflow:hidden;}
+
+#person_index_left button{width:123px; height:27px; margin-top:5px; margin-left:22px; border:none; text-align:center; color:#000000; line-height:27px; background:url(/images/person/left_btn_bg.jpg) repeat-x;}
+#person_index_left .title{width:95px; height:17px; margin-top:10px; margin-left:22px; padding-top:8px; padding-left:10px; border:1px solid #cccccc; border-bottom:none; font-size:14px; color:#00446D; font-weight:bold; background:url(/images/person/left_title_bg.jpg) repeat-x;}
+#person_index_left .titlebottom{width:161px; height:1px; margin-bottom:10px; margin-left:4px; background:url(/images/person/left_title_bottom.gif) no-repeat; overflow:hidden}
+#person_index_left .content{width:113px; height:20px; margin-left:32px; font-size:14px; line-height:20px;}
+#person_index_left .content a{color:#ffffff;}
+#person_index_left .system{width:100px; height:20px; margin-top:5px; padding-left:20px; line-height:20px; margin-right:5px; font-size:14px; font-weight:bold; background:url(/images/person/alert.jpg) no-repeat 3px; text-align:right; float:right;}
+#person_index_left .system a{color:#ffffff;}
+#person_index_left .systemline{width:123px; height:3px; background:url(/images/person/left_line.gif) no-repeat; overflow:hidden; float:right;}
+#person_index_left .servertitle{width:113px; height:20px; margin-top:20px; margin-left:32px; font-size:14px; line-height:20px; font-weight:bold;}
+#person_index_left .servertitle a{color:#ffffff;}
+#person_index_left .servercontent{width:100px; height:20px; margin-left:32px; padding-left:12px; line-height:20px; background:url(/images/person/triangle.jpg) no-repeat 6px; overflow:hidden;}
+#person_index_left .servercontent a{color:#ffffff;}
+
+#person_index_center{width:561px;}
+#person_index_center #info{width:561px; margin-top:10px; margin-left:15px;}
+#person_index_center #info #pic{width:138px; height:140px; background:url(/images/person/center_pic_bg.jpg) no-repeat;}
+#person_index_center #info #pic img{width:120px; height:120px; margin:7px 0 0 9px; overflow:hidden;}
+#person_index_center #info #name{width:410px; height:18px; margin-top:7px; font-size:14px; color:#000000; font-weight:bold; line-height:18px; float:right;}
+#person_index_center #info #state{width:408px; height:73px; margin-top:10px; border:1px solid #cbcbcb; background:#f7f7f7; float:right;}
+#person_index_center #info #state input{width:394px; height:29px; margin-top:5px; margin-left:6px; border:1px solid #bcbcbc;}
+#person_index_center #info #state #content{width:300px; height:25px; margin-top:5px; margin-left:10px; line-height:25px;}
+#person_index_center #info #state #content a{color:#336699;}
+#person_index_center #info #state #btn{width:51px; height:25px; margin-top:5px; margin-right:6px; float:right;}
+#person_index_center #info #state #btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; background:url(/images/person/submit_bg.jpg) no-repeat;}
+#person_index_center #info #operate{width:138px; margin-top:5px; line-height:20px;}
+#person_index_center #info #operate a{color:#336699; text-decoration:underline;}
+#person_index_center #info #from{width:410px; margin-top:10px; float:right;}
+#person_index_center #info .title{width:561px; height:28px; margin-top:20px; line-height:28px; background:#ddf0f8;}
+#person_index_center #info .title .t_l{padding-left:10px; padding-right:30px; color:#000000; font-weight:bold;}
+#person_index_center #info .title .t_r{cursor:pointer; padding-right:22px; color:#999999; float:right;}
+#person_index_center #info .title .lable{width:53px; height:25px; margin-top:3px; text-align:center; line-height:25px; color:#336699; background:url(/images/person/lable2.jpg) no-repeat;}
+#person_index_center #info .title .lable.select{width:54px; height:26px; margin-top:2px; background:url(/images/person/lable1.jpg) no-repeat;}
+#person_index_center #info .title .lable2{width:22px; height:25px; margin-top:3px; text-align:center; line-height:25px; color:#336699; background:url(/images/person/lable3.jpg) no-repeat;}
+#person_index_center #info .content{width:561px; margin-top:10px; color:#757575;}
+#person_index_center #info .content table{margin-left:30px;}
+#person_index_center #info .context{width:552px; margin-top:20px; padding-bottom:10px; border-bottom:1px solid #eeeeee; line-height:25px;}
+#person_index_center #info .context .c_title{width:506px; height:25px; font-size:14px; color:#000000; margin-left:23px; overflow:hidden;}
+#person_index_center #info .context .c_title a{color:#3366CC;}
+#person_index_center #info .context .day{height:25px; font-size:12px; float:right;}
+#person_index_center #info .context .day img{margin-right:5px; cursor:pointer;}
+#person_index_center #info .context .cc{width:506px; margin-left:23px; font-size:14px;}
+#person_index_center #info .context .comment{widht:506px; margin-left:23px;}
+#person_index_center #info .context .comment a{font-size:12px; color:#000000; text-decoration:underline;}
