@@ -24,7 +24,7 @@
              		<div id="cp_person">于元良&nbsp;律师专访：<font>金石律师事务所</font></div>
              		<div id="keyword">关键词：个性　理想　专业</div>
              		<div id="cp_words">好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，好律师，</div>
-             		<div class="more" style="margin-right:0px; font-size:12px;"><a href="#">更多>></a></div>
+             		<div class="more" style="margin-right:0px; font-size:12px;"><a href="#">更多&gt;&gt;</a></div>
              	</div>
               <div><div class="c_title">最近人物</div><div class="line" style="width:430px;"></div><div class="turn_l"><img src="/images/c_index/cp_t_l.jpg" /></div><div class="turn_r"><img src="/images/c_index/cp_t_r.jpg" /></div></div>
              	<div class="c_info">
