@@ -111,5 +111,24 @@
 		@setcookie("cache_name",null,0,'/');
 	}
 	
+	//.$byid=1 $param传入为用户id，否则，传入用户名
+	function add_friend($param,$byid=1){
+		
+	}
+	
+	function delete_friend($param,$byid=1){
+		if ($byid==1) {
+			$db->execute("delete lawsive.friend  where f_id='{$param} and u_id='{$this->id}'");
+		}else{$db->execute("delete lawsive.friend  where f_name='{$param} and u_id='{$this->id}'");}
+	}
+	
+	//如果不传入参数，返回所有好友，也可按用户id和用户loginname或者name获得
+	function get_friends($search){
+		if ($search) {
+			$record=member::find(array('conditions' => "id='$search' or name='$search' or login_name='$search'"));
+			return member::find(array('conditions' => "id='$search' or name='$search' or login_name='$search'"));
+		}
+	}
+		
 	}
 ?>
