@@ -47,27 +47,31 @@ $(function(){
 			});
 		}
 	else{
-		alert('no');
 			return false;
 		}
 	});
 	
-	
 	$('.logout').click(function(){
-		alert('no');
 		$.post("logout.php",function(data){
 			$("#logout").html(data);
 		});
 	});
 	
-	document.onkeydown = function(c){ 
-		if($("#name1").val() == ''){
-			  button = $("#login_btn0");
-		  }else{button = $("#login_btn1");} 
-		var ev = document.all ? window.event : c;
-		  if(ev.keyCode==13 || ev.ctrlKey) {
-			button.click();
-		  }
+	document.onkeydown = function(e){
+		if($("#name").val()== undefined){
+			if($("#name1").val() == ''){
+				  button = $("#login_btn0");
+			  }else{button = $("#login_btn1");} 
+			var ev = document.all ? window.event : e;
+			  if(ev.keyCode==13 || ev.ctrlKey) {
+				button.click();
+			  }
+		}else{
+			var ev = document.all ? window.event : e;
+			  if(ev.keyCode==13 || ev.ctrlKey) {
+				$("#login_btn2").click();
+			  }
+		}
 	};
 });
 
