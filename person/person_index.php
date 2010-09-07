@@ -144,7 +144,7 @@
       	 			<div class="lable">转帖</div>
       	 			<div class="lable">状态</div>
       	 			<div class="lable">对话</div>
-      	 			<div class="lable"><img src="/images/person/flag.jpg">机构</div>
+      	 			<div class="lable"><img style="margin-top:7px;" src="/images/person/flag.jpg">机构</div>
       	 			<div class="lable2"></div>
       	 			<div class="t_r" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;"></div>
       	 		 </div>
