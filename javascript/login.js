@@ -42,9 +42,8 @@ $(function(){
 		var password = $("#password");
 		var time=$("#time");
 		if(checkInput(login_name,password) != false){
-		$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),"time":time.val()},function(data){
-			alert(data);
-			if(data !="true"){alert('您的用户名或密码输入有误！');}else{window.location.href = "/";};
+			$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
+				if(data != true){alert('您输入的帐号密码有误！');}else{window.location.href="/";}
 			});
 		}
 	else{
@@ -52,22 +51,27 @@ $(function(){
 		}
 	});
 	
-	
 	$('.logout').click(function(){
-		alert('no');
 		$.post("logout.php",function(data){
 			$("#logout").html(data);
 		});
 	});
 	
-	document.onkeydown = function(c){ 
-		if($("#name1").val() == ''){
-			  button = $("#login_btn0");
-		  }else{button = $("#login_btn1");} 
-		var ev = document.all ? window.event : c;
-		  if(ev.keyCode==13 || ev.ctrlKey) {
-			button.click();
-		  }
+	document.onkeydown = function(e){
+		if($("#name").val()== undefined){
+			if($("#name1").val() == ''){
+				  button = $("#login_btn0");
+			  }else{button = $("#login_btn1");} 
+			var ev = document.all ? window.event : e;
+			  if(ev.keyCode==13 || ev.ctrlKey) {
+				button.click();
+			  }
+		}else{
+			var ev = document.all ? window.event : e;
+			  if(ev.keyCode==13 || ev.ctrlKey) {
+				$("#login_btn2").click();
+			  }
+		}
 	};
 });
 
