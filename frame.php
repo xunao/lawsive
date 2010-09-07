@@ -1,6 +1,7 @@
 <?php	
 	define("ROOT_DIR",dirname(__FILE__));
 	define('LIB_DIR',ROOT_DIR . "/lib");
+	define('INC_DIR',ROOT_DIR ."/inc");
 	define('PROJECT_LIB_DIR', ROOT_DIR . "/project_lib");
 	define("FRAME_VERSION",'1.0');
 	include_once ROOT_DIR .'/config/config.php';

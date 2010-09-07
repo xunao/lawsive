@@ -5,7 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-		include ('./frame.php');
+		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('public','regulation');
 		js_include_tag('login');
@@ -13,7 +13,7 @@
   	?>
 <body>
       <div id="ibody">
-          <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
+          <?php include_once(ROOT_DIR.'/inc/top.php'); ?>
           <div id="center">
            <div id="center_l">
            	<div id="regulation_search">
@@ -41,7 +41,7 @@
            		</div>
            		<?php } ?>
            		<div id="more">
-           			<a href="">更多>></a>
+           			<a href="">更多&gt;&gt;</a>
            		</div>
            	</div>
            	<div id="regulation_read">
@@ -54,7 +54,7 @@
            		<?php } ?>
            		<img src="/images/regulation/image1.jpg">
            		<div id="more">
-           			<a href="">更多>></a>
+           			<a href="">更多&gt;&gt;</a>
            		</div>
            	</div>
            	<div id="regulation_index">
@@ -90,9 +90,9 @@
            		<a href=""><img src="/images/regulation/image2.jpg"></a>
            	</div>
 		   </div>
-		   <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+		   <?php include_once(ROOT_DIR.'/inc/right.php'); ?> 
           </div>
-          <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>     
+          <?php include_once(ROOT_DIR.'/inc/bottom.php'); ?>     
       </div>
 </body>
 </html>

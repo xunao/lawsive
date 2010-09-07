@@ -5,7 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-		include ('./frame.php');
+		include ('../../frame.php');
 		use_jquery_ui();
 		css_include_tag('public','trading');
 		js_include_tag('login');
@@ -13,7 +13,7 @@
   	?>
 <body>
       <div id="ibody">
-              <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
+              <?php include_once(INC_DIR.'/top.php'); ?>
               <div id="center">
               	<div id="center_l">
 	              	<div id="new_trade">
@@ -34,7 +34,7 @@
 	              			<div class=time>2010年5月</div>
 	              			<div class=case> 外资所 IPO<br>金石律师事务所  <span>王晓晓</span> 律师</div>
 	              			<div class=money>2000万</div>
-	              			<div id=more><a href="">更多>></a></div>
+	              			<div id=more><a href="">更多&gt;&gt;</a></div>
 	              		</div>
 	              	 </div>
 	              	 <div id=trade_ranking>
@@ -127,9 +127,9 @@
 	              	 </div>
 	              	 
 	             </div>
-              	 <?php include_once(dirname(__FILE__).'/inc/right.php'); ?>
+              	 <?php include_once(INC_DIR.'/right.php'); ?>
               </div>     
-            <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
+            <?php include_once(INC_DIR.'/bottom.php'); ?>       
       </div>
 </body>
 </html>
