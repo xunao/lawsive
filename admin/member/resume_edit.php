@@ -104,7 +104,7 @@
 			<?php if($resume->photo){?>
 			<img width="62" height="62" src="<?php echo $resume->photo;?>">
 			<?php }?>
-			<input type="file" name="image_src" />(请上传62×62大小的图片)
+			<input type="file" name="post[photo]" />(请上传62×62大小的图片)
 			</td>
 		</tr>
 		<tr class=btools>

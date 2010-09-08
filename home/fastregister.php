@@ -8,24 +8,21 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('login');
-		js_include_tag('login','login_auto');
+		js_include_tag('register');
   	?>
 <body>
 	<div id="ibody">
 	    <div id="left">
 		    <div id="logo"><img alt="" src="/images/login/logo.jpg"></div>
 	    	<div id="cen_l">
-		    	<div id="login">
+		    	<div id="login" style="padding-top:0px;">
+				     <div class="log_t" style="width:150px; font-size:16px;">快速注册</div>
 				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
-				     <div id="chc_box"><input type="checkbox" name="time" value="1">记住登录状态</div>
-				     <div id="login_btn2"><img src = "/images/login/login.jpg" /></div><div id="submit"><a href="#">忘记密码？</a></div>
+				     <div><div class="log_t" style="padding-bottom:5px;">复核：</div><div class="log_in"><input id="password2" type="password" name="password"/></div></div>
+				     <div id="register"><img src = "/images/login/login.jpg" /></div><div id="submit"><a href="login.php">返回登录</a></div>
 	            </div>
-	            <div id="rigister">
-	            	<div id="rig_t"><img src="/images/login/point.jpg"><font>还没有开通律氏？点这里</font></div>
-	            	<div id="rig_d"><a href="/home/fastregister.php"><font>立即注册</font></a></div>
-	            </div>
-	            <div id="rig_key"><a href="/home/fastregister.php">一键注册，同时拥有四大平台</a></div>
+	            <div id="rig_key" style="color:#ffffff;">一键注册，同时拥有四大平台</div>
 	            <div id="rig_sen">
 	            	<div id="rig_s_t"><a href="">高级注册</a></div>
 	            	<div id="rig_s_c">
