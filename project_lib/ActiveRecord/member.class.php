@@ -132,24 +132,32 @@
 	}
 	
 	//如果不传入参数，返回所有好友，也可按用户id和用户login_name或者name获得
+	/*
+	 * 如果参数为空，则获得用户所有好友
+	 * 可接收1个参数，当该参数为整数时，按好友id查询
+	 * 当参数为数组时，需指定查找字段和匹配的值，此时，改参数必须为一个数组
+	 * $user->get_friends(array('name'=>'sauger'));
+	 */
 	function get_friends(){
 		$func_num=func_num_args();
-		$fun_value=func_get_arg(0);
-		if ($func_num<=0) {
-			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}'");
-			if(count($record)==1){return $record;}else{return null;};
-		}elseif(is_numeric($fun_value)){
-			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and f_id='{$fun_value}'");
-			if(count($record)==1){return $record;}else{return null;};
-		}elseif(ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$fun_value)){
-			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and login_name='{$fun_value}'");
-			if(count($record)==1){return $record;}else{return null;};
-		}elseif (ereg("^[a-zA-Z0-9_.]+$",$fun_value)) {
-			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and name='{$fun_value}' ");
-			if(count($record)==1){return $record;}else{return null;};
-		}else {return null;}
+		$sql = "select * from lawsive.friend";
+		$conditions = array('u_id='. $this->id);
+		if($func_num >= 0){
+			$fun_value=func_get_arg(0);
+			if(is_numeric($fun_value)){
+				$conditions[] = 'f_id=' .$fun_value;
+			}elseif (is_array($fun_value)){
+				foreach ($fun_value as $key => $val){
+					if(in_array($key, array('name','login_name'))){
+						$conditions[] = "$key='$val'";
+					}
+				}
+			}
+		}
+		$sql .= ' where ' . join(' and ', $conditions);
+		$db = get_db();
+		return $db->query($sql);		
+			
+	}
 	
-	}
-		
-	}
-?>
+}
