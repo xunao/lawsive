@@ -18,7 +18,7 @@
 					$url .= "?lasturl=" .$_POST['lasturl'];
 				}
 			}else{
-				$url = $_g_admin_dir;
+				$url = $_POST['lasturl'] ? $_POST['lasturl'] :$_g_admin_dir;
 			}	
 			
 			redirect($url);			
