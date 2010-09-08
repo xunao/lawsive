@@ -1,4 +1,5 @@
-EDIT `lawsive`.`friend` if exists;CREATE  TABLE `lawsive`.`friend` (
+DROP `lawsive`.`friend` if exists;
+CREATE  TABLE `lawsive`.`friend` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `u_id` INT NOT NULL ,
   `f_id` INT NOT NULL ,
@@ -8,7 +9,5 @@ EDIT `lawsive`.`friend` if exists;CREATE  TABLE `lawsive`.`friend` (
   `f_avatar` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `u_id` (`u_id` ASC, `f_id` ASC) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = ucs2
-COMMENT = '好友';
+DEFAULT CHARACTER SET = utf8 COMMENT = '好友';
 
