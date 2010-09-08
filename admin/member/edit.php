@@ -11,7 +11,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title><?php echo $_g_sitename;?>-用户管理</title>
 	<?php
-		$id=$_GET['id'];
+		$id=intval($_GET['id']);
 		$db = get_db();	
 		$user1 = new Table('member');
 		if($id)	{
@@ -48,7 +48,7 @@
 		<tr class=tr4>
 			<td class=td1 width=15%>会员等级</td>
 			<td>
-				<select  name="level" id="level" style="width:90px" class="sau_search">
+				<select  name="level" id="level" style="width:90px">
 					<option value="1">一级</option>
 					<option value="2">二级</option>
 					<option value="3">三级</option>
@@ -62,7 +62,7 @@
 		<tr class=tr4>
 			<td class=td1 width=15%>用户类型</td>
 			<td>
-				<select name="role" id="role" style="width:110px" class="sau_search">
+				<select name="role" id="role" style="width:110px">
 					<option value="0">选择类型</option>
 					<option value="1">合伙人</option>
 					<option value="2">青年律师</option>
@@ -73,6 +73,7 @@
 					<option value="7">法务院学生</option>
 					<option value="8">律师事务所</option>
 					<option value="9">公司法务部</option>
+					<option value="10">律师</option>
 				</select>
 				<script>
 					$('#role').val('<?php echo $user->role;?>');
@@ -89,7 +90,7 @@
 			<?php if($user->avatar){?>
 			<img width="62" height="62" src="<?php echo $user->avatar;?>">
 			<?php }?>
-			<input type="file" name="image_src" />(请上传62×62大小的图片)
+			<input type="file" name="post[avatar]" />(请上传62×62大小的图片)
 			</td>
 		</tr>
 		<tr class=btools>

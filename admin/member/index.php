@@ -36,7 +36,7 @@
 		}
 		$member = new Table("member");
 		$record = $member->paginate('all',array('conditions' => join(' and ', $conditions)),12);
-		if($member === false) die('数据库执行失败');
+		if($member == false) die('数据库执行失败');
 	?>
 </head>
 <body>
@@ -74,7 +74,7 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="25%">登录名</td><td width="20%">姓名</td><td width="15%">会员等级</td><td width="20%">最后登录时间</td><td width="20%">操作</td>
+			<td width="15%">登录名</td><td width="15%">姓名</td><td width="15%">会员等级</td><td width="10%">简历状态</td><td width="10%">资料状态</td><td width="20%">最后登录时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -84,15 +84,13 @@
 			<td style="text-align:left; text-indent:12px;"><?php echo strip_tags($record[$i]->login_name);?></td>
 			<td><?php echo $record[$i]->name;?></td>
 			<td><?php $level=$record[$i]->member_level; if($level==1){echo '普通会员';}elseif($level==2){echo '二级会员';}elseif($level==3){echo '三级会员';}elseif($level==4){echo '四级会员';};?></td>
+			<td><a href="resume_edit.php?id=<?php echo $record[$i]->id;?>"><img src="/images/admin/<?php if($record[$i]->member_resume_id == '0'){echo 'btn_unapply.png';}else{echo 'btn_apply.png';}?>" border=0/></a></td>
+			<td><a href="info_edit.php?id=<?php echo $record[$i]->id;?>"><img src="/images/admin/<?php if($record[$i]->base_info_id == '0'){echo 'btn_unapply.png';}else{echo 'btn_apply.png';}?>" border=0/></a></td>
 			<td><?php echo $record[$i]->last_login_time;?></td>
-			<td>
-					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
-					<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
-					<a href="resume_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="简历"><img src="/images/admin/btn_edit.png" border="0"></a>
-					<a href="info_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="资料"><img src="/images/admin/btn_edit.png" border="0"></a>
-					<a href="level_edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="权限管理"><img src="/images/admin/btn_edit.png" border="0"></a>
-					<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="" style="width:40px;">
-				</td>
+			<td><a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
+			<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
+			<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="" style="width:40px;">
+			</td>
 		</tr>
 		<?php
 			}

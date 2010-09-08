@@ -28,7 +28,7 @@
 	 */
 	static $s_virtual_fields = array();
 	
-	static function register($login_name,$name,$password,$email,$level,$role){
+	static function register($login_name,$name,$password,$email,$level,$role,$avatar){
 		if(mb_strlen($login_name)>48){return -3;}
 			else{
 				if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
@@ -53,7 +53,7 @@
 		
 		$db = get_db();
 		$password = md5($password);
-		$sql = $db->execute("insert into lawsive.member (login_name,name,password,email,member_level,role,created_at)value('$login_name','$name','$password','$email','$level','$role',now())");
+		$sql = $db->execute("insert into lawsive.member (login_name,name,password,email,member_level,role,created_at,avatar)value('$login_name','$name','$password','$email','$level','$role',now(),'$avatar')");
 		if($sql){
 			return 1;
 			}else{
