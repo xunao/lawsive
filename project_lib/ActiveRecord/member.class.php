@@ -118,21 +118,37 @@
 		}else{
 			$record=member::find(array('conditions' => "name='{$param}'"));	
 		}
-		$db->execute("insert into lawsive.friend (u_id,f_id,created_at,f_name,f_login_name)values('{$this->id}','{$record[0]->id}',now(),'{$record[0]->name}','{$record[0]->login_name}')");	
+		if(count($record)==1){
+		$db->execute("insert into lawsive.friend (u_id,f_id,created_at,f_name,f_login_name)values('{$this->id}','{$record[0]->id}',now(),'{$record[0]->name}','{$record[0]->login_name}')");
+		return true;
+		}else{return false;}
 	}
 	
 	//$byid=1 $param传入为用户id，否则，传入用户名
 	function delete_friend($param,$byid){
 		if ($byid==1) {
-			$db->execute("delete from lawsive.friend  where f_id='{$param}' and u_id='{$this->id}'");
+			  $db->execute("delete from lawsive.friend  where f_id='{$param}' and u_id='{$this->id}'");
 		}else{$db->execute("delete from lawsive.friend  where f_name='{$param}' and u_id='{$this->id}'");}
 	}
 	
-	//如果不传入参数，返回所有好友，也可按用户id和用户loginname或者name获得
-	function get_friends($search){
-		if ($search) {
-			return friend::find(array('conditions' => "u_id='{$this->id}' and f_id='{$search}' or f_name='{$search}' or f_login_name='{$search}'"));
-		}else{return friend::find(array('conditions' => "u_id='{$this->id}'"));}
+	//如果不传入参数，返回所有好友，也可按用户id和用户login_name或者name获得
+	function get_friends(){
+		$func_num=func_num_args();
+		$fun_value=func_get_arg(0);
+		if ($func_num<=0) {
+			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}'");
+			if(count($record)==1){return $record;}else{return null;};
+		}elseif(is_numeric($fun_value)){
+			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and f_id='{$fun_value}'");
+			if(count($record)==1){return $record;}else{return null;};
+		}elseif(ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$fun_value)){
+			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and login_name='{$fun_value}'");
+			if(count($record)==1){return $record;}else{return null;};
+		}elseif (ereg("^[a-zA-Z0-9_.]+$",$fun_value)) {
+			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and name='{$fun_value}' ");
+			if(count($record)==1){return $record;}else{return null;};
+		}else {return null;}
+	
 	}
 		
 	}

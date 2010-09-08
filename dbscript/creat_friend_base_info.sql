@@ -1,5 +1,4 @@
-DROP `lawsive`.`friend` if exists;
-CREATE  TABLE `lawsive`.`friend` (
+drop `lawsive`.`friend` if exists;CREATE  TABLE `lawsive`.`friend` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `u_id` INT NOT NULL ,
   `f_id` INT NOT NULL ,
