@@ -148,7 +148,6 @@
 			$record=$db->query("select * from lawsive.friend  where u_id='{$this->id}' and name='{$fun_value}' ");
 			if(count($record)==1){return $record;}else{return null;};
 		}else {return null;}
-	
 	}
 		
 	}
