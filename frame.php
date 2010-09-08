@@ -405,6 +405,7 @@ function judge_admin(){
 	global $g_admin;
 	$g_admin = AdminUser::current_user();
 	if(!$g_admin) {
-		require_login();
+		redirect_login();
+		exit();
 	}
 }
