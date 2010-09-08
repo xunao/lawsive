@@ -41,7 +41,19 @@ $(function(){
 		}
 	});
 	
+	$('.del').click(function(e){
+		e.preventDefault();
+		var id = $(this).parentsUntil('tr').parent().attr('id');
+		$.post('/admin/news/ajax.post.php',{'op':'del','id':id},function(data){
+			if(data){
+				alert(data);
+			}
+			window.location.reload();
+		});
+	});
+	
 	$('.static_news').click(function(e){
+		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
 		$.post('/admin/static/?type=news&id=' + $(this).attr('href'),{},function(data){
 			alert(data);
@@ -49,15 +61,23 @@ $(function(){
 	});
 	
 	$('.publish_news').click(function(e){
+		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
-		$.post('/admin/news/newscp.php?operation=publish&news_id='+ $(this).attr('name'),function(data){
-			location.reload();
+		$.post('/admin/news/ajax.post.php',{'op':'publish','id':id},function(data){
+			if(data){
+				alert(data);
+			}
+			window.location.reload();
 		});
 	});
 	$('.unpublish_news').click(function(e){
+		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
-		$.post('/admin/news/newscp.php?operation=unpublish&news_id='+ $(this).attr('name'),function(data){
-			location.reload();
+		$.post('/admin/news/ajax.post.php',{'op':'unpublish','id':id},function(data){
+			if(data){
+				alert(data);
+			}
+			window.location.reload();
 		});
 	});
 });

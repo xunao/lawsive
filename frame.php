@@ -399,3 +399,12 @@ function write_log($msg){
 function admin_log($msg){
 	$db = get_db();
 }
+
+//后台管理页面需要调用，判断是否登录
+function judge_admin(){
+	global $g_admin;
+	$g_admin = AdminUser::current_user();
+	if(!$g_admin) {
+		require_login();
+	}
+}
