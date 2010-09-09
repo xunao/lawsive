@@ -19,7 +19,7 @@ body a{text-decoration:none; color:#666666}
 #cont_i img{float:left;margin:0 10px 10px 0;}
 #cont_i font{font-size:14px; line-height:18px;}
 .cont_i_f{width:270px; float:left; margin:0 0 20px 0;}
-.cont_b1{width:100%; margin-bottom:10px; font-weight:bold; color:#666666;}
+.cont_b1{width:100%; margin:10px 0; font-weight:bold; color:#666666;}
 .cont_b2{width:100%; margin-bottom:10px; font-weight:bold; color:#0088FF;}
 .cont_b2 a{font-size:14px; line-height:18px; font-weight:bold; color:#0088FF;}
 .cont_b3{width:100%; margin:0 0 10px 10px; font-size:12px; font-weight:bold; color:#A7A7A7;}
@@ -46,8 +46,8 @@ body a{text-decoration:none; color:#666666}
 #com_l_b a{color:#4781AA;}
 
 #share{width:585px; margin-top:5px;}
-.share_l{width:90px; margin:0 13px; }
-.share_t {height:16px; margin:5px 0;}
+.share_l{width:92px; height:52px; margin:0 12px; }
+.share_t {height:16px; width:92px; margin:5px 0;}
 .share_t img{margin:1px 5px 0 0; float:left;}
 #authorize{width:585px; margin-top:5px;}
 
