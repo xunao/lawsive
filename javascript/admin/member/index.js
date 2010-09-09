@@ -26,7 +26,6 @@ $(function(){
 		}
 		else{
 		$.post("edit.post.php",{'post_type':'del','id':$(this).attr('name')},function(data){
-			alert("删除完毕！");
 			window.location.href="index.php";
 			});
 		}
