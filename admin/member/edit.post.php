@@ -47,10 +47,14 @@
 				}
 			}else{
 				$member->update_file_attributes('post');
-				$avatar=$member->id;
+				$avatar = $member->avatar;
 				$result = member::register($login_name, $name, $password, $email, $level, $role,$avatar);
 				if($result != '1'){
-				alert($result);}
+					if($result == '-1'||$result == '-2'){alert('用户名或邮箱已被占用');}
+					if($result == '-5'){alert('用户名或邮箱地址格式错误');}
+					if($result == '-3'||$result == '-4'||$result == '-7'||$result == '-8'){alert('用户名或邮箱地址长度错误');}
+					if($result == '-6'){alert('姓名太长了');}
+				}
 				else{
 					alert('注册成功!');}
 			}

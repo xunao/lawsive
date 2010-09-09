@@ -33,7 +33,7 @@ $(function(){
 	});
 	$("#birthday").datepicker(
 			{
-				 yearRange: 'c-70:c+0',
+				maxDate:'-18y',
 				changeMonth: true,
 				changeYear: true,
 				monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
@@ -42,4 +42,12 @@ $(function(){
 				dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 				dateFormat: 'yy-mm-dd'
 			});
+	$("#add_edu").click(function(){
+	var edu_count =	$("#edu_count").val();
+	var url = new Array();	
+	url.push('id=' + $('#id').val());
+	url.push('edu_count=' + edu_count);
+	url = "?" + url.join('&');
+	window.location.href=url;
+	});
 });
