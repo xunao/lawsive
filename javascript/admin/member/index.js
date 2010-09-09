@@ -44,6 +44,6 @@ $(function(){
 			});
 	$("#add_edu").click(function(e){
 		e.parentDefult();
-		parent.$.fn.colorbox({'href':''});
+		parent.$.fn.colorbox({'href':'/admin.php'});
 	});
 });
