@@ -18,6 +18,7 @@
 		css_include_tag('admin/index','colorbox');
 		use_jquery();
 		use_jquery_ui();
+		js_include_tag('jquery.colorbox');
   ?>
 </head>
 <body style="background:url(/images/admin/bg.jpg);">
