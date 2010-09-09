@@ -84,8 +84,9 @@
 			<td style="text-align:left; text-indent:12px;"><?php echo strip_tags($record[$i]->login_name);?></td>
 			<td><?php echo $record[$i]->name;?></td>
 			<td><?php $level=$record[$i]->member_level; if($level==1){echo '普通会员';}elseif($level==2){echo '二级会员';}elseif($level==3){echo '三级会员';}elseif($level==4){echo '四级会员';};?></td>
-			<td><a href="resume_edit.php?id=<?php echo $record[$i]->id;?>"><img src="/images/admin/<?php if($record[$i]->member_resume_id == '0'){echo 'btn_unapply.png';}else{echo 'btn_apply.png';}?>" border=0/></a></td>
-			<td><a href="info_edit.php?id=<?php echo $record[$i]->id;?>"><img src="/images/admin/<?php if($record[$i]->base_info_id == '0'){echo 'btn_unapply.png';}else{echo 'btn_apply.png';}?>" border=0/></a></td>
+			
+			<td><?php if($record[$i]->member_resume_id == '0'){echo '无';}else{echo "<a href='edit.php?id=".$record[$i]->id."'>编辑<a>";}?></td>
+			<td><?php if($record[$i]->base_info_id == '0'){echo '无';}else{echo "<a href='edit.php?id=".$record[$i]->id."'>编辑<a>";}?></td>
 			<td><?php echo $record[$i]->last_login_time;?></td>
 			<td><a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
 			<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
