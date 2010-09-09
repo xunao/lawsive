@@ -42,8 +42,22 @@ $(function(){
 				dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 				dateFormat: 'yy-mm-dd'
 			});
-	$("#add_edu").click(function(e){
-		e.parentDefult();
-		parent.$.fn.colorbox({'href':'/admin.php'});
+	$("#edu_edit").click(function(e){
+		e.preventDefault();
+		parent.$.fn.colorbox({'href':'/admin/member/education_edit.php?id=' +$('#id').val()+ ''});
+	});
+	$("#job_edit").click(function(e){
+		e.preventDefault();
+		parent.$.fn.colorbox({'href':'/admin/member/job_edit.php?id=' +$('#id').val()+ ''});
+	});
+	$("#sub_j").click(function(){
+		$.post('/admin/member/job_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val()},function(data){
+			$('#result').html(data);
+		});
+	});
+	$("#sub_e").click(function(){
+		$.post('/admin/member/education_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val()},function(data){
+			$('#result').html(data);
+		});
 	});
 });
