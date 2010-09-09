@@ -19,8 +19,8 @@
           		<div id="left_title">
           			<div id="l_t1">2010年09月07日 &nbsp 15:32 &nbsp PM</div>
           			<div id="l_t2">中国工业企业“西进”</div>
-          			<div id="l_t3">作者：英国《金融时报》&nbsp <font color="#086CC4">彼得•马什</font></div>
-          			<div id="l_t4">字号 背景 </div><div id="l_t5">收藏 电邮 打印 评论<font color="#9E2F2F">[1条] 英文 对照</font></div>
+          			<div id="l_t3">作者：英国《金融时报》&nbsp <a href=""><font color="#086CC4">彼得•马什</font></a></div>
+          			<div id="l_t4">字号 &nbsp &nbsp &nbsp &nbsp &nbsp 背景 </div><div id="l_t5">收藏 电邮 打印 评论<a href=""><font color="#9E2F2F">[1条]</font></a>&nbsp &nbsp<a href=""><font color="#9E2F2F">英文</font></a>&nbsp &nbsp<a href=""><font color="#9E2F2F">对照</font></a></div>
           		</div>
           		<div id="content">
           			<div class="cont">在英国兰开夏郡(Lancashire)罗奇代尔市(Rochdale)一座巨穴般的工厂里，一群工人正在对一批高科技机床进行最后加工，这些机床用于为美军使用的重炮制造关键部件。半小时车程之外，西约克郡(West Yorkshire)哈利法克斯市(Halifax)的另一家工厂里，另一个工程小组正在组装用于石油、筑路和航天行业的大型机械。</div>
@@ -46,22 +46,22 @@
           			<div class="cont">“十年前，（涉及中国企业）的此类交易纯粹是为了获取技术知识，但如今，另一个同样重要的目的，是为中国企业提供更多西方视角。”</div>
           			<div class="cont">译者/何黎</div>
           			<div class="cont_b1">彼得•马什上一篇文章：</div>
-          			<div class="cont_b2">重庆机电拟将英国子公司在伦敦上市 <font class="cont_b3">2010-09-07</font></div>
+          			<div class="cont_b2"><a href="">重庆机电拟将英国子公司在伦敦上市</a> <font class="cont_b3">2010-09-07</font></div>
           			<div class="cont_b1">您可能感兴趣的文章：</div>
-          			<div class="cont_b2">中国国资委应更进一步 <font class="cont_b3">2010-08-26</font></div>
-          			<div class="cont_b2">中国企业进入德国 <font class="cont_b3">2010-08-13</font></div>
-          			<div class="cont_b2">后危机时代中国企业面临的战略转变 <font class="cont_b3">2010-08-12</font></div>
-          			<div class="cont_b2"><font class="cont_b4">本文涉及话题：</font>工业 &nbsp 中国企业</div>
+          			<div class="cont_b2"><a href="">中国国资委应更进一步 </a><font class="cont_b3">2010-08-26</font></div>
+          			<div class="cont_b2"><a href="">中国企业进入德国</a> <font class="cont_b3">2010-08-13</font></div>
+          			<div class="cont_b2"><a href="">后危机时代中国企业面临的战略转变 </a><font class="cont_b3">2010-08-12</font></div>
+          			<div class="cont_b2"><font class="cont_b4">本文涉及话题：</font><a href="">工业</a> &nbsp <a href="">中国企业</a></div>
           		</div>
           		<div id="bee_ad"><a href=""><img alt="" src="/images/news/bee_ad.jpg" border="0"></a></div>
           		<div id="comment">
           			 <div class="c_title" ><div class="c_t_n" ><font>读者评论</font><div class="c_t_b" style="width:510px;"></div></div></div>
           			 <div class="comment1"><img alt="" src="/images/news/comment.jpg">评论只代表会员个人观点，不代表律氏中文网的观点</div>
-          			 <div id="comment2"><font color="#000000">排序：</font><select id="comment_order"><option value="0">时间倒序</option><option value="1">时间顺序</option></select><font color="#0088FF">&nbsp 评论总数 &nbsp </font><font color="#A84749">[ 1 条 ]</font></div>
+          			 <div id="comment2"><font color="#000000">排序：</font><select id="comment_order"><option value="0">时间倒序</option><option value="1">时间顺序</option></select><font color="#0088FF">&nbsp 评论总数 &nbsp </font><a href=""><font color="#A84749">[ 1 条 ]</font></a></div>
           			 <div class="comment1">2010-09-07 16:33:42</div>
-          			 <div id="comment3"><font color="#0088FF">wjsdxtd</font>&nbsp 来自上海市徐汇区</div>
+          			 <div id="comment3"><a href=""><font color="#0088FF">wjsdxtd</font></a>&nbsp 来自上海市徐汇区</div>
           			 <div id="comment4">钓鱼岛是中国领土，中国渔船有权在附近海域作业。</div>
-          			 <div id="comment5">转贴 &nbsp 回复 &nbsp 支持<font color="#000000">( 0 )</font> &nbsp 反对<font color="#000000">( 0 )</font></div>
+          			 <div id="comment5"><a href="">转贴</a> &nbsp <a href="">回复</a> &nbsp 支持<a href=""><font color="#000000">( 0 )</font></a> &nbsp 反对<a href=""><font color="#000000">( 0 )</font></a></div>
           			 <div id="comment6"><font color="#000000">[</font>查看所有评论 &nbsp<font color="#A84749">(  1  )</font><font color="#000000">&nbsp ]</font></div>
           		</div>
           		<div id="comment_login">
@@ -69,11 +69,11 @@
           			<div id="com_l_b"><button>会员登录</button><a href=""> &nbsp 免费注册</a></div>
           		</div>
           		<div id="share">
-          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg">新浪微博</div><div class="share_t"><img src="/images/news/logo/qq.jpg">QQ空间</div></div>
-          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/douban.jpg">豆瓣网</div><div class="share_t"><img src="/images/news/logo/sohu.jpg">搜狐微博</div></div>
-          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/apple.jpg">鲜果网</div><div class="share_t"><img src="/images/news/logo/twitter.jpg">Twitter</div></div>
-          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/renren.jpg">人人网</div><div class="share_t"><img src="/images/news/logo/google.jpg">Google</div></div>
-          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/happy.jpg">开心网</div><div class="share_t"><img src="/images/news/logo/facebook.jpg">Facebook</div></div>
+          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
+          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/douban.jpg"><a href="">豆瓣网</a></div><div class="share_t"><img src="/images/news/logo/sohu.jpg"><a href="">搜狐微博</a></div></div>
+          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/apple.jpg"><a href="">鲜果网</a></div><div class="share_t"><img src="/images/news/logo/twitter.jpg"><a href="">Twitter</a></div></div>
+          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/renren.jpg"><a href="">人人网</a></div><div class="share_t"><img src="/images/news/logo/google.jpg"><a href="">Google</a></div></div>
+          			<div class="share_l"><div class="share_t"><img src="/images/news/logo/happy.jpg"><a href="">开心网</a></div><div class="share_t"><img src="/images/news/logo/facebook.jpg"><a href="">Facebook</a></div></div>
           		</div>
           		<div id="authorize">未经英国《金融时报》书面许可，对于英国《金融时报》拥有版权和/或其他知识产权的任何内容，任何人不得复制、转载、摘编或在非FT中文网（或：英国《金融时报》中文网）所属的服务器上做镜像或以其他任何方式进行使用。已经英国《金融时报》授权使用作品的，应在授权范围内使用。</div>
           	</div>
@@ -90,16 +90,16 @@
           		 	   <div id="news_l_h">十大热门文章</div>
                        <div id="law_h"><div ><a href="" >一天</a></div><div><a href="">一周</a></div><div><a href="">一月</a></div><div><a href="">视频</a></div></div>
                        <div id="law_tt" >
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">1</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">2</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">3</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">4</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">5</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">6</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">7</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">8</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">9</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
-                            <div class="lawyer2" style="border:0px;"><div class="lawyer_c" style="margin-top:2px;">10</div><div class="lawyer_p">紫金矿山回复离开房间封口机看风景看开始接受卡</div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">1</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">2</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">3</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">4</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">5</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">6</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">7</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">8</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2"><div class="lawyer_c" style="margin-top:2px;">9</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
+                            <div class="lawyer2" style="border:0px;"><div class="lawyer_c" style="margin-top:2px;">10</div><div class="lawyer_p"><a href="">紫金矿山回复离开房间封口机看风景看开始接受卡</a></div></div>
                        </div>
                        <div id="lawyer_more"><a href="">更多排行榜>></a></div>
                        <div id="rss"><form action="" method="post"><div id="rss_in"><img src="/images/index/a.jpg"><input type="text" name="email" value="输入您的接收邮件"><a href=""><img id="rss_p" src="/images/news/rss_q.jpg" border="0"></a></div></form></div>
