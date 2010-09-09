@@ -42,12 +42,8 @@ $(function(){
 				dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 				dateFormat: 'yy-mm-dd'
 			});
-	$("#add_edu").click(function(){
-	var edu_count =	$("#edu_count").val();
-	var url = new Array();	
-	url.push('id=' + $('#id').val());
-	url.push('edu_count=' + edu_count);
-	url = "?" + url.join('&');
-	window.location.href=url;
+	$("#add_edu").click(function(e){
+		e.parentDefult();
+		parent.$.fn.colorbox({'href':''});
 	});
 });
