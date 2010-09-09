@@ -13,7 +13,6 @@
 	<title><?php echo $_g_sitename;?>-用户管理</title>
 	<?php
 		$id=$_GET['id'];
-		$edu_count=$_GET['edu_count'];
 		$db = get_db();	
 		$user1 = new Table('member');
 		if($id)	{
