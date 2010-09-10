@@ -20,7 +20,7 @@
 				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
 				     <div><div class="log_t" style="padding-bottom:5px;">复核：</div><div class="log_in"><input id="password2" type="password" name="password"/></div></div>
-				     <div id="register"><img src = "/images/login/login.jpg" /></div><div id="submit"><a href="login.php">返回登录</a></div>
+				     <div id="register"><img src = "/images/login/regist.jpg" /></div><div id="submit"><a href="login.php">返回登录</a></div>
 	            </div>
 	            <div id="rig_key" style="color:#ffffff;">一键注册，同时拥有四大平台</div>
 	            <div id="rig_sen">
