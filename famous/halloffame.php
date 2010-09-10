@@ -106,14 +106,14 @@
              </div>
              <div id="center_r">
               <?php 
-                include(dirname(__FILE__).'/inc/right/right_column.php');
-				include(dirname(__FILE__).'/inc/right/right_search.php');
-				include(dirname(__FILE__).'/inc/right/right_add.php');
-				include(dirname(__FILE__).'/inc/right/right_today.php');
-				include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
-				include(dirname(__FILE__).'/inc/right/right_hot.php');
-				include(dirname(__FILE__).'/inc/right/right_rss.php');
-				include(dirname(__FILE__).'/inc/right/right_news.php');
+                include(ROOT_DIR.'/inc/right/right_column.php');
+				include(ROOT_DIR.'/inc/right/right_search.php');
+				include(ROOT_DIR.'/inc/right/right_add.php');
+				include(ROOT_DIR.'/inc/right/right_today.php');
+				include(ROOT_DIR.'/inc/right/right_cr_ad.php');
+				include(ROOT_DIR.'/inc/right/right_hot.php');
+				include(ROOT_DIR.'/inc/right/right_rss.php');
+				include(ROOT_DIR.'/inc/right/right_news.php');
               ?>
               </div>
              </div>
