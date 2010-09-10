@@ -159,8 +159,13 @@
 		$sql .= ' where ' . join(' and ', $conditions);
 		$db = get_db();
 		return $db->query($sql);		
-			
-
 	}
-	
+	function get_message($uid,$status=-1){
+		if($status != -1){
+		$sql = "select * from lawsive.message where status ='{$status}' id = '{$uid}'";
+		}else{
+		$sql = "select * from lawsive.message where id = '{$uid}'";
+		}
+		return count($sql);
+	}
 }
