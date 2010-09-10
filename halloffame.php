@@ -104,7 +104,18 @@
 	            	  </div>
 	            	  <div class="h_intr">我们很有钱！</div>
              </div>
-                       <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+             <div id="center_r">
+              <?php 
+                include(dirname(__FILE__).'/inc/right/right_column.php');
+				include(dirname(__FILE__).'/inc/right/right_search.php');
+				include(dirname(__FILE__).'/inc/right/right_add.php');
+				include(dirname(__FILE__).'/inc/right/right_today.php');
+				include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
+				include(dirname(__FILE__).'/inc/right/right_hot.php');
+				include(dirname(__FILE__).'/inc/right/right_rss.php');
+				include(dirname(__FILE__).'/inc/right/right_news.php');
+              ?>
+              </div>
              </div>
             <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
       </div>

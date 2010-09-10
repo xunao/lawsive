@@ -67,7 +67,20 @@
                             </div>
                             <div id="discuss"><img src="/images/view/discuss.jpg"></div>
                        </div>
-                       <?php include_once(dirname(__FILE__).'/../inc/right.php'); ?> 
+                       <div id="center_r">
+                       	<?php 
+                       		include('/inc/right/right_expert.php');
+							include('/inc/right/right_rss.php');
+							include('/inc/right/right_meeting.php');
+							include('/inc/right/right_bussiness.php');
+							include('/inc/right/right_job.php');
+							include('/inc/right/right_cr_ad.php');
+							include('/inc/right/right_lawyer.php');
+							include('/inc/right/right_add.php');
+							include('/inc/right/right_rank.php');
+							include('/inc/right/right_add.php');
+                       	?>
+                       </div>
              </div>
              <div id="logout"></div>
             <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>       

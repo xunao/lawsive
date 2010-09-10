@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>律氏中文网-人才库</title>
+<title>律氏中文网-调研报告</title>
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
@@ -48,7 +48,17 @@
                        			<div class="more_big"><a href="">更多>></a></div><div><img src="/images/view/research_ad.jpg"></div>
                        		</div>
                        </div>
-                       <?php include_once(dirname(__FILE__).'/../inc/right.php'); ?> 
+                       <div id="center_r">
+                       	<?php 
+                       		include('../inc/right/right_column.php');
+							include('../inc/right/right_tab.php');
+							include('../inc/right/right_expert.php');
+							include('../inc/right/right_cr_ad.php');
+							include('../inc/right/right_hot.php');
+							include('../inc/right/right_rss.php');
+							include('../inc/right/right_news.php');
+                       	?>
+                       </div> 
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>
                        
              </div>
