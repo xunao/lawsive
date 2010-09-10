@@ -19,7 +19,7 @@
                      <div id="title_b">
                              <div id="logo"><a href=""><img src="/images/index/logo_lawsive.jpg" border="0"></a></div>
                              <div id="people">
-	                                 <div id="people_t"><div>>人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
+	                                 <div id="people_t"><div>&gt;人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
 	                                 <div id="people_j"><div id="people_j_t">日本地产商觊觎中国市场</div><a href=""><font>他们认为，自己在经验和声誉上具有相对的优势，他们认为，自己在经验和声誉上具有</font></a></div>
 	                                 <div id="people_a"><a href=""><img src="/images/index/jp_ad.jpg" border="0"></a></div>
                               </div>
