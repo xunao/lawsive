@@ -21,9 +21,10 @@
 		if($resume_id != '0'){
 		$user2 = new Table('member_resume');
 		$resume = $user2->find($resume_id);
+		$db = get_db();	
 		$edu = $db->query("select * from lawsive.member_education_history where member_id = '$id'");
-		$job = $db->query("select * from lawsive.member_job_history where member_id = '$id'");
 		$nume = count($edu);
+		$job = $db->query("select * from lawsive.member_job_history where member_id = '$id'");
 		$numj = count($job);
 		}else{
 			alert('没有简历信息！');
@@ -65,68 +66,24 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>教育经历</td>
-			<td><div id="edu_edit" style="width:10%;"><a href="">添加教育经历</a></div></td>
+			<td><div id="edu_add" style="width:10%;"><a href="">添加教育经历</a></div></td>
 		</tr>
 		<?php for($i = 0; $i<$nume; $i++){?>
 		<tr class=tr4>
 			<td class=td1 width=15%>学历档案<?php echo $i+1;?>#</td>
-			<td></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>学院</td>
-			<td><input type="text" name="post[college]" value="<?php echo $edu[$i]->college;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>起始时间</td>
-			<td><input type="text" name="post[start_date]" value="<?php echo $edu[$i]->start_date;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>终止时间</td>
-			<td><input type="text" name="post[end_date]" value="<?php echo $edu[$i]->end_date;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>备注</td>
-			<td ><textarea style="width:50%" name="post[description]" class="required"><?php echo $edu[$i]->description;?></textarea></td>
+			<td><div style="width:80%;" >从<?php echo $edu[$i]->start_date;?>到<?php echo $edu[$i]->end_date;?>在<?php echo $edu[$i]->college;?>学习</div><div class="edu_edit" name="<?php echo $edu[$i]->id;?>" value="<?php echo $i+1;?>" style="width:10%;"><a href="">编辑详情</a></div></td>
 		</tr>
 		<?php }?>
 		<tr class=tr4>
-			<td class=td1 width=15%></td>
-			<td></td>
-		</tr>
-		<tr class=tr4>
 			<td class=td1 width=15%>工作经历</td>
-			<td><div id="job_edit" style="width:10%;"><a href="">添加工作经历</a></div></td>
+			<td><div id="job_add" style="width:10%;"><a href="">添加工作经历</a></div></td>
 		</tr>
 		<?php for($i = 0; $i<$numj; $i++){?>
 		<tr class=tr4>
 			<td class=td1 width=15%>工作档案<?php echo $i+1;?>#</td>
-			<td></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>公司</td>
-			<td><input type="text" name="post[company]" value="<?php echo $job[$i]->company;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>职务</td>
-			<td><input type="text" name="post[title]" value="<?php echo $job[$i]->title;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>起始时间</td>
-			<td><input type="text" name="post[start_date]" value="<?php echo $job[$i]->start_date;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>终止时间</td>
-			<td><input type="text" name="post[end_date]" value="<?php echo $job[$i]->end_date;?>" class="required"></td>
-		</tr>
-		<tr class=tr4>
-			<td class=td1 width=15%>备注</td>
-			<td ><textarea style="width:50%" name="post[description]" class="required"><?php echo $job[$i]->description;?></textarea></td>
+			<td><div style="width:80%;" >从<?php echo $job[$i]->start_date;?>到<?php echo $job[$i]->end_date;?>在<?php echo $job[$i]->company;?>担任<?php echo $job[$i]->title;?></div><div class="job_edit" name="<?php echo $job[$i]->id; ?>" value="<?php echo $i+1;?>" style="width:10%;"><a href="">编辑详情</a></div></td>
 		</tr>
 		<?php }?>
-		<tr class=tr4>
-			<td class=td1 width=15%></td>
-			<td></td>
-		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>专业执照</td>
 			<td><input type="text" name="post[license]" value="<?php echo $resume->license;?>" class="required"></td>

@@ -41,21 +41,29 @@ $(function(){
 				dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 				dateFormat: 'yy-mm-dd'
 			});
-	$("#edu_edit").click(function(e){
+	$(".edu_edit").click(function(e){
 		e.preventDefault();
-		parent.$.fn.colorbox({'href':'/admin/member/education_edit.php?id=' +$('#id').val()+ ''});
+		parent.$.fn.colorbox({'href':'/admin/member/education_edit.php?id=' +$('#id').val()+ '&type=edit&e_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
 	});
-	$("#job_edit").click(function(e){
+	$("#edu_add").click(function(e){
 		e.preventDefault();
-		parent.$.fn.colorbox({'href':'/admin/member/job_edit.php?id=' +$('#id').val()+ ''});
+		parent.$.fn.colorbox({'href':'/admin/member/education_edit.php?id=' +$('#id').val()+ '&type=add'});
+	});
+	$(".job_edit").click(function(e){
+		e.preventDefault();
+		parent.$.fn.colorbox({'href':'/admin/member/job_edit.php?id=' +$('#id').val()+'&type=edit&j_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
+	});
+	$("#job_add").click(function(e){
+		e.preventDefault();
+		parent.$.fn.colorbox({'href':'/admin/member/job_edit.php?id=' +$('#id').val()+ '&type=add'});
 	});
 	$("#sub_j").click(function(){
-		$.post('/admin/member/job_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val()},function(data){
+		$.post('/admin/member/job_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#j_id').val()},function(data){
 			$('#result').html(data);
 		});
 	});
 	$("#sub_e").click(function(){
-		$.post('/admin/member/education_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val()},function(data){
+		$.post('/admin/member/education_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#e_id').val()},function(data){
 			$('#result').html(data);
 		});
 	});
