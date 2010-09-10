@@ -62,7 +62,7 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>last name</td>
-			<td width=85%><input type="text" name="post[middle_name]" value="<?php echo $info->last_name;?>" class="required"></td>
+			<td width=85%><input type="text" name="post[last_name]" value="<?php echo $info->last_name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>律师事务所</td>

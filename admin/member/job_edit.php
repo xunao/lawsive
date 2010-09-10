@@ -80,7 +80,7 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>备注</td>
-			<td ><textarea id="description" style="width:50%" name="post[description]" class="required"><?php echo $job->description;?></textarea></td>
+			<td ><textarea id="description" style="width:80%" name="post[description]" class="required"><?php echo $job->description;?></textarea></td>
 		</tr>
 		<tr class=btools>
 			<td colspan="10">
