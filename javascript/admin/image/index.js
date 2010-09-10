@@ -27,7 +27,7 @@ $(function(){
 			}
 		}
 		
-		$('#search_category').val(category_id);
+	$('#search_category').val(category_id);
 		search_image();
 	});
 	

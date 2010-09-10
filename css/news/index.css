@@ -1,0 +1,73 @@
+@CHARSET "UTF-8"; 
+body{width:1000px; margin: 0 auto;  line-height:16px;  font-size:14px; font-family:宋体,Arial; color:#000000; background:#00121E; }
+body div{display:inline; }
+body a{text-decoration:none; color:#666666}
+#ibody{width:1000px; background:#00121E; }
+
+#center{width:1000px; background:#ECF1FF; padding-bottom:20px; color:#666666;}
+#left{width:610px; margin:25px 0 75px 20px; border-right:1px solid #CED7DF; overflow:hidden; float:left;}
+#right{width:355px; margin:25px 0 0 0px;  overflow:hidden; float:left;}
+#left_title{width:585px; }
+#l_t1{width:100%; line-height:18px; color:#9E2F2F;}
+#l_t2{width:100%; margin:20px 0; font-size:16px; line-height:18px; font-weight:bold; color:#010101;}
+#l_t3{width:100%; line-height:18px;}
+#l_t4{width:40%; margin:15px 0 20px 0; font-size:12px; line-height:18px; text-align:left; float:left;}
+#l_t5{width:50%; margin:15px 0 20px 0; font-size:12px; line-height:18px; text-align:right; float:right;}
+#content{width:585px; color:#000000; font-size:14px; line-height:18px;}
+.cont{margin-bottom:20px; line-height:20px; text-indent:30px;}
+#cont_i{width:100%; margin-bottom:20px;}
+#cont_i img{float:left;margin:0 10px 10px 0;}
+#cont_i font{font-size:14px; line-height:18px;}
+.cont_i_f{width:270px; float:left; margin:0 0 20px 0;}
+.cont_b1{width:100%; margin:10px 0; font-weight:bold; color:#666666;}
+.cont_b2{width:100%; margin-bottom:10px; font-weight:bold; color:#0088FF;}
+.cont_b2 a{font-size:14px; line-height:18px; font-weight:bold; color:#0088FF;}
+.cont_b3{width:100%; margin:0 0 10px 10px; font-size:12px; font-weight:bold; color:#A7A7A7;}
+.cont_b4{width:100%; margin-bottom:10px; font-weight:200; color:#000000;}
+
+#bee_ad{margin-left:2px;}
+#comment{width:585px; margin-top:15px;}
+.c_t_b{height:22px; margin-left:2px;  background:url("/images/index/c_t_b.jpg"); }
+.c_title{width:100%; height:22px; font-weight:600; line-height:16px; ; font-size:14px; margin:0; }
+.c_t_n{width:100%; height:22px; color:#000000;font-size:14px;line-height:22px; }
+.comment1{font-size:12px; line-height:14px; float:right;}
+#comment2{width:100%; margin:10px 0; text-align:right;}
+#comment3{width:100%; margin:0 0 10px 0; font-size:12px; line-height:14px;}
+#comment4{width:100%; margin:0 0 10px 0; }
+#comment5{width:100%; padding-bottom:20px; color:#0088FF; text-align:right; border-bottom:1px dotted #0088FF}
+#comment5 a{color:#0088FF; font-size:14px; line-height:18px;}
+#comment3{width:100%; margin:0 0 10px 0; font-size:12px; line-height:14px;}
+#comment6{width:100%; margin:1px 0 10px 0; text-align:right; color:#0088FF;}
+#comment_login{width:585px; height:80px; margin-top:20px; border:1px solid #ABC6CF; background:#F0F0F0;}
+#com_l_t{margin:20px 0 0 15px;}
+#com_l_t input{width:100px; height:20px; border:1px solid #ABADB3; background:#FFFFFF;}
+#com_l_b{margin:5px 0 0 15px;}
+#com_l_b button{width:100px;}
+#com_l_b a{color:#4781AA;}
+
+#share{width:585px; margin-top:5px;}
+.share_l{width:92px; height:52px; margin:0 12px; }
+.share_t {height:16px; width:92px; margin:5px 0;}
+.share_t img{margin:1px 5px 0 0; float:left;}
+#authorize{width:585px; margin-top:5px;}
+
+#right{width:355px; margin:25px 0 0 0px;  overflow:hidden; float:left;}
+#right_h{width:331px; padding:5px 12px; margin-left:1px; font-size:12px; line-height:14px; background:#ECEEF4;}
+#right_h img{float:right;}
+.right_b{width:352px;  height:66px; margin:5px 0 5px 1px; font-weight:bold; background:url('/images/news/right_b.jpg'); }
+.right_b_b{width:225px; height:50px; margin:10px 0 0 15px; text-align:center; border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF;}
+.right_b_t{width:74px; height:22px; line-height:22px; text-align:center; border-right:1px solid #FFFFFF; border-bottom:1px solid #FFFFFF;}
+#right_ad{margin:15px 0 20px 5px;}
+#news_l_h{margin:0 0 10px 15px; color:#000000;}
+.lawyer2{border:0px; margin-top:1px;}
+#lawyer_more{width:335px; margin-right:20px; font-size:12px; line-height:14px; font-weight:bold; color:#8A8A8A; text-align:right;}
+
+#rss{width:353px; height:40px; margin:10px 0; border:1px solid #8EAFC7}
+#rss_in{width:349px; height:35px; background:#BDD8EB; margin:2px; }
+#rss_in img{float:left; }
+#rss_in input{line-height:22px; }
+#rss_p{margin:5px 0 0 5px; }
+#rss_in input{width:205px; height:22px; font-size:12px;  border:1px solid #748E9D; float:left; margin:5px; color:#666666}
+.news_view{width:170px; margin:10px 0 10px 10px;font-size:12px; line-height:14px; float:left;}
+.n_v{width:100%; margin:5px 0;}
+#news_l_h{font-weight:bold;}

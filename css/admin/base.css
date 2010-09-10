@@ -7,6 +7,10 @@ div{margin:0; padding:0; float:left; display:inline;}
 td{word-break:break-all}
 a{text-decoration:none; color:black;}
 
+a.sort{background-position:100% 50%; background-repeat:no-repeat;padding-right:16px;}
+a.sort.asc{background-image:url(/images/admin/sort_asc.png)}
+a.sort.desc{background-image:url(/images/admin/sort_desc.png)}
+
 #ibody{width:1050px; margin:0 auto; float:none; display:block;}
 #icaption{width:1004px; height:25px; margin-left:10px; padding:10px; font-weight:bold; font-size:14px; text-align:left; border:1px dotted #cdcdcd; background:#FBFBFB; }
 #icaption #title{width:800px; color:#0B55C4; font-size:23px; }
@@ -55,3 +59,4 @@ td.list_head input{float:none;width:50px;}
 #tabs{width:1024px; height:40px; margin:10px 0px 5px 10px; font-size:14px; line-height:40px; font-weight:bold; border:1px dotted #cdcdcd; background:#FBFBFB; }
 #tabs span a{color:#cccccc}
 #tabs span a.selected{color:black}
+.resume_table{width:20%; text-align:center;}

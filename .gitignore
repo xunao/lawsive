@@ -10,7 +10,6 @@ upload/*
 bbs/*
 blog/*
 ucenter/*
-home/*
 login/uc_client/*
 ey_bbs/*
 top.inc.html
@@ -26,3 +25,4 @@ review
 .cache
 test
 *.screw
+test.post.php

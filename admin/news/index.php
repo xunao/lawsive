@@ -5,13 +5,15 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<?php 
 		session_start();
-		include_once('../../frame.php')
+		include_once('../../frame.php');
+		judge_admin();
+		
 	?>
 	<title><?php echo $_g_site_name;?>-新闻管理</title>
 	<?php
 		css_include_tag('admin/base');
 		use_jquery();
-		js_include_tag('admin/pub','category','admin/pub/search','admin/news/index');
+		js_include_tag('category','admin/news/index');
 		$category = new Category('news');
 		$category->echo_jsdata();
 		$filter_category = intval($_GET['filter_category']);
@@ -20,7 +22,8 @@
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
 		if($filter_category > 0){
-			$cats = join(',',$category->children_map($filter_category));
+			$cates = ($category->children_map($filter_category));
+			$cats = join(',',$cates);
 			if($cats){
 				$conditions[] = "category_id in ($cats)";
 			}
@@ -35,8 +38,9 @@
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
 		
+		$db = get_db();
 		$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		if($record === false) die('数据库执行失败');		
+		if($record === false) die('数据库执行失败');
 	?>
 </head>
 <body>
@@ -76,32 +80,35 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<td><a href="index.php?category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $record[$i]->category_name;?></a></td>
+			<td><a href="index.php?filter_category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php echo $record[$i]->category_name;?></a></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
 					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
 					<?php 
-						if(has_right('delete_news')){
+						if($g_admin->has_rights('delete_news')){
 					?>
-					<span style="cursor:pointer" class="del" name="<?php echo $record[$i]->id;?>"  title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
+					<span style="cursor:pointer" class="del" title="删除"><img src="/images/admin/btn_delete.png" border="0"></span>
 					<?php }?>
 					<?php
-						if(has_right('publish_news')){
+						if($g_admin->has_rights('publish_news')){
 							if($record[$i]->is_adopt=="1"){?>
-					<span style="cursor:pointer" class="unpublish_news" name="<?php echo $record[$i]->id;?>" title="撤销"><img src="/images/admin/btn_apply.png" border="0"></span>
+					<span style="cursor:pointer" class="unpublish_news" title="撤销"><img src="/images/admin/btn_apply.png" border="0"></span>
 					<?php	}else{?>
-					<span style="cursor:pointer" class="publish_news" name="<?php echo $record[$i]->id;?>" title="发布"><img src="/images/admin/btn_unapply.png" border="0"></span>
+					<span style="cursor:pointer" class="publish_news" title="发布"><img src="/images/admin/btn_unapply.png" border="0"></span>
 					<?php }
 						}?>
 					<?php
-					if(has_right('top_news')){
+					/*
+					if($g_admin->has_rights('top_news')){
 					if($record[$i]->set_up=="1"){?>
-					<span style="cursor:pointer" class="set_down" name="<?php echo $record[$i]->id;?>" title="取消置顶"><img src="/images/admin/btn_up.png" border="0"></span>
+					<span style="cursor:pointer" class="set_down" title="取消置顶"><img src="/images/admin/btn_up.png" border="0"></span>
 					<?php }else{?>
-					<span style="cursor:pointer" class="set_up" name="<?php echo $record[$i]->id;?>" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
+					<span style="cursor:pointer" class="set_up" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
-					}?>
-					<?php if(has_right('comment_news')){?>
+					}
+					*/
+					?>
+					<?php if($g_admin->has_rights('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $record[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>
 					<?php }?>
 					<input type="hidden" class="priority"  name="<?php echo $record[$i]->id;?>"  value="<?php if('100'!=$record[$i]->priority){echo $record[$i]->priority;};?>" style="width:40px;">
@@ -117,7 +124,13 @@
 				<button id=clear_priority style="display:none">清空优先级</button>
 				<button id=edit_priority  style="display:none">编辑优先级</button>
 				<input type="hidden" id="relation" value="news">
+				<!--
+				 
 				<input type="hidden" id="db_table" value="<?php echo $tb_news;?>">
+				<input type="hidden" id="sort_title" value="<?php echo $sort_title;?>" />
+				<input type="hidden" id="sort_author" value="<?php echo $sort_author;?>" />
+				<input type="hidden" id="sort_created_at" value="<?php echo $created_at;?>" />
+				 -->
 			</td>
 		</tr>
   </table>

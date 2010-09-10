@@ -1,6 +1,7 @@
 <?php	
 	define("ROOT_DIR",dirname(__FILE__));
 	define('LIB_DIR',ROOT_DIR . "/lib");
+	define('INC_DIR',ROOT_DIR ."/inc");
 	define('PROJECT_LIB_DIR', ROOT_DIR . "/project_lib");
 	define("FRAME_VERSION",'1.0');
 	include_once ROOT_DIR .'/config/config.php';
@@ -397,4 +398,14 @@ function write_log($msg){
 
 function admin_log($msg){
 	$db = get_db();
+}
+
+//后台管理页面需要调用，判断是否登录
+function judge_admin(){
+	global $g_admin;
+	$g_admin = AdminUser::current_user();
+	if(!$g_admin) {
+		redirect_login();
+		exit();
+	}
 }

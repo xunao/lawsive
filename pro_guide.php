@@ -23,70 +23,23 @@
 	            	  </div>
 	            	  <div class="nav_left">
 	            	 	<div class="n_title">IT</div>
-	            	  	<div class="n_l">
+	            	 	<?php for($i=0;$i<8;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_title">电信及增值</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<2;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_title">传媒娱乐</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<3;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_title">连锁经营</div>
-	            	  	<div class="n_l">
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
 	            	  	<div class="n_title">教育行业</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<8;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_t_">教育行业</div>
 	            	  	<div class="n_t_">教育行业</div>
 	            	  	<div class="n_t_">教育行业</div>
@@ -94,51 +47,17 @@
 	            	  </div>
 	            	  <div class="nav_left">
 	            	 	<div class="n_title">IT</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<8;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_title">电信及增值</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_title">传媒娱乐</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<4;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_title">教育行业</div>
-	            	  	<div class="n_l">
+	            	  	<?php for($i=0;$i<2;$i++){?>
 	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
-	            	  	<div class="n_l">
-	            	  		<div class="n_l_t"><a href="#">软件产业阿</a></div>
-	            	  	</div>
+	            	  	<?php }?>
 	            	  	<div class="n_t_">教育行业</div>
 	            	  	<div class="n_t_">教育行业</div>
 	            	  	<div class="n_t_">教育行业</div>

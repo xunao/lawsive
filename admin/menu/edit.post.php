@@ -29,8 +29,6 @@
 				}
 				if($_POST['add_roles']){
 					$add_roles = explode(',', $_POST['add_roles']);
-					var_dump($add_roles);
-					die();
 					foreach ($add_roles as $add_role){
 						$db->execute("insert into role_rights (role_id,rights_id) values($add_role,{$right->id})");
 					}
@@ -43,7 +41,7 @@
 				display_error('修改菜单失败');
 				echo '<a href="menu_list.php">返回</a>';
 			}
-			
+			redirect('/admin/menu/');
 			
 		?>
 	</body>

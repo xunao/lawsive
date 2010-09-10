@@ -9,8 +9,7 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title><?php echo $_g_sitename;?>发布新闻</title>
 	<?php 
-		$user = AdminUser::current_user();
-		
+		judge_admin();
 		css_include_tag('admin/base');
 		use_jquery_ui();
 		#validate_form("news_edit");
@@ -43,7 +42,7 @@
 		<form id="news_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 		<table cellspacing="1" align="center">
 			
-			<?php if($user->has_rights('schedule_news')){?>
+			<?php if($g_admin->has_rights('schedule_news')){?>
 			<tr class="tr4">
 				<td class="td1" width="15%" >定时发布</td>
 				<td width="85%"><input type="text" name="publish_schedule_date" id="publish_schedule" class="publish_schedule" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date;?>"></input><input style="width:20px;" type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input>(格式：2010-03-03 16:00:00)</td>

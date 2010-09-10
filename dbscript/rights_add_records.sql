@@ -1,0 +1,6 @@
+insert into lawsive.rights(name,type,nick_name) values ('publish_news',1,'发布新闻')
+,('delete_news',1,'删除新闻')
+,('setup_news',1,'置顶新闻')
+,('comment_news',1,'管理新闻评论')
+,('static_news',1,'静态化新闻')
+,('schedule_news',1,'定时发布新闻')

@@ -28,11 +28,7 @@
 		$news->created_at = now();
 		$news->click_count = 0;					
 	}
-	if($news->is_adopt){
-		publish_news($news);
-	}else{
-		$news->save();
-	}
+	$news->save();
 	/*
 	 * news saved
 	 */
@@ -71,7 +67,7 @@
 		$news->save();
 	}
 	$href = "index.php";
-	#redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>
