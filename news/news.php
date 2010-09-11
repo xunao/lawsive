@@ -8,10 +8,12 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('public','news/index');
-		js_include_tag('login','comment');
+		js_include_tag('login');
 		$user = member::current();
 		$db=get_db();
-		$news_id=$_GET['news_id'];
+		$news_id = $_GET['id'];
+		$comment = new Comment('news',$news_id);
+		$comment->use_css();
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
 		$record_f=explode(' ', $record[0]->related_news);
 		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
@@ -47,27 +49,12 @@
           		<div id="bee_ad"><a href=""><img alt="" src="/images/news/bee_ad.jpg" border="0"></a></div>
           		<div id="comment">
           			 <div class="c_title" ><div class="c_t_n" ><font>读者评论</font><div class="c_t_b" style="width:510px;"></div></div></div>
-          			 <div class="comment1"><img alt="" src="/images/news/comment.jpg">评论只代表会员个人观点，不代表律氏中文网的观点</div>
-          			 <div id="comment2"><font color="#000000">排序：</font><select id="comment_order"><option value="0">时间倒序</option><option value="1">时间顺序</option></select><font color="#0088FF">&nbsp 评论总数 &nbsp </font><a href=""><font color="#A84749">[ 1 条 ]</font></a></div>
-          			 <div class="comment1">2010-09-07 16:33:42</div>
-          			 <div id="comment3"><a href=""><font color="#0088FF">wjsdxtd</font></a>&nbsp 来自上海市徐汇区</div>
-          			 <div id="comment4">钓鱼岛是中国领土，中国渔船有权在附近海域作业。</div>
-          			 <div id="comment5"><a href="">转贴</a> &nbsp <a href="">回复</a> &nbsp 支持<a href=""><font color="#000000">( 0 )</font></a> &nbsp 反对<a href=""><font color="#000000">( 0 )</font></a></div>
-          			 <div id="comment6"><font color="#000000">[</font>查看所有评论 &nbsp<font color="#A84749">(  1  )</font><font color="#000000">&nbsp ]</font></div>
+					 <div class="comment1"><img alt="" src="/images/news/comment.jpg">评论只代表会员个人观点，不代表律氏中文网的观点</div>
+					 <?php $comment->echo_num();?>
+					 <?php $comment->echo_comment();?>
           		</div>
-          		<div id="comment_login">
-          			<div id="com_l_t">
-          				<div class="no_login_comment">
-          				您还没有登录，请输入评论 &nbsp 用户名：<input id="clogin_name" type="text"/> &nbsp 密码：<input id="cpassword" type="password"/>
-          				</div>
-          				<div class="login_comment" style="display:none;"><textarea id="comment_content"></textarea></div>
-          			</div>
-          			<div id="com_l_b">
-          				<div class="no_login_comment"><button>会员登录</button><a href=""> &nbsp 免费注册</a></div>
-          				<div class="login_comment" style="display:none;"><button>提交</button></div>
-          			</div>
-          			<input type="hidden" id="resource_id" value="<?php echo $news_id;?>">
-          		</div>
+          		<?php ?>
+          		<?php $comment->echo_text();?>
           		<div id="share">
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/douban.jpg"><a href="">豆瓣网</a></div><div class="share_t"><img src="/images/news/logo/sohu.jpg"><a href="">搜狐微博</a></div></div>
