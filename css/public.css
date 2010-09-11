@@ -88,51 +88,5 @@ body a{text-decoration:none; color:#666666}
 /*right*/
 #center_r{width:355px; margin:16px 16px 0 0; border-left:1px solid #CED7DF; border-top:1px solid #CED7DF; float:right;}
 .lecture{width:160px; margin:0px 8px 16px 8px; }
-#lawyer{width:355px; }
-#law_h{width:355px; height:24px; font-size:12px;  line-height:24px;  background:url("/images/index/lawyer_h.jpg"); color:white; margin-bottom:10px; }
-#law_h a{color:white}
-#law_h a:hover{color:black}
-#law_h div{width:67px; height:24px; margin:0 2px;  color:white; text-align:center; font-weight:bold;}
-#law_h div:hover{ background:url("/images/index/lawyer_h_q.jpg");  color:black}
-#law_tt{margin:10px 20px 5px  10px; }
-.lawyer1{width:325px; height:58px; line-height:52px; color:red; border-bottom:1px dotted #666666 ; }
-.lawyer1 img{margin-left:10px; float:left; }
-.lawyer_t{font-size:12px; line-height:20px; color:black; font-weight:bold; margin-left:5px; width:195px; }
-.lawyer_s{font-size:12px; line-height:16px; color:#666666; margin-left:5px; width:195px; letter-spacing:0.2px; }
-.lawyer_p{font-size:12px; line-height:20px; color:#666666; margin-left:8px; width:300px; letter-spacing:0.2px; }
-.lawyer2{width:325px; height:25px; border-bottom:1px dotted #666666 ; margin-top:5px; }
-.lawyer_c{width:16px; height:16px; background:url("/images/index/lawyer_c.jpg"); font-size:12px; line-height:16px; text-align:center; }
-#bussiness{width:355px; margin:2px 0; font-size:12px; line-height:20px; text-align:center}
-#buss_h{width:355px; height:25px; line-height:25px; }
-#buss_h  font{float:left; font-weight:bold; }
-#buss_t{width:355px; height:20px; line-height:20px; }
-#buss_t1{width:65px; height:20px; }
-#buss_t2{width:215px; height:20px; margin:0  3px; }
-.buss_b1{background:#DFE2E9}
-.buss_b2{background:#E6E8EF}
-#meeting{width:355px; margin:2px 0; font-size:12px; line-height:20px; text-align:center}
-#meeting a{color:#003869;}
-#job{width:355px; margin:2px 0; font-size:12px; line-height:20px; text-align:center}
-#rss{width:355px; height:40px; margin:10px 0; border:1px solid #8EAFC7}
-#rss_in{width:350px; height:35px; background:#BDD8EB; margin:2.5px; }
-#rss_in img{float:left; }
-#rss_in input{line-height:22px; }
-#rss_p{margin:5px 0 0 5px; }
-#rss_in input{width:210px; height:22px; font-size:12px;  border:1px solid #748E9D; float:left; margin:5px; color:#666666}
-#cr_ad img{margin:30px 5px;float:left;}
-#add{margin:5px; }
-.rank{border-bottom:1px solid #DEE1E8}
-.rank font{margin-left:5px;float:left;}
-.rank img{margin-left:5px;}
-.rank1{width:255px; font-size:14px; line-height:16px; font-weight:600; color:black; letter-spacing:1px; float:left; margin-top:5px; }
-.rank2{margin-top:5px; float:left; font-size:12px; line-height:14px; float:left;}
-#expert{width:355px; }
-#exp_h{width:230px; height:24px; font-size:12px; font-weight:600; line-height:24px; color:white; background:url("/images/index/lawyer_h.jpg");  text-align:center;}
-#exp_h   a{  text-align:center;  color:white;  padding:0 5px;height:24px;}
-#exp_h   div a:hover{color:black;  }
-#exp_h  div{height:24px; width:67px; margin-left: 8px; text-align:center;}
-#exp_h  div:hover{background:url("/images/index/lawyer_h_q.jpg"); }
-#exp_c{width:355px;}
-#exp_c img{margin:20px 0  10px 30px; }
-#exp_d{width:100%; font-size:12px; line-height:14px; font-weight:bold;}
-#exp_d font{margin:0 5px 0px 32px;float:left;font-size:12px; line-height:14px; }
+
+

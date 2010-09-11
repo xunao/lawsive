@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>律氏中文网</title>
 <meta name="keywords" content="律氏" />
-	<meta name="description" content="律氏" />
+<meta name="description" content="律氏" />
 <?php	
 		include ('./frame.php');
 		use_jquery_ui();
@@ -119,7 +119,20 @@
 		                                </div>
 		                         </div>
                        </div>
-                       <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+                       <div id="center_r">
+                       	<?php 
+                       		include(dirname(__FILE__).'/inc/right/right_expert.php');
+							include(dirname(__FILE__).'/inc/right/right_rss.php');
+							include(dirname(__FILE__).'/inc/right/right_meeting.php');
+							include(dirname(__FILE__).'/inc/right/right_bussiness.php');
+							include(dirname(__FILE__).'/inc/right/right_job.php');
+							include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
+							include(dirname(__FILE__).'/inc/right/right_lawyer.php');
+							include(dirname(__FILE__).'/inc/right/right_add.php');
+							include(dirname(__FILE__).'/inc/right/right_rank.php');
+							include(dirname(__FILE__).'/inc/right/right_add.php');
+                       	?>
+                       </div>
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>
              </div>
              <div id="logout"></div>
