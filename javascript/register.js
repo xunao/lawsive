@@ -27,7 +27,7 @@ $(function(){
 	};
 	$('#register').click(function(){
 		if(checkInput($("#name"),$("#password"),$("#password2")) != false){
-			$.post("register.post.php",{"login_name": $("#name").val(),"password": $("#name").val(),"email":$("#name").val()},function(data){
+			$.post("register.post.php",{"login_name": $("#name").val(),"password": $("#password").val(),"email":$("#name").val()},function(data){
 				if(data != true){alert(data);}
 				else{
 					$.post("login.post.php",{"login_name": $("#name").val(),"password": $("#name").val()},function(data){
