@@ -31,20 +31,6 @@ body a{text-decoration:none; color:#666666}
 .c_title{width:100%; height:22px; font-weight:600; line-height:16px; ; font-size:14px; margin:0; }
 .c_t_n{width:100%; height:22px; color:#000000;font-size:14px;line-height:22px; }
 .comment1{font-size:12px; line-height:14px; float:right; color:#666666;}
-.comment2{width:100%; margin:10px 0; text-align:right;}
-.comment3{width:100%; margin:0 0 10px 0; font-size:12px; line-height:14px; color:#0088FF;}
-.comment4{width:100%; margin:0 0 10px 0; }
-.comment5{width:100%; padding-bottom:20px; color:#0088FF; text-align:right; border-bottom:1px dotted #0088FF}
-.comment5 a{color:#0088FF; font-size:14px; line-height:18px; cursor:pointer;}
-.comment3{width:100%; margin:10px 0 10px 0; font-size:12px; line-height:14px;}
-.comment6{width:100%; margin:1px 0 10px 0; text-align:right; color:#0088FF;}
-.comment_login{width:585px; margin-top:20px; padding-bottom:20px; border:1px solid #ABC6CF; background:#F0F0F0;}
-.com_l_t{margin:20px 0 0 15px;}
-.com_l_t input{width:100px; height:20px; border:1px solid #ABADB3; background:#FFFFFF;}
-.com_l_t textarea{width:550px; height:100px; background-color:#fff; border:1px solid #666;}
-.com_l_b{margin:5px 0 0 15px;}
-.com_l_b button{width:100px;}
-.com_l_b a{color:#4781AA;}
 
 #share{width:585px; margin-top:5px;}
 .share_l{width:92px; height:52px; margin:0 12px; }
