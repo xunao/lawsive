@@ -67,7 +67,20 @@
                       <div><div class="c_title" style="margin-top:10px; font-size:16px;width:140px;">律氏中文网专栏</div><div class="line" style="width:385px; margin-top:22px;"></div><div class="turn_l" style="margin-top:15px;"><img src="/images/c_index/cp_t_l.jpg" /></div><div class="turn_r" style="margin-top:15px;"><img src="/images/c_index/cp_t_r.jpg" /></div></div>
                       <div><div class="c_title" style="margin-top:10px; font-size:16px; width:120px;">律氏作家专栏</div><div class="line" style="width:405px; margin-top:22px;"></div><div class="turn_l" style="margin-top:15px;"><img src="/images/c_index/cp_t_l.jpg" /></div><div class="turn_r" style="margin-top:15px;"><img src="/images/c_index/cp_t_r.jpg" /></div></div>
              </div>
-                       <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+             <div id="center_r">
+               <?php 
+                include(dirname(__FILE__).'/inc/right/right_expert.php');
+				include(dirname(__FILE__).'/inc/right/right_rss.php');
+				include(dirname(__FILE__).'/inc/right/right_meeting.php');
+				include(dirname(__FILE__).'/inc/right/right_bussiness.php');
+				include(dirname(__FILE__).'/inc/right/right_job.php');
+				include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
+				include(dirname(__FILE__).'/inc/right/right_lawyer.php');
+				include(dirname(__FILE__).'/inc/right/right_add.php');
+				include(dirname(__FILE__).'/inc/right/right_rank.php');
+				include(dirname(__FILE__).'/inc/right/right_add.php');
+              ?>
+             </div>
              </div>
             <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
       </div>

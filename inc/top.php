@@ -11,7 +11,6 @@
                               <?php }else{?>
                               <div id="t_l_r">
 								      <div class="t_l_r_c" >欢迎您，<?php $level = $user->member_level; if($level==1){echo '普通会员';}elseif($level==2){echo '二级会员';}elseif($level==3){echo '三级会员';}elseif($level==4){echo '四级会员';};?><?php if($user->name != ''){echo $user->name;}else{echo $user->login_name;} ;?></div>
-									  <div class="t_l_r_c" >用户ID：<?php echo $user->id;?></div>
 									  <div class="logout">退出登录</div>
 								</div>
                               <?php }?>
@@ -19,7 +18,7 @@
                      <div id="title_b">
                              <div id="logo"><a href=""><img src="/images/index/logo_lawsive.jpg" border="0"></a></div>
                              <div id="people">
-	                                 <div id="people_t"><div>>人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
+	                                 <div id="people_t"><div>&gt;人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
 	                                 <div id="people_j"><div id="people_j_t">日本地产商觊觎中国市场</div><a href=""><font>他们认为，自己在经验和声誉上具有相对的优势，他们认为，自己在经验和声誉上具有</font></a></div>
 	                                 <div id="people_a"><a href=""><img src="/images/index/jp_ad.jpg" border="0"></a></div>
                               </div>

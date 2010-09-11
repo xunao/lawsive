@@ -28,7 +28,20 @@
                        		<div style="margin:15px 0 25px 5px;"><a href=""><img src="/images/view/talent.jpg" border="0"></a></div>
                             <div id="analy_writer"><div class="c_title" ><div class="c_t_n" ><font>律氏专栏作家</font><div class="c_t_b" style="width:420px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div></div>
                        </div>
-                       <?php include_once(dirname(__FILE__).'/../inc/right.php'); ?> 
+                       <div id="center_r">
+                       	<?php 
+                       		include(ROOT_DIR.'/inc/right/right_expert.php');
+							include(ROOT_DIR.'/inc/right/right_rss.php');
+							include(ROOT_DIR.'/inc/right/right_meeting.php');
+							include(ROOT_DIR.'/inc/right/right_bussiness.php');
+							include(ROOT_DIR.'/inc/right/right_job.php');
+							include(ROOT_DIR.'/inc/right/right_cr_ad.php');
+							include(ROOT_DIR.'/inc/right/right_lawyer.php');
+							include(ROOT_DIR.'/inc/right/right_add.php');
+							include(ROOT_DIR.'/inc/right/right_rank.php');
+							include(ROOT_DIR.'/inc/right/right_add.php');
+                       	?>
+                       </div> 
              </div>
              <div id="logout"></div>
             <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>       

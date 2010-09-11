@@ -7,4 +7,5 @@ include_once('../../frame.php');
 ?>
 <script>
 	parent.$.fn.colorbox.close();
+	admin_iframe.location.reload(true);
 </script>
