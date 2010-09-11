@@ -9,7 +9,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('index','public','view/talent');
-		js_include_tag('login');
+		js_include_tag('login','index');
 		$user = member::current();
   	?>
 <body>

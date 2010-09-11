@@ -8,7 +8,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('public','news/index');
-		js_include_tag('login');
+		js_include_tag('login','index');
 		$user = member::current();
 		$db=get_db();
 		//$news_id=$_POST('news_id');
