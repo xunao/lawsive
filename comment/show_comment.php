@@ -5,6 +5,8 @@ $type = $_GET['type'];
 $id = intval($_GET['id']);
 $order = $_GET['order'];
 if(empty($order))$order = 'desc';
+$limit = intval($_GET['limit']);
+if(empty($limit))$limit = 5;
 $db = get_db();
 
 

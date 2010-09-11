@@ -56,6 +56,7 @@
           		</div>
           		<input type="hidden" id="resource_id" value="<?php echo $news_id;?>">
           		<input type="hidden" id="resource_type" value="news">
+          		<input type="hidden" id="comment_limit" value="5">
           		<div id="share">
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/douban.jpg"><a href="">豆瓣网</a></div><div class="share_t"><img src="/images/news/logo/sohu.jpg"><a href="">搜狐微博</a></div></div>

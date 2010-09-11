@@ -1,14 +1,19 @@
 $(function(){
 	var resource_id = $("#resource_id").val();
 	var resource_type = $("#resource_type").val();
+	var limit = $("#comment_limit").val();
+	if(limit==undefined)limit = 0;
+	var order = $("#comment_order").val();
+	if(order==undefined)order = '';
 	var reply_str = '';
 	
 	$("#comment_text").load('/comment/comment_text.php');
-	load_comment(resource_id,resource_type);
+	load_comment(resource_id,resource_type,order,limit);
 	load_comment_num(resource_id,resource_type);
 	
 	$("#comment_order").change(function(){
-		load_comment(resource_id,resource_type);
+		order = $("#comment_order").val();
+		load_comment(resource_id,resource_type,order,limit);
 	});
 	
 	$(".comment_up").live('click',function(){
@@ -56,7 +61,7 @@ $(function(){
 			$.post('/comment/comment.post.php',{'id':resource_id,'content':content,'type':resource_type,'comment_id':$(parent).attr('cid')},function(data){
 				if(data=='ok'){
 					$(prev).find(".comment_content").attr('value','');
-					load_comment(resource_id,resource_type);
+					load_comment(resource_id,resource_type,order,limit);
 					load_comment_num(resource_id,resource_type);
 				}else{
 					alert(data);
@@ -66,7 +71,7 @@ $(function(){
 			$.post('/comment/comment.post.php',{'id':resource_id,'content':content,'type':resource_type},function(data){
 				if(data=='ok'){
 					$(prev).find(".comment_content").attr('value','');
-					load_comment(resource_id,resource_type);
+					load_comment(resource_id,resource_type,order,limit);
 					load_comment_num(resource_id,resource_type);
 				}else{
 					alert(data);
@@ -76,13 +81,13 @@ $(function(){
 	});
 });
 
-function load_comment(resource_id,resource_type){
-	$("#comment_show").load('/comment/show_comment.php?type='+resource_type+'&id='+resource_id+"&order="+$("#comment_order").val(),function(){
+function load_comment(resource_id,resource_type,order,limit){
+	$("#comment_show").load('/comment/show_comment.php?type='+resource_type+'&id='+resource_id+"&order="+order+"&limit="+limit,function(){
 		$("#comment_reply").load('/comment/comment_text.php');
 	});
 }
 function load_comment_num(resource_id,resource_type){
-	$("#comment_num").load('/comment/comment_num.php?type='+resource_type+'&id='+resource_id)
+	$("#comment_num").load('/comment/comment_num.php?type='+resource_type+'&id='+resource_id);
 }
 function dig(type,id,dig){
 	$.post('/ajax/dig.php?id='+id+'&dig='+dig+'&type='+type);
