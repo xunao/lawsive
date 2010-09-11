@@ -52,7 +52,7 @@
 					 <div id="comment_show">
 					 </div>
           		</div>
-          		<div id="comment_login">
+          		<div class="comment_login" id="comment_text">
           		</div>
           		<input type="hidden" id="resource_id" value="<?php echo $news_id;?>">
           		<input type="hidden" id="resource_type" value="news">
