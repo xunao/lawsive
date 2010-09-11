@@ -10,4 +10,4 @@ CREATE TABLE `lawsive`.`lawyer_activity` (
   `comment` text  COMMENT '备注',
   PRIMARY KEY (`id`)
 )
-ENGINE = MyISAM COMMENT = '律师社会活动';
+ENGINE = MyISAM COMMENT = '律师社会活动' DEFAULT CHARSET=utf8;
