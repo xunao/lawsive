@@ -1,5 +1,0 @@
-#!/bin/sh
-for file in `ls /home/justin/website/lawsive/lib/*.php`
-do
-	`screw $file`
-done
