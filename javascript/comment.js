@@ -12,8 +12,8 @@ $(function(){
 	});
 	
 	$(".login_comment button").click(function(){
-		var news_id = $("#news_id").val();
-		$.post('/comment/comment.post.php',{'news_id':news_id,'content':$("#comment_content").val(),'type':'news'},function(){
+		var resource_id = $("#resource_id").val();
+		$.post('/comment/comment.post.php',{'id':resource_id,'content':$("#comment_content").val(),'type':'news'},function(){
 			
 		});
 	});

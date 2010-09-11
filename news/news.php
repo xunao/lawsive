@@ -66,7 +66,7 @@
           				<div class="no_login_comment"><button>会员登录</button><a href=""> &nbsp 免费注册</a></div>
           				<div class="login_comment" style="display:none;"><button>提交</button></div>
           			</div>
-          			<input type="hidden" id="news_id" value="<?php echo $news_id;?>">
+          			<input type="hidden" id="resource_id" value="<?php echo $news_id;?>">
           		</div>
           		<div id="share">
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
