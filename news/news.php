@@ -11,8 +11,7 @@
 		js_include_tag('login','comment');
 		$user = member::current();
 		$db=get_db();
-		//$news_id=$_POST('news_id');
-		$news_id=1;
+		$news_id=$_POST('news_id');
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
 		$record_f=explode(' ', $record[0]->related_news);
 		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
@@ -57,8 +56,17 @@
           			 <div id="comment6"><font color="#000000">[</font>查看所有评论 &nbsp<font color="#A84749">(  1  )</font><font color="#000000">&nbsp ]</font></div>
           		</div>
           		<div id="comment_login">
-          			<div id="com_l_t">您还没有登录，请输入评论 &nbsp 用户名：<input id="clogin_name" type="text"/> &nbsp 密码：<input id="cpassword" type="password"/> </div>
-          			<div id="com_l_b"><button>会员登录</button><a href=""> &nbsp 免费注册</a></div>
+          			<div id="com_l_t">
+          				<div class="no_login_comment">
+          				您还没有登录，请输入评论 &nbsp 用户名：<input id="clogin_name" type="text"/> &nbsp 密码：<input id="cpassword" type="password"/>
+          				</div>
+          				<div class="login_comment" style="display:none;"><textarea id="comment_content"></textarea></div>
+          			</div>
+          			<div id="com_l_b">
+          				<div class="no_login_comment"><button>会员登录</button><a href=""> &nbsp 免费注册</a></div>
+          				<div class="login_comment" style="display:none;"><button>提交</button></div>
+          			</div>
+          			<input type="hidden" id="news_id" value="<?php echo $news_id;?>">
           		</div>
           		<div id="share">
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
