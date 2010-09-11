@@ -11,7 +11,7 @@
 		js_include_tag('login','comment');
 		$user = member::current();
 		$db=get_db();
-		$news_id=$_POST('news_id');
+		$news_id=$_GET['news_id'];
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
 		$record_f=explode(' ', $record[0]->related_news);
 		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
