@@ -43,7 +43,7 @@
 			<td><input type="text" name="post[project_type]" value="<?php echo $project->project_type;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1 width=15%>金额</td>
+			<td class=td1 width=15%>活动日期</td>
 			<td><input type="text" name="post[value]" value="<?php echo $project->value;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
