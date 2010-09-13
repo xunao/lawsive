@@ -159,8 +159,19 @@
 		$sql .= ' where ' . join(' and ', $conditions);
 		$db = get_db();
 		return $db->query($sql);		
-			
-
 	}
-	
+	function get_message($u_id,$status){
+		if($status !='-1'){
+		$sql = "select * from lawsive.message where status ='{$status}' id = '{$u_id}'";
+		}else{
+		$sql = "select * from lawsive.message where id = '{$u_id}'";
+		}
+		return count($sql);
+	}
+	function send_message($u_id,$msg,$r_id){
+		$sender = member::find(array('conditions' => "id='$u_id'"));
+		$receiver = member::find(array('conditions' => "id='$r_id'"));
+		$sql = "insert into lawsive.message (sender_id,sender_name,receiver_id,receiver_name,status,content,created_at)values('{$sender_id}','{$sender[0]->name}','1',{$r_id}','{$receiver[0]->name}','{$msg}',now())";
+		if($sql){return true;}else{return false;}
+	}
 }

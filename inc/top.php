@@ -36,10 +36,23 @@
                      </div>
                      <div id="head">
 				            <div id="head_l">
-				                     <div id="head_l_l"><a href="" style="margin-left:25px">首页</a><a href="">动态</a><a href="">人物</a><a href="">观点</a><a href="">
-				                     专家库</a><a href="">专业</a><a href="">会议</a><a href="">职位</a><a href="">研究中心</a><a href="">法学院</a><a href="">订阅</a><a href="">榜单</a><a href="">会员</a><a href="">律所</a></div>
+				                     <div id="head_l_l">
+				                     <div class="nav" id="0"><a href="/" style="margin-left:25px">首页</a></div>
+				                     <div class="nav" id="1"><a href="">动态</a></div>
+				                     <div class="nav" id="2"><a href="">高端访谈</a></div>
+				                     <div class="nav" id="3"><a href="">热点</a></div>
+				                     <div class="nav" id="4"><a href="">专栏</a></div>
+				                     <div class="nav" id="5"><a href="">律师&律所</a></div>
+				                     <div class="nav" id="6"><a href="">案例</a></div>
+				                     <div class="nav" id="7"><a href="">交易</a></div>
+				                     <div class="nav" id="8"><a href="">云律所</a></div>
+				                     <div class="nav" id="9"><a href="">律氏知道</a></div>
+				                     <div class="nav" id="10"><a href="">会议</a></div>
+				                     <div class="nav" id="11"><a href="">榜单</a></div>
+				                     <div class="nav" id="12"><a href="">订阅</a></div>
+				            </div>
 				            </div>
 				            <div id="head_r"><a href="">我的律氏</a></div>
                      </div>
-                     <div id="center_h"><a href="" >交易</a>|<a href="">律所</a>|<a href="">律师</a>|<a href="">媒体</a>|<a href="">专题报道</a>|<a href="">新闻</a></div>
+                     <div id="cbx"><div id="center_h"></div></div>
               </div>
