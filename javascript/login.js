@@ -52,8 +52,8 @@ $(function(){
 	});
 	
 	$('.logout').click(function(){
-		$.post("logout.php",function(data){
-			$("#logout").html(data);
+		$.post("/home/logout.php",function(data){
+			$(".logout").html(data);
 		});
 	});
 	

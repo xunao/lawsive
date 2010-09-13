@@ -57,12 +57,12 @@
 			<td width=85%><input type="text" name="post[first_name]" value="<?php echo $info->first_name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
-			<td class=td1 width=15%>middl ename</td>
+			<td class=td1 width=15%>middle name</td>
 			<td width=85%><input type="text" name="post[middle_name]" value="<?php echo $info->middle_name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>last name</td>
-			<td width=85%><input type="text" name="post[middle_name]" value="<?php echo $info->middle_name;?>" class="required"></td>
+			<td width=85%><input type="text" name="post[last_name]" value="<?php echo $info->last_name;?>" class="required"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>律师事务所</td>
@@ -94,10 +94,11 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>备注</td>
-			<td><textarea name="comment" class="post[required]"><?php echo $info->comment;?></textarea></td>
+			<td><textarea name="post[comment]" class="required"><?php echo $info->comment;?></textarea></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>联系方式一：</td>
+			<td></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>公司地址</td>
@@ -125,6 +126,7 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>联系方式二：</td>
+			<td></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>公司地址</td>

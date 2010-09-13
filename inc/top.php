@@ -11,7 +11,6 @@
                               <?php }else{?>
                               <div id="t_l_r">
 								      <div class="t_l_r_c" >欢迎您，<?php $level = $user->member_level; if($level==1){echo '普通会员';}elseif($level==2){echo '二级会员';}elseif($level==3){echo '三级会员';}elseif($level==4){echo '四级会员';};?><?php if($user->name != ''){echo $user->name;}else{echo $user->login_name;} ;?></div>
-									  <div class="t_l_r_c" >用户ID：<?php echo $user->id;?></div>
 									  <div class="logout">退出登录</div>
 								</div>
                               <?php }?>
@@ -19,7 +18,7 @@
                      <div id="title_b">
                              <div id="logo"><a href=""><img src="/images/index/logo_lawsive.jpg" border="0"></a></div>
                              <div id="people">
-	                                 <div id="people_t"><div>>人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
+	                                 <div id="people_t"><div>&gt;人物专栏</div><div class="people_t_r"><img src="/images/index/people_t_r.jpg"></div><div class="people_t_r"><img src="/images/index/people_t_l.jpg"></div></div>
 	                                 <div id="people_j"><div id="people_j_t">日本地产商觊觎中国市场</div><a href=""><font>他们认为，自己在经验和声誉上具有相对的优势，他们认为，自己在经验和声誉上具有</font></a></div>
 	                                 <div id="people_a"><a href=""><img src="/images/index/jp_ad.jpg" border="0"></a></div>
                               </div>
@@ -37,10 +36,23 @@
                      </div>
                      <div id="head">
 				            <div id="head_l">
-				                     <div id="head_l_l"><a href="" style="margin-left:25px">首页</a><a href="">动态</a><a href="">人物</a><a href="">观点</a><a href="">
-				                     专家库</a><a href="">专业</a><a href="">会议</a><a href="">职位</a><a href="">研究中心</a><a href="">法学院</a><a href="">订阅</a><a href="">榜单</a><a href="">会员</a><a href="">律所</a></div>
+				                     <div id="head_l_l">
+				                     <div class="nav" id="0"><a href="/" style="margin-left:25px">首页</a></div>
+				                     <div class="nav" id="1"><a href="">动态</a></div>
+				                     <div class="nav" id="2"><a href="">高端访谈</a></div>
+				                     <div class="nav" id="3"><a href="">热点</a></div>
+				                     <div class="nav" id="4"><a href="">专栏</a></div>
+				                     <div class="nav" id="5"><a href="">律师&律所</a></div>
+				                     <div class="nav" id="6"><a href="">案例</a></div>
+				                     <div class="nav" id="7"><a href="">交易</a></div>
+				                     <div class="nav" id="8"><a href="">云律所</a></div>
+				                     <div class="nav" id="9"><a href="">律氏知道</a></div>
+				                     <div class="nav" id="10"><a href="">会议</a></div>
+				                     <div class="nav" id="11"><a href="">榜单</a></div>
+				                     <div class="nav" id="12"><a href="">订阅</a></div>
+				            </div>
 				            </div>
 				            <div id="head_r"><a href="">我的律氏</a></div>
                      </div>
-                     <div id="center_h"><a href="" >交易</a>|<a href="">律所</a>|<a href="">律师</a>|<a href="">媒体</a>|<a href="">专题报道</a>|<a href="">新闻</a></div>
+                     <div id="cbx"><div id="center_h"></div></div>
               </div>

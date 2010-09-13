@@ -1,5 +1,8 @@
 <?php 
 include 'frame.php';
-echo 'ok';
-echo mb_strlen('我是中国人','utf-8');
+include 'lib/Comment.class.php';
+
+$comment = new Comment('news',1);
+
+var_dump($comment);
 ?>

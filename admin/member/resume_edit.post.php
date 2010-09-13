@@ -1,6 +1,12 @@
 <?php
 include_once('../../frame.php');
     set_charset("utf-8");
+    if($_POST['type'] == 'del'){
+    	$del_id = intval($_POST['del_id']);
+    	$table = new Table($_POST['db_table']);
+    	$table->delete($del_id);
+    	return true;
+    }
     	$id = intval($_POST['id']);
     	$db = get_db();
 		$resume = new Table('member_resume');

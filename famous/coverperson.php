@@ -5,15 +5,15 @@
 <meta name="keywords" content="律氏" />
 	<meta name="coverperson" content="律氏" />
 <?php	
-		include ('./frame.php');
+		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('index','public','c_index');
-		js_include_tag('login');
+		js_include_tag('login','index');
 		$user = member::current();
   	?>
 <body>
       <div id="ibody">
-              <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
+              <?php include_once(dirname(__FILE__).'/../inc/top.php'); ?>
               <div id="center">
               <div id="middlebox">
               <div><div class="c_title">本期人物</div><div class="line" style="width:480px;"></div></div>
@@ -173,9 +173,26 @@
              		</div>
              	</div>
               </div>
-                       <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+<<<<<<< HEAD
+                       <?php include_once(dirname(__FILE__).'/../inc/right.php'); ?> 
+=======
+              <div id="center_r">
+              <?php 
+                include(ROOT_DIR.'/inc/right/right_expert.php');
+				include(ROOT_DIR.'/inc/right/right_rss.php');
+				include(ROOT_DIR.'/inc/right/right_meeting.php');
+				include(ROOT_DIR.'/inc/right/right_bussiness.php');
+				include(ROOT_DIR.'/inc/right/right_job.php');
+				include(ROOT_DIR.'/inc/right/right_cr_ad.php');
+				include(ROOT_DIR.'/inc/right/right_lawyer.php');
+				include(ROOT_DIR.'/inc/right/right_add.php');
+				include(ROOT_DIR.'/inc/right/right_rank.php');
+				include(ROOT_DIR.'/inc/right/right_add.php');
+              ?>
               </div>
-            <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>       
+>>>>>>> 23f233670bc768c87670a0bb0688383ac24d2763
+              </div>
+            <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>       
       </div>
 </body>
 </html>

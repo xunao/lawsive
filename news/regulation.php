@@ -8,7 +8,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('public','regulation');
-		js_include_tag('login');
+		js_include_tag('login','index','index');
 		$user = member::current();
   	?>
 <body>
@@ -90,7 +90,20 @@
            		<a href=""><img src="/images/regulation/image2.jpg"></a>
            	</div>
 		   </div>
-		   <?php include_once(ROOT_DIR.'/inc/right.php'); ?> 
+		   <div id="center_r">
+		   <?php 
+                include(ROOT_DIR.'/inc/right/right_expert.php');
+				include(ROOT_DIR.'/inc/right/right_rss.php');
+				include(ROOT_DIR.'/inc/right/right_meeting.php');
+				include(ROOT_DIR.'/inc/right/right_bussiness.php');
+				include(ROOT_DIR.'/inc/right/right_job.php');
+				include(ROOT_DIR.'/inc/right/right_cr_ad.php');
+				include(ROOT_DIR.'/inc/right/right_lawyer.php');
+				include(ROOT_DIR.'/inc/right/right_add.php');
+				include(ROOT_DIR.'/inc/right/right_rank.php');
+				include(ROOT_DIR.'/inc/right/right_add.php');
+              ?>
+            </div>
           </div>
           <?php include_once(ROOT_DIR.'/inc/bottom.php'); ?>     
       </div>

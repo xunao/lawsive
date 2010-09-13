@@ -23,9 +23,9 @@
 	            </div>
 	            <div id="rigister">
 	            	<div id="rig_t"><img src="/images/login/point.jpg"><font>还没有开通律氏？点这里</font></div>
-	            	<div id="rig_d"><a href="/home/fastregister.php"><font>立即注册</font></a></div>
+	            	<div id="rig_d"><a href="/home/register.php"><font>立即注册</font></a></div>
 	            </div>
-	            <div id="rig_key"><a href="/home/fastregister.php">一键注册，同时拥有四大平台</a></div>
+	            <div id="rig_key"><a href="/home/register.php">一键注册，同时拥有四大平台</a></div>
 	            <div id="rig_sen">
 	            	<div id="rig_s_t"><a href="">高级注册</a></div>
 	            	<div id="rig_s_c">
@@ -37,8 +37,8 @@
 	    	</div>
     	</div>
     	<div id="title">
-			<div id="tt_l"><a href=""><font>咨询</font></a>|<a href=""><font>中文网</font></a>|<a href=""><font>法学院</font></a>|<a href=""><font>个人服务</font></a></div>
-			<img alt="" src="/images/login/title_r.jpg"><div id="tt_r"><a href=""><font>注册</font></a>|<a href=""><font>登录</font></a>|<a href=""><font>帮助</font></a></div>
+			<div id="tt_l"><a href=""><font>咨询</font></a>|<a href="/"><font>中文网</font></a>|<a href=""><font>法学院</font></a>|<a href=""><font>个人服务</font></a></div>
+			<img alt="" src="/images/login/title_r.jpg"><div id="tt_r"><a href="/home/register.php"><font>注册</font></a>|<a href="#"><font>登录</font></a>|<a href=""><font>帮助</font></a></div>
 		</div>
     	<div id="flash"><a href=""><img src="/images/login/flash.jpg" border="0"></a></div>
     	<div id="lawsive"><img src="/images/login/lawsive.jpg"></div>

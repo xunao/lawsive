@@ -88,7 +88,7 @@
 			<td class=td1 width="15%">头像</td>
 			<td width="85%">
 			<?php if($user->avatar){?>
-			<img width="62" height="62" src="<?php echo $user->avatar;?>">
+			<a href="<?php echo $user->avatar;?>" target="_blank"><img width="62" height="62" src="<?php echo $user->avatar;?>" border=0 /></a>
 			<?php }?>
 			<input type="file" name="post[avatar]" />(请上传62×62大小的图片)
 			</td>

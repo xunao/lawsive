@@ -8,7 +8,7 @@
 		include ('./frame.php');
 		use_jquery_ui();
 		css_include_tag('public','qa');
-		js_include_tag('login');
+		js_include_tag('login','index');
 		$user = member::current();
   	?>
 <body>
@@ -93,7 +93,20 @@
            		<div class="qa_title noborder"><a href="">研究咨询</a></div>
            	</div>
 		   </div>
-		   <?php include_once(dirname(__FILE__).'/inc/right.php'); ?> 
+		   <div id="center_r">
+		   		<?php 
+	                include(dirname(__FILE__).'/inc/right/right_expert.php');
+					include(dirname(__FILE__).'/inc/right/right_rss.php');
+					include(dirname(__FILE__).'/inc/right/right_meeting.php');
+					include(dirname(__FILE__).'/inc/right/right_bussiness.php');
+					include(dirname(__FILE__).'/inc/right/right_job.php');
+					include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
+					include(dirname(__FILE__).'/inc/right/right_lawyer.php');
+					include(dirname(__FILE__).'/inc/right/right_add.php');
+					include(dirname(__FILE__).'/inc/right/right_rank.php');
+					include(dirname(__FILE__).'/inc/right/right_add.php');
+	              ?>
+            </div>
           </div>
           <?php include_once(dirname(__FILE__).'/inc/bottom.php'); ?>     
       </div>

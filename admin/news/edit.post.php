@@ -28,11 +28,7 @@
 		$news->created_at = now();
 		$news->click_count = 0;					
 	}
-	if($news->is_adopt){
-		publish_news($news);
-	}else{
-		$news->save();
-	}
+	$news->save();
 	/*
 	 * news saved
 	 */
