@@ -58,3 +58,5 @@ body a{text-decoration:none; color:#666666}
 .news_view{width:170px; margin:10px 0 10px 10px;font-size:12px; line-height:14px; float:left;}
 .n_v{width:100%; margin:5px 0;}
 #news_l_h{font-weight:bold;}
+
+#pub_comment_box{width:100%;}
