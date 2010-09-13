@@ -126,6 +126,53 @@ $(function(){
 		$('tr.news_content').hide();
 		$('tr.'+ news_type).show();
 	});
+	$('#copy_news').live('click',function(e){
+		e.preventDefault();
+		$('#tr_copy_news').show();
+		$(this).hide();
+	});
+	$('#delete_copy_news').live('click',function(e){
+		e.preventDefault();
+		$('#copy_news').show();
+		$('#tr_copy_news').hide();
+		$(this).next().val(0);
+	});
+	$('#a_related_news').colorbox({'href':'/news/index.php'});
+	$('.publish_schedule').datepicker({
+		changeMonth: true,
+		changeYear: true,
+		monthNamesShort:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+		dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dayNamesMin:["日","一","二","三","四","五","六"],
+		dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+		dateFormat: 'yy-mm-dd',
+		onSelect: function(date){
+			var time;
+			if($(this).data('endtime')){
+				time = $(this).data('endtime');
+			}else{
+				time = "00:00:00";
+			}
+			$(this).val(date + " " + time);
+		},
+		beforeShow: function(input){
+			var time = $(this).val();
+			time = time.split(' ');
+			time = time[time.length-1];
+			$(this).data('endtime',time);
+		}
+	});
+	
+	$('#publish_schedule_select').change(function(){
+		if(false === $(this).attr('checked')){
+			$(this).data('save_time',$('#publish_schedule').val());
+			$('#publish_schedule').val('');
+			$('#publish_schedule').attr('disabled',true);
+		}else{
+			$('#publish_schedule').attr('disabled',false);
+			$('#publish_schedule').val($(this).data('save_time'));
+		}
+	});
 	$('#add_keyword').click(function(){
 		var	keyword = $('#auto_keywords').val();
 		add_keyword(keyword);

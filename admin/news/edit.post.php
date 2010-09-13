@@ -62,6 +62,11 @@
 				$schedule->delete();
 			}
 		}
+		if ($schedule<=time()) {
+			;
+		}else {
+			;
+		}
 	}
 
 	if($_POST['copy_news']){
