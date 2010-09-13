@@ -60,7 +60,7 @@ body a{text-decoration:none; color:#666666}
 #head_l  a{color:#DBF6FB; float:left;padding:0 11px;}
 #head_l a:link{color:#DBF6FB}
 #head_l_l {width:910px;background:#203F53;}
-#head_l_l a:hover{background:#335368;}
+#head_l_l a.selected{background:#335368;}
 #head_r{width:90px; height:41px; background:url("/images/index/head_r.jpg"); font-size:17px; line-height:40px; font-weight:bold; float:right; color:#DBF6FB; text-align:center}
 #head_r a{padding:0 6px; text-align:center; color:#DBF6FB;}
 #cbx{width:970px; padding-left:30px; color:black; font-size:12px; height:20px;background:#ECF1FF; }
