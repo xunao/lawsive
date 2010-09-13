@@ -9,11 +9,6 @@ class Comment{
 	function __construct($type=null,$id=null) {
 		if($type)$this->r_type = $type;
 		if($id)$this->r_id = $id;
-		js_include_once_tag('comment');
-	}
-	
-	public function use_css(){
-		css_include_once_tag('comment');
 	}
 	
 	public function echo_num($use_order=true){
