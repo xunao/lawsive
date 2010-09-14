@@ -10,10 +10,10 @@
 	<title><?php echo $_g_sitename;?>发布新闻</title>
 	<?php 
 		judge_admin();
-		css_include_tag('admin/base');
+		css_include_tag('admin/base','colorbox');
 		use_jquery_ui();
 		#validate_form("news_edit");
-		js_include_tag('category', 'admin/news/edit','pubfun');
+		js_include_tag('category','jquery.colorbox','admin/news/edit','pubfun');
 		use_ckeditor();
 		$news = new News();
 		$id = intval($_GET['id']);

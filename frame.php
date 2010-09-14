@@ -6,6 +6,7 @@
 	define("FRAME_VERSION",'1.0');
 	include_once ROOT_DIR .'/config/config.php';
 	include_once LIB_DIR ."/pubfun.php";
+	include_once ROOT_DIR .'/lib/Category.class.php';
 	global $_g_admin_dir;
 	define('ADMIN_DIR',ROOT_DIR ."/".$_g_admin_dir);
 	define('ADMIN_PATH',"/{$_g_admin_dir}");

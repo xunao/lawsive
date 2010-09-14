@@ -7,13 +7,11 @@
 <?php	
 		include ('../frame.php');
 		use_jquery_ui();
-		css_include_tag('public','news/index');
-		js_include_tag('login');
+		css_include_tag('public','news/index','comment');
+		js_include_tag('login','comment');
 		$user = member::current();
 		$db=get_db();
 		$news_id = $_GET['id'];
-		$comment = new Comment('news',$news_id);
-		$comment->use_css();
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
 		$record_f=explode(' ', $record[0]->related_news);
 		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
@@ -50,11 +48,12 @@
           		<div id="comment">
           			 <div class="c_title" ><div class="c_t_n" ><font>读者评论</font><div class="c_t_b" style="width:510px;"></div></div></div>
 					 <div class="comment1"><img alt="" src="/images/news/comment.jpg">评论只代表会员个人观点，不代表律氏中文网的观点</div>
-					 <?php $comment->echo_num();?>
-					 <?php $comment->echo_comment();?>
+					 <div id="pub_comment_box">
+					 </div>
+					 <script type="text/javascript">
+					 	pub_comment('news',<?php echo $news_id;?>);
+					 </script>
           		</div>
-          		<?php ?>
-          		<?php $comment->echo_text();?>
           		<div id="share">
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/sina.jpg"><a href="">新浪微博</a></div><div class="share_t"><img src="/images/news/logo/qq.jpg"><a href="">QQ空间</a></div></div>
           			<div class="share_l"><div class="share_t"><img src="/images/news/logo/douban.jpg"><a href="">豆瓣网</a></div><div class="share_t"><img src="/images/news/logo/sohu.jpg"><a href="">搜狐微博</a></div></div>

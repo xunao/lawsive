@@ -11,13 +11,11 @@
 		js_include_tag('login','index');
 		$user = member::current();
 		$db=get_db();
-		//$news_id=$_POST('news_id');
-		$news_id=1;
+		$news_id=$_GET('news_id');
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
-		$record_f=explode(' ', $record[0]->related_news);
-		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
-		$record_f_t=array();
-		$record_f_d=array();
+		$record_f=explode(',', $record[0]->related_news);
+		$latest_news=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
+		$sql=$db->query("select * from lawsive.news where id in('{$record_f[0]}','{$record_f[1]}','{$record_f[2]}')");
 		for ($i = 0; $i < 3; $i++) {
 			$sql=$db->query("select * from lawsive.news where id='{$record_f[$i]}'");
 			$record_f_t[]=$sql[0]->title;

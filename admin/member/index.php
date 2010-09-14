@@ -74,7 +74,7 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="15%">登录名</td><td width="15%">姓名</td><td width="15%">会员等级</td><td width="10%">简历状态</td><td width="10%">资料状态</td><td width="5%">用户项目</td><td width="15%">最后登录时间</td><td width="15%">操作</td>
+			<td width="15%">登录名</td><td width="15%">姓名</td><td width="10%">会员等级</td><td width="9%">简历状态</td><td width="9%">资料状态</td><td width="6%">社会活动</td><td width="6%">用户项目</td><td width="15%">最后登录时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -87,6 +87,7 @@
 			
 			<td><?php if($record[$i]->member_resume_id == '0'){echo '无';}else{echo "<a href='resume_edit.php?id=".$record[$i]->id."'>编辑<a>";}?></td>
 			<td><?php if($record[$i]->base_info_id == '0'){echo '无';}else{echo "<a href='info_edit.php?id=".$record[$i]->id."'>编辑<a>";}?></td>
+			<td><a href="/admin/activity/index.php?member_id=<?php echo $record[$i]->id; ?>">查看</a></td>
 			<td><a href="/admin/project/index.php?member_id=<?php echo $record[$i]->id; ?>">查看</a></td>
 			<td><?php echo $record[$i]->last_login_time;?></td>
 			<td><a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>

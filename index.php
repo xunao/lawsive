@@ -40,7 +40,7 @@
 			                     <div id="change">
 			                            <div class="c_title"><div class="c_t_n" ><font>观点·专栏</font><div class="c_t_b" style="width:60px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
                                         <div class="change_b">
-									            <div class="change_t" ><a href="" ><font class="change_t1" >专栏>余元良 律师</font></a><font class="cha_tt" >离婚方面的事</font><img alt="qyname" src="/images/index/qy_name.jpg" style="margin-right:5px; float:left;">8月4日，2010
+									            <div class="change_t" ><a href="" ><font class="change_t1" >专栏&gt;余元良 律师</font></a><font class="cha_tt" >离婚方面的事</font><img alt="qyname" src="/images/index/qy_name.jpg" style="margin-right:5px; float:left;">8月4日，2010
 									                    年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌国接近开关了结果 积分卡附加费空间打开放的积分</div>
 												<div class="change_t"><a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a><font class="cha_tt" >离婚方面的事</font><font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌</font></div>
 												<div class="change_t"><a href=""><font class="v_c_t_1" >专栏·余元良 律师</font></a><font class="cha_tt" >离婚方面的事</font><font> 8月4日，2010年客和份额解放军额外发我会计法可是能 俄俄阿发挥好根据韩国收购计划规划和让人肯德基富可敌 </font></div>
@@ -53,10 +53,10 @@
 						                 <div id="s_l" >
 						                        <font>―北大教授力挺郭德纲，赞其是民族英雄，你认为？</font>
 					                            <form action = "http://www.blabla.cn/asdocs/html_tutorials/choose.asp" method = "post">
-					                                    <div> <input type="radio" name="fruit" value = ""vote>支持</div><div><input type="radio" name="fruit" value = "against">反对</div><div><input type="radio" name="fruit" value = "nothing">无所谓了</div>
+					                                    <div> <input type="radio" name="fruit" value = "vote">支持</div><div><input type="radio" name="fruit" value = "against">反对</div><div><input type="radio" name="fruit" value = "nothing">无所谓了</div>
 					                                    <div id="s_l_i" style="width:210px;"><a href=""><img src="/images/index/talk_t.jpg" border="0"></a><a href=""><img src="/images/index/talk_s.jpg" border="0"></a></div> 
 												</form>
-												<div><a href=""><font>更多律师调查>></font></a></div>
+												<div><a href=""><font>更多律师调查&gt;&gt;</font></a></div>
 										 </div>
 						         </div>
                                  <div id="award"><a href=""><img alt="aa" src="/images/index/award_p.jpg" border="0"></a></div>
