@@ -15,7 +15,7 @@
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
 		$record_f=explode(',', $record[0]->related_news);
 		$latest_news=$db->query("select title, created_at ,id from lawsive.news where author='{$record[0]->author}' and id > '{$news_id}'  limit 1");
-		$related_news=$db->query("select title, created_at ,id from lawsive.news where id in ('{$record_f}' ,'{$record_f[1]}' ,'{$record_f[2]}')");
+		$related_news=$db->query("select title, created_at ,id from lawsive.news where id in ('{$record_f[0]}' ,'{$record_f[1]}' ,'{$record_f[2]}')");
   	?>
 <body>
       <div id="ibody">
