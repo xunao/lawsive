@@ -25,8 +25,8 @@
           		<div id="left_title">
           			<div id="l_t1"><?php echo $record[0]->created_at;?></div>
           			<div id="l_t2"><?php echo $record[0]->title;?></div>
-          			<div id="l_t3">作者：&nbsp <a href=""><font color="#086CC4"><?php echo $record[0]->author;?></font></a></div>
-          			<div id="l_t4">字号 &nbsp &nbsp &nbsp &nbsp &nbsp 背景 </div><div id="l_t5">收藏 电邮 打印 评论<a href=""><font color="#9E2F2F">[1条]</font></a>&nbsp &nbsp<a href=""><font color="#9E2F2F">英文</font></a>&nbsp &nbsp<a href=""><font color="#9E2F2F">对照</font></a></div>
+          			<div id="l_t3">作者：　<a href=""><font color="#086CC4"><?php echo $record[0]->author;?></font></a></div>
+          			<div id="l_t4">字号 　　　　　背景 </div><div id="l_t5">收藏 电邮 打印 评论<a href=""><font color="#9E2F2F">[1条]</font></a>　&nbsp<a href=""><font color="#9E2F2F">英文</font></a>　&nbsp<a href=""><font color="#9E2F2F">对照</font></a></div>
           		</div>
           		<div id="content">
           		    <div><?php echo $record[0]->content;?></div>
@@ -64,7 +64,7 @@
           	<div id="right">
           		<div id="right_h">FT专栏作家克鲁克：美国总统奥巴马本可借助兴建清真寺之争议，要求争论双方彼此宽容、相互理解，但却错失良机<img src="/images/news/exit.jpg"></div>
           		<div class="right_b">
-          			<div style="margin:10px 0 0 30px;color:#003869">动 &nbsp &nbsp 态</div> <div class="right_b_b"><div class="right_b_t">律所律师</div><div class="right_b_t">交易</div><div class="right_b_t">专题</div><div class="right_b_t">调研报告</div><div class="right_b_t">法律法规</div></div>
+          			<div style="margin:10px 0 0 30px;color:#003869">动 　　态</div> <div class="right_b_b"><div class="right_b_t">律所律师</div><div class="right_b_t">交易</div><div class="right_b_t">专题</div><div class="right_b_t">调研报告</div><div class="right_b_t">法律法规</div></div>
           		</div>
           		<div class="right_b">
           			<div style="margin:10px 0 0 30px;color:#003869">快速导航</div> <div class="right_b_b"><div class="right_b_t">热点案例</div><div class="right_b_t">专家库</div><div class="right_b_t">专业指南</div><div class="right_b_t">会议讲座</div><div class="right_b_t">最新交易</div><div class="right_b_t">推荐指南</div></div>
