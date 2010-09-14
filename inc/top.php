@@ -110,7 +110,7 @@
 					$("#cbx").html("<div id='center_h'></div>");
 					break;
 				case 1:
-					$("#cbx").html("<div id='center_h'><a href='/news/lawyer/' >律所/律师</a>|<a href='/news/job/'>职位</a>|<a href='/news/topic/topic.php'>专题</a>|<a href='/news/topic/topic.php'>调研/报告</a>|<a href='#'>新法速递</a></div>");
+					$("#cbx").html("<div id='center_h'><a href='/news/lawyer/' >律所/律师</a>|<a href='/news/job/'>职位</a>|<a href='/news/topic/topic.php'>专题</a>|<a href='/view/research.php'>调研/报告</a>|<a href='#'>新法速递</a></div>");
 					break;
 				case 2:
 					$("#cbx").html("<div id='center_h' style='margin-left:24px;'><a href='/interview/halloffame.php' >人物墙</a>|<a href='/interview/cover.php'>封面人物</a>|<a href='/interview/interview.php'>高端访谈</a>|<a href='#'>律氏访谈</a></div>");

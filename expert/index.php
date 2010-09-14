@@ -13,7 +13,7 @@
   	?>
 <body>
       <div id="ibody">
-          <?php include_once(dirname(__FILE__).'/../inc/top.php'); ?>
+          <?php include_once(INC_DIR.'/top.php'); ?>
           <div id="center">
            <div id="center_l">
            	<div id="expert_Introduction">
@@ -51,7 +51,7 @@
 	             ?>
              </div>
           </div>
-          <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>     
+          <?php include_once(ROOT_DIR.'/inc/bottom.php'); ?>     
       </div>
 </body>
 </html>
