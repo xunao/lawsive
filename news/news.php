@@ -13,15 +13,9 @@
 		$db=get_db();
 		$news_id = $_GET['id'];
 		$record=$db->query("select * from lawsive.news where id='{$news_id}'");
-		$record_f=explode(' ', $record[0]->related_news);
-		$latest_test=$db->query("select * from lawsive.news where author='{$record[0]->author}' and id!='{$news_id}' ");
-		$record_f_t=array();
-		$record_f_d=array();
-		for ($i = 0; $i < 3; $i++) {
-			$sql=$db->query("select * from lawsive.news where id='{$record_f[$i]}'");
-			$record_f_t[]=$sql[0]->title;
-			$record_f_d[]=$sql[0]->created_at;
-		}
+		$record_f=explode(',', $record[0]->related_news);
+		$latest_news=$db->query("select title, created_at ,id from lawsive.news where author='{$record[0]->author}' and id > '{$news_id}'  limit 1");
+		$related_news=$db->query("select title, created_at ,id from lawsive.news where id in ('{$record_f[0]}' ,'{$record_f[1]}' ,'{$record_f[2]}')");
   	?>
 <body>
       <div id="ibody">
@@ -36,12 +30,16 @@
           		</div>
           		<div id="content">
           		    <div><?php echo $record[0]->content;?></div>
+          		    <?php if (count($latest_news)==1) {?>
           		    <div class="cont_b1"><?php echo $record[0]->author;?>上一篇文章：</div>
-          			<div class="cont_b2"><a href=""><?php echo $latest_test[0]->title;?></a> <font class="cont_b3"><?php echo date('Y-m-d',strtotime($latest_test[0]->created_at));?></font></div>
+          			<div class="cont_b2"><a href=""><?php echo $latest_news[0]->title;?></a> <font class="cont_b3"><?php echo date('Y-m-d',strtotime($latest_news[0]->created_at));?></font></div>
+          			<?php }?>
+          			<?php if (count($related_news)!=0) {?>
           			<div class="cont_b1">您可能感兴趣的文章：</div>
-          			<div class="cont_b2"><a href=""><?php echo $record_f_t[0];?></a><font class="cont_b3"><?php echo date('Y-m-d',strtotime($record_f_d[0]));?></font></div>
-          			<div class="cont_b2"><a href=""><?php echo $record_f_t[1];?></a> <font class="cont_b3"><?php echo date('Y-m-d',strtotime($record_f_d[1]));?></font></div>
-          			<div class="cont_b2"><a href=""><?php echo $record_f_t[2];?> </a><font class="cont_b3"><?php echo date('Y-m-d',strtotime($record_f_d[2]));?></font></div>
+          			<?php }?>
+          			<?php for ($i = 0; $i < count($related_news); $i++) {?>
+          			<div class="cont_b2"><a href="./news.php?id=<?php echo $related_news[$i]->id;?>"><?php echo $related_news[$i]->title;?></a><font class="cont_b3"><?php echo date('Y-m-d',strtotime($related_news[$i]->created_at));?></font></div>
+          			<?php }?>
           			<div class="cont_b2"><font class="cont_b4">本文涉及话题：</font><a href=""><?php echo $record[0]->keywords;?></a></div> 
           		</div>
           		<div id="bee_ad"><a href=""><img alt="" src="/images/news/bee_ad.jpg" border="0"></a></div>

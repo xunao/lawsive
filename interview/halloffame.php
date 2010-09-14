@@ -106,17 +106,17 @@
              </div>
              <div id="center_r">
               <?php 
-                include(ROOT_DIR.'/inc/right/right_column.php');
-				include(ROOT_DIR.'/inc/right/right_search.php');
-				include(ROOT_DIR.'/inc/right/right_add.php');
-				include(ROOT_DIR.'/inc/right/right_today.php');
-				include(ROOT_DIR.'/inc/right/right_cr_ad.php');
-				include(ROOT_DIR.'/inc/right/right_hot.php');
-				include(ROOT_DIR.'/inc/right/right_rss.php');
-				include(ROOT_DIR.'/inc/right/right_news.php');
+               		include(ROOT_DIR.'/inc/right/right_add.php');
+					include(ROOT_DIR.'/inc/right/right_search.php');
+					include(ROOT_DIR.'/inc/right/right_rss.php');
+					include(ROOT_DIR.'/inc/right/right_today.php');
+					include(ROOT_DIR.'/inc/right/right_hot.php');
+					include(ROOT_DIR.'/inc/right/right_expert.php');
+					include(ROOT_DIR.'/inc/right/right_rank.php');
               ?>
              </div>
             <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>       
+      </div>
       </div>
 </body>
 </html>

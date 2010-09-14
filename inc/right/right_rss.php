@@ -6,4 +6,4 @@
 	#right_rss_p{margin:5px 0 0 5px; }
 	#right_rss_in input{width:210px; height:22px; font-size:12px;  border:1px solid #748E9D; float:left; margin:5px; color:#666666}
 </style>
-<div id="right_rss"><form action="" method="post"><div id="right_rss_in"><img src="/images/index/a.jpg"><input type="text" name="email" value="输入您的接收邮件"><a href=""><img id="right_rss_p" src="images/index/rss_q.jpg" border="0"></a></div></form></div>
+<div id="right_rss"><form action="" method="post"><div id="right_rss_in"><img src="/images/index/a.jpg"><input type="text" name="email" value="输入您的接收邮件"><a href=""><img id="right_rss_p" src="/images/index/rss_q.jpg" border="0"></a></div></form></div>

@@ -10,6 +10,11 @@
 		css_include_tag('public','lawyer');
 		js_include_tag('login','index');
 		$user = member::current();
+		$db = get_db();
+		$sql_lawhos="select title description last_edited_at photo_str from lawsive.news where news_type='律所动态'  limit 14";
+		$sql_lawyer="select title description last_edited_at photo_str from lawsive.news where news_type='律师动态' limit 14 ";
+		$lawhos=$db->query($sql_lawhos);
+		$lawyer=$db->query($sql_lawyer);
   	?>
 <body>
       <div id="ibody">
@@ -29,7 +34,7 @@
            		<?php for($i=0;$i<7;$i++){ ?>
            		<div class="regulation_content">
            			<div class="context">
-	           			<?php if($i%2==0){ ?><a href=""><img src="/images/lawyer/image.jpg" /><?php }?></a><p><a href=""><span class="span1">上海领秀律师事务所</span></a><br><a href="">共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案</a>　　<span>2010/08/02</span></p>
+	           			<?php if($i%2==0){ ?><a href=""><img src="<?php echo $lawhos[$i]->photo_src?>" /><?php }?></a><p><a href=""><span class="span1"><?php echo $lawhos[$i]->title?></span></a><br><a href=""><?php echo $lawhos[$i]->description ?></a>　　<span><?php echo $lawhos[$i]->last_edited_at?></span></p>
 	           		</div>
            		</div>
            		<?php } ?>
@@ -37,7 +42,7 @@
            		<?php for($i=7;$i<14;$i++){ ?>
            		<div class="regulation_content">
            			<div class="context">
-	           			<?php if($i%2==0){ ?><a href=""><img src="/images/lawyer/image.jpg" /><?php }?></a><p><a href=""><span class="span1">上海领秀律师事务所</span></a><br><a href="">共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案</a>　　<span>2010/08/02</span></p>
+	           			<?php if($i%2==0){ ?><a href=""><img src="<?php echo $lawhos[$i]->photo_src?>" /><?php }?></a><p><a href=""><span class="span1"><?php echo $lawhos[$i]->title?></span></a><br><a href=""><?php echo $lawhos[$i]->description ?></a>　　<span><?php echo $lawhos[$i]->last_edited_at?></span></p>
 	           		</div>
            		</div>
            		<?php } ?>
@@ -50,7 +55,7 @@
            		<?php for($i=0;$i<14;$i++){ ?>
            		<div class="regulation_content">
            			<div class="context">
-	           			<?php if($i%2==0){ ?><a href=""><img src="/images/lawyer/image.jpg" /><?php }?></a><p><a href=""><span class="span1">上海领秀律师事务所</span></a><br><a href="">共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案</a>　　<span>2010/08/02</span></p>
+	           			<?php if($i%2==0){ ?><a href=""><img src="<?php echo $lawyer[$i]->photo_src?>" /><?php }?></a><p><a href=""><span class="span1"><?php echo $lawyer[$i]->title?></span></a><br><a href=""><?php echo $lawyer[$i]->description ?></a>　　<span><?php echo $lawyer[$i]->last_edited_at?></span></p>
 	           		</div>
            		</div>
            		<?php } ?>
@@ -63,20 +68,21 @@
 		   </div>
 		   <div id="center_r">
 		   <?php 
-                include(ROOT_DIR.'/inc/right/right_expert.php');
-				include(ROOT_DIR.'/inc/right/right_rss.php');
-				include(ROOT_DIR.'/inc/right/right_meeting.php');
+                include(ROOT_DIR.'/inc/right/right_column.php');
 				include(ROOT_DIR.'/inc/right/right_bussiness.php');
-				include(ROOT_DIR.'/inc/right/right_job.php');
+				include(ROOT_DIR.'/inc/right/right_meeting.php');
 				include(ROOT_DIR.'/inc/right/right_cr_ad.php');
-				include(ROOT_DIR.'/inc/right/right_lawyer.php');
-				include(ROOT_DIR.'/inc/right/right_add.php');
+				include(ROOT_DIR.'/inc/right/right_rss.php');
+				include(ROOT_DIR.'/inc/right/right_hot.php');
+				include(ROOT_DIR.'/inc/right/right_expert.php');
 				include(ROOT_DIR.'/inc/right/right_rank.php');
-				include(ROOT_DIR.'/inc/right/right_add.php');
              ?>
              </div>
           </div>
-          <?php include_once(ROOT_DIR.'/inc/bottom.php'); ?>     
+          <?php include_once(ROOT_DIR.'/inc/bottom.php'); ?> 
+          <?php
+           /*<?php if($i%2==0){ ?><a href=""><img src="/images/lawyer/image.jpg" /><?php }?></a><p><a href=""><span class="span1">上海领秀律师事务所</span></a><br><a href="">共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案共同犯罪的非典型形态及其认定案</a>　　<span>2010/08/02</span></p>*/
+           ?>    
       </div>
 </body>
 </html>
