@@ -34,7 +34,7 @@
 				if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
 			}
 		if(mb_strlen($login_name)<6){return -4;}
-		if(!ereg("^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_-]+\.[a-zA-Z_.-]+$",$login_name)){return -5;}
+		if(!ereg("^[_.a-zA-Z0-9-]+@[a-zA-Z0-9-]+\.[a-zA-Z_.]+$",$login_name)){return -5;}
 		
 		if(mb_strlen($name)>50){return -6;}
 		
@@ -46,7 +46,7 @@
 		if(intval($role)>10){return -11;}
 		
 		if(mb_strlen($email)>128){return -9;}
-		if(!ereg("^[a-zA-Z0-9_.]+@[a-zA-Z0-9]+\.[a-zA-Z_.]+$",$email)){return -5;}
+		if(!ereg("^[_.a-zA-Z0-9-]+@[a-zA-Z0-9-]+\.[a-zA-Z_.]+$",$email)){return -5;}
 		
 		if(member::find(array('conditions' => "email='$email'"))){return -2;}
 		if(member::find(array('conditions' => "login_name='$login_name'"))){return -1;}
