@@ -121,16 +121,12 @@
                        </div>
                        <div id="center_r">
                        	<?php 
-                       		include(dirname(__FILE__).'/inc/right/right_expert.php');
-							include(dirname(__FILE__).'/inc/right/right_rss.php');
-							include(dirname(__FILE__).'/inc/right/right_meeting.php');
-							include(dirname(__FILE__).'/inc/right/right_bussiness.php');
-							include(dirname(__FILE__).'/inc/right/right_job.php');
-							include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
-							include(dirname(__FILE__).'/inc/right/right_lawyer.php');
-							include(dirname(__FILE__).'/inc/right/right_add.php');
-							include(dirname(__FILE__).'/inc/right/right_rank.php');
-							include(dirname(__FILE__).'/inc/right/right_add.php');
+                       		include(ROOT_DIR.'/inc/right/right_add.php');
+							include(ROOT_DIR.'/inc/right/right_lawyer.php');
+							include(ROOT_DIR.'/inc/right/right_rss.php');
+							include(ROOT_DIR.'/inc/right/right_hot.php');
+							include(ROOT_DIR.'/inc/right/right_expert.php');
+							include(ROOT_DIR.'/inc/right/right_rank.php');
                        	?>
                        </div>
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>

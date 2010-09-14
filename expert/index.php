@@ -38,24 +38,18 @@
            		<button class="expert_button second">申请服务</button>
            	</div>
 		   </div>
-<<<<<<< HEAD:expert.php
 		   <div id="center_r">
 			   <?php 
-	                include(dirname(__FILE__).'/inc/right/right_expert.php');
-					include(dirname(__FILE__).'/inc/right/right_rss.php');
-					include(dirname(__FILE__).'/inc/right/right_meeting.php');
-					include(dirname(__FILE__).'/inc/right/right_bussiness.php');
-					include(dirname(__FILE__).'/inc/right/right_job.php');
-					include(dirname(__FILE__).'/inc/right/right_cr_ad.php');
-					include(dirname(__FILE__).'/inc/right/right_lawyer.php');
-					include(dirname(__FILE__).'/inc/right/right_add.php');
-					include(dirname(__FILE__).'/inc/right/right_rank.php');
-					include(dirname(__FILE__).'/inc/right/right_add.php');
+		            include(ROOT_DIR.'/inc/right/right_column.php');
+					include(ROOT_DIR.'/inc/right/right_bussiness.php');
+					include(ROOT_DIR.'/inc/right/right_meeting.php');
+					include(ROOT_DIR.'/inc/right/right_cr_ad.php');
+					include(ROOT_DIR.'/inc/right/right_rss.php');
+					include(ROOT_DIR.'/inc/right/right_hot.php');
+					include(ROOT_DIR.'/inc/right/right_expert.php');
+					include(ROOT_DIR.'/inc/right/right_rank.php');
 	             ?>
              </div>
-=======
-		   <?php include_once(dirname(__FILE__).'/../inc/right.php'); ?> 
->>>>>>> b0f54e21b50b1139dc1ab0ac7ba09ca4a7a0d735:expert/index.php
           </div>
           <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>     
       </div>

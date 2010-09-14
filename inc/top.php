@@ -143,7 +143,7 @@
 					$("#cbx").html("<div id='center_h' style='margin-left:747px;'><a href='#' >申请加入</a></div>");
 					break;
 				case 12:
-					$("#cbx").html("<div id='center_h' style='margin-left:802px;'><a href='' >律所订阅</a></div>");
+					$("#cbx").html("<div id='center_h' style='margin-left:802px;'><a href='#' >律所订阅</a></div>");
 					break;
 			}
 		}

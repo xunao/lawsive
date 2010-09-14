@@ -4,7 +4,7 @@ function checkInput(login_name,password,password2){
 		b = password2.val();
 		if(login_name != null){
 			if(!u ||u.length == 0){alert('请输入邮箱地址！'); login_name.focus(); return false;}
-			if(u.length >50&&u.length<6){alert('请注意邮箱长度');login_name.focus();return false;}
+			if(u.length >128&&u.length<6){alert('请注意邮箱长度');login_name.focus();return false;}
 			if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(u)) { alert('请注意邮箱'); return false;}
 		}
 		if(password != null){
