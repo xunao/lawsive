@@ -9,15 +9,16 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title><?php echo $_g_sitename;?>发布调查报告</title>
 	<?php 
-		$id=intval($_GET['id']);
-		$user1 = new Table('article');
-		if($id)	{
-			$report = $user1->find($id);
-		}
 		use_jquery();
 		css_include_tag('admin/base');
 		js_include_tag('admin/research/edit','pubfun');
 		use_ckeditor();
+		$id=intval($_GET['id']);
+		$user = AdminUser::current_user();
+		$user1 = new Table('article');
+		if($id)	{
+			$report = $user1->find($id);
+		}
 		#validate_form("news_edit");
 	?>
 </head>
@@ -112,7 +113,6 @@
 				<td colspan="2">
 					<button id="submit" type="submit" value="">提交</button>
 					<input type="hidden" name=post[is_adopt] value="<?php $report->is_adopt;?>">
-					<input type="hidden" id="admin_user_id" name=post[admin_user_id] value="<?php echo $_SESSION['id'];?>">
 				</td>
 			</tr>	
 		</table>

@@ -80,9 +80,8 @@ $(function(){
 		var priority = $('#priority').attr('value');
 		if(priority == ''){ priority = 100;}
 		if(valid_input()){
-			$.post("edit.post.php",{'post[resource_type]':'research','post[admin_user_id]':$('#admin_user_id').val(),'post[title]':$('#research_title').val(),'post[author]':$('#research_author').val(),'post[category]':$('#research_category').val(),'post[priority]':$('#research_priority').val(),'post[recommand]':$('#research_recommand').val(),'post[research_src]':$('#research_src').val(),'post[keywords]':$('#research_keywords').val(),'post[photo_src]':$('#research_photo').val(),'post[description]':description,'post[content]':content},function(data){
-//				if(data == true){window.location.href="index.php";}else{alert('go');}
-				$('#test').html(data);
+			$.post("edit.post.php",{'post[resource_type]':'research','post[is_adopt]':$('#is_adopt').val(),'post[title]':$('#research_title').val(),'post[author]':$('#research_author').val(),'post[category]':$('#research_category').val(),'post[priority]':$('#research_priority').val(),'post[recommand]':$('#research_recommand').val(),'post[research_src]':$('#research_src').val(),'post[keywords]':$('#research_keywords').val(),'post[photo_src]':$('#research_photo').val(),'post[description]':description,'post[content]':content},function(data){
+				if(data == true){window.location.href="/admin/research";}
 				});
 		}
 	});
