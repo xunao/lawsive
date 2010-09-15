@@ -4,18 +4,6 @@
 	$user = AdminUser::current_user();
 	$db = get_db();
 	
-	if($_POST['post_type'] == 'del'){
-		$id = intval($_POST['id']);
-		$article = new Table('article');
-		$article-> delete($id);
-	}
-	if($_POST['post_type'] == 'set_up'||'set_down'||'unpub'||'pub'){
-		$id = intval($_POST['id']);
-		$article = new Table('article');
-		$article -> find($id);
-		$article->update_file_attributes('post');
-		$article->update_attributes($_POST['post']);
-	}
 	$report = new Table('article');
 	$report->update_file_attributes('post');
 	$report->update_attributes($_POST['post'],false);

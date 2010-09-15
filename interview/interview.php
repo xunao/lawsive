@@ -33,11 +33,11 @@
 						<div class="line" style="width: 207px;"></div>
 					</div>
 					<?php for($i=0;$i<4;$i++){?>
-					<div class="c_info">
-						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
-						<div class="c_key"><font>关键词：</font><a href="#">蓝蓝律师</a></div>
-						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
+					<div class="c_info"<?php $pos="left_interview_$i";show_page_pos($pos,'interview_headline')?>>
+						<img src="<?php echo $pos_items[$pos]->image1?>" />
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
 					<div class="int_pic">
