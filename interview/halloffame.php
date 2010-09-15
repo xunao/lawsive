@@ -17,7 +17,7 @@
               <div id="center">
               <div id="middlebox">
 	            	  <div class="h_title">高级合伙人</div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
 	            	  <div class="h_picbox">
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
@@ -44,9 +44,9 @@
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  </div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
 	            	  <div class="h_title">高级合伙人</div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
 	            	  <div class="h_picbox">
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
@@ -73,9 +73,9 @@
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  </div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
 	            	  <div class="h_title">高级合伙人</div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
 	            	  <div class="h_picbox">
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
@@ -102,7 +102,7 @@
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  	<a href="#"><img src="/images/c_index/human1.jpg" border=0 /></a>
 	            	  </div>
-	            	  <div class="h_intr">我们很有钱！</div>
+	            	  <div class="h_intr"><a href="">我们很有钱！</a></div>
              </div>
              <div id="center_r">
               <?php 

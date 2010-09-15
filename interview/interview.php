@@ -35,9 +35,9 @@
 					<?php for($i=0;$i<4;$i++){?>
 					<div class="c_info">
 						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font>蓝蓝律师</font>&nbsp;&nbsp;蓝蓝律师事务所</div>
-						<div class="c_key"><font>关键词：</font>蓝蓝律师</div>
-						好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，
+						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
+						<div class="c_key"><font>关键词：</font><a href="#">蓝蓝律师</a></div>
+						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
 					</div>
 					<?php }?>
 					<div class="int_pic">
@@ -46,9 +46,9 @@
 					<?php for($i=4;$i<8;$i++){?>
 					<div class="c_info">
 						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font>蓝蓝律师</font>&nbsp;&nbsp;蓝蓝律师事务所</div>
-						<div class="c_key"><font>关键词：</font>蓝蓝律师</div>
-						好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，
+						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
+						<div class="c_key"><font>关键词：</font><a href="#">蓝蓝律师</a></div>
+						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
 					</div>
 					<?php }?>
  					<div class="more" id="unline"><a href="#">更多&gt;&gt;</a></div>
@@ -62,9 +62,9 @@
 					<?php for($i=0;$i<8;$i++){?>
 					<div class="int_info">
 						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font>蓝蓝律师</font>&nbsp;&nbsp;蓝蓝律师事务所</div>
-						<div class="c_key"><font>关键词：</font>蓝蓝律师</div>
-						好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，
+						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
+						<div class="c_key"><font>关键词：</font><a href="">蓝蓝律师</a></div>
+						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
 					</div>
 					<?php }?>
 					<div class="int_pic">
