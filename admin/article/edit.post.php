@@ -3,38 +3,39 @@
 	include_once('../../frame.php');
 	$user = AdminUser::current_user();
 	$db = get_db();
-	$news_id = $_POST['id'] ? $_POST['id'] : 0;
-	$news = new Table('news');
-	if($news_id){
-		$news->find($news_id);
+	$article_id = $_POST['id'] ? $_POST['id'] : 0;
+	//$news = new Table('news');
+	$article=new Table('article');
+	if($article_id){
+		$article->find($article_id);
 	}
 	
-	$news->update_attributes($_POST['news'],false);
-	$news->update_file_attributes('news');
-	if(!$news->admin_user_id){
-		$news->admin_user_id = $user->id;
+	$article->update_attributes($_POST['news'],false);
+	$article->update_file_attributes('news');
+	if(!$article->admin_user_id){
+		$article->admin_user_id = $user->id;
 	}
 	
-	if ($news->priority == ""){
-		$news->priority = 100;
+	if ($article->priority == ""){
+		$article->priority = 100;
 	}
 	$table_change = array('<p>'=>'');
 	$table_change += array('</p>'=>'');
-	$news->title = strtr($news->title,$table_change);
-	$news->short_title = strtr($news->short_title,$table_change);
-	$news->last_edited_at = now();	
-	if(!$news->id){
+	$article->title = strtr($article->title,$table_change);
+	//news->short_title = strtr($news->short_title,$table_change);
+	$article->last_edited_at = now();	
+	if(!$article->id){
 		//insert news
-		$news->created_at = now();
-		$news->click_count = 0;					
+		$article->created_at = now();
+		//$news->click_count = 0;					
 	}
-	$news->save();
+	$article->save();
 	/*
 	 * news saved
 	 */
 	
 	//handle the keywords
-	$keywords = explode('||', $news->keywords);
+	$keywords = explode('||', $article->keywords);
 	if($keywords){
 		foreach($keywords as $val){
 			if(empty($val)) continue;
@@ -59,22 +60,23 @@
 			}
 		}
 		if ($schedule->publish_date<=time()) {
-			$news->is_adopt=1;
+			$article->is_adopt=1;
 		}else {
-			$news->is_adopt=0;
-			$news->created_at=time();
-			$news->last_edited_at=$schedule->publish_date;
+			$article->is_adopt=0;
+			$article->created_at=time();
+			$article->last_edited_at=$schedule->publish_date;
 		}
-		$news->save();
+		$article->save();
 	}
 
 	if($_POST['copy_news']){
-		$news->copy_from = $news->id;
-		$news->id = 0;
-		$news->category_id = intval($_POST['copy_news']);
-		$news->save();
+		//$news->copy_from = $news->id;
+		$article->id = 0;
+		//$news->category_id = intval($_POST['copy_news']);
+		$article->save();
 	}
 	$href = "index.php";
+	//redirect($href);
 	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	

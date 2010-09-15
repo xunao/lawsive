@@ -63,7 +63,7 @@
 	}
 	
 	static function login($login_name, $password, $expire){
-	    if(mb_strlen($login_name)>48 or mb_strlen($login_name)<6){return null;}
+	    if(mb_strlen($login_name)>128 or mb_strlen($login_name)<6){return null;}
 	    if(mb_strlen($password)>50 or mb_strlen($password)<6){return null;}
 		$s_expire=$expire*86400;
 		$md5_password=md5($password);
@@ -74,9 +74,12 @@
 			$db = get_db();
 			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record[0]->id}'");
 			if ($s_expire!=0){
-				@setcookie("email",$login_name,time()+$s_expire,'/');
-				@setcookie("password",$password,time()+$s_expire,'/');
+				$s_expire = time() + $s_expire;
+			}else{
+				$s_expire = 0;
 			}
+			@setcookie("email",$login_name,$s_expire,'/');
+			@setcookie("password",$password,$s_expire,'/');
 			return $record[0];
 			
 		    }else{
@@ -110,7 +113,6 @@
 	function logout($u_id){
 		$db = get_db();
 		$db->execute("update lawsive.member set last_login_time=now() where id ='{$u_id}'");
-		@setcookie("password",$cache_name,0,'/');
 		@setcookie("cache_name",null,0,'/');
 	}
 	

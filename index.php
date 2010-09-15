@@ -8,7 +8,7 @@
 		include ('./frame.php');
 		use_jquery_ui();
 		css_include_tag('index','public');
-		js_include_tag('login','logout','index');
+		js_include_tag('login','logout');
 		$user = member::current();
   	?>
 <body>
