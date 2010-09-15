@@ -38,26 +38,9 @@
 				<td class="td1">作者名</td>
 				<td><input type="text" name="post[author]" id="research_author" value="<?php echo strip_tags($report->author ? $report->author : $_SESSION['admin_nick_name']);?>"></input></td>
 			</tr>
-			
-			<tr class="tr4">
-				<td class="td1">子分类名</td>
-				<td><input name="post[category]"></td>
-			</tr>
 			<tr class="tr4">
 				<td class="td1">优先级</td>
 				<td><input type="text" name="post[priority]" id="priority"  class="number" value="<?php echo $report->priority;?>">(0~100)</td>
-			</tr>
-			<tr class="tr4">
-				<td class=td1>是否置顶</td>
-				<td>
-					<select  name="post[recommand]" id="recommand" style="width:90px">
-						<option value="0">未置顶</option>
-						<option value="1">已置顶</option>
-					</select>
-				<script>
-					$('#recommand').val('<?php echo $user->recommand;?>');
-				</script>
-				</td>
 			</tr>
 			<!-- 外部新闻 -->
 			<tr class="tr4">
@@ -110,8 +93,8 @@
 			<tr class="tr4 normal news_content">
 				<td  class="td1">报告内容</td><td><?php show_fckeditor('post[content]','Admin',false,"215",$report->content);?></td>
 			</tr>
-			<tr class="tr4 normal news_content">
-				<td  class="td1"></td><td><div id="test"></div></td>
+			<tr class="tr4" style="display:none">
+				<td  class="td1">test</td><td><?php show_fckeditor('x','Admin',false,"0");?></td>
 			</tr>
 			
 			<tr class="btools">

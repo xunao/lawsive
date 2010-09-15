@@ -22,7 +22,7 @@
 		$fields['pg']=array("标题","描述","链接","","图片","","","");
 		$fields['link_t_time']=array("类型","标题","链接","","","","时间","");
 		$fields['interview_headline']=array("律师","律所","链接","","图片","","标题","");
-		$fields['interview_intr']=array("律师","律所","链接","","图片","","标题","");
+		$fields['interview_intrduction']=array("律师","律所","链接","关键查询","图片","","关键字","内容");
 		$names = array_key_exists($_GET['name'],$fields) ?  $fields[$_GET['name']] : $fields['default'];
 	?>
 </head>
