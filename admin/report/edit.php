@@ -11,7 +11,7 @@
 	<?php 
 		use_jquery();
 		css_include_tag('admin/base');
-		js_include_tag('admin/research/edit','pubfun');
+		js_include_tag('admin/report/edit','pubfun');
 		use_ckeditor();
 		$id=intval($_GET['id']);
 		$user1 = new Table('article');
@@ -23,7 +23,7 @@
 </head>
 <body>
 	<div id="icaption">
-	    <div id="title"><?php if(!$id){ echo '调查发布';}else{echo '调查修改';} ?></div>
+	    <div id="title"><?php if(!$id){ echo '报告发布';}else{echo '报告修改';} ?></div>
 		  <a href="index.php" id="btn_back"></a>
 	</div>
 	<div id="itable">
@@ -61,8 +61,17 @@
 			</tr>
 			<!-- 外部新闻 -->
 			<tr class="tr4">
-				<td class="td1">文章链接</td>
-				<td><input type="text" name="post[research_src]" id="research_src" value="<?php echo $report->research_src;?>"></td>
+				<td class="td1">报告文档名</td>
+				<td><input type="text" name="post[file_name]" id="file_name" value="<?php echo $report->file_name;?>"></td>
+			</tr>
+			<tr class="tr4">
+				<td class="td1">上传文档</td>
+				<td>
+					<input type="file" id="file" name="post[file_src]">
+					<?php if($report->file_src){?>
+					<a href="<?php echo $report->file_src?>" target="_blank">查看</a>
+					<?php }?>
+				</td>
 			</tr>
 			<tr class="tr4">
 				<td class="td1">关键词</td>
@@ -84,7 +93,6 @@
 					<img id="add_keyword" style="cursor:pointer; float:left;" src="/images/admin/btn_add.png" />
 				</td>
 			</tr>
-	
 			<tr class="tr4">
 				<td class="td1">上传封面图片</td>
 				<td>
@@ -94,14 +102,13 @@
 					<?php }?>
 					<span style="color:blue;">支持格式：jpg,png,gif，小于100K</span>
 				</td>
-			</tr>		
-	
+			</tr>
 			<tr class="tr4">
 				<td  class="td1">简短描述</td><td><?php show_fckeditor('post[description]','Admin',false,"100",$report->description);?></td>
 			</tr>
 			
 			<tr class="tr4 normal news_content">
-				<td  class="td1">调查内容</td><td><?php show_fckeditor('post[content]','Admin',false,"215",$report->content);?></td>
+				<td  class="td1">报告内容</td><td><?php show_fckeditor('post[content]','Admin',false,"215",$report->content);?></td>
 			</tr>
 			<tr class="tr4 normal news_content">
 				<td  class="td1"></td><td><div id="test"></div></td>
