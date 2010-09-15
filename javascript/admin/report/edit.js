@@ -33,8 +33,12 @@ function valid_input(){
 		alert("请输入标题！");
 		return false;
 	}
-	if($('#research_src').val() ==""){
-		alert("请输入文章地址！");
+	if($('#file_name').val() ==""){
+		alert("请输入报告文档名！");
+		return false;
+	}
+	if($('#file').val() ==""){
+		alert("请添加报告！");
 		return false;
 	}
 	if($('#research_keywords').val()==''){

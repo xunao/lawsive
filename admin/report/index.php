@@ -9,7 +9,7 @@
 		judge_admin();
 		
 	?>
-	<title><?php echo $_g_site_name;?>-调查管理</title>
+	<title><?php echo $_g_site_name;?>-报告管理</title>
 	<?php
 		css_include_tag('admin/base');
 		use_jquery();
@@ -19,15 +19,15 @@
 		$filter_adopt=isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']): -1;
 		$recommand =isset($_GET['recommand']) ?  intval($_GET['recommand']): -1;
 		$conditions = array();
-		$conditions[] = "resource_type = 'research'";
+		$conditions[] = "resource_type = 'report'";
 		if($filter_search != ''){
 			$conditions[] = "(title like '%$filter_search%' or category like '%$filter_search%' or description like '%$filter_search%' or keywords like '%$filter_search%' or file_name like '%$filter_search%')";
 		}
 		if($recommand != -1){
-			$conditions[] = "recommand = $recommand";
+			$conditions[] = "recommand = '$recommand'";
 		}
 		if($filter_adopt != -1){
-			$conditions[] = "is_adopt = $filter_adopt";
+			$conditions[] = "is_adopt = 'rd$filter_adopt'";
 		}
 		$report = new Table("article");
 		$report = $report->paginate('all',array('conditions' => join(' and ', $conditions)),30);
@@ -36,7 +36,7 @@
 </head>
 <body>
 <div id=icaption>
-    <div id=title>调查管理</div>
+    <div id=title>报告管理</div>
 	  <a href="edit.php" id=btn_add></a>
 </div>
 <div id=isearch>
@@ -61,7 +61,7 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="40%">标题</td><td width="15%">作者</td><td width="15%">所属类别</td><td width="15%">发布时间</td><td width="15%">操作</td>
+			<td width="25%">标题</td><td width="15%">作者</td><td width="15%">子类别名</td><td width="15%">报告文件名</td><td width="15%">发布时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
@@ -71,6 +71,7 @@
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/research/research.php?id={$report[$i]->id}";?>" target="_blank"><?php echo strip_tags($report[$i]->title);?></a></td>
 			<td><?php echo $report[$i]->author;?></td>
 			<td><?php echo $report[$i]->category;?></td>
+			<td><a href="<?php echo $report[$i]->file_src;?>"></a><?php echo $report[$i]->file_name;?></td>
 			<td><?php echo $report[$i]->created_at;?></td>
 			<td>
 					<a href="edit.php?id=<?php echo $report[$i]->id;?>" class="edit" name="<?php echo $report[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
