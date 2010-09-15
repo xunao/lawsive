@@ -1,4 +1,3 @@
-	
 function add_keyword(keyword){
 	if(keyword == ''){
 		alert('请输入关键字!');
