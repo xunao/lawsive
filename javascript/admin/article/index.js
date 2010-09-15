@@ -8,6 +8,7 @@ function search_news(){
 	url.push('filter_category='+filter_category);
 	url.push('filter_recommand='+ $('#up').val());
 	url.push('filter_adopt=' + $('#adopt').val());
+	url.push('filter_author=' + $('#author').val());
 	url.push('filter_search=' + encodeURI($('#filter_search').val()));
 	url = "?" + url.join('&');
 	window.location.href=url;	
@@ -44,7 +45,7 @@ $(function(){
 	$('.del').click(function(e){
 		e.preventDefault();
 		var id = $(this).parentsUntil('tr').parent().attr('id');
-		$.post('/admin/news/ajax.post.php',{'op':'del','id':id},function(data){
+		$.post('/admin/article/ajax.post.php',{'op':'del','id':id},function(data){
 			if(data){
 				alert(data);
 			}
@@ -63,7 +64,7 @@ $(function(){
 	$('.publish_news').click(function(e){
 		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
-		$.post('/admin/news/ajax.post.php',{'op':'publish','id':id},function(data){
+		$.post('/admin/article/ajax.post.php',{'op':'publish','id':id},function(data){
 			if(data){
 				alert(data);
 			}
@@ -73,7 +74,7 @@ $(function(){
 	$('.unpublish_news').click(function(e){
 		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
-		$.post('/admin/news/ajax.post.php',{'op':'unpublish','id':id},function(data){
+		$.post('/admin/article/ajax.post.php',{'op':'unpublish','id':id},function(data){
 			if(data){
 				alert(data);
 			}

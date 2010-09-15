@@ -33,7 +33,7 @@
 		//$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 		$sub_headline = $article->category  ? explode(',',$article->category) : array();
 		//initialize the categroy;
-		$category = new Category('news');
+		$category = new Category('article');
 		$category->echo_jsdata();
 	?>
 </head>

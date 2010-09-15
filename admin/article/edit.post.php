@@ -51,7 +51,7 @@
 		}
 		if($_POST['publish_schedule_date']){
 			$schedule->publish_date = $_POST['publish_schedule_date'];
-			$schedule->resource_id = $news->id;
+			$schedule->resource_id = $article->id;
 			$schedule->resource_type= 'news';
 			$schedule->save();
 		}else{

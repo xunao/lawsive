@@ -12,30 +12,35 @@
 	<?php
 		css_include_tag('admin/base');
 		use_jquery();
-		js_include_tag('category','admin/news/index');
+		js_include_tag('category','admin/article/index');
 		$category = new Category('news');
 		$category->echo_jsdata();
-		//$filter_category = intval($_GET['filter_category']);
+		$filter_category = intval($_GET['filter_category']);
 		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
 		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
+		$filter_author = is_string($_GET['filter_author']) ?  urldecode($_GET['filter_author']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-//		if($filter_category > 0){
-//			$cates = ($category->children_map($filter_category));
-//			$cats = join(',',$cates);
-//			if($cats){
-//				$conditions[] = "category_id in ($cats)";
-//			}
-//		}
+		if($filter_category > 0){
+			$cates = ($category->children_map($filter_category));
+			$cats = join(',',$cates);
+			if($cats){
+				$conditions[] = "category_id in ($cats)";
+			}
+		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
 		if($filter_recommand >=0){
 			$conditions[] = "recommand = $filter_recommand";
 		}
+		if(!is_numeric($filter_author)){
+			$conditions[] = "author = '${filter_author}'";
+		}
 		if($filter_search){
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
 		}
+		
 		$db = get_db();
 		$article=new Table('article');
 		$articles=$db->query('select author from lawsive.article');
@@ -51,7 +56,7 @@
 </div>
 <div id=isearch>
 		<input id="filter_search" type="text" value="<?php echo $filter_search;?>">
-		<span id="span_category"></span>
+<!--		<span id="span_category"></span>-->
 		<select id="adopt" style="width:90px" class="sau_search">
 				<option value="-1">发布状况</option>
 				<option value="1">已发布</option>
@@ -62,10 +67,10 @@
 				<option value="1">已置顶</option>
 				<option value="0">未置顶</option>
 		</select>
-		<select id="up" style="width:90px" class="sau_search">
+		<select id="author" style="width:90px" class="sau_search">
 				<option value="-1">作者姓名</option>
 				<?php for ($j = 0; $j < count($articles); $j++) { ?>
-					<option value="<?php echo $j;?>"><?php echo $articles[$j]->author;?></option>
+				<option value="<?php echo $articles[$j]->author;?>"><?php echo $articles[$j]->author;?></option>
 				<?php }?>
 				
 		</select>
@@ -74,7 +79,7 @@
 			$('#up').val('<?php echo $filter_recommand;?>');
 		</script>
 		<input type="button" value="搜索" id="search_button">
-<!--		<input type="hidden" id="filter_category" value="<?php echo $filter_category;?>" />-->
+		<input type="hidden" id="filter_category" value="<?php echo $filter_category;?>" />
 </div>
 <div id=itable>
 	<table cellspacing="1" align="center">
@@ -86,7 +91,7 @@
 			for($i=0;$i<count($record);$i++){
 		?>
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
-			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/news/news.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
+			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/view/column.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
 			<td><a href="index.php?filter_category=<?php echo $record[$i]->resource_type;?>" style="color:#0000FF"><?php echo strip_tags($record[$i]->resource_type);?></a></td>
 			<td><?php echo $record[$i]->created_at;?></td>
