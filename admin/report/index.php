@@ -61,16 +61,15 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="25%">标题</td><td width="15%">作者</td><td width="15%">子类别名</td><td width="15%">报告文件名</td><td width="15%">发布时间</td><td width="15%">操作</td>
+			<td width="25%">标题</td><td width="20%">作者</td><td width="20%">报告文件名</td><td width="20%">发布时间</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
 			for($i=0;$i<count($report);$i++){
 		?>
 		<tr class=tr3 id=<?php echo $report[$i]->id;?> >
-			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/research/research.php?id={$report[$i]->id}";?>" target="_blank"><?php echo strip_tags($report[$i]->title);?></a></td>
+			<td style="text-align:left; text-indent:12px;"><a href="/view/research.php" target="_blank"><?php echo strip_tags($report[$i]->title);?></a></td>
 			<td><?php echo $report[$i]->author;?></td>
-			<td><?php echo $report[$i]->category;?></td>
 			<td><a href="<?php echo $report[$i]->file_src;?>"></a><?php echo $report[$i]->file_name;?></td>
 			<td><?php echo $report[$i]->created_at;?></td>
 			<td>
