@@ -31,7 +31,7 @@
 		}
 		$report = new Table("article");
 		$report = $report->paginate('all',array('conditions' => join(' and ', $conditions)),30);
-		if($report == false) die('数据库执行失败');
+		if($report === false) die('数据库执行失败');
 	?>
 </head>
 <body>

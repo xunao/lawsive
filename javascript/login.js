@@ -41,11 +41,7 @@ $(function(){
 		}
 	});
 	
-	$('.logout').click(function(){
-		$.post("/home/logout.php",function(data){
-			$(".logout").html(data);
-		});
-	});
+	
 	
 });
 
