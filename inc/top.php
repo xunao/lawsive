@@ -3,7 +3,7 @@
 	<div id="title_log">
 	    <div id="t_l_l"></div>
 	    <div id="t_l_c">
-	    	<a href=""><font>咨询</font></a><font>|</font>
+	    	<a href=""><font style="margin-left:2px;">咨询</font></a><font>|</font>
 	        <a href=""><font>中文网</font></a><font>|</font>
 	        <a href=""><font>法学院</font></a><font>|</font>
 			<a href=""><font>个人服务</font></a>
