@@ -23,8 +23,8 @@
 				<?php for($i=0;$i<3;$i++){?>
 				<div class="itv"<?php $pos="left_interview_$i";show_page_pos($pos,'interview_headline')?>>
 					<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1?>" border="0" /></a>
-					<div class="itv_from"><?php echo $pos_items[$pos]->title;?><font>&nbsp;&nbsp;<?php echo $pos_items[$pos]->description;?></font></div>
-					<div class="itv_title" title="<?php echo $pos_items[$pos]->reserve1?>"><?php echo $pos_items[$pos]->reserve1;?></div>
+					<div class="itv_from"><a href="<?php echo $pos_items[$pos]->href;?>"  title="<?php echo $pos_items[$pos]->title;?>"><?php echo $pos_items[$pos]->title;?></a><font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href;?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description;?></a></font></div>
+					<div class="itv_title" title="<?php echo $pos_items[$pos]->reserve1?>"><a href="<?php echo $pos_items[$pos]->href;?>"><?php echo $pos_items[$pos]->reserve1;?></a></div>
 				</div>
 				<?php }?>
 				<div class="int_box" style="padding-right: 7px;">
@@ -35,20 +35,20 @@
 					<?php for($i=0;$i<4;$i++){?>
 					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
-						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->title?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
-						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
-						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" ><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href="" title="<?php echo $pos_items[$pos]->reserve2?>"><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
 					<div class="int_pic"<?php $pos="left_add_1";show_page_pos($pos,'link_i')?>>
 						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1?>" border=0 /></a>
 					</div>
 					<?php for($i=0;$i<4;$i++){?>
-					<div class="c_info"<?php $pos="left_intrduction2_$i";show_page_pos($pos,'interview_intrduction')?>>
+					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
-						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
-						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
-						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" ><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href="" title="<?php echo $pos_items[$pos]->reserve2?>"><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
  					<div class="more" id="unline"><a href="#">更多&gt;&gt;</a></div>
