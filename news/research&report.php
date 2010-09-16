@@ -24,8 +24,7 @@
           			<div id="l_t1"><?php echo $record[0]->created_at;?></div>
           			<div id="l_t2"><?php echo $record[0]->title;?></div>
           			<div id="l_t3">作者：　<a href=""><font color="#086CC4"><?php echo $record[0]->author;?></font></a></div>
-<!--          			<div id="l_t4">字号 　　　　　背景 </div>-->
-          			<div id="l_t5">收藏 电邮 打印 评论<a href=""><font color="#9E2F2F">[1条]</font></a>　&nbsp;<a href=""><font color="#9E2F2F">英文</font></a>　&nbsp;<a href=""><font color="#9E2F2F">对照</font></a></div>
+<!--       			<div id="l_t4">字号 　　　　　背景 </div><div id="l_t5">收藏 电邮 打印 评论<a href=""><font color="#9E2F2F">[1条]</font></a>　&nbsp;<a href=""><font color="#9E2F2F">英文</font></a>　&nbsp;<a href=""><font color="#9E2F2F">对照</font></a></div>-->
           		</div>
           		<div id="content">
           		    <div><?php echo $record[0]->content;?></div>
