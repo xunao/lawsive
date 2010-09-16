@@ -33,7 +33,7 @@
 		//$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 		$sub_headline = $article->category  ? explode(',',$article->category) : array();
 		//initialize the categroy;
-		$category = new Category('news');
+		$category = new Category('article');
 		$category->echo_jsdata();
 	?>
 </head>
@@ -67,10 +67,10 @@
 				<td><input type="text" name="news[author]" id="news_short_title" value="<?php echo strip_tags($article->author ? $article->author : $_SESSION['admin_nick_name']);?>"></input></td>
 			</tr>
 			
-			<tr class="tr4">
-				<td class="td1">分类</td>
-				<td><span id="span_category"></span><a href="#" id="copy_news" style="color:blue">复制到其他分类</a></td>
-			</tr>
+<!--			<tr class="tr4">-->
+<!--				<td class="td1">分类</td>-->
+<!--				<td><span id="span_category"></span><a href="#" id="copy_news" style="color:blue">复制到其他分类</a></td>-->
+<!--			</tr>-->
 			
 			<tr class="tr4" style="display:none;" id="tr_copy_news">
 				<td class="td1">复制到分类</td>
@@ -82,34 +82,7 @@
 				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $article->priority;?>">(0~100)</td>
 			</tr>
 			
-<!--			<tr class="tr4">-->
-<!--				<td class="td1">新闻类表</td>-->
-<!--				<td>-->
-<!--					<select name="news[news_type]" id="sel_news_type">-->
-<!--						<option value="normal">普通新闻</option>-->
-<!--						<option value="file">文件下载</option>-->
-<!--						<option value="href">外部链接</option>-->
-<!--					</select>-->
-<!--					<script type="text/javascript">$('#sel_news_type').val(<?php echo "'$news->news_type'"?>);</script>-->
-<!--				</td>-->
-<!--			</tr>-->
-			
-			<!-- 文件新闻 
-			<tr class="tr4 file news_content">
-				<td class="td1">上传文件</td>
-				<td>
-					<input type="file" id="file_file" name="news[file_name]" />
-					<?php if($news->file_name){?>
-					<a href="<?php echo $news->file_name;?>" target="_blank">下载</a>
-					<?php }?>
-				</td>
-			</tr>
-			
-			 外部新闻 
-			<tr class="tr4 href news_content">
-				<td class="td1">新闻链接</td>
-				<td><input type="text" name=news[target_url] id="input_href" value="<?php echo $article->target_url;?>"></td>
-			</tr>-->
+
 			
 			<tr class="tr4 normal news_content">
 				<td class="td1">关键词</td>

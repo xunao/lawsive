@@ -17,14 +17,10 @@
 		js_include_tag('admin/research/index');
 		$filter_search = urldecode($_GET['filter_search']);
 		$filter_adopt=isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']): -1;
-		$recommand =isset($_GET['recommand']) ?  intval($_GET['recommand']): -1;
 		$conditions = array();
 		$conditions[] = "resource_type = 'research'";
 		if($filter_search != ''){
 			$conditions[] = "(title like '%$filter_search%' or category like '%$filter_search%' or description like '%$filter_search%' or keywords like '%$filter_search%' or file_name like '%$filter_search%')";
-		}
-		if($recommand != -1){
-			$conditions[] = "recommand = $recommand";
 		}
 		if($filter_adopt != -1){
 			$conditions[] = "is_adopt = $filter_adopt";
@@ -45,11 +41,6 @@
 				<option value="-1">发布状况</option>
 				<option value="1">已发布</option>
 				<option value="0">未发布</option>
-		</select>
-		<select id="recommand" style="width:90px" class="sau_search">
-				<option value="-1">是否置顶</option>
-				<option value="1">已置顶</option>
-				<option value="0">未置顶</option>
 		</select>
 		<script type="text/javascript">
 			$('#filter_adopt').val('<?php echo $filter_adopt;?>');
@@ -82,13 +73,14 @@
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="publish_news" title="发布"><img src="/images/admin/btn_unapply.png" border="0"></span>
 					<?php }?>
 					<?php
-//					if($g_admin->has_rights('top_news')){
+					/*
+					if($g_admin->has_rights('top_news')){
 					if($report[$i]->recommand =="1"){?>
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="set_down" title="取消置顶"><img src="/images/admin/btn_up.png" border="0"></span>
 					<?php }else{?>
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="set_up" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
-//					}
+					}*/
 					?>
 					<?php if($g_admin->has_rights('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $report[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>

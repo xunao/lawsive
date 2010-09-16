@@ -33,22 +33,22 @@
 						<div class="line" style="width: 207px;"></div>
 					</div>
 					<?php for($i=0;$i<4;$i++){?>
-					<div class="c_info"<?php $pos="left_interview_$i";show_page_pos($pos,'interview_headline')?>>
+					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
 						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
 						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
 						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
-					<div class="int_pic">
-						<a href="#"><img src="/images/c_index/pic1.jpg" border=0 /></a>
+					<div class="int_pic"<?php $pos="left_add_1";show_page_pos($pos,'link_i')?>>
+						<a href="<?php echo $pos_items[$pos]->href?>"><img src="<?php echo $pos_items[$pos]->image1?>" border=0 /></a>
 					</div>
-					<?php for($i=4;$i<8;$i++){?>
-					<div class="c_info">
-						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
-						<div class="c_key"><font>关键词：</font><a href="#">蓝蓝律师</a></div>
-						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
+					<?php for($i=0;$i<4;$i++){?>
+					<div class="c_info"<?php $pos="left_intrduction2_$i";show_page_pos($pos,'interview_intrduction')?>>
+						<img src="<?php echo $pos_items[$pos]->image1?>" />
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
  					<div class="more" id="unline"><a href="#">更多&gt;&gt;</a></div>
@@ -60,15 +60,15 @@
 						<div class="line" style="width: 207px;"></div>
 					</div>
 					<?php for($i=0;$i<8;$i++){?>
-					<div class="int_info">
-						<img src="/images/c_index/human3.jpg" />
-						<div class="c_t"><font><a href="">蓝蓝律师</a></font>&nbsp;&nbsp;<a href="">蓝蓝律师事务所</a></div>
-						<div class="c_key"><font>关键词：</font><a href="">蓝蓝律师</a></div>
-						<a href="">好律师，好律师，好律师，好律师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，师，好律师，好律师，</a>
+					<div class="c_info"<?php $pos="left_intrduction3_$i";show_page_pos($pos,'interview_intrduction')?>>
+						<img src="<?php echo $pos_items[$pos]->image1?>" />
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
-					<div class="int_pic">
-						<a href="#"><img style="margin-left: 7px;" src="/images/c_index/pic1.jpg" border=0 /></a>
+					<div class="int_pic"<?php $pos="left_add_2";show_page_pos($pos,'link_i')?>>
+						<a href="<?php echo $pos_items[$pos]->href?>"><img style="margin-left: 7px;" src="<?php echo $pos_items[$pos]->image1?>" border=0 /></a>
 					</div>
  					<div class="more" id="unline"><a href="#">更多&gt;&gt;</a></div>
 				</div>

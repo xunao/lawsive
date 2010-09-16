@@ -82,14 +82,14 @@
 					<?php	}else{?>
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="publish_news" title="发布"><img src="/images/admin/btn_unapply.png" border="0"></span>
 					<?php }?>
-					<?php
-//					if($g_admin->has_rights('top_news')){
+					<?php/*
+					if($g_admin->has_rights('top_news')){
 					if($report[$i]->recommand =="1"){?>
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="set_down" title="取消置顶"><img src="/images/admin/btn_up.png" border="0"></span>
 					<?php }else{?>
 					<span style="cursor:pointer" name="<?php echo $report[$i]->id;?>" class="set_up" title="置顶"><img src="/images/admin/btn_unup.png" border="0"></span>
 					<?php }
-//					}
+					}*/
 					?>
 					<?php if($g_admin->has_rights('comment_news')){?>
 					<a href="/admin/comment/comment.php?id=<?php echo $report[$i]->id;?>&type=news" title="评论"><img src="/images/admin/btn_comment.png" border="0"></a>

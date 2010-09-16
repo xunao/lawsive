@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	include_once('../../frame.php');
 	$user = AdminUser::current_user();

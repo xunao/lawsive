@@ -34,9 +34,9 @@
 .c_info2{width:277px; height:70px; margin-left:16px; margin-bottom:18px; overflow:hidden;}
 .c_info2 img{width:70px; height:70px; float:left; margin-right:3px;}
 .c_box{width:195px; margin-left:9px;}
-.c_t{width:195px; height:18px;}
-.c_t a {font-size:14px; overflow:hidden;}
-.c_t font a{color:#005c9d;}
+.c_t{width:195px; height:18px; overflow:hidden;}
+.c_t a {font-size:14px;}
+.c_t font a{height:18px; color:#005c9d; overflow:hidden;}
 .c_key{width:195px; height:18px; color:#999999; overflow:hidden;}
 .c_key font{color:#000000;}
 .c_key a{color:#999999;}
@@ -52,7 +52,8 @@
 .itv_from font{color:#999999; font-size:12px;}
 .itv_title{width:177px; height:16px; letter-spacing:0px; color:#003869; font-weight:bold; font-size:14px; line-height:16px; margin-top:5px; overflow:hidden;}
 .int_box{width:301px;}
-.int_pic img{width:280px; height:60px; margin-left:16px; padding-bottom:20px;}
+.int_pic{width:280px; height:60px; margin-left:16px; padding-bottom:20px;}
+.int_pic img{width:280px; height:60px;}
 .line2{width:1px; height:1100px; margin-top:32px; background:#ced7df; lineheight:0px; font-size:0px;}
 
 .job_box{width:301px;}

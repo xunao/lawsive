@@ -42,7 +42,7 @@ function delete_news($id){
 	}
 	$db = get_db();
 	
-	if($db->execute("delete from article where id=$id")){
+	if($db->execute("delete from article where id='{$id}'")){
 		if($db->affect_count <= 0 )return false;
 		admin_log('delete article');
 		return true;
@@ -58,7 +58,7 @@ function update_news_attribute($right,$id,$field,$value){
 		return false;
 	}
 	$db = get_db();
-	if($db->execute("update news set $field='$value' where id=$id")){
+	if($db->execute("update article set $field='$value' where id=$id")){
 		if($db->affect_count <= 0 )return false;
 		admin_log($right);
 		return true;

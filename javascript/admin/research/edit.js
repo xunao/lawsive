@@ -45,6 +45,15 @@ function valid_input(){
 		alert("请添加封面照片!");
 		return false;
 	}
+	var x = CKEDITOR.instances['x'] ;
+	var x = x.getData();
+	
+	var editor = CKEDITOR.instances['post[content]'] ;
+	var content = editor.getData();
+	if(content== x){
+		alert("请输入文章内容！");
+		return false;
+	}
 	return true;
 };
 $(function(){
@@ -62,20 +71,6 @@ $(function(){
 			keywords.push($(this).val());
 		});
 		$('#research_keywords').val(keywords.join('||'));
-		
-		var editor = CKEDITOR.instances['post[description]'] ;
-		var description = editor.getData();
-		if(description==""){
-			alert("请输入描述！");
-			return false;
-		}
-		
-		var editor = CKEDITOR.instances['post[content]'] ;
-		var content = editor.getData();
-		if(content==""){
-			alert("请输入文章内容！");
-			return false;
-		}
 		
 		return valid_input();
 	});
