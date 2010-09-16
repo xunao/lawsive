@@ -13,20 +13,23 @@
 		css_include_tag('admin/base');
 		use_jquery();
 		js_include_tag('category','admin/article/index');
-		$category = new Category('news');
+		$category = new Category('column');
 		$category->echo_jsdata();
-		$filter_category = intval($_GET['filter_category']);
+		$filter_category = urldecode($_GET['filter_category']);
 		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
 		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
 		$filter_author = is_string($_GET['filter_author']) ?  urldecode($_GET['filter_author']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-//		if($filter_category > 0){
-//			$cates = ($category->children_map($filter_category));
-//			$cats = join(',',$cates);
-//			if($cats){
-//				$conditions[] = "category_id in ($cats)";
-//			}
+		if($filter_category > 0){
+			$cates = ($category->children_map($filter_category));
+			$cats = join(',',$cates);
+			if($cats){
+				$conditions[] = "category_id in ($cats)";
+			}
+		}
+//		if($filter_category ){			
+//				$conditions[] = "category_id in (($filter_category)";
 //		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
@@ -46,7 +49,10 @@
 		$articles=$db->query('select distinct author from lawsive.article');
 		$record=$article->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		//if($record === false) die('数据库执行失败');
+		if($record === false) die('数据库执行失败');
+        $category_name =$db->query('select a.category_id, c.name  from category c,article a where a.category_id = c.id;');
+//		$category->find($record[0]->category_id);
+//		echo $cate->name;
 	?>
 </head>
 <body>
@@ -94,8 +100,8 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/view/column.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->resource_type;?>" style="color:#0000FF"><?php echo strip_tags($record[$i]->resource_type);?></a></td>-->
-			<td><?php echo strip_tags($record[$i]->resource_type);?></td>
+			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php $cate = $category->find($record[$i]->category_id); echo $cate->name;?></a></td>-->
+			<td><?php  echo $category_name[$i]->name;?></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
 					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>
