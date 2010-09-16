@@ -36,7 +36,7 @@
 					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
 						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" ><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description?></a></div>
-						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href=""><?php echo $pos_items[$pos]->reserve1?></a></div>
 						<a href="" title="<?php echo $pos_items[$pos]->reserve2?>"><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
@@ -47,7 +47,7 @@
 					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
 						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" ><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description?></a></div>
-						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href=""><?php echo $pos_items[$pos]->reserve1?></a></div>
 						<a href="" title="<?php echo $pos_items[$pos]->reserve2?>"><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
@@ -60,11 +60,11 @@
 						<div class="line" style="width: 207px;"></div>
 					</div>
 					<?php for($i=0;$i<8;$i++){?>
-					<div class="c_info"<?php $pos="left_intrduction3_$i";show_page_pos($pos,'interview_intrduction')?>>
+					<div class="c_info"<?php $pos="left_intrduction1_$i";show_page_pos($pos,'interview_intrduction')?>>
 						<img src="<?php echo $pos_items[$pos]->image1?>" />
-						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>"><?php echo $pos_items[$pos]->description?></a></div>
-						<div class="c_key"><font>关键词：</font><a href="<?php echo $pos_items[$pos]->static_href?>"><?php echo $pos_items[$pos]->reserve1?></a></div>
-						<a href=""><?php echo $pos_items[$pos]->reserve2?></a>
+						<div class="c_t"><font><a href="<?php echo $pos_items[$pos]->href?>" ><?php echo $pos_items[$pos]->title?></a></font>&nbsp;&nbsp;<a href="<?php echo $pos_items[$pos]->href?>" title="<?php echo $pos_items[$pos]->description?>"><?php echo $pos_items[$pos]->description?></a></div>
+						<div class="c_key" title="<?php echo $pos_items[$pos]->reserve1?>"><font>关键词：</font><a href=""><?php echo $pos_items[$pos]->reserve1?></a></div>
+						<a href="" title="<?php echo $pos_items[$pos]->reserve2?>"><?php echo $pos_items[$pos]->reserve2?></a>
 					</div>
 					<?php }?>
 					<div class="int_pic"<?php $pos="left_add_2";show_page_pos($pos,'link_i')?>>
