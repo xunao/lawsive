@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+
+#person_info_center{width:777px; height:2000px; margin-top:10px; margin-left:15px; background:#666666; padding:2px;}
+#person_info_center #info{width:775px; background:#ffffff;}

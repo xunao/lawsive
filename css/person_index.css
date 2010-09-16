@@ -17,25 +17,6 @@
 #person_index_right .pic .lastonline{width:45px; height:10px; font-size:8px; color:#666666; text-align:center; line-height:10px; overflow:hidden;}
 
 
-#person_index_left{width:169px; padding-bottom:10px; background:#666666;}
-#person_index_left #medal{width:125px; height:51px; margin-top:10px; margin-left:22px; background:#f7f2d2;}
-#person_index_left #medal #close{height:12px; margin-top:3px; margin-right:10px; cursor:pointer; float:right;}
-#person_index_left #medal #top{width:110px; height:15px; margin-left:5px; line-height:15px; color:#646362; overflow:hidden;}
-#person_index_left #medal #bottom{width:120px; height:20px; margin-left:2px; line-height:20px; color:#3783B6; overflow:hidden;}
-
-#person_index_left button{width:123px; height:27px; margin-top:5px; margin-left:22px; border:none; text-align:center; color:#000000; line-height:27px; background:url(/images/person/left_btn_bg.jpg) repeat-x;}
-#person_index_left .title{width:95px; height:17px; margin-top:10px; margin-left:22px; padding-top:8px; padding-left:10px; border:1px solid #cccccc; border-bottom:none; font-size:14px; color:#00446D; font-weight:bold; background:url(/images/person/left_title_bg.jpg) repeat-x;}
-#person_index_left .titlebottom{width:161px; height:1px; margin-bottom:10px; margin-left:4px; background:url(/images/person/left_title_bottom.gif) no-repeat; overflow:hidden}
-#person_index_left .content{width:113px; height:20px; margin-left:32px; font-size:14px; line-height:20px;}
-#person_index_left .content a{color:#ffffff;}
-#person_index_left .system{width:100px; height:20px; margin-top:5px; padding-left:20px; line-height:20px; margin-right:5px; font-size:14px; font-weight:bold; background:url(/images/person/alert.jpg) no-repeat 3px; text-align:right; float:right;}
-#person_index_left .system a{color:#ffffff;}
-#person_index_left .systemline{width:123px; height:3px; background:url(/images/person/left_line.gif) no-repeat; overflow:hidden; float:right;}
-#person_index_left .servertitle{width:113px; height:20px; margin-top:20px; margin-left:32px; font-size:14px; line-height:20px; font-weight:bold;}
-#person_index_left .servertitle a{color:#ffffff;}
-#person_index_left .servercontent{width:100px; height:20px; margin-left:32px; padding-left:12px; line-height:20px; background:url(/images/person/triangle.jpg) no-repeat 6px; overflow:hidden;}
-#person_index_left .servercontent a{color:#ffffff;}
-
 #person_index_center{width:561px;}
 #person_index_center #info{width:561px; margin-top:10px; margin-left:15px;}
 #person_index_center #info #pic{width:138px; height:140px; background:url(/images/person/center_pic_bg.jpg) no-repeat;}
