@@ -21,13 +21,13 @@
 		$filter_author = is_string($_GET['filter_author']) ?  urldecode($_GET['filter_author']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-		if($filter_category > 0){
-			$cates = ($category->children_map($filter_category));
-			$cats = join(',',$cates);
-			if($cats){
-				$conditions[] = "category_id in ($cats)";
-			}
-		}
+//		if($filter_category > 0){
+//			$cates = ($category->children_map($filter_category));
+//			$cats = join(',',$cates);
+//			if($cats){
+//				$conditions[] = "category_id in ($cats)";
+//			}
+//		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
@@ -44,7 +44,7 @@
 		$db = get_db();
 		$article=new Table('article');
 		$articles=$db->query('select distinct author from lawsive.article');
-		$record=$article->find('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
+		$record=$article->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//if($record === false) die('数据库执行失败');
 	?>
