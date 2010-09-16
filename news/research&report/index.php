@@ -5,7 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-		include ('../frame.php');
+		include ('../../frame.php');
 		use_jquery_ui();
 		css_include_tag('index','public','view/research');
 		js_include_tag('login','index');
@@ -13,11 +13,10 @@
 		$article =new Table('article');
 		 $research =$article->paginate('all',array('conditions' => "resource_type='research' and is_adopt = '1'",'orederby' => "created_at desc limit 9"));
 		$report =$article->paginate('all',array('conditions' => "resource_type='report' and is_adopt = '1'",'orederby' => "created_at desc limit 9"));
-  		var_dump($report[0]->title);
 		?>
 <body>
       <div id="ibody">
-              <?php include_once(dirname(__FILE__).'/../inc/top.php'); ?>
+              <?php include_once(dirname(__FILE__).'/../../inc/top.php'); ?>
               <div id="center">
                        <div id="center_l">
                        		<div id="research_top">
@@ -55,7 +54,7 @@
                        <div id="cl_ad"><a href=""><img src="/images/index/cl_ad.jpg" border=0></a></div>
              </div>
              <div id="logout"></div>
-            <?php include_once(dirname(__FILE__).'/../inc/bottom.php'); ?>       
+            <?php include_once(dirname(__FILE__).'/../../inc/bottom.php'); ?>       
       </div>
 </body>
 </html>
