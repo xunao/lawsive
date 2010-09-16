@@ -59,7 +59,7 @@
 			for($i=0;$i<count($report);$i++){
 		?>
 		<tr class=tr3 id=<?php echo $report[$i]->id;?> >
-			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/research/research.php?id={$report[$i]->id}";?>" target="_blank"><?php echo strip_tags($report[$i]->title);?></a></td>
+			<td style="text-align:left; text-indent:12px;"><a href="/view/research.php";?>" target="_blank"><?php echo strip_tags($report[$i]->title);?></a></td>
 			<td><?php echo $report[$i]->author;?></td>
 			<td><?php echo $report[$i]->category;?></td>
 			<td><?php echo $report[$i]->created_at;?></td>
