@@ -8,7 +8,7 @@
 		include_once dirname(__FILE__) ."/../../frame.php";
 		use_jquery_ui();
 		js_include_tag('jquery.colorbox-min','admin/page_pos/edit');
-		css_include_tag('jquery_ui','admin/pub');
+		css_include_tag('jquery_ui','admin/base');
 		$pos = new Table('page_pos');
 		$pos->find('first',array('conditions'=>"page='{$_GET['page']}' and name='{$_GET['pos_name']}'"));
 		$fields['default']=array("标题","描述","链接","静态链接","图片一","图片二","备用字段","备用字段2");
