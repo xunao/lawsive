@@ -51,7 +51,7 @@
 		}
 		if($_POST['publish_schedule_date']){
 			$schedule->publish_date = $_POST['publish_schedule_date'];
-			$schedule->resource_id = $news->id;
+			$schedule->resource_id = $article->id;
 			$schedule->resource_type= 'news';
 			$schedule->save();
 		}else{
@@ -76,8 +76,8 @@
 		$article->save();
 	}
 	$href = "index.php";
-	//redirect($href);
-	redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect($href);
+	//redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>
