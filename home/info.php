@@ -30,7 +30,7 @@
       	 		<table align="left">
 	      	 		<tr>
 	      	 			<td width="15%" align="right">用户名：</td>
-	      	 			<td width="95%"><?php echo $member[0]->login_name; ?><input type="hidden" name="member_id" value="<?php echo $member[0]->id; ?>">></td>
+	      	 			<td width="85%"><?php echo $member[0]->login_name; ?><input type="hidden" name="member_id" value="<?php echo $member[0]->id; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">姓名：</td>
