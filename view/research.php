@@ -11,8 +11,8 @@
 		js_include_tag('login','index');
 		$user = member::current();
 		$article =new Table('article');
-		$research =$article->paginate('all',array('conditions' => "resource_type='research'",'orederby' => "created_at desc limit 9"));
-		$report =$article->paginate('all',array('conditions' => "resource_type='report'",'orederby' => "created_at desc limit 9"));
+		 $research =$article->paginate('all',array('conditions' => "resource_type='research' and is_adopt = '1'",'orederby' => "created_at desc limit 9"));
+		$report =$article->paginate('all',array('conditions' => "resource_type='report' and is_adopt = '1'",'orederby' => "created_at desc limit 9"));
   		var_dump($report[0]->title);
 		?>
 <body>
