@@ -25,16 +25,18 @@
                        			<div class="more"><a href=""><img src="/images/view/askforserve.jpg" border="0"></a></div>
                        		</div>
                        		<div id="research_now">
-                       			<div class="c_title" ><div class="c_t_n" ><font>最新分析</font><div class="c_t_b" style="width:200px;"></div></div></div>
-                       			<?php for($i=0; $i<9; $i++){?>
+                       			<div class="c_title" ><div class="c_t_n" ><font>最新调研</font><div class="c_t_b" style="width:200px;"></div></div></div>
+                       			<?php	if(count($research)<9){$num_research = count($research);}else{$num_research = 9;} 
+                       				for($i=0; $i<$num_research; $i++){?>
                        			<div class="research"><img src="<?php echo $research[$i]->photo_src;?>" /><div class="research1"><?php echo $research[$i]->title;?></div><div class="research1"><?php echo substr($research[$i]->created_at, 0,4);?></div><div class="more"><a href="<?php echo $research[$i]->research_src;?>" target="_blank">参加>></a></div></div>
                        			<?php }?>
                        			<div class="more_big"><a href="">更多>></a></div><div><img src="/images/view/research_ad.jpg"></div>
                        		</div>
                        		<div id="report_now">
                        			<div class="c_title" ><div class="c_t_n" ><font>最新报告</font><div class="c_t_b" style="width:200px;"></div></div></div>
-                       			<?php for($i=0; $i<9; $i++){?>
-                       			<div class="research"><img src="<?php echo $report[$i]->photo_src;?>"><div class="research1"><?php echo $report[$i]->title;?><font size="2">2010</font></div><div class="research2"><?php echo $report[$i]->file_name;?></div><div class="more"><a href="<?php echo $report[$i]->file_src;?>">下载>></a></div></div>
+                       			<?php	if(count($report)<9){$num_report = count($report);}else{$num_report = 9;} 
+                       				for($i=0; $i<$num_report; $i++){?>
+                       			<div class="research"><img src="<?php echo $report[$i]->photo_src;?>"><div class="research1"><?php echo $report[$i]->title;?><font size="2"><?php echo substr($research[$i]->created_at, 0,4);?></font></div><div class="research2"><?php echo $report[$i]->file_name;?></div><div class="more"><a href="<?php echo $report[$i]->file_src;?>">下载>></a></div></div>
                        			<?php }?>
                        			<div class="more_big"><a href="">更多>></a></div><div><img src="/images/view/research_ad.jpg"></div>
                        		</div>
