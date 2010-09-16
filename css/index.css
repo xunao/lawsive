@@ -8,8 +8,8 @@ body a{text-decoration:none; color:#666666}
 #center_l{width:585px; margin:16px 0 0 16px; }
 #new_ad{margin-bottom:30px; }
 
-#c_people{width:585px; }
-#c_p_i{float:left; margin:0 10px 14px 0; }
+#c_people{width:585px; height:162px; }
+#c_p_i{width:204px; height:131px; float:left; margin:0 10px 14px 0; }
 #c_p_r{width:370px; height:130px; }
 #c_p_r  font{float:left;}
 #c_p_r_1{width:370px;font-size:17px; line-height:20px; font-weight:600; color:black; letter-spacing:3px; }
