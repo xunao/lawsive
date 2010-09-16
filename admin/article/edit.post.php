@@ -51,8 +51,8 @@
 		}
 		if($_POST['publish_schedule_date']){
 			$schedule->publish_date = $_POST['publish_schedule_date'];
-			$schedule->resource_id = $article->id;
-			$schedule->resource_type= 'news';
+			//$schedule->resource_id = $article->id;
+			$schedule->resource_type= 'column';
 			$schedule->save();
 		}else{
 			if($schedule->id){
@@ -71,13 +71,15 @@
 
 	if($_POST['copy_news']){
 		//$news->copy_from = $news->id;
-		$article->id = 0;
-		//$news->category_id = intval($_POST['copy_news']);
+		//$article->id = 0;
+		//echo count($_POST['copy_news']);
+		//$article->category = $_POST['copy_news'];
+		$news->category_id = intval($_POST['copy_news']);
 		$article->save();
 	}
 	$href = "index.php";
-	redirect($href);
-	//redirect($href.'?category='.$_POST['news']['category_id']);
+	//redirect($href);
+	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>

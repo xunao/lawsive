@@ -21,13 +21,13 @@
 		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-		if($filter_category > 0){
-			$cates = ($category->children_map($filter_category));
-			$cats = join(',',$cates);
-			if($cats){
-				$conditions[] = "category_id in ($cats)";
-			}
-		}
+//		if($filter_category > 0){
+//			$cates = ($category->children_map($filter_category));
+//			$cats = join(',',$cates);
+//			if($cats){
+//				$conditions[] = "category_id in ($cats)";
+//			}
+//		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
 		}

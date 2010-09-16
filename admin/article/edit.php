@@ -21,10 +21,10 @@
 		if($id){
 			$article =$article->find($id);
 			//$news = $news->find($id);
-			//$category_id = $news->category_id;
-			$resource_type=$article->resource_type;
+			$category_id = $article->category_id;
+			//$resource_type=$article->resource_type;
 		}
-		if(empty($resource_type)) $category_id = -1;
+		if(empty($category_id)) $category_id = -1;
 		//if(empty($category_id)) $category_id = -1;
 //		if (!$article->news_type){
 //			$news->news_type = 1;
@@ -33,7 +33,7 @@
 		//$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 		$sub_headline = $article->category  ? explode(',',$article->category) : array();
 		//initialize the categroy;
-		$category = new Category('article');
+		$category = new Category('column');
 		$category->echo_jsdata();
 	?>
 </head>
@@ -67,10 +67,10 @@
 				<td><input type="text" name="news[author]" id="news_short_title" value="<?php echo strip_tags($article->author ? $article->author : $_SESSION['admin_nick_name']);?>"></input></td>
 			</tr>
 			
-<!--			<tr class="tr4">-->
-<!--				<td class="td1">分类</td>-->
-<!--				<td><span id="span_category"></span><a href="#" id="copy_news" style="color:blue">复制到其他分类</a></td>-->
-<!--			</tr>-->
+			<tr class="tr4">
+				<td class="td1">分类</td>
+				<td><span id="span_category"></span><a href="#" id="copy_news" style="color:blue">复制到其他分类</a></td>
+			</tr>
 			
 			<tr class="tr4" style="display:none;" id="tr_copy_news">
 				<td class="td1">复制到分类</td>
@@ -101,6 +101,7 @@
 					<img src="/images/admin/btn_delete.png" style="cursor:pointer; float:left;" id="delete_keyword" />
 					<input type="text" id="auto_keywords" />
 					<input type="hidden" name="news[keywords]" id="news_keywords"/>
+					<input type="hidden" name="news[category]" id="category" value="<?php echo $image->category_id;?>">
 					<img id="add_keyword" style="cursor:pointer; float:left;" src="/images/admin/btn_add.png" />
 				</td>
 			</tr>
