@@ -36,6 +36,7 @@
 .c_box{width:195px; margin-left:9px;}
 .c_t{width:195px; height:18px; overflow:hidden;}
 .c_t a {font-size:14px;}
+.c_t font{width:30px}
 .c_t font a{height:18px; color:#005c9d; overflow:hidden;}
 .c_key{width:195px; height:18px; color:#999999; overflow:hidden;}
 .c_key font{color:#000000;}
