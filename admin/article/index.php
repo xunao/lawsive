@@ -43,10 +43,10 @@
 		
 		$db = get_db();
 		$article=new Table('article');
-		$articles=$db->query('select author from lawsive.article');
+		$articles=$db->query('select distinct author from lawsive.article');
 		$record=$article->find('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		if($record === false) die('数据库执行失败');
+		//if($record === false) die('数据库执行失败');
 	?>
 </head>
 <body>
@@ -77,6 +77,7 @@
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
 			$('#up').val('<?php echo $filter_recommand;?>');
+			$('#author').val('<?php echo $filter_author;?>');
 		</script>
 		<input type="button" value="搜索" id="search_button">
 		<input type="hidden" id="filter_category" value="<?php echo $filter_category;?>" />
@@ -93,7 +94,8 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/view/column.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<td><a href="index.php?filter_category=<?php echo $record[$i]->resource_type;?>" style="color:#0000FF"><?php echo strip_tags($record[$i]->resource_type);?></a></td>
+			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->resource_type;?>" style="color:#0000FF"><?php echo strip_tags($record[$i]->resource_type);?></a></td>-->
+			<td><?php echo strip_tags($record[$i]->resource_type);?></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
 					<a href="edit.php?id=<?php echo $record[$i]->id;?>" class="edit" name="<?php echo $record[$i]->id;?>" title="编辑"><img src="/images/admin/btn_edit.png" border="0"></a>

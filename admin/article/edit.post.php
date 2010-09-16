@@ -76,8 +76,8 @@
 		$article->save();
 	}
 	$href = "index.php";
-	//redirect($href);
-	redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect($href);
+	//redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>
