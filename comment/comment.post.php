@@ -42,6 +42,7 @@ $comment->user_id = $user->id;
 $comment->nick_name = $nick_name;
 $comment->created_at = now();
 $comment->comment_tree = $tree;
+$comment->is_adopt = 1;
 $comment->ip = $_SERVER["REMOTE_ADDR"];
 
 $comment->save();

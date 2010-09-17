@@ -9,16 +9,16 @@
 		use_jquery_ui();
 		css_include_tag('person_public','person_info');
 		js_include_tag('date','person_info');
-		$user = member::current();
-		session_start(); 
-		$_SESSION["server"] = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+		$member = member::current();
+		session_start(); 		
 		$db=get_db();
-		if($_REQUEST['id']=="")
+		if(!$member)
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 		}
-		$member=$db->query('select * from member where id='.$_REQUEST['id']);
-		$info=$db->query('select * from member_base_info where member_id='.$_REQUEST['id']);
+		$info=$db->query('select * from member_base_info where member_id='.$member->id);
+		$auth = rand_str();
+		$_SESSION['info_auth'] = $auth;
   	?>
 <body>
       <div id="ibody">
@@ -26,13 +26,13 @@
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
-      	 			修改用户基本信息<a href=""><<返回上一页</a>
+      	 			修改用户基本信息<a href="">&gt;&gt;返回上一页</a>
       	 		</div>
       	 		<form method="post" action="info.post.php">
       	 		<table align="left">
 	      	 		<tr>
 	      	 			<td width="15%" align="right">用户名：</td>
-	      	 			<td width="85%"><?php echo $member[0]->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info[0]->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member[0]->id; ?>"></td>
+	      	 			<td width="85%"><?php echo $member->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info[0]->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member->id; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">姓名：</td>
@@ -120,8 +120,15 @@
 	      	 			<td align="right">移动电话：</td>
 	      	 			<td><input type="text" id="mobile2" name="post[mobile2]" value="<?php echo $info[0]->mobile2; ?>"></td>
 	      	 		</tr>
-	      	 		<tr><td style="border-bottom:none;"></td><td style="border-bottom:none;"><button id="sub">保存设置</button></td></tr>
+	      	 		<tr>
+	      	 			<td style="border-bottom:none;"></td>
+	      	 			<td style="border-bottom:none;">
+	      	 				<button id="sub">保存设置</button>
+	      	 				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
+	      	 			</td>
+	      	 		</tr>
       	 		</table>
+      	 		</form>
       	 	</div>
       	 </div>
       	<?php include_once(dirname(__FILE__).'/../inc/home/left.php'); ?>
