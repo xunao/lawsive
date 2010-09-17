@@ -1,0 +1,13 @@
+#diary_box{width:806px; height:1200px; margin:-41px 0 0 24px; border-right:1px solid #dfdede;}
+	#diary_title{width:785px; height:35px; font-size:16px; font-weight:bold; line-height:30px; margin-top:25px; border-bottom:1px solid #dfdede; }
+	#diary_title img{margin-left:15px; margin:5px 5px 0 15px;float:left; display:inline;}
+	#e_ret{float:right; margin-right:20px;}
+	#e_ret a{font-weight:normal; font-size:14px; color:#999999; text-decoration:underline;}
+	
+	#d_m{width:772px; height:800px; margin-left:13px; margin-top:27px; background:pink;}
+		#dm_t_l{width:4px; height:29px; background:url('/images/diary/t_t_left.gif') no-repeat;}
+		#dm_t_m{width:90px; height:28px; font-size:16px; line-height:28px; text-align:center; border-top:1px solid #8f8f8f;}
+		#dm_t_r{width:4px; height:29px; background:url('/images/diary/t_t_right.gif') no-repeat;}
+		#dm_t_o{width:674px; height:29px; border-bottom:1px solid #e7e7e7;}
+		#dm_t_o a{font-size:16px; line-height:24px; margin-left:15px; corlor:#598caa; text-decoration:underline;}
+		.dm_diary{width:577px; height:47px; border-top:1px solid #999999;}
