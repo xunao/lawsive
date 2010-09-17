@@ -16,14 +16,23 @@
 //		$trade = new Category('trade');
 		$trade = new Table('trade');
 		$conditions[] = "1=1";
-		$trade = $trade->paginate('all',array('conditions' => join(' and ', $conditions)),12);
+		//var_dump();
 		//$trade->paginate(20);
 //		$category->echo_jsdata();
 //		$filter_category = intval($_GET['filter_category']);
-//		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
+		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
+		switch ($filter_adopt){
+			case 0;
+			$conditions[] = "trade_type = 'office'";
+			break;
+			case 1;
+			$conditions[] = "trade_type = 'lawyer'";
+			break;
+			default:
+				break;
+		}
 //		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
-//		$filter_search = urldecode($_GET['filter_search']);
-//		$conditions = array();
+		$filter_search = urldecode($_GET['filter_search']);
 //		if($filter_category > 0){
 //			$cates = ($category->children_map($filter_category));
 //			$cats = join(',',$cates);
@@ -37,9 +46,10 @@
 //		if($filter_recommand >=0){
 //			$conditions[] = "recommand = $filter_recommand";
 //		}
-//		if($filter_search){
-//			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
-//		}
+		if($filter_search){
+			$conditions[] = "client like '%$filter_search%' ";
+		}
+		$trade = $trade->paginate('all',array('conditions' => join(' and ', $conditions)),12);
 //		
 //		$db = get_db();
 //		$trade = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
@@ -57,7 +67,7 @@
 		<select id="adopt" style="width:90px" class="sau_search">
 				<option value="-1">交易类型</option>
 				<option value="1">律师</option>
-				<option value="0">公司</option>
+				<option value="0">律所</option>
 		</select>
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
@@ -77,7 +87,7 @@
 		?>
 		<tr class=tr3 id=<?php echo $trade[$i]->id;?> >
 			<td><?php echo strip_tags($trade[$i]->client);?></td>
-			<td><?php echo $trade[$i]->trade_type;?></td>
+			<td><?php echo $trade[$i]->trade_type == "office" ? "律所":"律师";?></td>
 			<td><?php echo $trade[$i]->trade_value;?></td>
 			<td><?php echo $trade[$i]->created_at;?></td>
 			<td>

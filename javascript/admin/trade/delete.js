@@ -4,7 +4,8 @@ $(function(){
 			var trade_id = $(this).attr("name");
 			$.post('delete.post.php',{"id":trade_id},function(data){
 				alert(data)
-				$("#"+trade_id).remove();
+//				$("#"+trade_id).remove();
+				location.reload();
 			});
 		}
 	});

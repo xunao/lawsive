@@ -13,7 +13,6 @@
 		css_include_tag('admin/base','colorbox');
 		use_jquery_ui();
 		use_ckeditor();
-		#validate_form("news_edit");
 		js_include_tag('category','jquery.colorbox','admin/trade/edit','pubfun');
 		$id = intval($_GET['id']);
 		$trade = new Table('trade');
@@ -37,7 +36,14 @@
 			</tr>
 			<tr class="tr4">
 				<td class="td1">交易类型</td>
-				<td><input type="text" name="trade[trade_type]" id="trade_trade_type" value="<?php echo strip_tags($trade->trade_type);?>"></input></td>
+				<td> 
+					<select name="trade[trade_type]" id="sel_trade_type">
+						<option value="normal">请选择类别</option>
+						<option value="lawyer">律师</option>
+						<option value="office">律所</option>
+					</select>
+					<script type="text/javascript">$("#sel_trade_type").val("<?php echo strip_tags($trade->trade_type);?>");</script>
+				</td>
 			</tr>
 			<tr class="tr4">
 				<td class="td1">交易金额</td>
@@ -69,7 +75,7 @@
 			</tr>
 			<tr class="btools">
 				<td colspan="2">
-					<input id="submit" type="submit" value="提交">
+					<input id="button_submit" type="button" value="提交">
 					<input type="hidden" name="trade[id]" id="category_id" value="<?php echo $trade->id;?>">
 				</td>
 			</tr>	
