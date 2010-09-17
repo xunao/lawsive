@@ -1,3 +1,13 @@
+function IsNum(s)
+{
+    if(s!=null){
+        var r,re;
+        re = /\d*/i; //\d表示数字,*表示匹配多个数字
+        r = s.match(re);
+        return (r==s)?true:false;
+    }
+    return false;
+}
 function checkinput(){
 	if(strlen($('#company').val())>128){alert('公司名太长了！');return false;}
 	if(strlen($('#title').val())>255){alert('职务名太长了！');return false;}
@@ -8,6 +18,7 @@ function checkinput(){
 	if(strlen($('#introduce').val())>128){alert('自我评价内容长度超出！');return false;}
 	if(strlen($('#vista').val())>255){alert('发展目标内容长度超出！');return false;}
 	if(strlen($('#languages').val())>128){alert('工作语言内容长度超出！');return false;}
+	if(!IsNum($("#work_years").val())){alert('工作时间必须为数字');}
 }
 $(function(){
 	$("#work_from").datepicker(
@@ -34,27 +45,27 @@ $(function(){
 				});
 	$(".edu_edit").click(function(e){
 		e.preventDefault();
-		$.fn.colorbox({'href':'/person/edu_edit.php?id=' +$('#u_id').val()+ '&type=edit&e_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
+		$.fn.colorbox({'href':'/home/edu_edit.php?id=' +$('#u_id').val()+ '&type=edit&e_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
 	});
 	$("#edu_add").click(function(e){
 		e.preventDefault();
-		$.fn.colorbox({'href':'/person/edu_edit.php?id=' +$('#u_id').val()+ '&type=add'});
+		$.fn.colorbox({'href':'/home/edu_edit.php?id=' +$('#u_id').val()+ '&type=add'});
 	});
 	$(".job_edit").click(function(e){
 		e.preventDefault();
-		$.fn.colorbox({'href':'/person/job_edit.php?id=' +$('#u_id').val()+'&type=edit&j_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
+		$.fn.colorbox({'href':'/home/job_edit.php?id=' +$('#u_id').val()+'&type=edit&j_id=' +$(this).attr('name')+ '&num=' +$(this).attr('value')+ ''});
 	});
 	$("#job_add").click(function(e){
 		e.preventDefault();
-		$.fn.colorbox({'href':'/person/job_edit.php?id=' +$('#u_id').val()+ '&type=add'});
+		$.fn.colorbox({'href':'/home/job_edit.php?id=' +$('#u_id').val()+ '&type=add'});
 	});
 	$("#sub_j").click(function(){
-		$.post('/person/edu_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#j_id').val()},function(data){
+		$.post('/home/job_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#j_id').val()},function(data){
 			$('#result').html(data);
 		});
 	});
 	$("#sub_e").click(function(){
-		$.post('/person/edu_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#e_id').val()},function(data){
+		$.post('/home/edu_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#e_id').val()},function(data){
 			$('#result').html(data);
 		});
 	});
@@ -64,7 +75,8 @@ $(function(){
 			return false;
 		}
 		else{
-			$.post('/person/edit.post.php',{'type':'del','db_table':$(this).attr('type'),'del_id':$(this).attr('name')},function(data){
+			$.post('/home/edit.post.php',{'type':'del','db_table':$(this).attr('type'),'del_id':$(this).attr('name')},function(data){
+				window.location.href="/home/edit.php";
 			});
 		}
 	});
