@@ -17,7 +17,6 @@
 		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-		
 		if($filter_category > 0){
 			$cats = join(',',$category->children_map($filter_category));
 			if($cats){

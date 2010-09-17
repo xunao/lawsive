@@ -7,7 +7,6 @@
 		session_start();
 		include_once('../../frame.php');
 		judge_admin();
-		
 	?>
 	<title><?php echo $_g_site_name;?>-新闻管理</title>
 	<?php
