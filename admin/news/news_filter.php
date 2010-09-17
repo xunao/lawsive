@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	include_once('../../frame.php');
 	judge_role();

@@ -21,7 +21,7 @@ class Comment{
 	 		<option value="asc">时间顺序</option>
 	 	</select>
 	 <?php }?>
-	 	<font color="#0088FF">&nbsp 评论总数 &nbsp </font>
+	 	<font color="#0088FF">评论总数</font>
 	 	<a><font color="#A84749">[ <span id="comment_num">1</span> 条 ]</font></a>
 	 </div>
 <?php 

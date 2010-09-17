@@ -9,27 +9,26 @@
 	<meta http-equiv=Content-Language content=zh-CN>
 	<title><?php echo $_g_sitename;?>发布调查报告</title>
 	<?php 
+		use_jquery();
+		css_include_tag('admin/base');
+		js_include_tag('admin/research/edit','pubfun');
+		use_ckeditor();
 		$id=intval($_GET['id']);
 		$user1 = new Table('article');
 		if($id)	{
 			$report = $user1->find($id);
 		}
-		use_jquery();
-		css_include_tag('admin/base');
-		js_include_tag('admin/research/edit','pubfun');
-		use_ckeditor();
 		#validate_form("news_edit");
 	?>
 </head>
 <body>
 	<div id="icaption">
-	    <div id="title">调查报告发布</div>
+	    <div id="title"><?php if(!$id){ echo '调查发布';}else{echo '调查修改';} ?></div>
 		  <a href="index.php" id="btn_back"></a>
 	</div>
 	<div id="itable">
-<!--		<form id="news_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> -->
+		<form id="research_edit" enctype="multipart/form-data" action="edit.post.php" method="post"> 
 		<table cellspacing="1" align="center">
-			
 			<tr class="tr4">
 				<td class=td1>标题</td>
 				<td><input type="text" name="post[title]" id="research_title" value="<?php echo strip_tags($report->title);?>"></td>
@@ -46,24 +45,12 @@
 			</tr>
 			<tr class="tr4">
 				<td class="td1">优先级</td>
-				<td><input type="text" name=post[priority] id="priority"  class="number" value="<?php echo $report->priority;?>">(0~100)</td>
-			</tr>
-			<tr class="tr4">
-				<td class=td1>是否置顶</td>
-				<td>
-					<select  name="post[recommand]" id="recommand" style="width:90px">
-						<option value="0">未置顶</option>
-						<option value="1">已置顶</option>
-					</select>
-				<script>
-					$('#recommand').val('<?php echo $user->recommand;?>');
-				</script>
-				</td>
+				<td><input type="text" name="post[priority]" id="priority"  class="number" value="<?php echo $report->priority;?>">(0~100)</td>
 			</tr>
 			<!-- 外部新闻 -->
 			<tr class="tr4">
-				<td class="td1">文章链接</td>
-				<td><input type="text" name=post[research_src] id="research_src" value="<?php echo $report->research_src;?>"></td>
+				<td class="td1">调查链接</td>
+				<td><input type="text" name="post[research_src]" id="research_src" value="<?php echo $report->research_src;?>"></td>
 			</tr>
 			<tr class="tr4">
 				<td class="td1">关键词</td>
@@ -91,7 +78,7 @@
 				<td>
 					<input type="file" id="research_photo" name="post[photo_src]">
 					<?php if($report->photo_src){?>
-					<a href="<?php echo $report->photo_src?>" target="_blank">查看</a> <a href="#" id="a_delete_pic">删除</a>
+					<a href="<?php echo $report->photo_src?>" target="_blank">查看</a>
 					<?php }?>
 					<span style="color:blue;">支持格式：jpg,png,gif，小于100K</span>
 				</td>
@@ -102,21 +89,20 @@
 			</tr>
 			
 			<tr class="tr4 normal news_content">
-				<td  class="td1">调查报告内容</td><td><?php show_fckeditor('post[content]','Admin',false,"215",$report->content);?></td>
+				<td  class="td1">调查内容</td><td><?php show_fckeditor('post[content]','Admin',false,"215",$report->content);?></td>
 			</tr>
-			<tr class="tr4 normal news_content">
-				<td  class="td1"></td><td><div id="test"></div></td>
+			<tr class="tr4" style="display:none">
+				<td  class="td1">test</td><td><?php show_fckeditor('x','Admin',false,"0");?></td>
 			</tr>
 			
 			<tr class="btools">
 				<td colspan="2">
 					<button id="submit" type="submit" value="">提交</button>
-					<input type="hidden" name=post[is_adopt] value="<?php $report->is_adopt;?>">
-					<input type="hidden" id="admin_user_id" name=post[admin_user_id] value="<?php echo $_SESSION['id'];?>">
+					<input type="hidden" name="post[is_adopt]" value="<?php $report->is_adopt;?>">
 				</td>
 			</tr>	
 		</table>
-<!--		</form>-->
+		</form>
 	</div>
 </body>
 </html>

@@ -13,12 +13,13 @@ body a{text-decoration:none; color:#666666}
 #rea_t_c{width:100%; margin-top:10px; line-height:20px;}
 #research_now{width:280px;}
 .research{width:100%; height:48px; margin-top:5px;}
-.research img{margin-right:10px; float:left;}
-.research1{width:220px; }
+.research img{width:48px; height:48px;margin-right:10px; float:left;}
+.research1{width:220px; height:16px; overflow:hidden;}
+.research1 font{display:block; margin-right:10px; float:right;}
 .more{margin-right:15px;}
 .more_big{margin:20px 0; font-size:14px; line-height:16px; float:right;}
 .more_big a{font-size:14px; line-height:16px; text-decoration:underline;}
 
 #report_now{width:280px; float:right; letter-spacing:0px;}
-.research2{width:220px; color:#003869}
+.research2{width:220px; height:16px; color:#003869; overflow:hidden;}
 #cl_ad{margin:880px 0 0px 10px;;}

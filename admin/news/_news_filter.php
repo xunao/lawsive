@@ -1,4 +1,4 @@
-<?php
+<?php 
 	include_once('../../frame.php');
 	$category = new Category('news');
 	$key = urldecode($_REQUEST['key']);

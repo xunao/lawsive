@@ -1,0 +1,23 @@
+#pedit_box{width:785px; padding-bottom:100px;margin:-21px 0 0 22px;background:url('/images/person/pedit_bj.jpg') repeat-y;}
+	#box_top{width:785px; height:5px; background:url('/images/person/pedit_top.jpg') no-repeat;}
+	#box_m{width:744px; padding-left:21px; padding-right:20px;}
+		#e_title{width:744px; line-height:16px; padding-top:14px; padding-bottom:12px; font-size:14px; font-weight:bold; color:#000000; border-bottom:1px solid #666666;}
+		#e_ret{float:right;}
+		#e_ret a{font-weight:normal; color:#dfdede; text-decoration:underline;}
+		#e_avatar{width:140px; height:400px; margin-top:15px; background:url('/images/person/center_pic_bg.jpg') no-repeat;;}
+		#e_avatar font{font-size:12px; line-height:14px;}
+		#e_avatar img{width:120px; height:120px; padding:6px 7px 14px 9px;}
+		#e_avatar input{ margin-top:6px;}
+		.e_resume{width:569px; margin-left:35px; margin-top:15px;}
+			.er_info{width:569px; border-bottom:1px dotted #999999;}
+			.er_info font{line-height:16px; font-size:12px; margin-top:10px;}
+				.er_i{width:190px; height:18px;  margin-left:28px; padding-top:10px; padding-bottom:14px; padding-right:50px;}
+				.er_i input{width:140px; height:14px;}
+				.er_i2{width:210px; height:18px;  padding-bottom:14px; padding-top:10px; margin-left:5px; padding-right:53px;}
+				.er_i2 input{width:140px; height:14px;}
+				#er_fb{width:400px;}
+				#er_add{width:480px; padding-bottom:6px;}
+				.er_tx{width:100%; height:16px; margin-top:10px; margin-left:5px; }
+				.er_tar{width:80%; height:55px; margin-left:17px; margin-bottom:10px;}
+			#er_sub{width:75px; height:23px; color:#ffffff; margin-top:30px; margin-left:8px; border:1px solid #fcc7a4; background:url('/images/person/pe_sub.jpg') no-repeat;}
+	#box_bottom{width:785px; height:5px; margin-left:22px; background:url('/images/person/pedit_bottom.jpg') no-repeat;}

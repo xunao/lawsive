@@ -9,7 +9,7 @@ body a{text-decoration:none; color:#666666}
 #title_log{width:1000px; height:56px; margin-top:20px;}
 #t_l_l{width:156px; height:60px; background:url("/images/index/t_l_l.jpg")}
 #t_l_c{width:298px; height:40px; background:url("/images/index/t_l_c.jpg"); line-height:40px; font-size:14px;  font-weight:600; color:white; }
-#t_l_c font{margin-left:11px; line-height:40px; font-size:14px;  font-weight:600;}
+#t_l_c font{margin-left:10px; line-height:40px; font-size:14px;  font-weight:600; display:inline}
 #t_l_c a{color:white; line-height:40px; font-size:14px;  font-weight:600;}
 #t_l_r{width:385px; height:25px; float:right; margin:11px 0 0 0; color:#BBBBBB}
 #t_l_r  input{width:80px; height:20px; padding:0; border:1px solid #C4C4C4; background:#00121E}

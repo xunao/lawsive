@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	include_once('../../frame.php');
 	$user = AdminUser::current_user();
@@ -61,8 +61,9 @@
 		if ($schedule->publish_date<=time()) {
 			$news->is_adopt=1;
 		}else {
+			$news->is_adopt=0;
 			$news->created_at=time();
-			$news->last_edited_at=$schedule;
+			$news->last_edited_at=$schedule->publish_date;
 		}
 		$news->save();
 	}

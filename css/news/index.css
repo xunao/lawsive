@@ -15,6 +15,8 @@ body a{text-decoration:none; color:#666666}
 #l_t5{width:50%; margin:15px 0 20px 0; font-size:12px; line-height:18px; text-align:right; float:right;}
 #content{width:585px; color:#000000; font-size:14px; line-height:18px;}
 .cont{margin-bottom:20px; line-height:20px; text-indent:30px;}
+.con_m{width:100%; text-align:right;}
+.con_m a{color:#005C9D;}
 #cont_i{width:100%; margin-bottom:20px;}
 #cont_i img{float:left;margin:0 10px 10px 0;}
 #cont_i font{font-size:14px; line-height:18px;}

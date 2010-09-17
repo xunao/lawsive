@@ -13,18 +13,7 @@ function checkInput(login_name,password){
 }
 
 $(function(){
-	$("#login_btn0").click(function(){
-		var login_name = $("#login_name");
-		var password = $("#password");
-		if(checkInput(login_name,password) != false){
-		$.post("_ajax.login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
-			$('#t_l_r').html(data);
-			$('#b_u_u').html(data);
-		});
-		}else{
-			return false;
-		}
-	});
+	
 	$("#login_btn1").click(function(){
 		var login_name = $("#name1");
 		var password = $("#password1");
@@ -52,28 +41,8 @@ $(function(){
 		}
 	});
 	
-	$('.logout').click(function(){
-		$.post("/home/logout.php",function(data){
-			$(".logout").html(data);
-		});
-	});
 	
-	document.onkeydown = function(e){
-		if($("#name").val()== undefined){
-			if($("#name1").val() == ''){
-				  button = $("#login_btn0");
-			  }else{button = $("#login_btn1");} 
-			var ev = document.all ? window.event : e;
-			  if(ev.keyCode==13 || ev.ctrlKey) {
-				button.click();
-			  }
-		}else{
-			var ev = document.all ? window.event : e;
-			  if(ev.keyCode==13 || ev.ctrlKey) {
-				$("#login_btn2").click();
-			  }
-		}
-	};
+	
 });
 
 	 

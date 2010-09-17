@@ -19,36 +19,43 @@
 .line{height:3px; line-height:0px; font-size:0px; background:#d4d4d4; margin-top:10px; margin-top:37px;}
 #cp_photo{margin-top:5px; margin-left:16px;}
 #cp_photo img{width:150px; height:150px;}
-#cp_person{font-weight:blod;}
 #cp_intr{width:400px; margin-left:16px; margin-top:5px;}
-#cp_title{width:400px; font-size:16px; font-weight:bold; line-height:24px; color:#000000;}
-#cp_person{width:400px; color:#333333;}
+#cp_title{width:400px; height:24px; font-size:16px; font-weight:bold; line-height:24px; color:#000000; overflow:hidden;}
+#cp_person{width:400px; height:18px; font-weight:blod; color:#333333; overflow:hidden;}
+#cp_person a{color:#333333;}
 #keyword{margin-top:5px;font-size:12px;}
-#cp_words{width:400px; margin-top:5px; padding-bottom:5px;color:#333333;font-size:12px; text-align:justify;}
-#cp_person font{color:#ce231f;}
+#cp_words{width:400px; height:72px; margin-top:5px; padding-bottom:5px;color:#333333; font-size:12px; text-align:justify; overflow:hidden;}
+#cp_person font a{color:#ce231f;}
 .more{width:80%; margin-right:12px; text-align:right;}
 .turn_l{margin:30px 10px 0 5px; cursor:pointer;}
 .turn_r{margin-top:30px; cursor:pointer;}
-.c_info{width:277px; margin-left:16px; margin-bottom:18px;}
+.c_info{width:277px; height:105px; margin-left:16px; margin-bottom:18px; overflow:hidden;}
 .c_info img{width:70px; height:70px; float:left;margin-right:3px;}
+.c_info2{width:277px; height:70px; margin-left:16px; margin-bottom:18px; overflow:hidden;}
+.c_info2 img{width:70px; height:70px; float:left; margin-right:3px;}
 .c_box{width:195px; margin-left:9px;}
-.c_t{width:195px; font-size:14px;}
-.c_t font{color:#005c9d; font-size:14px;}
-.c_key{width:195px; color:#999999;}
+.c_t{width:195px; height:18px; overflow:hidden;}
+.c_t a {font-size:14px;}
+.c_t font{width:30px}
+.c_t font a{height:18px; color:#005c9d; overflow:hidden;}
+.c_key{width:195px; height:18px; color:#999999; overflow:hidden;}
 .c_key font{color:#000000;}
-.c_word{text-align:justify;}
+.c_key a{color:#999999;}
+.c_word{height:36px; text-align:justify; overflow:hidden;}
 .int_info{width:277px; margin-left:8px; margin-bottom:18px;}
 .int_info img{width:70px; height:70px; float:left;margin-right:3px;}
 
 .i_title{width:550px; height:24px; font-weight:bold; font-size:16px; margin-top:25px; margin-left:16px;}
 .i_title a{color:#9e2f2f;}
-.itv{width:177px; font-size:12px; margin:15px 9px 0 16px; text-align:justify;}
+.itv{width:177px; height:150px; font-size:12px; margin:15px 9px 0 16px; text-align:justify;}
 .itv img{width:170px; height:100px;}
-.itv_from{margin-top:12px;}
-.itv_from font{color:#999999; font-size:12px;}
-.itv_title{width:177px; letter-spacing:0px; color:#003869; font-weight:bold; font-size:14px; line-height:16px; margin-top:5px;}
+.itv_from{width:177px; height:18px; margin-top:12px;  overflow:hidden;}
+.itv_from a{color:#999999; font-size:12px;}
+.itv_title{width:177px; height:16px; letter-spacing:0px; margin-top:5px; overflow:hidden;}
+.itv_title a{ color:#003869; font-weight:bold; font-size:14px; line-height:16px;}
 .int_box{width:301px;}
-.int_pic img{width:280px; height:60px; margin-left:16px; padding-bottom:20px;}
+.int_pic{width:280px; height:60px; margin-left:16px; padding-bottom:20px;}
+.int_pic img{width:280px; height:60px;}
 .line2{width:1px; height:1100px; margin-top:32px; background:#ced7df; lineheight:0px; font-size:0px;}
 
 .job_box{width:301px;}

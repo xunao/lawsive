@@ -1,5 +1,5 @@
 function search_news(){
-	var url = new Array();	
+	var url = new Array();
 	var filter_category = $('.category_select:last').val();
 	var category_count = $('.category_select').length;
 	if(filter_category == -1 && category_count > 1){

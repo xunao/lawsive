@@ -27,7 +27,7 @@ function delete_keyword(){
 	});
 }
 function valid_input(){
-	var pic_array = new Array('jpg','png','bmp','gif','icon');
+//	var pic_array = new Array('jpg','png','bmp','gif','icon');
 	
 	if($('#research_title').val() ==""){
 		alert("请输入标题！");
@@ -45,6 +45,15 @@ function valid_input(){
 		alert("请添加封面照片!");
 		return false;
 	}
+	var x = CKEDITOR.instances['x'] ;
+	var x = x.getData();
+	
+	var editor = CKEDITOR.instances['post[content]'] ;
+	var content = editor.getData();
+	if(content== x){
+		alert("请输入文章内容！");
+		return false;
+	}
 	return true;
 };
 $(function(){
@@ -56,34 +65,13 @@ $(function(){
 		delete_keyword();
 	});
 	$('#submit').click(function(e){
-		e.preventDefault();
+		
 		var keywords = new Array();
 		$('#sel_keywords option').each(function(){
 			keywords.push($(this).val());
 		});
 		$('#research_keywords').val(keywords.join('||'));
 		
-		var editor = CKEDITOR.instances['post[description]'] ;
-		var description = editor.getData();
-		if(description==""){
-			alert("请输入描述！");
-			return false;
-		}
-		
-		var editor = CKEDITOR.instances['post[content]'] ;
-		var content = editor.getData();
-		if(content==""){
-			alert("请输入文章内容！");
-			return false;
-		}
-		
-		var priority = $('#priority').attr('value');
-		if(priority == ''){ priority = 100;}
-		if(valid_input()){
-			$.post("edit.post.php",{'post[resource_type]':'research','post[admin_user_id]':$('#admin_user_id').val(),'post[title]':$('#research_title').val(),'post[author]':$('#research_author').val(),'post[category]':$('#research_category').val(),'post[priority]':$('#research_priority').val(),'post[recommand]':$('#research_recommand').val(),'post[research_src]':$('#research_src').val(),'post[keywords]':$('#research_keywords').val(),'post[photo_src]':$('#research_photo').val(),'post[description]':description,'post[content]':content},function(data){
-//				if(data == true){window.location.href="index.php";}else{alert('go');}
-				$('#test').html(data);
-				});
-		}
+		return valid_input();
 	});
 });

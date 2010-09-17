@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<html>
+<html> 
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
@@ -20,13 +20,13 @@
 		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-		if($filter_category > 0){
-			$cates = ($category->children_map($filter_category));
-			$cats = join(',',$cates);
-			if($cats){
-				$conditions[] = "category_id in ($cats)";
-			}
-		}
+//		if($filter_category > 0){
+//			$cates = ($category->children_map($filter_category));
+//			$cats = join(',',$cates);
+//			if($cats){
+//				$conditions[] = "category_id in ($cats)";
+//			}
+//		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
