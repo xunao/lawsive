@@ -31,9 +31,6 @@ $(function(){
 		}else if(trade_trade_value.search("^-?\\d+$") != 0){
 			alert("金额输入有误，必须为数字");
 			$("#trade_trade_value").focus();
-		}else if(trade_trade_value.search("^-?\\d+$") != 0){
-			alert("金额输入有误");
-			$("#trade_trade_value").focus();
 		}else if(!trade_area){
 			alert("请输入使用的法律区域");
 			$('#trade_area').focus();
