@@ -10,6 +10,7 @@
 		css_include_tag('person_public','column');
 		js_include_tag('login');
 		$user = member::current();
+		var_dump($user);
   	?>
 <body>
       <div id="ibody">
