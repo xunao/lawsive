@@ -10,8 +10,8 @@
 	global $_g_admin_dir;
 	define('ADMIN_DIR',ROOT_DIR ."/".$_g_admin_dir);
 	define('ADMIN_PATH',"/{$_g_admin_dir}");
-	if(file_exists(ROOT_DIR ."/inc/project_pubfun.php")){
-		require_once ROOT_DIR ."/inc/project_pubfun.php";
+	if(file_exists(PROJECT_LIB_DIR ."/project_pubfun.php")){
+		require_once PROJECT_LIB_DIR ."/project_pubfun.php";
 	}
 	
 	function __autoload($class_name){
