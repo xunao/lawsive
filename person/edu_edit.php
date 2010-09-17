@@ -1,6 +1,6 @@
 <?php
 	session_start();
-  	include_once('../../frame.php');
+  	include_once('../frame.php');
   	set_charset("utf-8");
 	#judge_role();
 ?>
@@ -9,10 +9,10 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title><?php echo $_g_sitename;?>-用户管理</title>
+	<title>个人简历添改</title>
 	<?php
 		css_include_tag('admin/base');
-		js_include_tag('index/member/index');
+		js_include_tag('person_edit');
 	?>
 </head>
 <?php
