@@ -1,5 +1,19 @@
 @CHARSET "UTF-8";
 #column_banner{width:810px; height:700px; float:right; display:inline;}
-	#person_index_welcome{width:775px; height:50px; padding-left:40px; margin-left:10px; background:url(/images/column/top_pg.jpg) no-repeat 15px 20px;  font-weight:bold; font-size:16px; line-height:60px; border-bottom:1px solid #dfdede; float:left; display:inline;}
-		#column_pg{width:775px; height:30px; margin-top:20px; float:left; display: inline;}
-		#column_top_pg{width:101px; height:29px; text-align:center; line-height:29px; background:url(/images/column) no-repeat; font-size:14px; float:left; display:inline;}
+	#person_index_welcome{width:775px; height:50px; padding-left:40px; margin-left:10px; background:url(/images/column/top_pg.jpg) no-repeat 15px 20px; overflow:hidden;  font-weight:bold; font-size:16px; line-height:60px; border-bottom:1px solid #dfdede; float:left; display:inline;}
+		#column_pg{width:775px; height:29px; margin-top:20px; float:left; display: inline;}
+		#column_top_pg{width:101px; height:29px; text-align:center; line-height:29px; background:url(/images/column/top_a.jpg) no-repeat; font-size:14px; float:left; display:inline;}
+		#column_top_right{width:660px; height:28px; padding-left:10px; line-height:28px;  border-bottom:1px solid #E7E7E7; float:left; display:inline;}
+	.column_title_pg{width:775px; height:50px; margin-top:20px; border-top:1px solid #C6C6C6; background:#EFEFEF; display:inline;}
+		.column_left{width: 600px; height:50px; margin-left:15px; float:left; display:inline;}
+			.column_title{width:590px; height:25px; padding-left:10px; line-height:25px; font-size:16px; font-weight:bold; display:inline;}
+			.column_time_pg{width:600px; height:25px; line-height:25px; font-size:16px; display:inline;}
+			.column_time_pg span{margin-left:10px;font-size:12px; color:#666666;}
+		.column_right{width:100px; height:50px; float:right; display:inline;}
+			.column_bianji{width:30px; height:50px; line-height:50px; float:left; display: inline;}
+			.column_right a{color:#336699; font-size:14px;}
+			.columnt_y_hr{width:1px; height:16px; margin-left:5px; margin-top:16px; padding-right:17px; background:url(/images/column/dian.jpg) repeat-y 7px 10px; float:left;display: inline;}
+	.column_result_pg{width:775px; height:50px; margin-top:20px; float:left; display:inline;}
+	.column_hr{width:775px; height:50px; margin-top:20px; border-bottom:1px solid #DFDEDE; float:left; display:inline;}
+		.column_hr_bianji{width:30px; height:50px; line-height:50px; float:left; display: inline;}
+			.column_hr_bianji a{color:#336699; font-size:12px;}

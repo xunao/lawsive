@@ -100,13 +100,16 @@
 	
 	//just test
 	static function current(){
+		global $_g_current_member;
+		if(is_object($_g_current_member)) return $_g_current_member;
 		$cache_name = $_COOKIE[cache_name];
 	    $record=member::find(array('conditions' => "cache_name='$cache_name'"));
 		if(count($record)==1){
-			return $record[0];
+			$_g_current_member = $record[0];
 		}else{
-			return NULL;
-			}
+			$_g_current_member = null;
+		}
+		return $_g_current_member;
 	}
 	
 	//just test
