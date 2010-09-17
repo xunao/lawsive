@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+#column_banner{width:810px; height:700px; float:right; display:inline;}
+	#person_index_welcome{width:775px; height:50px; padding-left:40px; margin-left:10px; background:url(/images/column/top_pg.jpg) no-repeat 15px 20px;  font-weight:bold; font-size:16px; line-height:60px; border-bottom:1px solid #dfdede; float:left; display:inline;}
+		#column_pg{width:775px; height:30px; margin-top:20px; float:left; display: inline;}
+		#column_top_pg{width:101px; height:29px; text-align:center; line-height:29px; background:url(/images/column) no-repeat; font-size:14px; float:left; display:inline;}
