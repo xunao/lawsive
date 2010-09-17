@@ -13,10 +13,11 @@
 	<?php
 		css_include_tag('admin/base');
 		js_include_tag('person_edit');
+		$user = member::current();
 	?>
 </head>
 <?php
-	$id=intval($_GET['id']);
+	$id=$user->id;
 	if($_GET['type'] == 'add'){
 ?>
 <body>
@@ -27,11 +28,11 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>起始时间</td>
-			<td><input id="start_date" type="text" name="post[start_date]" class="required"></td>
+			<td><input id="start_date" class="time" type="text" name="post[start_date]"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>终止时间</td>
-			<td><input id="end_date" type="text" class="required"></td>
+			<td><input id="end_date" class="time" name="post[send_date]" type="text"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=20%>注释</td>
@@ -64,11 +65,11 @@
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>起始时间</td>
-			<td><input id="start_date" type="text" name="post[start_date]" value="<?php echo $edu->start_date;?>" class="required"></td>
+			<td><input id="start_date" type="text" name="post[start_date]" value="<?php echo $edu->start_date;?>" class="time"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>终止时间</td>
-			<td><input id="end_date" type="text" name="post[end_date]" value="<?php echo $edu->end_date;?>" class="required"></td>
+			<td><input id="end_date" type="text" name="post[end_date]" value="<?php echo $edu->end_date;?>" class="time"></td>
 		</tr>
 		<tr class=tr4>
 			<td class=td1 width=15%>备注</td>

@@ -13,6 +13,11 @@
 		$user = member::current();
 		$resume = new Table('member_resume');
 		$report = $resume->find($user->member_resume_id);
+		$db = get_db();
+		$edu = $db->query("select * from lawsive.member_education_history where member_id = '{$user->id}' order by id asc");
+		$nume = count($edu);
+		$job = $db->query("select * from lawsive.member_job_history where member_id = '{$user->id}' order by id asc");
+		$numj = count($job);
   	?>
 <body>
       <div id="ibody">
@@ -42,19 +47,23 @@
       				<div class="er_info">
       					<div class="er_i" id="er_add">教育经历：<a href="" id="edu_add" title="添加教育经历">添加</a></div>
       				</div>
+      				<?php for($i=0; $i<$nume; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add">学历档案1#：自xxxx至xxxx在xxxxxxxxxx学习</div>
-      					<div class="edu_edit" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
-      					<div class="del" title="删除"><img src="../images/admin/btn_delete.png" /></div>
+      					<div class="er_i" id="er_add">学历档案<?php echo $i+1;?>#：自<?php echo $edu[$i]->start_date; ?>至<?php echo $edu[$i]->end_date; ?>在<?php echo $edu[$i]->college; ?>学习</div>
+      					<div class="edu_edit" name="<?php echo $edu[$i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
+      					<div class="del" type="member_education_history" name="<?php echo $edu[$i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
       				</div>
+      				<?php }?>
       				<div class="er_info">
       					<div class="er_i" id="er_add">工作经历：<a href="#" id="job_add" title="添加工作经历">添加</a></div>
       				</div>
+      				<?php for($i=0; $i<$numj; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add">工作档案2#：自xxxx至xxxx在xxxxxxxxxx担任xxxxx</div>
-      					<div class="job_edit" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
-      					<div class="del" title="删除"><img src="../images/admin/btn_delete.png" /></div>
+      					<div class="er_i" id="er_add">工作档案<?php echo $i+1;?>#：自<?php echo $job[i]->start_date; ?>至<?php echo $job[i]->end_date; ?>在<?php echo $job[i]->company; ?>担任<?php echo $job[i]->title; ?></div>
+      					<div class="job_edit" name="<?php echo $job[i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
+      					<div class="del" type="member_job_history" name="<?php echo $job[i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
       				</div>
+      				<?php }?>
       				<div class="er_info">
       					<div class="er_i2" >专业执照：<input id="license" type="text" name="post[license]" value="<?php echo $report->license;?>"></div>
       					<div class="er_i2" >相关资质：<input id="qualification" type="text" name="post[qualification]" value="<?php echo $report->qualification;?>"></div>
@@ -89,7 +98,7 @@
       				</div>
       				<button type="submit" id="er_sub" name="" value="">保存修改</button>
       				<input type="hidden" name="id" value="<?php echo $user->member_resume_id;?>">
-      				<input type="hidden" name="post[member_id]" value="<?php echo $user->id;?>">
+      				<input id="u_id" type="hidden" name="post[member_id]" value="<?php echo $user->id;?>">
       			</div>
       		</form>
       		</div>

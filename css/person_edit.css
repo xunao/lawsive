@@ -20,7 +20,7 @@
 				.er_i2 input{width:140px; height:18px;}
 				#work_years{width:140px; height:24px;}
 				#er_fb{width:400px;}
-				#er_add{width:400px; padding-bottom:6px;}
+				#er_add{width:400px; padding-bottom:6px; overflow:hidden;}
 				.er_tx{width:100%; height:16px; margin-top:10px; margin-left:5px; }
 				.er_tar{width:80%; height:55px; margin-left:17px; margin-bottom:10px;}
 			#er_sub{width:75px; height:23px; color:#ffffff; margin-top:30px; margin-left:8px; border:1px solid #fcc7a4; background:url('/images/person/pe_sub.jpg') no-repeat;}
