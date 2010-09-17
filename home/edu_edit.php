@@ -9,11 +9,19 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title>个人简历添改</title>
+	<title>教育经历</title>
 	<?php
 		css_include_tag('admin/base');
 		js_include_tag('person_edit');
 		$user = member::current();
+		session_start(); 		
+		$db=get_db();
+		if(!$user)
+		{
+			die('对不起，您的登录已过期！请重新登录！');
+		}
+		$auth = rand_str();
+		$_SESSION['info_auth'] = $auth;
 	?>
 </head>
 <?php
@@ -42,6 +50,7 @@
 			<td colspan="10">
 				<button  id="sub_e" type="submit">提 交</button>
 				<input type="hidden" id="member_id" value="<?php echo $id;?>">
+				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
 			</td>
 		</tr>
 	</table>
@@ -80,6 +89,7 @@
 				<button  id="sub_e" type="submit">提 交</button>
 				<input type="hidden" id="member_id" value="<?php echo $id;?>">
 				<input type="hidden" id="e_id" name="post[id]" value="<?php echo $e_id;?>">
+				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
 			</td>
 		</tr>
 	</table>

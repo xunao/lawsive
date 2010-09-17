@@ -11,9 +11,17 @@
 		css_include_tag('person_public','person_edit','colorbox');
 		js_include_tag('person_edit','jquery.colorbox');
 		$user = member::current();
+		session_start(); 		
+		$db=get_db();
+		if(!$user)
+		{
+			die('对不起，您的登录已过期！请重新登录！');
+		}
 		$resume = new Table('member_resume');
 		$report = $resume->find($user->member_resume_id);
-		$db = get_db();
+		$auth = rand_str();
+		$_SESSION['info_auth'] = $auth;
+		
 		$edu = $db->query("select * from lawsive.member_education_history where member_id = '{$user->id}' order by id asc");
 		$nume = count($edu);
 		$job = $db->query("select * from lawsive.member_job_history where member_id = '{$user->id}' order by id asc");
@@ -28,7 +36,7 @@
       		<div id="box_m">
       		<form id="resum_form" method="post" enctype="multipart/form-data" action="edit.post.php">
       			<div id="e_title">修改我的简历
-      				<div id="e_ret"><a href="#"><<返回首页</a></div>
+      				<div id="e_ret"><a href="/home/">>>返回我的首页</a></div>
       			</div>
       			<div id="e_avatar">
       				<a href=""><img src="<?php if($report->photo !=''){echo $report->photo;}else{echo '../images/person/head.jpg';}?>" border=0 /></a>
@@ -59,9 +67,9 @@
       				</div>
       				<?php for($i=0; $i<$numj; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add">工作档案<?php echo $i+1;?>#：自<?php echo $job[i]->start_date; ?>至<?php echo $job[i]->end_date; ?>在<?php echo $job[i]->company; ?>担任<?php echo $job[i]->title; ?></div>
-      					<div class="job_edit" name="<?php echo $job[i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
-      					<div class="del" type="member_job_history" name="<?php echo $job[i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
+      					<div class="er_i" id="er_add">工作档案<?php echo $i+1;?>#：自<?php echo $job[$i]->start_date; ?>至<?php echo $job[$i]->end_date; ?>在<?php echo $job[$i]->company; ?>担任<?php echo $job[$i]->title; ?></div>
+      					<div class="job_edit" name="<?php echo $job[$i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
+      					<div class="del" type="member_job_history" name="<?php echo $job[$i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
       				</div>
       				<?php }?>
       				<div class="er_info">
@@ -97,6 +105,7 @@
       					<textarea id="vista" class="er_tar"  name="post[vista]"><?php echo $report->vista;?></textarea>
       				</div>
       				<button type="submit" id="er_sub" name="" value="">保存修改</button>
+      				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
       				<input type="hidden" name="id" value="<?php echo $user->member_resume_id;?>">
       				<input id="u_id" type="hidden" name="post[member_id]" value="<?php echo $user->id;?>">
       			</div>
