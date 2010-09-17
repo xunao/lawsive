@@ -10,6 +10,8 @@
 		css_include_tag('person_public','person_info');
 		js_include_tag('date','person_info');
 		$user = member::current();
+		session_start(); 
+		$_SESSION["server"] = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
 		$db=get_db();
 		if($_REQUEST['id']=="")
 		{
@@ -30,7 +32,7 @@
       	 		<table align="left">
 	      	 		<tr>
 	      	 			<td width="15%" align="right">用户名：</td>
-	      	 			<td width="85%"><?php echo $member[0]->login_name; ?><input type="hidden" name="member_id" value="<?php echo $member[0]->id; ?>"></td>
+	      	 			<td width="85%"><?php echo $member[0]->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info[0]->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member[0]->id; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">姓名：</td>
