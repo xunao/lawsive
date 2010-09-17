@@ -8,18 +8,7 @@ function IsNum(s)
     }
     return false;
 }
-function checkinput(){
-	if(strlen($('#company').val())>128){alert('公司名太长了！');return false;}
-	if(strlen($('#title').val())>255){alert('职务名太长了！');return false;}
-	if(strlen($('#license').val())>255){alert('专业执照内容长度超出！');return false;}
-	if(strlen($('#qualification').val())>255){alert('相关资质内容长度超出！');return false;}
-	if(strlen($('#professional_field').val())>255){alert('专业领域内容长度超出！');return false;}
-	if(strlen($('#professional_overage').val())>255){alert('附属领域内容长度超出！');return false;}
-	if(strlen($('#introduce').val())>128){alert('自我评价内容长度超出！');return false;}
-	if(strlen($('#vista').val())>255){alert('发展目标内容长度超出！');return false;}
-	if(strlen($('#languages').val())>128){alert('工作语言内容长度超出！');return false;}
-	if(!IsNum($("#work_years").val())){alert('工作时间必须为数字');}
-}
+
 $(function(){
 	$("#work_from").datepicker(
 				{
@@ -32,6 +21,13 @@ $(function(){
 					dayNamesShort:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
 					dateFormat: 'yy-mm-dd'
 				});
+	$("#er_sub").click(function(){
+		var intr = $('#intr').val();
+		var vista =  $('#vista').val();
+		if(intr.length >128){alert('自我评价太长了！');return false;}
+		if(vista.length >255){alert('自我评价太长了！');return false;}
+		if(!IsNum($("#work_years").val())){alert('工作时间必须为数字');return false;}
+	});
 	$(".time").datepicker(
 				{
 					 yearRange: 'c-50:c+5',
@@ -60,11 +56,14 @@ $(function(){
 		$.fn.colorbox({'href':'/home/job_edit.php?id=' +$('#u_id').val()+ '&type=add'});
 	});
 	$("#sub_j").click(function(){
+		if(des.length >512){alert('简介太长了!');return false;}
 		$.post('/home/job_edit.post.php',{'post[company]':$('#company').val(),'post[title]':$('#title').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#j_id').val()},function(data){
 			$('#result').html(data);
 		});
 	});
 	$("#sub_e").click(function(){
+		var des = $('#description').val();
+		if(des.length >512){alert('简介太长了!');return false;}
 		$.post('/home/edu_edit.post.php',{'post[college]':$('#college').val(),'post[start_date]':$('#start_date').val(),'post[end_date]':$('#end_date').val(),'post[description]':$('#description').val(),'post[member_id]':$('#member_id').val(),'post[id]':$('#e_id').val()},function(data){
 			$('#result').html(data);
 		});
