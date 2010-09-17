@@ -4,10 +4,38 @@
 	#e_ret{float:right; margin-right:20px;}
 	#e_ret a{font-weight:normal; font-size:14px; color:#999999; text-decoration:underline;}
 	
-	#d_m{width:772px; height:800px; margin-left:13px; margin-top:27px; background:pink;}
+	#d_m{width:772px; height:800px; margin-left:13px; margin-top:27px;}
 		#dm_t_l{width:4px; height:29px; background:url('/images/diary/t_t_left.gif') no-repeat;}
 		#dm_t_m{width:90px; height:28px; font-size:16px; line-height:28px; text-align:center; border-top:1px solid #8f8f8f;}
 		#dm_t_r{width:4px; height:29px; background:url('/images/diary/t_t_right.gif') no-repeat;}
 		#dm_t_o{width:674px; height:29px; border-bottom:1px solid #e7e7e7;}
 		#dm_t_o a{font-size:16px; line-height:24px; margin-left:15px; corlor:#598caa; text-decoration:underline;}
-		.dm_diary{width:577px; height:47px; border-top:1px solid #999999;}
+		
+		#dia_box{width:577px; margin-top:30px;}
+			.dm_diary{width:577px; height:47px; border-top:1px solid #c6c6c6; background:#efefef;}
+				.dia_t{width:470px; margin-top:3px; height:24px; line-height:24px; }
+				.dia_t a{font-weight:bold; font-size:14px; color:#336699; text-decoration:underline; margin-left:16px;}
+				.dia_info{width:454px; height:16px; line-height:16px; padding-left:16px; color:#666666;}
+				.dia_edit{width:107px; font-size:14px; line-height:24px; padding-top:16px; padding-bottom:8px;}
+				.dia_edit font{color:#b0b1b1;}
+				.dia_edit a{color:#336699;}
+			.dia_cont{width:577px; margin-top:25px; padding-bottom:15px; border-bottom:1px solid #dfdede;}
+				.dia_word{width:555px; font-size:14px; line-height:20px; padding-left:16px; padding-bottom:10px;}
+				.dia_add{width:567px; line-height:16px; font-size:14px; text-align:right;}
+				.dia_add font{color:#b0b1b1;}
+				.dia_add a{color:#336699;}
+		#dia_other{width:175px; padding-top:10px; padding-bottom:8px; margin-top:30px; border:1px solid #e3e3e3; background:#f7f7f7; float:right;}
+			#dia_mn{width:155px; padding-left:20px; padding-bottom:6px; font-weight:bold; line-height:16px;}
+			
+			.dc_t{width:3px; height:12px; margin-left:32px; margin-top:6px;}
+			.dc_t img{display:none;}
+			.dc_name{width:125px; height:20px; line-height:20px; padding-left:3px; color:#336699;}
+			#add_more{width:165px; padding-right:10px; margin-top:3px; text-align:right;}
+			#add_more a{color:#336699; text-decoration:underline;}
+			
+		#ed_t{width:90px; height:30px; line-height:30px; font-size:16px; margin-left:4px; text-align:center;}
+		#ed_input{width:674px; height:30px; margin-top:4px;}
+		#ed_input input{width:80%;}
+		#ed_box{width:757px; margin-top:30px; height:400px; background:yellow;}
+			#ed_nr{width:700px; margin-left:25px; height:30px; line-height:30px; font-size:16px; font-weight:bold;}
+		
