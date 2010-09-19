@@ -12,64 +12,58 @@
 		use_ckeditor();
 		$user = member::current();
 		session_start();
-		$article_id=intval($_POST['id']);
+		$article_id=intval($_GET['a_id']);
 		$db=get_db();
+		$id=intval($_GET['id']);
 //		if(!$user)
 //		{
 //			die('对不起，您的登录已过期！请重新登录！');
 //		}
-		$diary = new Table('article');
+//		$diary = new Table('article');
 //		$auth = rand_str();
 //		$_SESSION['info_auth'] = $auth;
-		$diary = $diary->paginate('all',array('conditions' => "admin_user_id='{$id}'"),12);
-		if($diary === false) die('数据库执行失败');
+//		$diary = $diary->paginate('all',array('conditions' => "admin_user_id='{$id}'"),12);
+		$article = new Table('article');
+		$article = $article->find($article_id);
+		var_dump($article_id);
   	?>
 <body>
       <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?></div>
+      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
+      </div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />日记
-      			<div id="e_ret"><a href="/home/">>>返回我的首页</a></div>	
+      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
       		</div>
       		<div id="d_m">
-      			<div id="ed_t">标题：</div>
-      			<div id="ed_input"><input id="title" name="post[title]" value=""></div>
-      			<div id="ed_box">
-      				<div id="ed_nr">内容：</div>
-      				<div id="ed_cont">
-      					<?php show_fckeditor('post[content]','Front',true,"215", htmlspecialchars_decode($diary[0]->content));?>
-      				</div>
-      				<div id="ed_post">日志分类：
-      				<?php 
-      					$category = $db->query("select id,name from lawsive.category where category_type ='diary' and parent_id='{$user->id}'")
-      				?>
-	      				<select id="dia_category" type="text" name="post[category]">
-		      				<option value="-1">请选择分类</option>	
-	      					<?php for($i=0; $i<count($category);$i++){?>
-		      				<option value="<?php echo $category[$i]->id?>"><?php echo $category[$i]->name?></option>
-		      				<?php }?>
-	      				</select>
-		      			<img src="/images/admin/btn_add.png" />
-		      			<input id="category_name" name="category_type" type="text" value="">
-		      			<input id="sub_category" name="" type="button" value="增加分类">
-      				</div>
-      				<script type="text/javascript">
-      					$('#dia_category').val(<?php echo $article->category;?>);
-      				</script>
-      				<div id="ed_post">
-      					<button type="submit" id="ed_sub">发布日记</button>
-      					<input type="button" id="return" value="返回日志">
-      					<input type="hidden" id="article_id" name="article_id"value="<?php echo $article_id?>">
-      					<input type="hidden" name="post[admin_user_id]" value="<?php echo $user->id?>">
-      				</div>
-      			</div>
+	      		<form method="post" enctype="multipart/form-data" action="edit.post.php">
+	      			<div id="ed_t">标题：</div>
+	      			<div id="ed_input"><input id="title" name="post[title]" value="<?php echo $article->title;?>"></div>
+	      			<div id="ed_box">
+	      				<div id="ed_nr">内容：</div>
+	      				<div id="ed_cont">
+	      					<?php show_fckeditor('post[content]','Front',true,"215", htmlspecialchars_decode($article->content));?>
+	      				</div>
+	      				<div id="test">
+	      					<?php show_fckeditor('x','Front',true,"0");?>
+	      				</div>
+	      				<div id="ed_post"></div>
+	      				<script type="text/javascript">
+	      					$('#dia_category').val(<?php echo $article->category;?>);
+	      				</script>
+	      				<div id="ed_nr">
+	      					<button type="submit" id="ed_sub">发布日记</button>
+	      					<input type="button" id="return" value="返回日志">
+	      					<input type="hidden" id="article_id" name="article_id" value="<?php echo $article_id?>">
+	      					<input type="hidden" id="id" value="<?php echo $user->id?>">
+	      					<input type="hidden" id="category_id" name="post[sort_id]" value="<?php echo $diary->sort_id;?>">
+	      				</div>
+	      			</div>
+      			</form>
       		</div>
-      		
-      		
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
-      </div>
 </body>
 </html>

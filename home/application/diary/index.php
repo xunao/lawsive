@@ -8,82 +8,92 @@
 		include ('../../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','diary');
-		js_include_tag('login');
+		js_include_tag('login','diary');
+		use_ckeditor();
 		$user = member::current();
-		$id=intval($_POST['id']);
+		$id=intval($_GET['id']);
 		$db=get_db();
-		$file_category = intval($_GET['filter_category']);
-		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
-		$filter_search = urldecode($_GET['filter_search']);
+		$file_category = intval($_GET['file_category']);
+$id=$user->id;
 		$conditions = array();
-		if($filter_category > 0){
-			$cats = join(',',$category->children_map($filter_category));
-			if($cats){
-				$conditions[] = "category_id in ($cats)";
-			}
-		}
-		if($filter_adopt >=0){
-			$conditions[] = "is_adopt = $filter_adopt";
-		}
-		if($filter_search){
-			$conditions[] = "(title like '%$filter_search%' or keywords like '%$filter_search%' or description like '%$filter_search%')";
+		$conditions[] = "resource_type = 'diary'";
+		$conditions[] = "admin_user_id='{$id}'";
+		if($file_category != ''){
+			$conditions[] = "category = '$file_category'";
 		}
 //		if(!$user)
 //		{
 //			die('对不起，您的登录已过期！请重新登录！');
 //		}
-		$diary = new Table('article');
 //		$auth = rand_str();
 //		$_SESSION['info_auth'] = $auth;
-		$diarys = $diary->paginate('all',array('conditions' => "admin_user_id='{$id}',resource_type='diary'",'orderby' => "created_at desc"),12);
-		if($diarys === false) die('数据库执行失败');
-		var_dump($user->id);
+		$diary = new Table("article");
+		$diary = $diary->paginate('all',array('conditions' => join(' and ', $conditions),'order by' => "created_at desc"),4);
+		if($diary === false) die('数据库执行失败');
   	?>
 <body>
       <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?></div>
+      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
+      </div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />日记
-      			<div id="e_ret"><a href="/home/">>>返回我的首页</a></div>	
+      			<input type="hidden" id="id" value="<?php echo $id ?>">
+      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
       		</div>
       		<div id="d_m">
       			<div id="dm_t_l"></div>
       			<div id="dm_t_m">全部日记</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
-      			<?php if($id==$user->id){echo "<a href='#'>写新日记</a>";}?></div>
+      			<?php if($id==$user->id){echo "<a href='/home/application/diary/edit.php?id=$user->id'>写新日记</a>";}?></div>
       			<div id="dia_other">
       				<div id="dia_mn">日记分类：</div>
       				<div class="dia_cate">
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      				<div class="dc_name" value="<?php echo $diarys->category?>">全部日记（1）</div>
-      				<?php for($i=0; $i<2;$i++){?>
+      				<div class="dc_name">全部日记（<?php echo count($diary)?>）</div>
+      				<?php 
+      					$categorys = $db->query("select id,name from lawsive.category where category_type = 'diary' and parent_id = '$id'");
+      					for($i=0; $i<count($categorys);$i++){
+      					$count = count($db->query("select id from lawsive.article where category = '{$categorys[$i]->id}'"));
+      				?>
       					<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      					<div class="dc_name" value="<?php echo $diarys->category?>">全部日记（1）</div>
+      					<div class="dc_name" value="<?php echo $categorys[$i]->id?>"><?php echo $categorys[$i]->name?>(<?php echo $count ?>)</div>
       				<?php }?>
-      					<div id="add_more"><a href="/home/application/diary/category_edit.php">分类管理>></a></div>
+      				<?php if($id == $user->id){?>
+      					<div id="add_more"><a href="/home/application/diary/category_edit.php">分类管理&gt;&gt;</a></div>
+      				<?php }?>
       				</div>
       			</div>
-      			<?php for($i=0; $i<2;$i++){?>
+      			<?php 
+      				if(count($diary) != '0'){
+      				for($i=0; $i<count($diary);$i++){
+      				$ct = $db->query("select name from lawsive.category where category_type = 'diary' and id='{$diary[$i]->category}'")
+      				?>
       			<div id="dia_box">
       				<div class="dm_diary">
-      					<div style="width:470px;"><div class="dia_t"><a href="#">赛巴提斯</a></div>
-      					<div class="dia_info">2010-10-10 12:88发表	分类：XXXXXX	权限：好友可见</div></div>
-      					<div class="dia_edit"><a href="#">编辑</a>　<font>|</font>　<a href="#">删除</a>　</div>
+      					<div style="width:470px;"><div class="dia_t"><a href="#"><?php echo $diary[$i]->title;?></a></div>
+      					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $ct[0]->name;?></div></div>
+      				<?php if($id==$user->id){?>
+      					<div class="dia_edit"><a href="/home/application/diary/edit.php?id=<?php echo $id;?>&a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font>　<a href="#">删除</a>　</div>
+      				<?php }?>
       				</div>
       				<div class="dia_cont">
-      					<div class="dia_word">好律师来这里，不好的律师来不了，好律师才来这里，不好的律师来了也马上变好律师，真的好律师早就在这里了，你看到这里也就已经是好律师了发觉了嘛</div>
-      					<div class="dia_add"><a href="#">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
+      					<div class="dia_word"><?php echo htmlspecialchars_decode($diary[$i]->content);?></div>
+      					<div class="dia_add" value="<?php $diary[$i]->id;?>"><a href="#">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
       				</div>
       			</div>
+      			<?php }
+      				}else{
+      			?>
+      			<div id="dia_box">
+      				<div id="nodia">该分类暂无日记！</div>
+      			</div>
       			<?php }?>
+      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
       		</div>
-      		
-      		
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
-      </div>
 </body>
 </html>

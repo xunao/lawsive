@@ -1,0 +1,4 @@
+ALTER TABLE `lawsive`.`article` MODIFY COLUMN `description` TEXT  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文章描述',
+ MODIFY COLUMN `keywords` VARCHAR(250)  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '关键词',
+ MODIFY COLUMN `photo_src` VARCHAR(250)  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '图片地址';
+
