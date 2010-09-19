@@ -180,4 +180,16 @@
 		$sql = "insert into lawsive.message (sender_id,sender_name,receiver_id,receiver_name,status,content,created_at)values('{$sender_id}','{$sender[0]->name}','1',{$r_id}','{$receiver[0]->name}','{$msg}',now())";
 		if($sql){return true;}else{return false;}
 	}
+	
+	function get_apps(){
+		$db = get_db();
+		//get the system default applications
+		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and is_free=1 and (role =0 or role={$this->role})");
+		!$apps && $apps = array();
+		//get the user applications
+		$user_apps = $db->query("select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1");
+		!$user_apps && $user_apps = array();
+		$apps = array_merge($apps,$user_apps);
+		return $apps;
+	}
 }
