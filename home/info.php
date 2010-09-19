@@ -14,7 +14,9 @@
 		$db=get_db();
 		if(!$member)
 		{
-			die('对不起，您的登录已过期！请重新登录！');
+			alert('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/info.php');
+			exit;
 		}
 		$info=$db->query('select * from member_base_info where member_id='.$member->id);
 		$auth = rand_str();
@@ -26,7 +28,7 @@
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
-      	 			修改用户基本信息<a href="">&gt;&gt;返回上一页</a>
+      	 			修改用户基本信息<a href="/home/">&gt;&gt;返回我的首页</a>
       	 		</div>
       	 		<form method="post" action="info.post.php">
       	 		<table align="left">

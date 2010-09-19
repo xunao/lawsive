@@ -1,3 +1,11 @@
+<?php 
+$member = member::current();
+if(!$member){
+	alert('请先登录！');
+	redirect('/home/login.php?last_url=' . get_current_url());
+	exit;
+}
+?>
 <div id=logo></div>
 <div id=person_top>
 	<div class="jump"><a href="/home/">首页</a></div>

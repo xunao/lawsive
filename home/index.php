@@ -75,7 +75,7 @@
       	 			</table>
       	 		</div>
       	 		<div id="operate">
-      	 			　<a href="">修改头像</a>　　<a href="">个人资料</a><br>
+      	 			　<a href="">修改头像</a>　　<a href="/home/info.php">个人资料</a><br>
       	 			　<a href="">账户设置</a>　　<a href="">隐私设置</a>	
       	 		</div>
       	 		<div class="title">
