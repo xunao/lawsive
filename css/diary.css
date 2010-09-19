@@ -33,9 +33,23 @@
 			#add_more{width:165px; padding-right:10px; margin-top:3px; text-align:right;}
 			#add_more a{color:#336699; text-decoration:underline;}
 			
-		#ed_t{width:90px; height:30px; line-height:30px; font-size:16px; margin-left:4px; text-align:center;}
+		#ed_t{width:90px; height:30px;  color:#666666; line-height:30px; font-size:16px; margin-left:4px; text-align:center;}
 		#ed_input{width:674px; height:30px; margin-top:4px;}
 		#ed_input input{width:80%;}
-		#ed_box{width:757px; margin-top:30px; height:400px; background:yellow;}
+		#ed_box{width:757px; margin-top:30px;color:#666666;}
 			#ed_nr{width:700px; margin-left:25px; height:30px; line-height:30px; font-size:16px; font-weight:bold;}
-		
+			#ed_cont{margin-left:21px; margin-top:16px;}
+			#ed_post{width:700px; margin-left:25px; margin-top:15px; line-height:30px;  font-size:12px; font-weight:bold;}
+			#ed_post img{cursor:pointer;}
+			.ed_sub{width:75px; height:23px; cursor:pointer; color:#ffffff; border:1px solid #fcc7a4; background:url('/images/person/pe_sub.jpg') no-repeat;}
+			#return{margin-left:15px;}
+			
+		#ct_rt{width:700px; margin-top:10px; font-size:14px; line-height:16px;}
+		#ct_rt a{text-decoration:underline;}
+		.ct_manager{width:500px; height:28px; margin-bottom:5px; padding-bottom:3px; border-bottom:1px dotted #333333; }
+		#ct_add{width:700px; margin-top:15px; padding-bottom:15px; line-height:30px;  font-size:12px; font-weight:bold;}
+			.ct_name{width:35%; height:28px; font-size:14px; color:#666666; line-height:28px;}
+			.ct_name input{width:80%; margin-top:2px;}
+			.ct_num{width:25%; height:28px; font-size:14px; color:#666666; line-height:28px; text-align:center;}
+			.ct_work{width:40%; height:28px; font-size:14px; color:#666666; line-height:28px; text-align:center;}
+			.ct_work a{ text-decoration:underline;}
