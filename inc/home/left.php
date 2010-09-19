@@ -1,12 +1,12 @@
 <div id="person_index_left">
 	<div id="medal">
 		<div id="close">X</div>
-			<div id="top">
-				勋章已升级
-			</div>
-			<div id="bottom">
-				得的勋章推荐给粉丝
-			</div>
+		<div id="top">
+			勋章已升级
+		</div>
+		<div id="bottom">
+			得的勋章推荐给粉丝
+		</div>
 	</div>
 	<button>高级注册</button>
 	<div class=title>我的律氏</div>

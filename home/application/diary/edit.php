@@ -26,12 +26,12 @@
   	?>
 <body>
       <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?></div>
+      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />日记
-      			<div id="e_ret"><a href="/home/">>>返回我的首页</a></div>	
+      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
       		</div>
       		<div id="d_m">
       			<div id="ed_t">标题：</div>
@@ -45,7 +45,7 @@
       				<?php 
       					$category = $db->query("select id,name from lawsive.category where category_type ='diary' and parent_id='{$user->id}'")
       				?>
-	      				<select id="dia_category" type="text" name="post[category]">
+	      				<select id="dia_category" name="post[category]">
 		      				<option value="-1">请选择分类</option>	
 	      					<?php for($i=0; $i<count($category);$i++){?>
 		      				<option value="<?php echo $category[$i]->id?>"><?php echo $category[$i]->name?></option>

@@ -37,11 +37,10 @@
 //		$_SESSION['info_auth'] = $auth;
 		$diarys = $diary->paginate('all',array('conditions' => "admin_user_id='{$id}',resource_type='diary'",'orderby' => "created_at desc"),12);
 		if($diarys === false) die('数据库执行失败');
-		var_dump($user->id);
   	?>
 <body>
       <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?></div>
+      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
