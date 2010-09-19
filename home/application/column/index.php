@@ -10,6 +10,7 @@
 		css_include_tag('person_public','column');
 		js_include_tag('login');
 		$user = member::current();
+		var_dump($user);
   	?>
 <body>
       <div id="ibody">
@@ -20,7 +21,31 @@
       	<?php include_once(dirname(__FILE__).'/../../../home/application/column/left.php'); ?>
       	<div id="column_banner">
       		<div id="column_pg">
-      		<div id="column_top_pg">全部专栏</div>
+      			<div id="column_top_pg">全部专栏</div>
+      			<div id="column_top_right"><a href="">写新专栏</a></div>
+      		</div>
+      		<div class="column_title_pg">
+      			<div class="column_left">
+      				<div class="column_title"><a href="">biaoti haha </a></div>
+      				<div class="column_time_pg">
+      					<span><?php echo substr(now(),0,16)?>发表</span>
+      					<span>分类：哈哈类</span>
+      				</div>
+      			</div>
+      			<div class="column_right">
+      				<div class="column_bianji"><a href="">编辑</a></div>
+      				<div class="columnt_y_hr"></div>
+      				<div class="column_bianji"><a href="">删除</a></div>
+      			</div>
+      		</div>
+      		<div class="column_result_pg">
+      		</div>
+      		<div class="column_hr">
+      			<div class="column_right">
+      				<div class="column_hr_bianji"><a href="">评论</a></div>
+      				<div class="columnt_y_hr"></div>
+      				<div class="column_hr_bianji"><a href="">赞</a></div>
+      			</div>
       		</div>
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
