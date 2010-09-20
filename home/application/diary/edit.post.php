@@ -15,12 +15,6 @@ include_once('../../../frame.php');
 //		redirect('/home/login.php?last_url=/home/edit.php');
 //		exit;	
 //	}
-    if($_POST['type'] == 'del'){
-    	$del_id = intval($_POST['del_id']);
-    	$table = new Table($_POST['db_table']);
-    	$table->delete($del_id);
-    	return true;
-    }
     	$id = intval($_POST['article_id']);
     	$db = get_db();
 		$diary = new Table('article');

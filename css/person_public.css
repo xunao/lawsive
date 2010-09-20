@@ -27,7 +27,7 @@ body a{text-decoration:none;}
 #person_about a{color:#666666;}
 
 /*person_left*/
-#person_index_left{width:169px; padding-bottom:10px; background:#666666;}
+#person_index_left{width:169px; padding-bottom:10px; background:#666666;clear:both;}
 #person_index_left #medal{width:125px; height:51px; margin-top:10px; margin-left:22px; background:#f7f2d2;}
 #person_index_left #medal #close{height:12px; margin-top:3px; margin-right:10px; cursor:pointer; float:right;}
 #person_index_left #medal #top{width:110px; height:15px; margin-left:5px; line-height:15px; color:#646362; overflow:hidden;}
@@ -45,3 +45,5 @@ body a{text-decoration:none;}
 #person_index_left .servertitle a{color:#ffffff;}
 #person_index_left .servercontent{width:100px; height:20px; margin-left:32px; padding-left:12px; line-height:20px; background:url(/images/person/triangle.jpg) no-repeat 6px; overflow:hidden;}
 #person_index_left .servercontent a{color:#ffffff;}
+
+#main_container{margin-left:10px; margin-top:-35px; width: 820px}

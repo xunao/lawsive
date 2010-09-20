@@ -5,12 +5,20 @@ init_page_items('index');
 $article = new Table('article');
 
 
-
 ?>
 
-<div id="test">
-asdfsdfsdfdasf
-	<input type="file" size="10" />
+<div class="test">
+abc
+</div>
+<div class="test">
+abc
+</div>
+<div class="test">
+abc
 </div>
 <script>
+	$('.test').each(function(){
+		alert($(this).html());
+		return false;
+	});
 </script>

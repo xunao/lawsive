@@ -1,7 +1,6 @@
 <?php
 	include_once('../../../frame.php');
     set_charset("utf-8");
-    
 //    if(!is_post()){
 //		die('invlad request!');
 //	}
@@ -15,11 +14,10 @@
 //		redirect('/home/login.php?last_url=/home/edit.php');
 //		exit;	
 //	}
-	if($_POST['type'] == 'category'){
-    	$ct = new Table('category');
-    	$ct->update_file_attributes('post');
-		if($ct->update_attributes($_POST['post'])){
-			echo true;
+    	$del_id = intval($_POST['id']);
+    	$db=get_db();
+    	if($db->query("select * from lawsive.article where id='$del_id' and admin_user_id = '{$user->id}'")){
+    		$diary = new Table('$del_type');
+    		$diary->delete($del_id);
     	}
-	}
 ?>

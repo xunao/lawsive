@@ -14,7 +14,6 @@
 		session_start();
 		$article_id=intval($_GET['a_id']);
 		$db=get_db();
-		$id=intval($_GET['id']);
 //		if(!$user)
 //		{
 //			die('对不起，您的登录已过期！请重新登录！');
@@ -25,12 +24,9 @@
 //		$diary = $diary->paginate('all',array('conditions' => "admin_user_id='{$id}'"),12);
 		$article = new Table('article');
 		$article = $article->find($article_id);
-		var_dump($article_id);
   	?>
 <body>
-      <div id="ibody">
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
-      </div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
@@ -58,7 +54,6 @@
 	      					<input type="button" id="return" value="返回日志">
 	      					<input type="hidden" id="article_id" name="article_id" value="<?php echo $article_id?>">
 	      					<input type="hidden" id="id" value="<?php echo $user->id?>">
-	      					<input type="hidden" id="category_id" name="post[sort_id]" value="<?php echo $diary->sort_id;?>">
 	      				</div>
 	      			</div>
       			</form>
@@ -66,4 +61,35 @@
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
 </body>
+<script type="text/javascript">
+$(function(){
+	var category_id=$('#category_id').val();
+	$.post('ajax.ct_edit.php',{"category_id":category_id},function(data){
+		$('#ed_post').html(data);
+	});
+	$('#sub_category').live('click',function(){
+	var value = $('#category_name').val().trim();
+	if(value != ""){
+		$.post('ct_edit.post.php',{'type':'category','post[category_type]':'diary','post[name]':$('#category_name').val(),'post[parent_id]':$('#id').val()},function(data){
+			if(data == true){
+				alert('添加成功！');
+				$.post('ajax.ct_edit.php',function(data){
+					$('#ed_post').html(data);
+				});
+			}else{
+				alert('添加失败！');
+			}
+		});
+	}else{
+		alert("类名不能为空！");
+	}
+	});
+	$('#ed_post img').live('click',function(){
+		var value = $('#ed_post select option:selected').val().trim();
+		$.post('ajax.ct_add.php',{"type":"insert"},function(data){
+			$('#ed_post').html(data);
+		});
+	});
+});
+</script>
 </html>

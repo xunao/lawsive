@@ -8,7 +8,7 @@
 		include ('../../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','diary');
-		js_include_tag('login','diary');
+		js_include_tag('diary');
 		use_ckeditor();
 		$user = member::current();
 		$id=intval($_GET['id']);
@@ -76,7 +76,7 @@ $id=$user->id;
       					<div style="width:470px;"><div class="dia_t"><a href="#"><?php echo $diary[$i]->title;?></a></div>
       					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $ct[0]->name;?></div></div>
       				<?php if($id==$user->id){?>
-      					<div class="dia_edit"><a href="/home/application/diary/edit.php?id=<?php echo $id;?>&a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font>　<a href="#">删除</a>　</div>
+      					<div class="dia_edit"><a href="/home/application/diary/edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" value="<?php echo $diary[$i]->id;?>" href="#">删除</a></div>
       				<?php }?>
       				</div>
       				<div class="dia_cont">

@@ -2,7 +2,7 @@
 #person_index_welcome{width:561px; height:27px; margin:10px 0px 5px 15px; background:#fff5cc; line-height:27px;}
 #person_index_welcome #content{width:520px; height:27px; margin-left:9px; line-height:27px; color:#777777;}
 #person_index_welcome #close{width:14px; height:14px; margin-top:7px; margin-right:10px; cursor:pointer; background:url(/images/person/welcome_close.jpg) no-repeat; float:right;}
-#person_index_right{width:234px; height:1000px; border:1px solid #cfcfcf; border-top:none; padding-bottom:10px; background:#f3f3f3; float:right;}
+#person_index_right{width:234px; border:1px solid #cfcfcf; border-top:none; padding-bottom:10px; background:#f3f3f3; float:right;}
 #person_index_right #title{width:212px; height:23px; margin:15px 0 15px 12px; background:#ddf0f8;}
 #person_index_right #title #t_l{width:170px; height:23px; margin-left:6px; color:#000000; line-height:23px; font-weight:bold; overflow:hidden;}
 #person_index_right #title #t_r{width:30px; height:12px; margin-top:6px; margin-right:6px; float:right;}
@@ -18,7 +18,7 @@
 
 
 #person_index_center{width:561px;}
-#person_index_center #info{width:561px; margin-top:10px; margin-left:15px;}
+#person_index_center #info{width:561px; margin-top:10px; }
 #person_index_center #info #pic{width:138px; height:140px; background:url(/images/person/center_pic_bg.jpg) no-repeat;}
 #person_index_center #info #pic img{width:120px; height:120px; margin:7px 0 0 9px; overflow:hidden;}
 #person_index_center #info #name{width:410px; height:18px; margin-top:7px; font-size:14px; color:#000000; font-weight:bold; line-height:18px; float:right;}
