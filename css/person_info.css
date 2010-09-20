@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-#person_info_center{width:777px; margin-top:20px; margin-right:20px; padding:3px; background:#e0e0e0; float:right;}
+#person_info_center{width:777px; margin-top:-30px; margin-right:20px; padding:3px; background:#e0e0e0; float:right;}
 #person_info_center #info{width:777px; background:#ffffff;}
 #person_info_center #info #title{width:743px; height:44px; margin-left:17px; border-bottom:1px solid #dfdede; line-height:44px; color:#000000; font-size:14px; font-weight:bold;}
 #person_info_center #info #title a{color:#666666; font-size:12px; font-weight:normal; text-decoration:underline; float:right;}
