@@ -14,11 +14,17 @@ if(!$user){
 }
 $db = get_db();
 $f_id =$_POST['f_id'];
-if (is_numeric($f_id)){
-	$sql = $user->delete_friend($f_id,1);
-	if($sql){
-		echo  true;
+if (! is_numeric($f_id)){
+	echo "系统错误，请重新尝试";
+	exit();
+}
+
+$sql = $user->delete_friend($f_id,1);
+	
+if($sql){
+	  echo  "成功删除好友";
 	}else{
-		echo  false;}
-}else {die();}
+	  echo  "删除好友失败";
+	}
+
 ?>
