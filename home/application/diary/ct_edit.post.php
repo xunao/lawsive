@@ -16,19 +16,30 @@
 		exit;	
 	}
 	if($_POST['type'] == 'category'){
-    	$ct = new Table('category');
+    	$ct = new Table('member_category');
     	$id = intval($_POST['id']);
     	$ct->find($id);
     	$ct->update_file_attributes('post');
     	$ct->update_attributes($_POST['post'],false);
-    	if(!$ct->parent_id){
-    		$ct->parent_id = $user->id;
+    	if(!$ct->member_id){
+    		$ct->member_id = $user->id;
     	}
-		if(!$ct->category_type){
-    		$ct->category_type = 'diary';
+		if(!$ct->resource_type){
+    		$ct->resource_type = 'diary';
     	}
 		if($ct->save()){
 			echo true;
+			return false;
     	}
+	}
+//	var_dump($_POST['ids']);
+//	var_dump($_POST['values']);
+	$len = count($_POST['ids']);
+	$db = get_db();
+	$member = member::current();
+	for($i=0;$i<$len; $i++){
+		$sql = "update member_category set name='{$_POST['values'][$i]}' where id={$_POST['ids'][$i]} and member_id={$member->id}";
+		$db->execute($sql);
+		redirect("/home/application/diary/category_edit.php");
 	}
 ?>

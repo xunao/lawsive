@@ -2,7 +2,7 @@
 	include_once('../../../frame.php');
 	$db=get_db();
 	$user = member::current();
-	$category = $db->query("select id,name from lawsive.category where category_type ='diary' and parent_id='{$user->id}'");
+	$category = $db->query("select id,name from lawsive.member_category where resource_type ='diary' and member_id='{$user->id}'");
 	$category_id=intval($_POST["category_id"]);
 ?>
 日志分类：

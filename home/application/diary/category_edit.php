@@ -39,20 +39,23 @@
       			<div class="ct_work">操作</div>
       		</div>
 	      		<?php 
-	      			$category=$db->query("select id,name from lawsive.category where category_type = 'diary' and parent_id = '$user->id'");
+	      			$category=$db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$user->id'");
 	      			for($i=0; $i<count($category); $i++){
 	      			$count = count($db->query("select id from lawsive.article where category = '{$category[$i]->id}'"));
 	      		?>
 	      		<div class="ct_manager">
-	      			<div class="ct_name"><input class="input" id="<?php echo $i;?>" test="<?php echo $category[$i]->id;?>" type="text" name="post[category]" value="<?php echo $category[$i]->name;?>"><input  id="check<?php echo $i;?>" type="hidden" value="<?php echo $category[$i]->name;?>"></div>
+	      			<div class="ct_name">
+	      				<input class="input" type="text" name="post[category]" value="<?php echo $category[$i]->name;?>">
+	      			</div>
 	      			<div class="ct_num"><?php echo $count;?></div>
-	      			<div class="ct_work">{<a class="del2" value="<?php echo $category[$i]->id;?>" name="category" href="">删除</a>}</div>
+	      			<div class="ct_work">{<a class="del2" name="category" href="#">删除</a>}</div>
+	      			<input class="category_id" type="hidden" value="<?php echo $category[$i]->id;?>" />
 	      		</div>
 	      		<?php }?>
 	      		<div id="ct_add">
-	      			<button type="submit"  class="ed_sub" id="ct_edit" name="" value="">保存修改</button>
-	      			<input type="hidden" id="count" name="dia_edit_auth" value="<?php echo count($category);?>" />
-	      			<input type="text" id="dia_edit_auth" name="dia_edit_auth" value="<?php echo $auth;?>" />
+	      			<form action="ct_edit.post.php" method="post" id="form"></form>
+	      			<button type="submit"  class="ed_sub" id="ct_edit">保存修改</button>
+	      			<input type="hidden" id="dia_edit_auth" value="<?php echo $auth;?>" />
 	      		</div>
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>

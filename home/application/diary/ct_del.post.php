@@ -16,7 +16,7 @@
 	}
     	$del_id = intval($_POST['id']);
     	$db=get_db();
-    	$sql = $db->query("select * from lawsive.category where id='$del_id' resource_type = 'diary' and parent_id = '{$user->id}'");
+    	$sql = $db->query("select * from lawsive.member_category where id='$del_id' resource_type = 'diary' and member_id = '{$user->id}'");
     	if(count($sql)=='1'){
     		$diary = new Table('category');
     		$diary->delete($del_id);

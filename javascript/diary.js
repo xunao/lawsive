@@ -26,24 +26,27 @@ function inupt_vaild(){
 }
 
 $(function(){
+	var dia_edit_auth = $('#dia_edit_auth').val();
+	$('.input').change(function(){
+		$(this).addClass('changed');
+	});
 	$('#ct_edit').click(function(){
-		var num = $("#count").val();
-		alert(num);
-		for($i=0; $i<num; $i++){
-			if($('#' +$i).val() != '' && $('#' +$i).val() != $('#check' +$i).val()){
-				alert($i);
-////				$.post('ct_edit.post.php',{'type':'category','id':$('#' +$i).attr('test'),'dia_edit_auth':$('#dia_edit_auth').val(),'post[name]':$('#' +$i).val()},function(data){
-////					if(data != true){alert(data);}
-////				});
-//				alert($i);
-			}
-		}
-//		window.location.reload(true);
+		$('#form').find('input').remove();
+		$('.input.changed').each(function(){
+			var cat_id = $(this).parent().parent().find('.category_id').val();
+			var cat_name = $(this).val();
+			$('#form').append('<input type="hidden" name="ids[]" value="'+cat_id+'" />');
+			$('#form').append('<input type="hidden" name="values[]" value="'+cat_name+'" />');
+		});
+		$('#form').append('<input type="hidden" name="dia_edit_auth" value="'+dia_edit_auth+'" />');
+		$('#form').submit();
+		
 	});
 	$('.dc_name').click(function(){
+		var cat_id = $(this).find('.category_id').val();
 		var url = new Array();
 		url.push('id=' + $('#id').val());
-		url.push('file_category=' + $(this).attr('value'));
+		url.push('file_category=' + cat_id);
 		url = "?" + url.join('&');
 		window.location.href=url;
 	});
@@ -73,12 +76,13 @@ $(function(){
 	});
 	$('.del').click(function(e){
 		e.preventDefault();
+		var dia_id = $(this).parent().find('#diary_id').val();
 		if(!window.confirm("确定要删除吗"))
 		{
 			return false;
 		}
 		else{
-			$.post('dia_del.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':$(this).attr('value')},function(data){
+			$.post('dia_del.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':dia_id},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{

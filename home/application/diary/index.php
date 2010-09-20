@@ -30,7 +30,7 @@
 		$conditions = array();
 		$conditions[] = "resource_type = 'diary'";
 		$conditions[] = "admin_user_id='{$id}'";
-		if($file_category != ''){
+		if($file_category != ''||$file_category != undefined){
 			$conditions[] = "category = '$file_category'";
 		}
 		$diary = new Table("article");
@@ -52,19 +52,22 @@
       			<div id="dm_t_m">全部日记</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
-      			<?php if($id==$user->id){echo "<a href='/home/application/diary/edit.php?id=$user->id'>写新日记</a>";}?></div>
+      			<?php if($id==$user->id){echo "<a href='/home/application/diary/edit.php'>写新日记</a>";}?></div>
       			<div id="dia_other">
       				<div id="dia_mn">日记分类：</div>
       				<div class="dia_cate">
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
       				<div class="dc_name">全部日记（<?php echo count($diary)?>）</div>
       				<?php 
-      					$categorys = $db->query("select id,name from lawsive.category where category_type = 'diary' and parent_id = '$id'");
+      					$categorys = $db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$id'");
       					for($i=0; $i<count($categorys);$i++){
       					$count = count($db->query("select id from lawsive.article where category = '{$categorys[$i]->id}'"));
       				?>
       					<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      					<div class="dc_name" value="<?php echo $categorys[$i]->id?>"><?php echo $categorys[$i]->name?>(<?php echo $count ?>)</div>
+      					<div class="dc_name">
+	      					<?php echo $categorys[$i]->name?>(<?php echo $count ?>)
+	      					<input class="category_id" type="hidden" value="<?php echo $categorys[$i]->id;?>" />
+      					</div>
       				<?php }?>
       				<?php if($id == $user->id){?>
       					<div id="add_more"><a href="/home/application/diary/category_edit.php">分类管理&gt;&gt;</a></div>
@@ -81,15 +84,19 @@
       					<div style="width:470px;"><div class="dia_t"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>"><?php echo $diary[$i]->title;?></a></div>
       					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $ct[0]->name;?></div></div>
       				<?php if($id==$user->id){?>
-      					<div class="dia_edit"><a href="/home/application/diary/edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" value="<?php echo $diary[$i]->id;?>" href="#">删除</a></div>
+      					<div class="dia_edit">
+      						<a href="/home/application/diary/edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" href="#">删除</a>
+      						<input  id="diary_id" type="hidden" value="<?php echo $diary[$i]->id;?>" />
+      					</div>
       				<?php }?>
       				</div>
       				<div class="dia_cont">
       					<div class="dia_word"><?php echo htmlspecialchars_decode($diary[$i]->content);?></div>
       				<?php if($id!=$user->id){?>
-      					<div class="dia_add" value="<?php $diary[$i]->id;?>"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
+      					<div class="dia_add"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
       				<?php }?>
       				</div>
+      				
       			</div>
       			<?php }
       				}else{
