@@ -4,7 +4,7 @@ include_once('../frame.php');
 
 $id = intval($_POST['id']);
 $type = $_POST['type'];
-$content = $_POST['content'];
+$content = urldecode($_POST['content']);
 $comment_id = intval($_POST['comment_id']);
 
 if(empty($content)){
