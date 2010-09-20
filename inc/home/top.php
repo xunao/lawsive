@@ -13,7 +13,7 @@ if(!$member){
 		<div class="jumpvertical">|</div>
 		<div class="jump"><a href="/home/friends/">好友</a></div>
 		<div class="jumpvertical">|</div>
-		<div class="jump"><a href="">消息</a></div>
+		<div class="jump"><a href="/home/message/">消息</a></div>
 		<div class="jumpvertical">|</div>
 		<div class="jump"><a href="">咨询</a></div>
 		<div id="person_search">

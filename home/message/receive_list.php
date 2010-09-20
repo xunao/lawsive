@@ -34,7 +34,7 @@
 			break;
 		}
 		$db = get_db();
-		$msgs = $db->query("select a.*,b.name,b.avatar from message a left join member b on a.sender_id=b.id where " .join(' and ',$conditions) ." order by status asc, created_at desc");
+		$msgs = $db->paginate("select a.*,b.name,b.avatar from message a left join member b on a.sender_id=b.id where " .join(' and ',$conditions) ." order by status asc, created_at desc");
 		!$msgs && $msgs = array();
   	?>
 <body>
@@ -85,6 +85,8 @@
       				
       			</div>
       			<?php }?>
+      			
+      			<div><?php echo paginate();?></div>
       			
       		</div>
       	</div>

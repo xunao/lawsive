@@ -5,3 +5,4 @@
 #send_link{margin-top:10px; margin-bottom: 10px; width:100%}
 .block_a{display:block;color:#336699; text-decoration: underline;}
 #receiver_container{width:100%;margin-bottom:20px;}
+#receiver_container img{width:30px; height:30px; border:0px;}

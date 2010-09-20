@@ -56,7 +56,7 @@ $(function(){
 	$(".login_comment button").live('click',function(){
 		var prev = $(this).parent().parent().prev();
 		var content = $(prev).find(".comment_content").val();
-		var parent = $(this).parent().parent().parent().parent()
+		var parent = $(this).parent().parent().parent().parent();
 		if($(parent).attr('class')=='pub_comment_dig'){
 			$.post('/comment/comment.post.php',{'id':resource_id,'content':content,'type':resource_type,'comment_id':$(parent).attr('cid')},function(data){
 				if(data=='ok'){
