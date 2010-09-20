@@ -5,27 +5,29 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-//        session_start();
-//        $str_auto=rand_str();
-//        $_SESSION['str_auto']=$str_auto;
+        session_start();
 		include ('../../frame.php');
 		include ('../../project_lib/ActiveRecord/member.class.php');
 		use_jquery_ui();
 		css_include_tag('person_public','home_friend');
 		js_include_tag('login','home_friend');
 		$user = member::current();
+		if(!$user)
+		{
+			alert('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/friend/friend.php');
+			exit;
+		}
 		$db = get_db();
 		$conditions = array();
 		$u_id=$user->id;
-		//$u_id=$_GET('id');
-		//if ($u_id) {
 		$conditions[] = "u_id = '{$u_id}'";
-		//}
 		$friend=new Table('friend');
 		$record=$friend->paginate('all',array('conditions' => join(' and ', $conditions)),6);
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');
-		//$user_id=$_GET('id');
+		$str_auto=rand_str();
+        $_SESSION['str_auto']=$str_auto;
   	?>
 <body>
       <div id="ibody">
@@ -61,7 +63,7 @@
 		      					<div class="friend_i_t2">123456789</div>
 		      				</div>
 	      				<?php }?>
-      				<div id="page"><?php paginate("",null,"page",true);?></div>
+      				<div id="page"><?php paginate("",null,"page",true);?><input type="hidden" name="str_auto" value="<?php echo $str_auto;?>" /></div>
       				<?php }?>
       			</div>
       		</div>

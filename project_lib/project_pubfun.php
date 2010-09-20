@@ -12,3 +12,10 @@ function judge_application($app){
 	if($db->record_count <=0) return false;
 	return true;
 }
+
+function send_msg($s_id,$r_id,$content){
+	$db = get_db();
+	$sql = "insert into message(sender_id, receiver_id,status, created_at, content,sender_delete, receiver_delete) values";
+	$sql .= "($s_id,$r_id,1,now(),'$content',0,0)";
+	return $db->execute($sql);
+};

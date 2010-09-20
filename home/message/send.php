@@ -5,16 +5,31 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-		include ('../../frame.php');
-		use_jquery();
-		css_include_tag('person_public','home/send');
-		
-		$member = member::current();
-		if(!$member){
-			alert('您还没登录或者登录已过期，请登录！');
-			redirect('/home/login.php?last_url=/home/message/receive_list.php?type=' .$param);
-			exit;
+	session_start();
+	include ('../../frame.php');
+	use_jquery_ui();
+	css_include_tag('person_public','home/send');
+	js_include_tag('front/home/send');
+	$r_id = 0;
+	if(isset($_GET['r_id'])){
+		$r_id = intval($_GET['r_id']);
+		$db = get_db();
+		$db->query("select avatar,name from member where id=$r_id");
+		if($db->record_count > 0 ){
+			$avatar = $db->field_by_name('avatar') ? $db->field_by_name('avatar') : '/images/home/default_avatar.jpg';
+			$name = $db->field_by_name('name');
+		}else{
+			$r_id = 0;
 		}
+	}
+	$member = member::current();
+	if(!$member){
+		alert('您还没登录或者登录已过期，请登录！');
+		redirect('/home/login.php?last_url=/home/message/receive_list.php?type=' .$param);
+		exit;
+	}
+	$send_msg_auth = rand_str();
+	$_SESSION['send_msg_auth'] = $send_msg_auth;
 		
   	?>
 <body>
@@ -33,16 +48,24 @@
       			</div>
       			<div id="receiver_container">
       				<label for="receiver">发送给:</label>
-      				<input type="text" name="receiver" id="receiver" style="width:400px;" />
+      				<input type="text" name="receiver" id="receiver" style="width:400px;" value="<?php echo $name;?>" />
+      				<?php if($avatar){?>
+      				<a href="/home/member.php?id=<?php echo $r_id;?>" target="_blank"><img src="<?php echo $avatar;?>" /></a>
+      				<?php }?>
       			</div>
-      			<div>内　容: </div>
+      			<form action="send.post.php" method="post">
+      			<div style="float:left;">内　容: </div>
+      			
       			<div id="content">
-      				<textarea rows="10" cols="40"></textarea>
+      				<textarea rows="10" style="width:400px;" id="msg_content" name="content"></textarea>
       				
       			</div>
-      			<div style="width:465px; text-align:right; margin-top:10px;">
+      			<div style="width:50%; text-align:left; margin-top:10px; margin-left:200px;">
       				<button id="submit">发送</button>
+      				<input type="hidden" id="receiver_id" name="receiver_id" value="<?php echo $r_id;?>">
+      				<input type="hidden" name="send_msg_auth" value="<?php echo $send_msg_auth?>" />
       			</div>
+      			</form>
       		</div>
       	</div>
       	<?php include_once(INC_DIR.'/home/bottom.php'); ?>

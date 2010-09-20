@@ -12,15 +12,17 @@ $(function(){
 	
 	$(".add").click(function(){
 		var id=$(this).attr('name');
-		$.post("add_friend.post.php",{"f_id":$(this).attr('name')},function(data){
-		if(data == false){alert('无法添加此好友');}else{alert('添加好友成功');window.location.reload(true);}
+		$.post("add_friend.post.php",{"f_id":$(this).attr('name'),"str_auto":$("#str_auto").val()},function(data){
+		alert(data);
+		window.location.href="friend.php";
 		});
 		
 	});
 	$(".delete").click(function(){
 		var id=$(this).attr('name');
-		$.post("delete_friend.post.php",{"f_id":$(this).attr('name')},function(data){
-		if(data == false){alert('无法删除此好友');}else{alert('删除好友成功');window.location.reload(true);}	
+		$.post("delete_friend.post.php",{"f_id":$(this).attr('name'),"str_auto":$("#str_auto").val()},function(data){
+			alert(data);
+			window.location.reload(true);	
 		});
 		
 	});
