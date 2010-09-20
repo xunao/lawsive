@@ -56,3 +56,13 @@
 		#test{display:none;}
 		#nodia{width:100%; font-size:24px; text-align:center; font-weight:bold; line-height:24px;}
 		#paginate{width:577px; text-align:center; font-size: 14px; margin-top:20px;}
+		
+		#com{width:100%; margin-top:20px;}
+			#com_t{width:98%; height:40px; padding-left:2%; line-height:40px; font-size:16px; font-weight:bold; color:#336699; background:#efefef;}
+			#com_author{width:95%; padding-right:5%;  height:30px; line-height:30px; font-size:14px; text-align:right;}
+			#com_author font{color:#336699; font-size:14px; }
+			#com_author a{color:#336699; font-size:14px; text-decoration:underline;}
+			#com_content{width:94%; font-size:14px; line-height:20px; padding-left:3%;padding-right:3%; background:#f7f7f7;}
+			
+			#comment{width:806px; font-size:14px; line-height:20px; margin-top:10px; font-weight:bold;}
+			#pub_comment_box{width:95%;}

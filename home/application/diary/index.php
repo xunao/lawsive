@@ -7,26 +7,31 @@
 <?php	
 		include ('../../../frame.php');
 		use_jquery_ui();
-		css_include_tag('person_public','diary');
+		css_include_tag('person_public','diary','comment');
 		js_include_tag('diary');
 		use_ckeditor();
 		$user = member::current();
+		session_start();
+		if(!$user)
+		{
+			die('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/application/dairy');
+		}
+		$auth = rand_str();
+		$_SESSION['info_auth'] = $auth;
+		
 		$id=intval($_GET['id']);
 		$db=get_db();
 		$file_category = intval($_GET['file_category']);
-$id=$user->id;
+		if(!$id){
+			$id=$user->id;
+		}
 		$conditions = array();
 		$conditions[] = "resource_type = 'diary'";
 		$conditions[] = "admin_user_id='{$id}'";
 		if($file_category != ''){
 			$conditions[] = "category = '$file_category'";
 		}
-//		if(!$user)
-//		{
-//			die('对不起，您的登录已过期！请重新登录！');
-//		}
-//		$auth = rand_str();
-//		$_SESSION['info_auth'] = $auth;
 		$diary = new Table("article");
 		$diary = $diary->paginate('all',array('conditions' => join(' and ', $conditions),'order by' => "created_at desc"),4);
 		if($diary === false) die('数据库执行失败');
@@ -34,7 +39,6 @@ $id=$user->id;
 <body>
       <div id="ibody">
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
-      </div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
@@ -81,9 +85,10 @@ $id=$user->id;
       				</div>
       				<div class="dia_cont">
       					<div class="dia_word"><?php echo htmlspecialchars_decode($diary[$i]->content);?></div>
-      					<div class="dia_add" value="<?php $diary[$i]->id;?>"><a href="#">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
+      					<div class="dia_add" value="<?php $diary[$i]->id;?>"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
       				</div>
       			</div>
+      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
       			<?php }
       				}else{
       			?>
@@ -91,9 +96,10 @@ $id=$user->id;
       				<div id="nodia">该分类暂无日记！</div>
       			</div>
       			<?php }?>
-      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
+      			
       		</div>
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
+	</div>
 </body>
 </html>

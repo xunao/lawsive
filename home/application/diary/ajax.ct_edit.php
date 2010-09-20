@@ -13,3 +13,6 @@
 			<?php }?>
 	</select>
 <img src="/images/admin/btn_add.png"/>
+<script>
+	$('#dia_category').val(<?php echo $category_id;?>);
+</script>

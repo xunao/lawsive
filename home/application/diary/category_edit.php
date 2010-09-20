@@ -44,7 +44,7 @@
       		<div class="ct_manager">
       			<div class="ct_name"><input type="text" name="post[category]" value="<?php echo $category[$i]->name;?>"></div>
       			<div class="ct_num"><?php echo $count;?></div>
-      			<div class="ct_work">{<a class="del" value="<?php $category[$i]->id;?>" name="category" href="">删除</a>}</div>
+      			<div class="ct_work">{<a class="del2" value="<?php echo $category[$i]->id;?>" name="category" href="">删除</a>}</div>
       		</div>
       		<?php }?>
       		<div id="ct_add">
