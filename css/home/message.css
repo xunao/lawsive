@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+#title{width:98%; line-height:30px; border-bottom: 1px solid gray; padding-bottom: 15px;padding-top: 15px;}
+	#title span{font-weight: bold; font-size:14px; margin-left:5px;}
+#main{width:100%}	
+#send_link{margin-top:10px; margin-bottom: 10px; width:100%}
+#msg_list{padding-left:50px; }
+table{}
+td{background-color: white; width:150px; text-align: center; line-height: 20px;}
