@@ -5,14 +5,14 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+        session_start();
 		include ('../../frame.php');
-		include ('../../project_lib/ActiveRecord/member.class.php');
 		use_jquery_ui();
-		css_include_tag('person_public','home_friend');
+		css_include_tag('home_friend','person_public');
 		js_include_tag('home_friend');
+		 $str_auto=rand_str();
+        $_SESSION['str_auto']=$str_auto;
 		$user = member::current();
-//		$category = new Category('friend');
-//		$category->echo_jsdata();
 		$db = get_db();
 		$conditions = array();
 		$search=$_GET['search'];
@@ -32,6 +32,7 @@
 <body>
       <div id="ibody">
       	<?php include_once(dirname(__FILE__).'/../../inc/home/top.php'); ?>
+      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
       	<div id="person_friend_right">
       		<div id="person_friend_right_top">
       			<img alt="" src="/images/person/friend/p_f_r_t.jpg"><font>好友</font>
@@ -43,7 +44,7 @@
       				<div id="friend_top_right"><div id="f_t_r_i"><img src="/images/person/friend/invitefriend.jpg"><a href="">邀请朋友加入</a></div></div>
       			</div>
       			<div id="friend_bottom">
-      			    <div id="search"><input id="search_input" type="text" ><input type="button" value="搜索" id="search_button"></div>
+      			    <div id="search_f"><input id="search_input" type="text" ><input type="button" value="搜索" id="search_button"></div>
       			    <?php if (count($record)>0) {
       			    	{;
       			    }?>
@@ -55,13 +56,12 @@
       				</div>
       				<?php }?>
       				<div id="page"><?php paginate("",null,"page",true);?></div>
+      				<input type="hidden" id="str_auto" value="<?php echo $str_auto?>"/>
       				<?php }?>
       			</div>
-      			
       		</div>
-      		
       	</div>
-      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
+      	
       	<?php include_once(dirname(__FILE__).'/../../inc/home/bottom.php'); ?>
       </div>
 </body>

@@ -27,7 +27,7 @@
 			$conditions[] = "recommand = '$recommand'";
 		}
 		if($filter_adopt != -1){
-			$conditions[] = "is_adopt = 'rd$filter_adopt'";
+			$conditions[] = "is_adopt = '$filter_adopt'";
 		}
 		$report = new Table("article");
 		$report = $report->paginate('all',array('conditions' => join(' and ', $conditions)),30);

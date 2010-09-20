@@ -1,5 +1,5 @@
 <?php 
-$member = member::current();
+$member = member::current(); 
 if(!$member){
 	alert('请先登录！');
 	redirect('/home/login.php?last_url=' . get_current_url());

@@ -1,7 +1,6 @@
 <?php
 	include_once('../../../frame.php');
     set_charset("utf-8");
-    
     if(!is_post()){
 		die('invlad request!');
 	}
@@ -12,18 +11,15 @@
 	$user = member::current();
 	if(!$user){
 		alert('对不起您登录已经超时，请重新登录，修改个人信息！');
-		redirect('/home/login.php?last_url=/home/application/diary');
+		redirect('/home/login.php?last_url=/home/application/dairy');
 		exit;	
 	}
-	if($_POST['type'] == 'category'){
-    	$ct = new Table('category');
-    	$ct->update_file_attributes('post');
-    	$ct->update_attributes($_POST['post'],false);
-    	if(!$ct->parent_id){
-    		$ct->parent_id = $user->id;
+    	$del_id = intval($_POST['id']);
+    	$db=get_db();
+    	$sql = $db->query("select * from lawsive.article where id='$del_id' resource_type = 'diary' and admin_user_id = '{$user->id}'");
+    	if(count($sql)=='1'){
+    		$diary = new Table('article');
+    		$diary->delete($del_id);
+    		echo true;
     	}
-		if($ct->save()){
-			echo true;
-    	}
-	}
 ?>
