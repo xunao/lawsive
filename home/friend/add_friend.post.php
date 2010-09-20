@@ -1,10 +1,12 @@
 <?php
-include_once '../frame.php';
+include ('../../frame.php');
+$user = member::current();
+$db = get_db();
 $f_id =$_POST['f_id'];
-$record = member::add_friend($f_id,1);
-if($record){
-	echo true;
+$sql = $user->add_friend($f_id,1);
+if($sql){
+	return true;
 }else{
-	echo false;}
+	return false;}
 	
 ?>

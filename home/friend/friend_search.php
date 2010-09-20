@@ -8,7 +8,7 @@
 		include ('../../frame.php');
 		include ('../../project_lib/ActiveRecord/member.class.php');
 		use_jquery_ui();
-		css_include_tag('person_public','home_friend');
+		css_include_tag('home_friend','person_public');
 		js_include_tag('home_friend');
 		$user = member::current();
 //		$category = new Category('friend');
@@ -43,7 +43,7 @@
       				<div id="friend_top_right"><div id="f_t_r_i"><img src="/images/person/friend/invitefriend.jpg"><a href="">邀请朋友加入</a></div></div>
       			</div>
       			<div id="friend_bottom">
-      			    <div id="search"><input id="search_input" type="text" ><input type="button" value="搜索" id="search_button"></div>
+      			    <div id="search_f"><input id="search_input" type="text" ><input type="button" value="搜索" id="search_button"></div>
       			    <?php if (count($record)>0) {
       			    	{;
       			    }?>

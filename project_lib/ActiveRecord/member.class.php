@@ -121,6 +121,7 @@
 	
 	//$byid=1 $param传入为用户id，否则，传入用户名
 	function add_friend($param,$byid){
+		$db = get_db();
 		if ($byid==1) {
 			$record=member::find(array('conditions' => "id='{$param}'"));
 		}else{
@@ -134,6 +135,7 @@
 	
 	//$byid=1 $param传入为用户id，否则，传入用户名
 	function delete_friend($param,$byid){
+		$db = get_db();
 		if ($byid==1) {
 			  $db->execute("delete from lawsive.friend  where f_id='{$param}' and u_id='{$this->id}'");
 		}else{$db->execute("delete from lawsive.friend  where f_name='{$param}' and u_id='{$this->id}'");}

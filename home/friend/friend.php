@@ -9,15 +9,16 @@
 		include ('../../project_lib/ActiveRecord/member.class.php');
 		use_jquery_ui();
 		css_include_tag('person_public','home_friend');
-		js_include_tag('home_friend');
+		js_include_tag('login','home_friend');
 		$user = member::current();
 		$category = new Category('friend');
 		$category->echo_jsdata();
 		$db = get_db();
 		$conditions = array();
+		$u_id=$user->id;
 		//$u_id=$_GET('id');
 		//if ($u_id) {
-		$conditions[] = "u_id = '{$user->id}'";
+		$conditions[] = "u_id = '{$u_id}'";
 		//}
 		$friend=new Table('friend');
 		$record=$friend->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>6));
@@ -50,8 +51,8 @@
       			    </div>
       			    <?php for($i=0;$i<count($record);$i++){ ?>
       				<div class="friend_info">
-      					<img alt="" src="<?php echo $record[$i]->f_avatar?>">
-      					<div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href=""><?php echo $record[$i]->f_name?></a> <font  class="delete">删除</font></div>
+      					<img alt="好友头像" src="<?php echo $record[$i]->f_avatar?>">
+      					<div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href=""><?php echo $record[$i]->f_name?></a> <font name="<?php echo $record[$i]->id?>" class="delete">删除</font></div>
       					<div class="friend_i_t2">123456789</div>
       				</div>
       				<?php }?>
