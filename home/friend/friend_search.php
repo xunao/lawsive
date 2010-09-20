@@ -10,9 +10,13 @@
 		use_jquery_ui();
 		css_include_tag('home_friend','person_public');
 		js_include_tag('home_friend');
-		 $str_auto=rand_str();
-        $_SESSION['str_auto']=$str_auto;
 		$user = member::current();
+		if(!$user)
+		{
+			alert('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/friend/friend.php');
+			exit;
+		}
 		$db = get_db();
 		$conditions = array();
 		$search=$_GET['search'];
@@ -23,11 +27,8 @@
 		}else {$conditions[] = "name = '$search'";}
 		$record=member::paginate('all',array('conditions' => join(' or ', $conditions),'per_page'=>6));
 		}
-		
-		//$record=$friend->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>6));
-		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
-		//if($record === false) die('数据库执行失败');
-		//$user_id=$_GET('id');
+		$str_auto=rand_str();
+        $_SESSION['str_auto']=$str_auto;
   	?>
 <body>
       <div id="ibody">
@@ -55,8 +56,7 @@
       					<div class="friend_i_t2">123456789</div>
       				</div>
       				<?php }?>
-      				<div id="page"><?php paginate("",null,"page",true);?></div>
-      				<input type="hidden" id="str_auto" value="<?php echo $str_auto?>"/>
+      				<div id="page"><?php paginate("",null,"page",true);?><input type="hidden" name="str_auto" value="<?php echo $str_auto;?>" /></div>
       				<?php }?>
       			</div>
       		</div>
