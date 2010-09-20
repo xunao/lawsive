@@ -5,20 +5,21 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+		session_start();
 		include ('../../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','diary','comment');
 		js_include_tag('diary');
 		use_ckeditor();
 		$user = member::current();
-		session_start();
+		
 		if(!$user)
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 			redirect('/home/login.php?last_url=/home/application/dairy');
 		}
 		$auth = rand_str();
-		$_SESSION['info_auth'] = $auth;
+		$_SESSION['dia_del_auth'] = $auth;
 		
 		$id=intval($_GET['id']);
 		$db=get_db();
@@ -77,7 +78,7 @@
       				?>
       			<div id="dia_box">
       				<div class="dm_diary">
-      					<div style="width:470px;"><div class="dia_t"><a href="#"><?php echo $diary[$i]->title;?></a></div>
+      					<div style="width:470px;"><div class="dia_t"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>"><?php echo $diary[$i]->title;?></a></div>
       					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $ct[0]->name;?></div></div>
       				<?php if($id==$user->id){?>
       					<div class="dia_edit"><a href="/home/application/diary/edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" value="<?php echo $diary[$i]->id;?>" href="#">删除</a></div>
@@ -85,10 +86,11 @@
       				</div>
       				<div class="dia_cont">
       					<div class="dia_word"><?php echo htmlspecialchars_decode($diary[$i]->content);?></div>
+      				<?php if($id!=$user->id){?>
       					<div class="dia_add" value="<?php $diary[$i]->id;?>"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>">评论</a>　<font>|</font>　<a href="#">赞</a>　</div>
+      				<?php }?>
       				</div>
       			</div>
-      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
       			<?php }
       				}else{
       			?>
@@ -96,7 +98,8 @@
       				<div id="nodia">该分类暂无日记！</div>
       			</div>
       			<?php }?>
-      			
+      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
+				<input type="hidden" id="dia_del_auth" name="dia_del_auth" value="<?php echo $auth;?>" />
       		</div>
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>

@@ -26,6 +26,20 @@ function inupt_vaild(){
 }
 
 $(function(){
+	$('#ct_edit').click(function(){
+		var num = $("#count").val();
+		alert(num);
+		for($i=0; $i<num; $i++){
+			if($('#' +$i).val() != '' && $('#' +$i).val() != $('#check' +$i).val()){
+				alert($i);
+////				$.post('ct_edit.post.php',{'type':'category','id':$('#' +$i).attr('test'),'dia_edit_auth':$('#dia_edit_auth').val(),'post[name]':$('#' +$i).val()},function(data){
+////					if(data != true){alert(data);}
+////				});
+//				alert($i);
+			}
+		}
+//		window.location.reload(true);
+	});
 	$('.dc_name').click(function(){
 		var url = new Array();
 		url.push('id=' + $('#id').val());
@@ -34,7 +48,7 @@ $(function(){
 		window.location.href=url;
 	});
 	
-	$('#ed_sub').click(function(){
+	$('#dia_edit').click(function(){
 		return inupt_vaild();
 	});
 	$('#return').click(function(){
@@ -43,8 +57,8 @@ $(function(){
 	$('#sub_category').live('click',function(){
 		var value = $('#category_name').val().trim();
 		if(value != ""){
-			$.post('ct_edit.post.php',{'type':'category','post[category_type]':'diary','post[name]':$('#category_name').val(),'post[parent_id]':$('#id').val()},function(data){
-				if(data == true){
+			$.post('ct_edit.post.php',{'type':'category','dia_edit_auth':$('#dia_edit_auth').val(),'post[name]':$('#category_name').val()},function(data){
+					if(data == true){
 					alert('添加成功！');
 					$.post('ajax.ct_edit.php',function(data){
 						$('#ed_post').html(data);
@@ -64,7 +78,7 @@ $(function(){
 			return false;
 		}
 		else{
-			$.post('dia_del.post.php',{'id':$(this).attr('value')},function(data){
+			$.post('dia_del.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':$(this).attr('value')},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{
@@ -80,7 +94,7 @@ $(function(){
 			return false;
 		}
 		else{
-			$.post('ct_del.post.php',{'id':$(this).attr('value')},function(data){
+			$.post('ct_del.post.php',{'ct_edit_auth':$('#ct_edit_auth').val(),'id':$(this).attr('value')},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{

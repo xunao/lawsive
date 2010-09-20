@@ -2,7 +2,9 @@
 	include_once('../../../frame.php');
 	$db=get_db();
 	$user = member::current();
-	$category = $db->query("select id,name from lawsive.category where category_type ='diary' and parent_id='{$user->id}'")
+	$category = $db->query("select id,name from lawsive.category where category_type ='diary' and parent_id='{$user->id}'");
+	$category_id=intval($_POST["category_id"]);
+	$auth=$_POST["dia_edit_auth"];
 ?>
 日志分类：
 	<select id="dia_category" name="post[category]">
@@ -13,3 +15,4 @@
 	</select>
 	<input id="category_name" name="category_type" type="text" value="">
 	<input id="sub_category" name="" type="button" value="增加分类">
+	<input type="hidden" id="dia_edit_auth" name="dia_edit_auth" value="<?php echo $auth;?>" />
