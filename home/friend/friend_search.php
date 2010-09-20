@@ -41,7 +41,7 @@
       		</div>
       		<div id="friend">
       			<div id="friend_top">
-      				<div id="searchfriend"><a href="friend.php" ><font color="#000000">我的好友</font></a></div><div id="myfriend"><font>查找好友</font></div>
+      				<div id="searchfriend"><a href="index.php" ><font color="#000000">我的好友</font></a></div><div id="myfriend"><font>查找好友</font></div>
       				<div id="friend_top_right"><div id="f_t_r_i"><img src="/images/person/friend/invitefriend.jpg"><a href="">邀请朋友加入</a></div></div>
       			</div>
       			<div id="friend_bottom">
@@ -51,12 +51,13 @@
       			    }?>
       				<?php for($i=0;$i<count($record);$i++){ ?>
       				<div class="friend_info">
-      					<img alt="" src="<?php echo $record[$i]->avatar?>">
-      					<div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href=""><?php echo $record[$i]->name?></a><font  class="add" name="<?php echo $record[$i]->id ?>">加为好友</font></div>
-      					<div class="friend_i_t2">123456789</div>
-      				</div>
+      					<img alt="" src="<?php if ($record[$i]->f_avatar == '') {echo '/images/home/default_avatar.jpg';}else {echo $record[$i]->f_avatar;}?>">
+      				    <div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href="<?php echo "member.php?id=".$record[$i]->f_id;?>"><?php echo $record[$i]->f_name?></a><a href="<?php echo "member.php?id=".$record[$i]->f_id;?>" class="right">基本信息</a></div>
+		      			<div class="friend_i_t2">123456789<a href="<?php echo "../message/send.php?r_id=".$record[$i]->id; ?>" class="right">发短消息</a></div>
+		      			<div class="friend_i_t2"><font name="<?php echo $record[$i]->id?>"  class="add">添加好友</font></div>
+		      		</div>
       				<?php }?>
-      				<div id="page"><?php paginate("",null,"page",true);?><input type="hidden" name="str_auto" value="<?php echo $str_auto;?>" /></div>
+      				<div id="page"><?php paginate("",null,"page",false);?><input type="hidden" name="str_auto" value="<?php echo $str_auto;?>" /></div>
       				<?php }?>
       			</div>
       		</div>

@@ -13,18 +13,19 @@
 #friend_top_right{width:590px;height:29px; border-bottom:1px solid #E7E7E7;}
 #f_t_r_i{height:29px; line-height:29px; float:right;}
 #f_t_r_i a{margin-left:5px; color:#598CAA; border-bottom:1px solid #598CAA;}
-#friend_middle{width:100%; height:25px;  margin-top:15px;}
+#friend_middle{width:100%; height:25px;  margin-top:15px; margin-bottom:15px;}
 #friend_select{width:90px; height:25px; margin-right:5px; text-align:center; float:left;}
 #friend_middle button{width:27px; height:25px; border:0px; cursor:pointer; background:url('/images/person/friend/searchbutton.jpg') no-repeat; float:left}
 #f_m_r{height:27px; margin-right:10px;  font-size:12px; line-height:26px; color:#666666; float:right;}
-#friend_bottom{width:780px; padding-bottom:20px; border-bottom:1px dotted #DEDEDE; float:left;}
-.friend_info{width:100%; height:60px; margin-top:10px;}
+#friend_bottom{width:780px; padding-bottom:20px; float:left;}
+.friend_info{width:100%; height:60px; padding-bottom:15px; margin-top:15px; line-height:20px; border-bottom:1px dotted #DEDEDE; float:left;}
 .friend_info img{width:60px; height:60px; float:left; margin-right:10px;}
 .friend_i_t1{width:710px; height:20px; text-decoration:underline; float:left;}
 .friend_i_t1 img{width:18px; height:15px; margin-right:5px; float:left;}
 .friend_i_t2{width:710px; height:20px; float:left;}
-.delete{color:#999999; float:right;}
-.add{color:#999999; float:right;}
+.delete{color:#999999; text-decoration:underline; float:right; cursor:pointer;}
+.right{color:#999999; text-decoration:underline; float:right; }
+.add{color:#999999; float:right; text-decoration:underline; cursor:pointer;}
 #page{width:100%; margin-top:10px; font-size:14px; line-height:18px; text-align:center;}
 
 #search_f{height:30px; margin:30px 200px 10px 200px;}
