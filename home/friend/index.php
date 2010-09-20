@@ -51,7 +51,7 @@
 				            <option value="0">熟人</option>
 			            </select>
 			            <button id="friend_button" ></button>
-			            <div id="f_m_r">共有<?php echo count($record)?>位好友，其中位好友在线</div>
+			            <div id="f_m_r">共有<?php echo $page_record_count;?>位好友，其中位好友在线</div>
       			    </div>
       			    <?php if (count($record)>0) {
       			    	{;
