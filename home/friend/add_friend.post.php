@@ -1,7 +1,7 @@
 <?php
 include ('../../frame.php');
+set_charset();
 if(!is_post()){
-	echo  "错误查询";
 	die('invlad request!');
 }
 if($_SESSION['str_auto'] != $_POST['str_auto']){

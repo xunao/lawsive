@@ -22,10 +22,12 @@
 		$search=$_GET['search'];
 		//$u_id=$_GET('id');
 		if ($search) {
-		if (is_numeric($search)) {
-			$conditions[] = "id = '$search'";
-		}else {$conditions[] = "name = '$search'";}
-		$record=member::paginate('all',array('conditions' => join(' or ', $conditions),'per_page'=>6));
+			if (is_numeric($search)) {
+				$conditions[] = "id = '$search'";
+			}else {
+				$conditions[] = "name = '$search'";
+			}
+			$record=member::paginate('all',array('conditions' => join(' or ', $conditions),'per_page'=>6));
 		}
 		$str_auto=rand_str();
         $_SESSION['str_auto']=$str_auto;
