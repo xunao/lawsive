@@ -47,3 +47,7 @@ body a{text-decoration:none;}
 #person_index_left .servercontent a{color:#ffffff;}
 
 #main_container{margin-left:10px; margin-top:-35px; width: 820px}
+.block{border: 1px solid gray; border-right:none;padding:5px 15px;}
+.block a{color:black; font-size:14px;}
+.block.selected{border-bottom:1px solid white;}
+.block.selected a{color:#336699}

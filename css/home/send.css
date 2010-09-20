@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+#title{width:98%; line-height:30px; border-bottom: 1px solid gray; padding-bottom: 15px;padding-top: 15px;}
+	#title span{font-weight: bold; font-size:14px; margin-left:5px;}
+#main{}	
+#send_link{margin-top:10px; margin-bottom: 10px; width:100%}
+.block_a{display:block;color:#336699; text-decoration: underline;}
+#receiver_container{width:100%;margin-bottom:20px;}

@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+#title{width:98%; line-height:30px; border-bottom: 1px solid gray; padding-bottom: 15px;padding-top: 15px;}
+	#title span{font-weight: bold; font-size:14px; margin-left:5px;}
+#main{width:100%}	
+#send_link{margin-top:10px; margin-bottom: 10px; width:100%}
+.block_a{display:block;color:#336699; text-decoration: underline;}
+#msg_list{width:800px;}
+.msg_box{width:800px; height: 100px;  margin-left:10px; padding-top:10px; line-height:20px;border-bottom: 1px solid #D8DFEA}
+	.sender_info{width:180px;}
+	.sender_info .date {color:#AFAFAF}
+	.avatar{width:70px; text-align: center;}
+		.avatar img{width:50px; height: 50px;}
+		.a_sender{margin-top:5px;}
+	
+	.message_content{width:550px; height:100px; overflow: hidden;}
+	
+	.tool_box{width:50px;}
