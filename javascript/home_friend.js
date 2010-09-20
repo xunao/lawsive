@@ -14,7 +14,7 @@ $(function(){
 		var id=$(this).attr('name');
 		$.post("add_friend.post.php",{"f_id":$(this).attr('name'),"str_auto":$("#str_auto").val()},function(data){
 		alert(data);
-		window.location.href="friend.php";
+		window.location.href="index.php";
 		});
 		
 	});

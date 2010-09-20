@@ -9,7 +9,7 @@ if($_SESSION['str_auto'] != $_POST['str_auto']){
 $user = member::current();
 if(!$user){
 	alert('对不起您登录已经超时，请重新登录，修改个人信息！');
-	redirect('/home/login.php?last_url=/home/friend/friend.php');
+	redirect('/home/login.php?last_url=/home/friend/');
 	exit;	
 }
 $db = get_db();
