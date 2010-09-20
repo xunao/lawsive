@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-#person_friend_right{width:828px; height:900px; border-top:1px solid #DFDEDE; border-right:1px solid #DFDEDE; float:right; }
+#person_friend_right{width:828px; height:700px; margin-top:-41px; border-top:1px solid #DFDEDE; border-right:1px solid #DFDEDE; overflow:hide; float:right; }
 #person_friend_right_top{width:800px; margin:30px 14px; padding-bottom:15px; border-bottom:1px solid #DFDEDE;}
 #person_friend_right_top img{margin-right:5px; float:left;}
 #person_friend_right_top font{font-size:14px; line-height:18px; color:#000000; float:left;}
@@ -27,5 +27,5 @@
 .add{color:#999999; float:right;}
 #page{width:100%; margin-top:10px; font-size:14px; line-height:18px; text-align:center;}
 
-#search{height:30px; margin:30px 200px 10px 200px;}
-#search input{height:30px; border:1px solid #666666; margin-right:20px;}
+#search_f{height:30px; margin:30px 200px 10px 200px;}
+#search_f input{height:30px; border:1px solid #666666; margin-right:20px;}
