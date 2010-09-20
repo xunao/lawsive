@@ -44,7 +44,7 @@
 				<div id="pub_comment_box">
 				</div>
 				<script type="text/javascript">
-					 	pub_comment('article',<?php echo $article_id;?>);
+					 	pub_comment('article',<?php echo $article_id;?>,'pub_comment_box');
 				</script>
           	</div>
       	</div>
