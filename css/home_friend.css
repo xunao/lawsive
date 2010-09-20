@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+#person_friend_right{width:828px; height:900px; border-top:1px solid #DFDEDE; border-right:1px solid #DFDEDE; float:right; }
+#person_friend_right_top{width:800px; margin:30px 14px; padding-bottom:15px; border-bottom:1px solid #DFDEDE;}
+#person_friend_right_top img{margin-right:5px; float:left;}
+#person_friend_right_top font{font-size:14px; line-height:18px; color:#000000; float:left;}
+#p_f_r_t_r{margin-right:10px; float:right; border-bottom:1px solid #666666}
+#p_f_r_t_r a{height:18px; font-size:12px; line-height:18px; color:#666666}
+
+#friend{width:790px; margin-left:19px; }
+#friend_top{width:100%; height:30px; }
+#myfriend{width:97px;height:30px; font-size:14px; line-height:30px; text-align:center; background:url('/images/person/friend/myfriend.jpg')}
+#searchfriend{width:103px;height:30px; font-size:14px; line-height:30px; text-align:center; background:url('/images/person/friend/searchfriend.jpg')}
+#friend_top_right{width:590px;height:29px; border-bottom:1px solid #E7E7E7;}
+#f_t_r_i{height:29px; line-height:29px; float:right;}
+#f_t_r_i a{margin-left:5px; color:#598CAA; border-bottom:1px solid #598CAA;}
+#friend_middle{width:100%; height:25px;  margin-top:15px;}
+#friend_select{width:90px; height:25px; margin-right:5px; text-align:center; float:left;}
+#friend_middle button{width:27px; height:25px; border:0px; cursor:pointer; background:url('/images/person/friend/searchbutton.jpg') no-repeat; float:left}
+#f_m_r{height:27px; margin-right:10px;  font-size:12px; line-height:26px; color:#666666; float:right;}
+#friend_bottom{width:780px; padding-bottom:20px; border-bottom:1px dotted #DEDEDE; float:left;}
+.friend_info{width:100%; height:60px; margin-top:10px;}
+.friend_info img{width:60px; height:60px; float:left; margin-right:10px;}
+.friend_i_t1{width:710px; height:20px; text-decoration:underline; float:left;}
+.friend_i_t1 img{width:18px; height:15px; margin-right:5px; float:left;}
+.friend_i_t2{width:710px; height:20px; float:left;}
+.delete{color:#999999; float:right;}
+.add{color:#999999; float:right;}
+#page{width:100%; margin-top:10px; font-size:14px; line-height:18px; text-align:center;}
+
+#search{height:30px; margin:30px 200px 10px 200px;}
+#search input{height:30px; border:1px solid #666666; margin-right:20px;}
