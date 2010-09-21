@@ -5,6 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+        session_start();
 		include ('../../frame.php');
 		use_jquery();
 		css_include_tag('person_public','home/message_list');
@@ -36,6 +37,8 @@
 		$db = get_db();
 		$msgs = $db->paginate("select a.*,b.name,b.avatar from message a left join member b on a.sender_id=b.id where " .join(' and ',$conditions) ." order by status asc, created_at desc");
 		!$msgs && $msgs = array();
+		$send_msg_auth = rand_str();
+	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
 <body>
       <div id="ibody">
@@ -51,46 +54,48 @@
       					<a href="/home/message/send.php">发送短消息</a>
       				</div>
       			</div>
-      			<?php foreach ($msgs as $msg) { ?>
+      			<?php for($i=0;$i<count($msgs);$i++) { ?>
       			<div class="msg_box">
       				<div class="sender_info">
       					<div class="avatar">
-      						<?php if($msg->sender_id == 0){?>
+      						<?php if($msgs[$i]->sender_id == 0){?>
       						<img src="/images/home/system.jpg" width="50" height="50" border="1"/>
       						<a href="#" class="a_sender  block_a">系统消息</a>
       						<?php }else{?>
-      						<a href="/home/member.php?id=<?php echo $msg->sender_id;?>"><img src="<?php echo $msg->avatar ? $msg->avatar : '/images/home/default_avatar.jpg';?>" width="50" height="50" border="1"/></a>
-      						<a href="/home/member.php?id=<?php echo $msg->sender_id;?>" class="a_sender  block_a"><?php echo $msg->name?></a>
+      						<a href="/home/member.php?id=<?php echo $msgs[$i]->sender_id;?>"><img src="<?php echo $msgs[$i]->avatar ? $msgs[$i]->avatar : '/images/home/default_avatar.jpg';?>" width="50" height="50" border="1"/></a>
+      						<a href="/home/member.php?id=<?php echo $msgs[$i]->sender_id;?>" class="a_sender  block_a"><?php echo $msgs[$i]->name?></a>
       						<?php }?>
       					</div>
       					<div class="date">
-							<?php echo substr($msg->created_at,0,10);?>  
-							<?php if($msg->status==1){?>
+							<?php echo substr($msgs[$i]->created_at,0,10);?>  
+							<?php if($msgs[$i]->status==1){?>
 							<br/>
 							<span style="color:red">new</span>
 							<?php }?>   						
       					</div>
       				</div>
-      				
       				<div class="message_content">
-      					<?php echo strip_tags($msg->content,'<a>')?>
+      					<a href="show.php?id=<?php echo $msgs[$i]->id;?>" ><?php echo strip_tags($msgs[$i]->content,'<a>')?></a>
       				</div>
       				<div class="tool_box">
-      					<a href="show.php?id=<?php echo $msg->id;?>" class="block_a">查看</a>
-      					<?php if($msg->sender_id !=0 ){?>
-      					<a href="reply.php?id=<?php echo $msg->id;?>" class="block_a">回复</a>
+      					<a href="show.php?id=<?php echo $msgs[$i]->id;?>" class="block_a">查看</a>
+      					<?php if($msgs[$i]->sender_id !=0 ){?>
+      					<a href="reply.php?id=<?php echo $msgs[$i]->id;?>" class="block_a">回复</a>
       					<?php }?>
-      					<a href="delete.php?id=<?php echo $msg->id;?>&last_url=<?php echo get_current_url();?>" class="block_a">删除</a>
+      					<a name="<?php echo $msgs[$i]->id?>" class="delete">删除</a>
       				</div>
-      				
       			</div>
       			<?php }?>
-      			
       			<div><?php echo paginate();?></div>
-      			
+<!--      			<form action="delete_message.post.php" class="form" method="post">-->
+      		            
+      		            <input type="hidden" id="m_control" value="1"/>
+      		            <input type="hidden" id="m_last_url" value="receive_list.php"/>
+      		            <input type="hidden" id="send_msg_auth" value="<?php echo $send_msg_auth?>" />
       		</div>
       	</div>
       	<?php include_once(INC_DIR.'/home/bottom.php'); ?>
+      	
       </div>
       <script type="text/javascript">
       	$(function(){
@@ -99,6 +104,14 @@
             },function(){
             	$(this).css('background-color','white');
             });
+
+      		$('.delete').click(function(){
+      			$.post("delete_message.post.php",{"m_id":$(this).attr('name'),"send_msg_auth":$("#send_msg_auth").val(),"m_control":$("#m_control").val(),"m_last_url":$("#m_last_url").val()},function(data){
+      				alert(data);
+      				window.location.reload(true);	
+      			});
+      		});
+      		
       	});
       	
       </script>
