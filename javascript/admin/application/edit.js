@@ -158,7 +158,7 @@ $(function(){
 		});
 		if(iNumChecked==0)
 		{
-			alert('请选择要添加的应用！');
+			alert('请选择该应用的使用角色权限！');
 			return false;
 		}
 		$("#check_role").attr('value',ary.substring(0,ary.lastIndexOf(',')));

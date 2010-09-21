@@ -33,6 +33,7 @@
 				$application->find($id);
 			}
 			$application->update_attributes($_POST['post'],false);
+			$application->role=$_POST['role_role'];
 			$application->save();
 			$app_id = $application->id;
 			if($id=="")

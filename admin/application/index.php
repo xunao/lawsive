@@ -40,7 +40,6 @@
 				  		{
 				  			switch($sub_role_str[$j])
 				  			{
-				  				case 0: echo "所有角色　";break;
 				  				case 1: echo "合伙人　";break;
 				  				case 2: echo "青年律师　";break;
 				  				case 3: echo "法务官　";break;
