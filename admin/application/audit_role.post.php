@@ -8,80 +8,64 @@
 		die('invlad request!');
 		//var_dump($_SESSION['edit_auth']);
 	}
-	$user = member::current();
+	$user = AdminUser::current_user();
 	if(!$user){
 		echo "out time";
 		redirect('/home/login.php?last_url=/home/edit.php');
 		exit;	
 	}
     $db = get_db();
+    $id = intval($_POST['id']);
+    $date=$db->query('select now() as time');
     if($_POST['post_type']=="del"){
-		$id = intval($_POST['id']);
+    	$mem_id=$_POST['member_id'];
 		$application = new Table('application_apply_log');
 		$application -> delete($id);
+		$sql='delete from member_appliaction where member_id='.$mem_id.' and application_id='.$_POST['app_id'];
+		if(!$db->execute($sql))
+		{
+			echo "";
+			exit;
+		}
+		echo $id;
 	}		
 	if($_POST['post_type']=="apply"){
-			$db=get_db();
-			$created_at=$db->query('select now() as time');
 			$application = new Table('application_apply_log');
-			$id = intval($_POST['id']);
-			if($id){
-				$application->find($id);
-			}
-			$application->status=1;
-			$application->save();
-			
-			$member_apply=new Table('member_appliaction');
-			$member_apply->member_id=$application->member_id;
-			$member_apply->name=$application->application_name;
-			$member_apply->application_id=$application->application_id;
-			$member_apply->url=$_POST['url'];
-			$member_apply->created_at=$created_at[0]->time;
-			if($_POST['is_default']==0)
-			{
-				$member_apply->status=2;
-			}
-			else if($_POST['is_default']==1)
-			{
-				$member_apply->status=1;
+			if(!$id){
+				echo "error";
 			}
 			else
 			{
-				$member_apply->status=0;
+				$application->find($id);
+				$application->admin_id=$user->id;
+				$application->admin_date=$date[0]->time;
+				$application->status=1;
+				$application->save();
+				if($_POST['is_default']==0)
+				{
+					$db->execute('update member_appliaction set status=2 where member_id='.$user->id.' and appliaction_id='.$id);
+				}
+				else if($_POST['is_default']==1)
+				{
+					$db->execute('update member_appliaction set status=1 where member_id='.$user->id.' and appliaction_id='.$id);
+				}
+				echo "OK";
 			}
-			$member_apply->save();
-			echo "OK";
 	}
 	if($_POST['post_type']=="unapply"){
-			$db=get_db();
 			$application = new Table('application_apply_log');
-			$id = intval($_POST['id']);
-			if($id){
-				$application->find($id);
-			}
-			$application->status=0;
-			$application->save();
-			
-			$member_apply=new Table('member_appliaction');
-			$member_apply->find($id);
-			$member_apply->status=$application->member_id;
-			$member_apply->name=$application->application_name;
-			$member_apply->application_id=$application->application_id;
-			$member_apply->url=$_POST['url'];
-			$member_apply->created_at=$created_at[0]->time;
-			if($_POST['is_default']==0)
-			{
-				$member_apply->status=2;
-			}
-			else if($_POST['is_default']==1)
-			{
-				$member_apply->status=1;
+			if(!$id){
+				echo "error";
 			}
 			else
 			{
-				$member_apply->status=0;
+				$application->find($id);
+				$application->admin_id=$user->id;
+				$application->admin_date=$date[0]->time;
+				$application->status=0;
+				$application->save();
+				$db->execute('update member_appliaction set status=0 where member_id='.$user->id.' and appliaction_id='.$id);
+				echo "OK";
 			}
-			$member_apply->save();
-			echo "OK";
 	}
 ?>
