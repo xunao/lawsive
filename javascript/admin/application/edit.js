@@ -76,6 +76,8 @@ $(function(){
 			$('.enabled').attr('checked',true);
 			$('.is_default').attr('disabled',false);
 			$('.is_free').attr('disabled',false);
+			$("#all_is_default").attr('checked',false);
+			$("#all_is_free").attr('checked',false);
 		}
 		else
 		{

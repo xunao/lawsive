@@ -19,10 +19,10 @@
 			$exist_roles = $db->query('select * from application_role where application_id = '. $id);
 		}
 		
-		function &role_by_id($id){
+		function &role_by_id($app_role){
 			global $exist_roles;
 			foreach ($exist_roles as $item){
-				if($item->role == $id) return $item;
+				if($item->role == $app_role) return $item;
 			}
 			return null;
 			
