@@ -28,6 +28,8 @@
 	 */
 	static $s_virtual_fields = array();
 	
+	private $_base_info = null;
+	
 	static function register($login_name,$name,$password,$email,$level,$role,$avatar){
 		if(mb_strlen($login_name)>128){return -3;}
 			else{
@@ -197,5 +199,101 @@
 		!$user_apps && $user_apps = array();
 		$apps = array_merge($apps,$user_apps);
 		return $apps;
+	}
+	
+	function get_base_info(){
+		if($this->_base_info) return $this->_base_info;
+		$this->_base_info = new Table('member_base_info');
+		$this->_base_info->find($this->base_info_id);
+		return $this->_base_info;
+		
+	}
+	
+	function role_name(){
+		switch ($this->role) {
+			case 1:
+				return "合伙人";
+				break;
+			case 2:
+				return "青年律师";
+				break;			
+			case 3:
+				return "法务官";
+				break;
+			case 4:
+				return "教授";
+				break;
+			case 5:
+				return "法官/检察官";
+				break;
+			case 6:
+				return "读者";
+				break;
+			case 7:
+				return "法务院学生";
+				break;
+			case 8:
+				return "律师事务所";
+				break;
+			case 9:
+				return "公司法务部";
+				break;
+			case 10:
+				return "律师";
+				break;
+			default:
+				;
+			break;
+		}
+	}
+	
+	function head_info_path(){
+		$url = ROOT_DIR ."/home/head_info/_". $this->role .".php";
+		if(file_exists($url)){
+			return $url;
+		}else{
+			return ROOT_DIR . "/home/head_info/_default.php";
+		}
+	}
+	
+	function user_quick_link(){
+		$return  = array("修改头像"=>"/home/avatar/","详细资料"=>"/home/info.php");
+		switch ($this->role) {
+			case 1:
+				//return "合伙人";
+				break;
+			case 2:
+				//return "青年律师";
+				break;			
+			case 3:
+				//return "法务官";
+				break;
+			case 4:
+				//return "教授";
+				break;
+			case 5:
+				//return "法官/检察官";
+				break;
+			case 6:
+				//return "读者";
+				break;
+			case 7:
+				//return "法务院学生";
+				break;
+			case 8:
+				//return "律师事务所";
+				break;
+			case 9:
+				//return "公司法务部";
+				break;
+			case 10:
+				//return "律师";
+				$return['个人简历'] = '/home/resume/';
+				break;
+			default:
+				;
+			break;
+		}
+		return $return;
 	}
 }

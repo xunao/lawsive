@@ -43,8 +43,8 @@
 		      	 			</table>
 		      	 		</div>
 	      	 		</div>
-	      	 		<div id="operate" style="width:138px;">
-	      	 			 <a href="">发短消息</a>　　<a href="">加为好友</a>
+	      	 		<div id="operate">
+	      	 			 <a href="">发短消息</a><a href="">加为好友</a>
 	      	 			 <div class="operate_t">他的照片（0）</div>
 	      	 			 <div class="operate_t">他的日记（1）</div>
 	      	 			 <div class="operate_t">他的记录（0）</div>
@@ -83,10 +83,10 @@
       			<?php for($i=0;$i<12; $i++){ ?>
 	      		<div class="pic">
 	      			<div class="top">
-	      				<a href=""><img src=""/images/person/image_bg.jpg" alt=""></a>
+	      				<a href=""><img src="/images/person/image_bg.jpg" alt=""></a>
 	      			</div>
 	      			<div class="name">
-	      				<img border=0 src="/images/person/online.jpg"><a href="">盛志峰</a>
+	      				<img border=0 src="/images/person/online.jpg" border="0"><a href="">盛志峰</a>
 	      			</div>
 	      			<div class="lastonline">
 	      				前天23：13

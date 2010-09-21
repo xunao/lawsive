@@ -19,10 +19,10 @@
 			$exist_roles = $db->query('select * from application_role where application_id = '. $id);
 		}
 		
-		function &role_by_id($id){
+		function &role_by_id($app_role){
 			global $exist_roles;
 			foreach ($exist_roles as $item){
-				if($item->id == $id) return $item;
+				if($item->role == $app_role) return $item;
 			}
 			return null;
 			
@@ -30,7 +30,7 @@
 		use_jquery();
 		use_jquery_ui();
 		css_include_tag('admin/base');
-		js_include_tag('admin/application/index');
+		js_include_tag('admin/application/edit');
 		$auth = rand_str();
 		$_SESSION['edit_auth'] = $auth;
 		$sub_role_str=explode(",",$application[0]->role);
@@ -80,41 +80,28 @@
 			</td>
 		</tr>
 		<?php 
-			foreach ($roles as $id => $name){
-			$item = role_by_id($id);
+			foreach ($roles as $role_id => $name){
+			$item = role_by_id($role_id);
 			$class_name = $item ? 'exists' : 'new';
 		?>
 		<tr class="tr4">
 			<td class="td1" width="15%"><?php echo $name;?></td>
 			<td class="<?php echo $class_name;?>">
-				<input type="checkbox" class="enabled" value="1" <?php if($item) echo "checked='checked'";?> style="float:none;"/>可用 
-				<input type="checkbox" class="is_default" value="1" <?php if($item->is_default) echo "checked='checked'";?> style="float:none;" />默认显示 
-				<input type="checkbox" class="is_free" value="1" <?php if($item->is_free) echo "checked='checked'";?> style="float:none;" />免费产品
+				<input type="checkbox" class="enabled" name="check_enabled" value="<?php echo $role_id; ?>" <?php if($item) echo "checked='checked'";?> style="float:none;"/>可用 
+				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default) echo "checked='checked'";?> style="float:none;" />默认显示 
+				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free) echo "checked='checked'";?> style="float:none;" />免费产品
 			</td>
 		</tr>
 		<?php }?>
-		<tr class=tr4>
-			<td class=td1 width=15%>使用角色</td>
-			<td>
-				<input type="checkbox" name="checkbox" <?php if($application[0]->role==0){ ?>checked="checked"<?php } ?> value="0">所有人<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==1){?>checked="checked"<?php break;}}?> value="1">合伙人<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==2){?>checked="checked"<?php break;}}?> value="2">青年律师<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==3){?>checked="checked"<?php break;}}?> value="3">法务官<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==4){?>checked="checked"<?php break;}}?> value="4">教授<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==5){?>checked="checked"<?php break;}}?> value="5">法官/检察官<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==6){?>checked="checked"<?php break;}}?> value="6">读者<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==7){?>checked="checked"<?php break;}}?> value="7">法务院学生<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==8){?>checked="checked"<?php break;}}?> value="8">律师事务所<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==9){?>checked="checked"<?php break;}}?> value="9">公司法务部<br>
-				<input type="checkbox" name="checkbox" <?php foreach($sub_role_str as $value){if($value==10){?>checked="checked"<?php break;}}?> value="10">律师
-			</td>
-		</tr>
 		<tr class=btools>
-			<td colspan="10">
+			<td colspan="2">
 				<button id="sub">提 交</button>
 				<input type="hidden" name="id" value="<?php echo $id;?>">
-				<input type="hidden" id="check_role" name="post[role]" value="<?php echo $application[0]->role; ?>">
-				<input type="hidden" name="edit_auth" value="<?php echo $auth;?>" />
+				<input type="hidden" id="check_role" name="role_role" value="">
+				<input type="hidden" id="check_is_default" name="role_is_default" value="">
+				<input type="hidden" id="check_is_free" name="role_is_free" value="">
+				<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
+				<input type="hidden" id="max_role" value="<?php echo count($roles); ?>">
 				<input type="hidden" name="post_type" value="application">
 			</td>
 		</tr>

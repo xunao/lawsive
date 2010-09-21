@@ -1,12 +1,12 @@
 <?php
+	session_start();
 	include_once('../../../frame.php');
     set_charset("utf-8");
     if(!is_post()){
 		die('invlad request!');
 	}
-	if($_SESSION['ct_edit_auth'] != $_POST['ct_edit_auth']){
+	if($_SESSION['dia_edit_auth'] != $_POST['dia_edit_auth']){
 		die('invlad request!');
-		var_dump($_SESSION['edit_auth']);
 	}
 	$user = member::current();
 	if(!$user){
@@ -18,9 +18,9 @@
     	$db=get_db();
     	$sql = $db->query("select * from lawsive.member_category where id='$del_id' resource_type = 'diary' and member_id = '{$user->id}'");
     	if(count($sql)=='1'){
-    		$diary = new Table('category');
+    		$diary = new Table('member_category');
     		$diary->delete($del_id);
-    		$db->execute("delete from lawsive.article where resource_type = 'diary' and admin_user_id = '{$user->id}' and category = '$del_id'");
+    		$db->execute("update lawsive.article set category = '0' where resource_type = 'diary' and admin_user_id = '{$user->id}' and category = '$del_id'");
     		echo true;
     	}
 ?>
