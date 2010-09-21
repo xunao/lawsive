@@ -35,8 +35,6 @@ $(function(){
 		{
 			$(this).nextAll('.is_default').attr('disabled',true);
 			$(this).nextAll('.is_free').attr('disabled',true);
-			$(this).nextAll('.is_default').attr('checked',false);
-			$(this).nextAll('.is_free').attr('checked',false);
 			$("#all_enabled").attr('checked',false);
 		}
 	});
@@ -140,7 +138,7 @@ $(function(){
 			{
 				iNumChecked++;
 				ary=ary+$(this).val()+',';
-				if($(this).nextAll('.is_default').attr('checked'))
+				if(!$(this).nextAll('.is_default').attr('disabled')&&$(this).nextAll('.is_default').attr('checked'))
 				{
 					ary1=ary1+'1,';
 				}
@@ -148,7 +146,7 @@ $(function(){
 				{
 					ary1=ary1+"0,";
 				}
-				if($(this).nextAll('.is_free').attr('checked'))
+				if(!$(this).nextAll('.is_free').attr('disabled')&&$(this).nextAll('.is_free').attr('checked'))
 				{
 					ary2=ary2+'1,';
 				}
@@ -166,7 +164,7 @@ $(function(){
 		$("#check_role").attr('value',ary.substring(0,ary.lastIndexOf(',')));
 		$("#check_is_default").attr('value',ary1.substring(0,ary1.lastIndexOf(',')));
 		$("#check_is_free").attr('value',ary2.substring(0,ary2.lastIndexOf(',')));
-		$("#application_form").submit();
+		//$("#application_form").submit();
 	});
 });
 function each_checkbox(name)
