@@ -1,5 +1,6 @@
 <?php
     include_once('../../frame.php');
+    session_start();
     set_charset("utf-8");
     if(!is_post()){
 		die('invlad request!');
