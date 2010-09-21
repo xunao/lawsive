@@ -63,7 +63,7 @@ $comments = $db->paginate("select t1.*,t2.up,t2.down from comment t1 left join d
 	</div>
 <?php }?>
 
-<div id="comment_paginate"><?php echo paginate("/comment/ajax_comment.php?type=$type&id=$id&limit=$limit&container=$container",$container,'comment_page');?></div>
+<div id="comment_paginate"><?php echo paginate("/comment/ajax_comment.php?type=$type&id=$id&limit=$limit&container=$container",$container,'comment_page',false);?></div>
 <div class="pub_comment_all">
 	<a href="/comment/comment_list.php?id=<?php echo $id;?>&type=<?php echo $type;?>">
 		<font color="#000000">[</font>查看所有评论 &nbsp;<font color="#A84749">(  <?php echo $comment_page_record_count;?>  )</font><font color="#000000">&nbsp; ]</font>

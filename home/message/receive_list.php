@@ -27,7 +27,7 @@
 			case 'system':
 				$conditions[] = "sender_id=0";
 			break;
-			case 'friends':
+			case 'friend':
 				$conditions[] = "sender_id!=0";
 			break;
 			default:
