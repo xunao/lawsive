@@ -61,6 +61,11 @@
 				</td>
 			</tr>
 			<? }?>
+			<tr class="btools">
+				<td colspan=5>				
+					<?php paginate("",null,"page",true);?>
+				</td>
+			</tr>
 		</table>
 		<input type="hidden" id="db_table" value="application">
 	</div>	
