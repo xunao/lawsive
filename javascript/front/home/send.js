@@ -29,7 +29,7 @@ $(function(){
 			return false;
 		}
 		if($('#receiver_id').val() <= 0 ){
-			alert('请填写短信接收者');
+			alert('请正确填写短信接收者姓名');
 			$('#receiver').focus();
 			return false;
 		}
