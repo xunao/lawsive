@@ -24,6 +24,7 @@ function post_comment(){
 		alert('评论内容太长');
 		return false;
 	}
+	$('.login_comment button').attr('disabled',true);
 	$.post('/comment/comment.post.php',{'type':$('#comment_resource_type').val(),'id':$('#comment_resource_id').val(),'content':encodeURI(content)},function(){
 		refresh_comment();
 	});
@@ -34,7 +35,6 @@ function dig(type,id,dig){
 }
 $(function(){
 	$(".login_comment button").live('click',function(){
-		$(this).attr('disabled',true);
 		post_comment();
 	});
 	
