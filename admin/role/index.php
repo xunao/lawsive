@@ -40,7 +40,7 @@
 			</tr>
 			<? }?>
 		</table>
-		<input type="hidden" id="db_table" value="eb_role">
+		<input type="hidden" id="db_table" value="role">
 	</div>	
 </body>
 </html>
