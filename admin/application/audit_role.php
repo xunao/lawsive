@@ -31,9 +31,9 @@
 				<td width="20%">应用名称</td><td width="15%">申请人</td><td width="15%">申请日期</td><td width="10%">状态</td><td width="10%">审核人</td><td width="15%">审核日期</td><td width="15%">操作</td>
 			</tr>
 			<?php for($i=0;$i<$count;$i++){
-				$url=$db->query('select a.url,r.is_default from application_role r left join application a on r.application_id=a.id where r.application_id='.$application[$i]->application_id.' and r.role='.$application[$i]->role);
+				$url=$db->query('select is_default from application_role where application_id='.$application[$i]->application_id.' and role='.$application[$i]->role);
 			?>
-			<tr class="tr3" id="<?php echo $application[$i]->id;?>" param1="<?php echo $url[0]->url; ?>" param2="<?php echo $url[0]->is_default; ?>">
+			<tr class="tr3" id="<?php echo $application[$i]->id;?>" >
 				<td><?php echo $application[$i]->application_name;?></td>
 				<td><?php echo $application[$i]->login_name;?></td>
 				<td><?php echo $application[$i]->apply_date; ?></td>
@@ -42,7 +42,7 @@
 				<td><?php echo $application[$i]->admin_date; ?></td>
 				<td>	
 					<?php if($application[$i]->state==0){ ?>
-						<span param=<?php echo $application[$i]->id;?>" class="pass" title="通过审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_apply.png" border="0"></a>
+						<span param=<?php echo $application[$i]->id;?>" param1="<?php echo $url[0]->is_default; ?>" class="pass" title="通过审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_apply.png" border="0"></a>
 					<?php }else if($application[$i]->state==1){?>
 						<span param=<?php echo $application[$i]->id;?>" class="unpass" title="取消审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_unapply.png" border="0"></a>
 					<?php }?>

@@ -16,7 +16,7 @@
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 		}
-		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where r.role='.$member->role.' and a.id not in (select application_id from member_appliaction where member_id='.$member->id.')');
+		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where (r.role='.$member->role.' or r.role=0) and a.id not in (select application_id from member_appliaction where member_id='.$member->id.')');
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;
   	?>

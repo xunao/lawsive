@@ -8,7 +8,7 @@
 		die('invlad request!');
 		//var_dump($_SESSION['edit_auth']);
 	}
-	$user = member::current();
+	$user = AdminUser::current_user();
 	if(!$user){
 		alert('对不起您登录已经超时，请重新登录，修改个人信息！');
 		redirect('/admin/login.php?last_url=role_edit.php?role_id='.$_POST['role_id'].'&application_id='.$_POST['application_id']);

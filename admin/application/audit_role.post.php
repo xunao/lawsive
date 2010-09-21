@@ -8,7 +8,7 @@
 		die('invlad request!');
 		//var_dump($_SESSION['edit_auth']);
 	}
-	$user = member::current();
+	$user = AdminUser::current_user();
 	if(!$user){
 		echo "out time";
 		redirect('/home/login.php?last_url=/home/edit.php');
@@ -30,24 +30,13 @@
 			}
 			$application->status=1;
 			$application->save();
-			
-			$member_apply=new Table('member_appliaction');
-			$member_apply->member_id=$application->member_id;
-			$member_apply->name=$application->application_name;
-			$member_apply->application_id=$application->application_id;
-			$member_apply->url=$_POST['url'];
-			$member_apply->created_at=$created_at[0]->time;
 			if($_POST['is_default']==0)
 			{
-				$member_apply->status=2;
+				$db->execute('update member_appliaction set status=2 where member_id='.$user->id.' and appliaction_id='.$id);
 			}
 			else if($_POST['is_default']==1)
 			{
-				$member_apply->status=1;
-			}
-			else
-			{
-				$member_apply->status=0;
+				$db->execute('update member_appliaction set status=1 where member_id='.$user->id.' and appliaction_id='.$id);
 			}
 			$member_apply->save();
 			echo "OK";
@@ -61,27 +50,7 @@
 			}
 			$application->status=0;
 			$application->save();
-			
-			$member_apply=new Table('member_appliaction');
-			$member_apply->find($id);
-			$member_apply->status=$application->member_id;
-			$member_apply->name=$application->application_name;
-			$member_apply->application_id=$application->application_id;
-			$member_apply->url=$_POST['url'];
-			$member_apply->created_at=$created_at[0]->time;
-			if($_POST['is_default']==0)
-			{
-				$member_apply->status=2;
-			}
-			else if($_POST['is_default']==1)
-			{
-				$member_apply->status=1;
-			}
-			else
-			{
-				$member_apply->status=0;
-			}
-			$member_apply->save();
+			$db->execute('update member_appliaction set status=0 where member_id='.$user->id.' and appliaction_id='.$id);
 			echo "OK";
 	}
 ?>
