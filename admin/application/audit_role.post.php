@@ -15,42 +15,57 @@
 		exit;	
 	}
     $db = get_db();
+    $id = intval($_POST['id']);
+    $date=$db->query('select now() as time');
     if($_POST['post_type']=="del"){
-		$id = intval($_POST['id']);
+    	$mem_id=$_POST['member_id'];
 		$application = new Table('application_apply_log');
 		$application -> delete($id);
+		$sql='delete from member_appliaction where member_id='.$mem_id.' and application_id='.$_POST['app_id'];
+		if(!$db->execute($sql))
+		{
+			echo "";
+			exit;
+		}
+		echo $id;
 	}		
 	if($_POST['post_type']=="apply"){
-			$db=get_db();
-			$created_at=$db->query('select now() as time');
 			$application = new Table('application_apply_log');
-			$id = intval($_POST['id']);
-			if($id){
+			if(!$id){
+				echo "error";
+			}
+			else
+			{
 				$application->find($id);
+				$application->admin_id=$user->id;
+				$application->admin_date=$date[0]->time;
+				$application->status=1;
+				$application->save();
+				if($_POST['is_default']==0)
+				{
+					$db->execute('update member_appliaction set status=2 where member_id='.$user->id.' and appliaction_id='.$id);
+				}
+				else if($_POST['is_default']==1)
+				{
+					$db->execute('update member_appliaction set status=1 where member_id='.$user->id.' and appliaction_id='.$id);
+				}
+				echo "OK";
 			}
-			$application->status=1;
-			$application->save();
-			if($_POST['is_default']==0)
-			{
-				$db->execute('update member_appliaction set status=2 where member_id='.$user->id.' and appliaction_id='.$id);
-			}
-			else if($_POST['is_default']==1)
-			{
-				$db->execute('update member_appliaction set status=1 where member_id='.$user->id.' and appliaction_id='.$id);
-			}
-			$member_apply->save();
-			echo "OK";
 	}
 	if($_POST['post_type']=="unapply"){
-			$db=get_db();
 			$application = new Table('application_apply_log');
-			$id = intval($_POST['id']);
-			if($id){
-				$application->find($id);
+			if(!$id){
+				echo "error";
 			}
-			$application->status=0;
-			$application->save();
-			$db->execute('update member_appliaction set status=0 where member_id='.$user->id.' and appliaction_id='.$id);
-			echo "OK";
+			else
+			{
+				$application->find($id);
+				$application->admin_id=$user->id;
+				$application->admin_date=$date[0]->time;
+				$application->status=0;
+				$application->save();
+				$db->execute('update member_appliaction set status=0 where member_id='.$user->id.' and appliaction_id='.$id);
+				echo "OK";
+			}
 	}
 ?>
