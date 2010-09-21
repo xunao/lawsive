@@ -24,6 +24,7 @@
 		$id=intval($_GET['id']);
 		$db=get_db();
 		$file_category = intval($_GET['file_category']);
+		$category_name = "select name from lawsive.member_category where member_id ='{$user->id}' id = '$file_category'";
 		if(!$id){
 			$id=$user->id;
 		}
@@ -50,7 +51,7 @@
       		</div>
       		<div id="d_m">
       			<div id="dm_t_l"></div>
-      			<div id="dm_t_m">全部日记</div>
+      			<div id="dm_t_m">全部日记<?php echo ?></div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
       			<?php if($id==$user->id){echo "<a href='/home/application/diary/edit.php'>写新日记</a>";}?></div>
@@ -82,7 +83,7 @@
       				?>
       			<div id="dia_box">
       				<div class="dm_diary">
-      					<div style="width:470px;"><div class="dia_t"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>"><?php echo $diary[$i]->title;?></a></div>
+      					<div style="width:470px;"><div class="dia_t"><a href="/home/application/diary/comment.php?id=<?php echo $diary[$i]->id;?>"><?php echo htmlspecialchars($diary[$i]->title);?></a></div>
       					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $ct[0]->name;?></div></div>
       				<?php if($id==$user->id){?>
       					<div class="dia_edit">
