@@ -17,8 +17,9 @@ body a{text-decoration:none; color:#336699;}
 #left{width:245px;}
 #cen_l{width:245px; padding-bottom:300px; background:#EFEFEF;}
 #login{width:215px;padding:15px 0 25px 0;margin:0 0 0 30px;border-bottom:1px solid #FFFFFF;}
+#login select{width:140px; height:24px; margin-left:43px; margin-bottom:10px;}
 .log_t{line-height:25px;margin:5px 0;}
-.log_in{margin:5px 0 5px 5px; border:1px black;}
+.log_in{width: 169px; margin:5px 0 5px 5px; border:1px black; text-align:justify;}
 .log_in input{height:21px;width:140px; border:1px solid black;}
 #chc_box{width:190px;height:20px;margin:20px 0; line-height:20px; text-align:center;}
 #login_btn2 img{width:72px; height:27px; margin-left:45px; border:0px; cursor:pointer; float:left; }
