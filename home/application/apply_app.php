@@ -22,6 +22,7 @@
 <body>
       <div id="ibody">
       	<?php include_once(dirname(__FILE__).'/../../inc/home/top.php'); ?>
+      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
@@ -55,7 +56,7 @@
       	 		</form>
       	 	</div>
       	 </div>
-      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
+      	
       	 
       	<?php include_once(dirname(__FILE__).'/../../inc/home/bottom.php'); ?>
       </div>
