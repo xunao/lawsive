@@ -22,11 +22,7 @@
 		$search=$_GET['search'];
 		//$u_id=$_GET('id');
 		if ($search) {
-			if (is_numeric($search)) {
-				$conditions[] = "id = '$search'";
-			}else {
-				$conditions[] = "name = '$search'";
-			}
+			$conditions[] = "name like '%$search%'";
 			$record=member::paginate('all',array('conditions' => join(' or ', $conditions),'per_page'=>6));
 		}
 		$str_auto=rand_str();
@@ -51,8 +47,8 @@
       				<?php for($i=0;$i<count($record);$i++){ ?>
       				<div class="friend_info">
       					<img alt="" src="<?php if ($record[$i]->f_avatar == '') {echo '/images/home/default_avatar.jpg';}else {echo $record[$i]->f_avatar;}?>">
-      				    <div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href="<?php echo "member.php?id=".$record[$i]->f_id;?>"><?php echo $record[$i]->name?></a><a href="<?php echo "member.php?id=".$record[$i]->id;?>" class="right">基本信息</a></div>
-		      			<div class="friend_i_t2">123456789<a href="<?php echo "../message/send.php?r_id=".$record[$i]->id; ?>" class="right">发短消息</a></div>
+      				    <div class="friend_i_t1"><img src="/images/person/friend/friend_info_online.jpg"><a href="<?php echo "member.php?id=".$record[$i]->f_id;?>" style="float:left"><?php echo $record[$i]->name?></a><a href="<?php echo "member.php?id=".$record[$i]->id;?>" class="right">基本信息</a></div>
+		      			<div class="friend_i_t2"><font style="float:left">123456789</font><a href="<?php echo "../message/send.php?r_id=".$record[$i]->id; ?>" class="right">发短消息</a></div>
 		      			<div class="friend_i_t2"><font name="<?php echo $record[$i]->id?>"  class="add">添加好友</font></div>
 		      		</div>
       				<?php }?>
