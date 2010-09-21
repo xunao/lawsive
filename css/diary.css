@@ -6,9 +6,9 @@
 	
 	#d_m{width:772px; margin-left:13px; margin-top:27px;}
 		#dm_t_l{width:4px; height:29px; background:url('/images/diary/t_t_left.gif') no-repeat;}
-		#dm_t_m{width:90px; height:28px; font-size:16px; line-height:28px; text-align:center; border-top:1px solid #8f8f8f;}
+		#dm_t_m{width:90px; height:28px; font-size:16px; line-height:28px; text-align:center; overflow:hidden;border-top:1px solid #8f8f8f;}
 		#dm_t_r{width:4px; height:29px; background:url('/images/diary/t_t_right.gif') no-repeat;}
-		#dm_t_o{width:674px; height:29px; border-bottom:1px solid #e7e7e7;}
+		#dm_t_o{width:674px; height:29px; border-bottom:1px solid #e7e7e7; overflow:hidden;}
 		#dm_t_o a{font-size:16px; line-height:24px; margin-left:15px; corlor:#598caa; text-decoration:underline;}
 		
 		#dia_box{width:577px; margin-top:30px;}

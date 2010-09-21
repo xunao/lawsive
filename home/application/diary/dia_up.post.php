@@ -16,25 +16,18 @@
 	}
 		$resource_id = intval($_POST['id']);
 		$db=get_db();
-		
-		$id_select = $db->execute("select id from lawsive.dig where resource_type = 'diary' and resource_id = '$resource_id'");
-    	if($id_select[0]->id){$id = $id_select[0]->id;}
-//		$dia_up = new Table('dig');
-//		$dia_up->update_file_attributes('post');
-//		$dia_up->update_attributes($_POST['post'],false);
-//    	if(!$dia_up->resource_id){
-//    		$dia_up->resource_id = $resource_id;
-//    	}
-//    	if(!$dia_up->resource_type){
-//    		$dia_up->resource_type = 'diary';
-//    	}
-//    	$dia_up->find($id);
-//    	if(!$dia_up->up){
-//    		$dia_up->up = 1;
-//    	}else{
-//    		$dia_up->up = $dia_up->up +1;
-//    	}
-		echo $resource_id;
-		
-    	
+		$dia_up = new Table('dig');
+		$id_select = $db->query("select id from lawsive.dig where resource_type = 'diary' and resource_id = '$resource_id'");
+    	if($id_select[0]->id){
+    		$id = $id_select[0]->id;
+			$dia_up->find($id);
+	    	$dia_up->up = $dia_up->up +1;
+    	}else{
+    		$dia_up->update_file_attributes('post');
+    		$dia_up->update_attributes($_POST['post'],false);
+    		$dia_up->resource_id = $resource_id;
+    		$dia_up->resource_type = 'diary';
+    		$dia_up->up = '1';
+    	}
+    	if($dia_up->save()){echo true;}
 ?>

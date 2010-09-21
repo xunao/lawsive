@@ -20,6 +20,21 @@
 				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
 				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
 				     <div><div class="log_t" style="padding-bottom:5px;">复核：</div><div class="log_in"><input id="password2" type="password" name="password"/></div></div>
+					 <div><select id="role">
+					   	    <option value="0">请选择用户类型</option>
+					     	<option value="1">合伙人</option>
+					     	<option value="2">青年律师</option>
+					     	<option value="3">法务官</option>
+					     	<option value="4">教授</option>
+					     	<option value="5">法官/检察官</option>
+					     	<option value="6">读者</option>
+					     	<option value="7">法务院学生</option>
+					     	<option value="8">律师事务所</option>
+					     	<option value="9">公司法务部</option>
+					     	<option value="10">律师</option>   
+					     </select>
+					     <div class="log_t"style="width:184px; text-align:justify;">用户提醒:用户类型注册后不可更改，不同用户类型可以使用的功能不同，请谨慎选择</div>
+					     </div> 
 				     <div id="register"><img src = "/images/login/regist.jpg" /></div><div id="submit"><a href="login.php">返回登录</a></div>
 	            </div>
 	            <div id="rig_key" style="color:#ffffff;">一键注册，同时拥有四大平台</div>

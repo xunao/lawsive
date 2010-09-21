@@ -30,7 +30,7 @@
 		$conditions = array();
 		$conditions[] = "resource_type = 'diary'";
 		$conditions[] = "admin_user_id='{$id}'";
-		if($file_category != '0'){
+		if( $file_category != '-1'){
 			$conditions[] = "category = '$file_category'";
 		}
 		$diarys = new Table("article");
@@ -52,7 +52,8 @@
       		<div id="d_m">
       			<div id="dm_t_l"></div>
       			<div id="dm_t_m">
-      			<?php if($file_category == '0'){?>全部日志
+      			<?php if($file_category == '0'){?>未分类日志
+      			<?php }elseif($file_category == '-1'){?>全部日志
       			<?php }else{
       				$cat_name= new Table('member_category');
       				$cat_name->find($file_category);
@@ -66,7 +67,10 @@
       				<div id="dia_mn">日志分类：</div>
       				<div class="dia_cate">
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      				<div class="dc_name">全部日志（<?php echo count($total)?>）</div>
+      				<div class="dc_name">
+      					全部日志（<?php echo count($total)?>）
+      					<input class="category_id" type="hidden" value="-1" />
+      				</div>
       				<?php 
       					$categorys = $db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$id'");
       					for($i=0; $i<count($categorys);$i++){
@@ -91,16 +95,18 @@
       				if($diary[$i]->category != '0'){
       					$cat_name2= new Table('member_category');
       					$cat_name2->find($diary[$i]->category);
-      					$cat_name2 = $cat_name2->name;
+      					$cat_name = $cat_name2->name;
+      					$cat_id = $cat_name2->id;
       				}else{
-      					$cat_name2 = '未指定';
+      					$cat_name = '未指定';
+      					$cat_id = '0';
       				}
       				
       				?>
       			<div id="dia_box">
       				<div class="dm_diary">
       					<div style="width:470px;"><div class="dia_t"><a href="show.php?id=<?php echo $diary[$i]->id;?>"><?php echo htmlspecialchars($diary[$i]->title);?></a></div>
-      					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<?php echo $cat_name2?></div></div>
+      					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<a href = "index.php?id=<?php echo $id;?>&file_category=<?php echo $cat_id;?>"><?php echo $cat_name?></a></div></div>
       				<?php if($id==$user->id){?>
       					<div class="dia_edit">
       						<a href="edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" href="#">删除</a>
@@ -126,8 +132,10 @@
       				<div id="nodia">该分类暂无日记！</div>
       			</div>
       			<?php }?>
-      			<div id="paginate"><?php paginate("",null,"page");?></div>
-				<input type="text" id="dia_del_auth" name="dia_del_auth" value="<?php echo $auth;?>" />
+      		<?php if($diary != false){?>
+      			<div id="paginate"><?php paginate("",null,"page",true);?></div>
+      		<?php }?>
+				<input type="hidden" id="dia_del_auth" name="dia_del_auth" value="<?php echo $auth;?>" />
       		</div>
       	</div>
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>

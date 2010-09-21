@@ -2,8 +2,8 @@
 include_once '../frame.php';
 $login_name =$_POST['login_name'];
 $password =$_POST['password'];
-$email = $_POST['email'];
-$record = member::register($login_name,null,$password,$login_name,null,null,null);
+$role = $_POST['role'];
+$record = member::register($login_name,null,$password,$login_name,null,$role,null);
 if($record == '1'){
 	echo true;
 }else{

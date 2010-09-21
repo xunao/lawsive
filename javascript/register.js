@@ -15,6 +15,10 @@ function checkInput(login_name,password,password2){
 			if(!b||b.length == 0){alert('请再次输入密码！'); password2.focus(); return false;}
 			if(a!= b){alert('两次密码不一致！'); password2.focus(); return false;}
 		}
+		if($("#role").val() == '0'){
+			alert('请选择用户类型！');
+			return false;
+		}
 }
 $(function(){
 	document.onkeydown = function(e){
@@ -27,7 +31,7 @@ $(function(){
 	};
 	$('#register').click(function(){
 		if(checkInput($("#name"),$("#password"),$("#password2")) != false){
-			$.post("register.post.php",{"login_name": $("#name").val(),"password": $("#password").val(),"email":$("#name").val()},function(data){
+			$.post("register.post.php",{"login_name": $("#name").val(),"password": $("#password").val(),"role":$("#role").val()},function(data){
 				if(data != true){alert(data);}
 				else{
 					$.post("login.post.php",{"login_name": $("#name").val(),"password": $("#password").val()},function(data){

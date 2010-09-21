@@ -110,10 +110,9 @@ $(function(){
 	$('.up').click(function(e){
 		e.preventDefault();
 		$.post('dia_up.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':$(this).parent().find('#diary_id').val()},function(data){
-			alert(data);
-			//			if(data == true){
-//				alert('点评成功！');
-//			}
+			if(data == true){
+			alert('点评成功！');
+			}
 		});
 	});
 });
