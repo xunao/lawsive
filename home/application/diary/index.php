@@ -132,7 +132,9 @@
       				<div id="nodia">该分类暂无日记！</div>
       			</div>
       			<?php }?>
+      		<?php if($diary != false){?>
       			<div id="paginate"><?php paginate("",null,"page",true);?></div>
+      		<?php }?>
 				<input type="hidden" id="dia_del_auth" name="dia_del_auth" value="<?php echo $auth;?>" />
       		</div>
       	</div>
