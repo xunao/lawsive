@@ -98,7 +98,7 @@ $(function(){
 			return false;
 		}
 		else{
-			$.post('ct_del.post.php',{'ct_edit_auth':$('#ct_edit_auth').val(),'id':$(this).attr('value')},function(data){
+			$.post('ct_del.post.php',{'dia_edit_auth':$('#dia_edit_auth').val(),'id':$(this).parent().parent().find('.category_id').val()},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{
@@ -106,5 +106,14 @@ $(function(){
 						}
 			});
 		}
+	});
+	$('.up').click(function(e){
+		e.preventDefault();
+		$.post('dia_up.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':$(this).parent().find('#diary_id').val()},function(data){
+			alert(data);
+			//			if(data == true){
+//				alert('点评成功！');
+//			}
+		});
 	});
 });

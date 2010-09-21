@@ -25,12 +25,25 @@
   	?>
 <body>
       <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
+      	<?php include_once(INC_DIR.'/home/top.php'); ?>
+      	<?php include_once(INC_DIR.'/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
-      			<img src="../../../images/diary/logo_diary.jpg" />日记评论
-      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
+      			<img src="../../../images/diary/logo_diary.jpg" />
+      			<?php if($user->id == $article->admin_user_id){?>我的日志展示
+      			<?php }else{ 
+      				echo $article->author;
+      			?>的日志展示
+      			<?php }?>
+      			<div id="e_ret">
+	      			<a href="/home/">
+		      			<?php if($user->id == $article->admin_user_id){?>&gt;&gt;返回我的日志首页
+		      			<?php }else{ 
+		      				echo '&gt;&gt;返回'.$article->author.'';
+		      			?>的日志首页
+		      			<?php }?>
+	      			</a>
+      			</div>	
       		</div>
       		<div id="com">
       			<div id="com_t"><?php echo $article->title;?></div>

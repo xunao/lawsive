@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include_once('../../../frame.php');
     set_charset("utf-8");
     if(!is_post()){
