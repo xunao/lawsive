@@ -19,6 +19,12 @@
 		$id = intval($_POST['id']);
 		$application = new Table('application');
 		$application -> delete($id);
+		$sql="delete from application_role where application_id=".$id;
+		if(!$db->execute($sql))
+		{
+			echo $id;
+			exit;
+		}
 	}		
 	if($_POST['post_type']=="application"){
 			$application = new Table('application');
@@ -26,21 +32,48 @@
 			if($id){
 				$application->find($id);
 			}
-			
 			$application->update_attributes($_POST['post'],false);
 			$application->save();
 			$app_id = $application->id;
-			$sub_role_str=explode(",",$_POST['post']['role']);
-	  		for($i=0;$i<count($sub_role_str);$i++)
-	  		{
-	  			$sql='insert into application_role(role,application_id) value ('.$sub_role_str[$i].','.$app_id.')';			
-	  			if(!$db->execute($sql))
+			if($id=="")
+			{
+				$sub_role_str=explode(",",$_POST['role_role']);
+				$sub_role_is_default=explode(",",$_POST['role_is_default']);
+				$sub_role_is_free=explode(",",$_POST['role_is_free']);
+		  		for($i=0;$i<count($sub_role_str);$i++)
+		  		{
+		  			$sql='insert into application_role(role,application_id,is_default,is_free) value ('.$sub_role_str[$i].','.$app_id.','.$sub_role_is_default[$i].','.$sub_role_is_free[$i].')';			
+		  			if(!$db->execute($sql))
+		  			{
+		  				alert('插入应用权限失败！');
+		  				exit;
+		  			}
+		  		}
+				alert('提交成功！');
+				redirect('index.php');
+			}
+			else
+			{
+				$sub_role_str=explode(",",$_POST['role_role']);
+				$sub_role_is_default=explode(",",$_POST['role_is_default']);
+				$sub_role_is_free=explode(",",$_POST['role_is_free']);
+				for($i=0;$i<count($sub_role_str);$i++)
+				{
+					$sql='update application_role set is_default='.$sub_role_is_default[$i].',is_free='.$sub_role_is_free[$i].' where role='.$sub_role_str[$i].' and application_id='.$app_id;
+					if(!$db->execute($sql))
+		  			{
+		  				alert('修改应用权限失败！');
+		  				exit;
+		  			}
+				}
+				$sql="delete from application_role where role not in (".$_POST['role_role'].")";
+				if(!$db->execute($sql))
 	  			{
-	  				alert('插入应用权限失败！');
+	  				alert('修改应用权限失败！');
 	  				exit;
 	  			}
-	  		}
-			alert('提交成功！');
-			redirect('index.php');
+	  			alert('提交成功！');
+				redirect('index.php');
+			}
 	}
 ?>
