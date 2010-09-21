@@ -33,8 +33,9 @@
 		if($file_category != ''||$file_category != undefined){
 			$conditions[] = "category = '$file_category'";
 		}
-		$diary = new Table("article");
-		$diary = $diary->paginate('all',array('conditions' => join(' and ', $conditions),'order by' => "created_at desc"),4);
+		$diarys = new Table("article");
+		$diary = $diarys->paginate('all',array('conditions' => join(' and ', $conditions),'order by' => "created_at desc"),4);
+		$total = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}'")));
 		if($diary === false) die('数据库执行失败');
   	?>
 <body>
@@ -57,7 +58,7 @@
       				<div id="dia_mn">日记分类：</div>
       				<div class="dia_cate">
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      				<div class="dc_name">全部日记（<?php echo count($diary)?>）</div>
+      				<div class="dc_name">全部日记（<?php echo count($total)?>）</div>
       				<?php 
       					$categorys = $db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$id'");
       					for($i=0; $i<count($categorys);$i++){
