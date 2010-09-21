@@ -5,18 +5,18 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-//		session_start();
+		session_start();
 		include ('../../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','diary','comment');
 		js_include_tag('login','diary','comment');
 		use_ckeditor();
 		$user = member::current();
-//		if(!$user)
-//		{
-//			echo('对不起，您的登录已过期！请重新登录！');
-//			redirect('/home/login.php?last_url=/home/application/dairy');
-//		}
+		if(!$user)
+		{
+			echo('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/application/dairy');
+		}
 		$article = new Table('article');
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;

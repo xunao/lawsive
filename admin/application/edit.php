@@ -13,8 +13,19 @@
 	<?php
 		$id=intval($_GET['id']);
 		$db = get_db();	
+		$exist_roles = array();
 		if($id)	{
-			$application = $db->query('select a.*,r.is_default,r.is_free from application a left join application_role r on a.id = r.application_id where a.id='.$id);
+			$application = $db->query('select a.* from application a  where a.id='.$id);
+			$exist_roles = $db->query('select * from application_role where application_id = '. $id);
+		}
+		
+		function &role_by_id($id){
+			global $exist_roles;
+			foreach ($exist_roles as $item){
+				if($item->id == $id) return $item;
+			}
+			return null;
+			
 		}
 		use_jquery();
 		use_jquery_ui();
@@ -23,6 +34,17 @@
 		$auth = rand_str();
 		$_SESSION['edit_auth'] = $auth;
 		$sub_role_str=explode(",",$application[0]->role);
+		
+		$roles =  array(  "1"=>"合伙人",
+						    '2' => '青年律师',
+							'3' => '法务官',
+							'4' => '教授',
+							'5' => '法官/检察官',
+							'6' => '读者',
+							'7' => '法务院学生',
+							'8' => '律师事务所',
+							'9' => '公司法务部',
+							'10' => '律师');
 	?>
 </head>
 <?php
@@ -49,6 +71,28 @@
 			<td class=td1 width=15%>应用链接</td>
 			<td><input type="text" name="post[url]" value="<?php echo $application[0]->url;?>" ></td>
 		</tr>
+		<tr class="tr4">
+			<td class="td1"><b>权限配置</b></td>
+			<td>
+				<input type="checkbox" id="all_enabled"  style="float:none;"/>选择全部
+				<input type="checkbox" id="all_is_default" style="float:none;" />全部默认显示 
+				<input type="checkbox" id="all_is_free" style="float:none;" />全部免费产品 
+			</td>
+		</tr>
+		<?php 
+			foreach ($roles as $id => $name){
+			$item = role_by_id($id);
+			$class_name = $item ? 'exists' : 'new';
+		?>
+		<tr class="tr4">
+			<td class="td1" width="15%"><?php echo $name;?></td>
+			<td class="<?php echo $class_name;?>">
+				<input type="checkbox" class="enabled" value="1" <?php if($item) echo "checked='checked'";?> style="float:none;"/>可用 
+				<input type="checkbox" class="is_default" value="1" <?php if($item->is_default) echo "checked='checked'";?> style="float:none;" />默认显示 
+				<input type="checkbox" class="is_free" value="1" <?php if($item->is_free) echo "checked='checked'";?> style="float:none;" />免费产品
+			</td>
+		</tr>
+		<?php }?>
 		<tr class=tr4>
 			<td class=td1 width=15%>使用角色</td>
 			<td>

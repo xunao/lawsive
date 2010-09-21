@@ -5,13 +5,14 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+		session_start();
 		include ('../../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','diary');
 		js_include_tag('login','diary');
 		use_ckeditor();
 		$user = member::current();
-		session_start();
+		
 		if(!$user)
 		{
 			die('对不起，您的登录已过期！请重新登录！');
@@ -19,7 +20,7 @@
 		}
 		$article = new Table('article');
 		$auth = rand_str();
-		$_SESSION['info_auth'] = $auth;
+		$_SESSION['dia_edit_auth'] = $auth;
 		$article_id=intval($_GET['a_id']);
 		$article = $article->find($article_id);
 		$db=get_db();
@@ -47,8 +48,9 @@
 	      				</div>
 	      				<div id="ed_post"></div>
 	      				<div id="ed_nr">
-	      					<button type="submit" id="ed_sub">发布日记</button>
+	      					<button type="submit" id="dia_edit" class="ed_sub">发布日记</button>
 	      					<input type="button" id="return" value="返回日志">
+	      	 				<input type="hidden" id="dia_edit_auth" name="dia_edit_auth" value="<?php echo $auth;?>" />
 	      					<input type="hidden" id="article_id" name="article_id" value="<?php echo $article_id?>">
 	      					<input type="hidden" id="category_id" value="<?php echo $article->category;?>">
 	      				</div>
@@ -62,12 +64,13 @@
 <script type="text/javascript">
 $(function(){
 	var category_id=$('#category_id').val();
+	var info_auth = $('#dia_edit_auth').val();
 	$.post('ajax.ct_edit.php',{"category_id":category_id},function(data){
 		$('#ed_post').html(data);
 	});
 	$('#ed_post img').live('click',function(){
 		var value = $('#ed_post select option:selected').val().trim();
-		$.post('ajax.ct_add.php',{"type":"insert"},function(data){
+		$.post('ajax.ct_add.php',{"type":"insert","category_id":category_id,"dia_edit_auth":info_auth},function(data){
 			$('#ed_post').html(data);
 		});
 	});

@@ -8,7 +8,6 @@
 		include ('../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_info');
-		js_include_tag('app');
 		$member = member::current();
 		session_start(); 		
 		$db=get_db();
@@ -16,13 +15,14 @@
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 		}
-		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where r.role='.$member->role.' and a.id not in (select application_id from member_appliaction where member_id='.$member->id.')');
+		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where (r.role='.$member->role.' or r.role=0) and a.id not in (select application_id from member_appliaction where member_id='.$member->id.')');
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;
   	?>
 <body>
       <div id="ibody">
       	<?php include_once(dirname(__FILE__).'/../../inc/home/top.php'); ?>
+      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
@@ -41,7 +41,7 @@
 	      	 				 for($i=0;$i<count($application);$i++){
 	      	 					if(strpos($application[$i]->role,$member->role)>=0){
 	      	 				?>
-	      	 					<input type="checkbox" name="checkbox" value="<?php echo $application[$i]->id; ?>"><label><?php echo $application[$i]->name; ?></label>(<?php if($application[$i]->is_free==1){echo "<span style='color:red;'>免费</span>";}else if($application[$i]->is_free==0){echo "<span style='color:red;'>付费</span>";} ?>)<br>
+	      	 					<input type="radio" name="radio" value="<?php echo $application[$i]->id; ?>"><?php echo $application[$i]->name; ?>(<?php if($application[$i]->is_free==1){echo "<span style='color:red;'>免费</span>";}else if($application[$i]->is_free==0){echo "<span style='color:red;'>付费</span>";} ?>)<br>
 	      	 				<?php }}?>
 	      	 			</td>
 	      	 		</tr>
@@ -49,14 +49,14 @@
 	      	 			<td style="border-bottom:none;"></td>
 	      	 			<td style="border-bottom:none;">
 	      	 				<button id="sub">提交</button>
-	      	 				<input type="hidden" id="info_auth" value="<?php echo $auth;?>" />
+	      	 				<input type="hidden" id="info_auth" name="info_auth" value="<?php echo $auth;?>" />
 	      	 			</td>
 	      	 		</tr>
       	 		</table>
       	 		</form>
       	 	</div>
       	 </div>
-      	<?php include_once(dirname(__FILE__).'/../../inc/home/left.php'); ?>
+      	
       	 
       	<?php include_once(dirname(__FILE__).'/../../inc/home/bottom.php'); ?>
       </div>

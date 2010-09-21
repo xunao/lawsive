@@ -5,7 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
-		include_once ('../frame.php');
+		include_once ('../../frame.php');
 		use_jquery();
 		use_jquery_ui();
 		css_include_tag('person_public','person_edit','colorbox');
@@ -20,7 +20,7 @@
 		$resume = new Table('member_resume');
 		$report = $resume->find($user->member_resume_id);
 		$auth = rand_str();
-		$_SESSION['info_auth'] = $auth;
+		$_SESSION['edit_auth'] = $auth;
 		
 		$edu = $db->query("select * from lawsive.member_education_history where member_id = '{$user->id}' order by id asc");
 		$nume = count($edu);
@@ -28,38 +28,39 @@
 		$numj = count($job);
   	?>
 <body>
-      <div id="ibody">
-      	<?php include_once(dirname(__FILE__).'/../inc/home/top.php'); ?></div>
-      	<?php include_once(dirname(__FILE__).'/../inc/home/left.php'); ?>
+      	<?php include_once(INC_DIR.'/home/top.php'); ?>
+      	<?php include_once(INC_DIR.'/home/left.php'); ?>
       	<div id="pedit_box">
       		<div id="box_top"></div>
       		<div id="box_m">
       		<form id="resum_form" method="post" enctype="multipart/form-data" action="edit.post.php">
       			<div id="e_title">修改我的简历
-      				<div id="e_ret"><a href="/home/">>>返回我的首页</a></div>
+      				<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
       			</div>
       			<div id="e_avatar">
-      				<a href=""><img src="<?php if($report->photo !=''){echo $report->photo;}else{echo '../images/person/head.jpg';}?>" border=0 /></a>
+      				<a href=""><img src="<?php if($report->photo !=''){echo $report->photo;}else{echo '../../images/person/head.jpg';}?>" border=0 /></a>
       				<font>(请上传62X62大小的图片)</font>
       				<input type="file" name="post[photo]" value="" size="8"> 
       			</div>
       			<div class="e_resume">
       				<div class="er_info">
-      					<div class="er_i">姓名：<input id="name" type="text" name="name" value="<?php echo $user->name;?>"></div>
+      					<div class="er_i">姓名：<input id="name" type="text" name="name" value="<?php echo htmlspecialchars($user->name);?>"></div>
       					<div class="er_i">公司：<input id="company" type="text" name="post[company]" value="<?php echo $report->company;?>"></div>
       				</div>
       				<div class="er_info">
-      					<div class="er_i">职务：<input id="title" type="text" name="post[title]" value="<?php echo $report->title;?>"></div>
-      					<div class="er_i">国籍：<input id="nationality" type="text" name="post[nationality]" value="<?php echo $report->nationality;?>"></div>
+      					<div class="er_i">职务：<input id="title" type="text" name="post[title]" value="<?php echo htmlspecialchars($report->title);?>"></div>
+      					<div class="er_i">国籍：<input id="nationality" type="text" name="post[nationality]" value="<?php echo htmlspecialchars($report->nationality);?>"></div>
       				</div>
       				<div class="er_info">
       					<div class="er_i" id="er_add">教育经历：<a href="" id="edu_add" title="添加教育经历">添加</a></div>
       				</div>
       				<?php for($i=0; $i<$nume; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add">学历档案<?php echo $i+1;?>#：自<?php echo $edu[$i]->start_date; ?>至<?php echo $edu[$i]->end_date; ?>在<?php echo $edu[$i]->college; ?>学习</div>
-      					<div class="edu_edit" name="<?php echo $edu[$i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
-      					<div class="del" type="member_education_history" name="<?php echo $edu[$i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
+      					<div class="er_i" id="er_add"><?php echo $i+1;?>#：自<font><?php echo htmlspecialchars($edu[$i]->start_date); ?></font>至<font><?php echo htmlspecialchars($edu[$i]->end_date); ?></font>在<font><?php echo htmlspecialchars($edu[$i]->college); ?></font>学习</div>
+      					<div class="edu_edit" title="编辑"><img src="../../images/admin/btn_edit.png" /></div>
+      					<div class="del_edu" title="删除"><img src="../../images/admin/btn_delete.png" /></div>
+      					<input class="edu_id" type="hidden" value="<?php echo $edu[$i]->id; ?>" />
+      					<input class="nume" type="hidden" value="<?php echo $i+1;?>" />
       				</div>
       				<?php }?>
       				<div class="er_info">
@@ -67,9 +68,11 @@
       				</div>
       				<?php for($i=0; $i<$numj; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add">工作档案<?php echo $i+1;?>#：自<?php echo $job[$i]->start_date; ?>至<?php echo $job[$i]->end_date; ?>在<?php echo $job[$i]->company; ?>担任<?php echo $job[$i]->title; ?></div>
-      					<div class="job_edit" name="<?php echo $job[$i]->id; ?>" value="<?php echo $i+1;?>" title="编辑"><img src="../images/admin/btn_edit.png" /></div>
-      					<div class="del" type="member_job_history" name="<?php echo $job[$i]->id; ?>" title="删除"><img src="../images/admin/btn_delete.png" /></div>
+      					<div class="er_i" id="er_add"><?php echo $i+1;?>#：自<font><?php echo htmlspecialchars($job[$i]->start_date); ?></font>至<font><?php echo htmlspecialchars($job[$i]->end_date); ?></font>在<font><?php echo $job[$i]->company; ?></font>担任<font><?php echo $job[$i]->title; ?></font></div>
+      					<div class="job_edit" title="编辑"><img src="../../images/admin/btn_edit.png" /></div>
+      					<div class="del_job" title="删除"><img src="../../images/admin/btn_delete.png" /></div>
+      					<input class="job_id" type="hidden" value="<?php echo $job[$i]->id; ?>" />
+      					<input class="numj" type="hidden" value="<?php echo $i+1;?>" />
       				</div>
       				<?php }?>
       				<div class="er_info">
@@ -77,13 +80,13 @@
       					<div class="er_i2" >相关资质：<input id="qualification" type="text" name="post[qualification]" value="<?php echo $report->qualification;?>"></div>
       				</div>
       				<div class="er_info">
-      					<div class="er_i2" >专业领域：<input id="professional_field" type="text" name="post[professional_field]" value="<?php echo $report->professional_field;?>"></div>
-      					<div class="er_i2" >附属领域：<input id="professional_overage" type="text" name="post[profession_overage]" value="<?php echo $report->profession_overage;?>"></div>
+      					<div class="er_i2" >专业领域：<input id="professional_field" type="text" name="post[professional_field]" value="<?php echo htmlspecialchars($report->professional_field);?>"></div>
+      					<div class="er_i2" >附属领域：<input id="professional_overage" type="text" name="post[profession_overage]" value="<?php echo htmlspecialchars($report->profession_overage);?>"></div>
       				</div>
       				<div class="er_info">
-      					<div class="er_i2" >工作语言：<input id="languages" type="text" name="post[languages]" value="<?php echo $report->languages;?>"></div>
+      					<div class="er_i2" >工作语言：<input id="languages" type="text" name="post[languages]" value="<?php echo htmlspecialchars($report->languages);?>"></div>
       					<div class="er_i2" >从业年数：
-      					<select id="work_years" type="text" name="post[work_years]" value="<?php echo $report->work_years;?>">
+      					<select id="work_years" name="post[work_years]">
       						<?php for($i=0; $i<51; $i++){?>
       							<option value="<?php echo $i;?>"><?php if($i != '0'){echo $i;}else{echo '不满一';}?>年</option>
       						<?php }?>
@@ -98,14 +101,14 @@
       				</div>
       				<div class="er_info">
       					<div class="er_tx">自我评价：</div>
-      					<textarea id="introduce" class="er_tar" name="post[introduce]"><?php echo $report->introduce;?></textarea>
+      					<textarea id="introduce" class="er_tar" name="post[introduce]"><?php echo htmlspecialchars($report->introduce);?></textarea>
       				</div>
       				<div class="er_info">
       					<div class="er_tx">发展目标：</div>
-      					<textarea id="vista" class="er_tar"  name="post[vista]"><?php echo $report->vista;?></textarea>
+      					<textarea id="vista" class="er_tar"  name="post[vista]"><?php echo htmlspecialchars($report->vista);?></textarea>
       				</div>
       				<button type="submit" id="er_sub" name="" value="">保存修改</button>
-      				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
+      				<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
       				<input type="hidden" name="id" value="<?php echo $user->member_resume_id;?>">
       				<input id="u_id" type="hidden" name="post[member_id]" value="<?php echo $user->id;?>">
       			</div>
@@ -113,8 +116,6 @@
       		</div>
       	</div>
       	<div id="box_bottom"></div>
-      	
-      	<?php include_once(dirname(__FILE__).'/../inc/home/bottom.php'); ?>
-      </div>
+      	<?php include_once(INC_DIR.'/home/bottom.php'); ?>
 </body>
 </html>
