@@ -50,7 +50,7 @@
       				</div>
       			</div>
       			<div id="reply">
-      				<div style="width:100%">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?php echo $name?>&nbsp; &nbsp; &nbsp; &nbsp; <div style="margin-right:500px;float:right;"><?php echo $record[0]->created_at;?></div></div>
+      				<div style="width:100%"><div style="margin-left:20px; float:left"><?php echo $name?></div><div style="margin-right:500px;float:right;"><?php echo $record[0]->created_at;?></div></div>
       				<div id="reply_t"><?php echo $record[0]->content;?></div>
       			</div>
       			<!--<div id="receiver_container">

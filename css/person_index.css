@@ -30,6 +30,7 @@
 #person_index_center #info #state #btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; background:url(/images/person/submit_bg.jpg) no-repeat;}
 #person_index_center #info #operate{width:138px; margin-top:5px; line-height:20px;}
 #person_index_center #info #operate a{color:#336699; text-decoration:underline;}
+#person_index_center #info .operate_t{width:100%; color:#999999; border-bottom:1px solid #999999}
 #person_index_center #info #from{width:410px; margin-top:10px; float:right;}
 #person_index_center #info .title{width:561px; height:28px; margin-top:20px; line-height:28px; background:#ddf0f8;}
 #person_index_center #info .title .t_l{padding-left:10px; padding-right:30px; color:#000000; font-weight:bold;}
