@@ -11,7 +11,7 @@
 	<?php 
 		css_include_tag('admin/base');
 		use_jquery();
-		js_include_tag('admin/pub');
+		js_include_tag('admin/application/index');
 		$auth = rand_str();
 		$_SESSION['edit_auth'] = $auth;
 		$db = get_db();
@@ -68,7 +68,7 @@
 				</td>
 			</tr>
 		</table>
-		<input type="hidden" name="edit_auth" value="<?php echo $auth;?>" />
+		<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
 		<input type="hidden" id="db_table" value="application">
 	</div>	
 </body>

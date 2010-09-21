@@ -8,10 +8,10 @@ $(function(){
 			return false;
 		}
 		$.post("edit.post.php",{'post_type':'del','id':$(this).attr('name'),'edit_auth':$('#edit_auth').val()},function(data){
-			if(!isNaN(data))
+			if(!isNaN(data)&&data!="")
 			{
 				alert('删除成功！');
-				$("#"+data).remove;
+				$("#"+data).remove();
 				return false;
 			}
 			else

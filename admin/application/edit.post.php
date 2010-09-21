@@ -20,7 +20,7 @@
 		$application = new Table('application');
 		$application -> delete($id);
 		$sql="delete from application_role where application_id=".$id;
-		if(!$db->execute($sql))
+		if($db->execute($sql))
 		{
 			echo $id;
 			exit;
