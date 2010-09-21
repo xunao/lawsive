@@ -100,7 +100,7 @@
 				<input type="hidden" id="check_role" name="role_role" value="">
 				<input type="hidden" id="check_is_default" name="role_is_default" value="">
 				<input type="hidden" id="check_is_free" name="role_is_free" value="">
-				<input type="hidden" name="edit_auth" value="<?php echo $auth;?>" />
+				<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
 				<input type="hidden" id="max_role" value="<?php echo count($roles); ?>">
 				<input type="hidden" name="post_type" value="application">
 			</td>
