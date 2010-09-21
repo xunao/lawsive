@@ -1,10 +1,11 @@
 <?php
+	session_start();
 	include_once('../../../frame.php');
     set_charset("utf-8");
     if(!is_post()){
 		die('invlad request!');
 	}
-	if($_SESSION['edit_auth'] != $_POST['edit_auth']){
+	if($_SESSION['dia_del_auth'] != $_POST['dia_del_auth']){
 		die('invlad request!');
 		var_dump($_SESSION['edit_auth']);
 	}

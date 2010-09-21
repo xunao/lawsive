@@ -5,6 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+        session_start();
 		include ('../../frame.php');
 		use_jquery();
 		css_include_tag('person_public','home/message_list');
@@ -19,6 +20,8 @@
 		$db = get_db();
 		$msgs = $db->paginate("select a.*,b.name,b.avatar from message a left join member b on a.receiver_id=b.id where " .join(' and ',$conditions)." order by status asc, created_at desc");
 		!$msgs && $msgs = array();
+		$send_msg_auth = rand_str();
+	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
 <body>
       <div id="ibody">
@@ -51,11 +54,14 @@
       				</div>
       				
       				<div class="message_content">
-      					<?php echo strip_tags($msg->content,'<a>')?>
+      					<a href="show.php?id=<?php echo $msg->id;?>" ><?php echo strip_tags($msg->content,'<a>')?></a>
       				</div>
       				<div class="tool_box">
       					<a href="show.php?id=<?php echo $msg->id;?>" class="block_a">查看</a>
-      					<a href="delete.php?id=<?php echo $msg->id;?>&last_url=<?php echo get_current_url();?>" class="block_a">删除</a>
+      					<a  name="<?php echo $msg->id?>" class="delete">删除</a>
+      					<input type="hidden" id="m_control" value="2"/>
+      					<input type="hidden" id="m_last_url" value="send_list.php"/>
+      					<input type="hidden" id="send_msg_auth" value="<?php echo $send_msg_auth?>" />
       				</div>
       				
       			</div>
@@ -72,6 +78,13 @@
             },function(){
             	$(this).css('background-color','white');
             });
+
+      		$('.delete').click(function(){
+      			$.post("delete_message.post.php",{"m_id":$(this).attr('name'),"send_msg_auth":$("#send_msg_auth").val(),"m_control":$("#m_control").val(),"m_last_url":$("#m_last_url").val()},function(data){
+      				alert(data);
+      				window.location.reload(true);	
+      			});
+      		});
       	});
       	
       </script>

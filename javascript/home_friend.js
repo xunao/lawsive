@@ -26,5 +26,9 @@ $(function(){
 		});
 		
 	});
+	$(".friend_info").hover(function(){
+	
+	});
+	
 
 });

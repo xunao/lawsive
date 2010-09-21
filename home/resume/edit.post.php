@@ -1,13 +1,13 @@
 <?php
-include_once('../frame.php');
+	session_start();
+	include_once('../../frame.php');
     set_charset("utf-8");
     
     if(!is_post()){
 		die('invlad request!');
 	}
 	if($_SESSION['edit_auth'] != $_POST['edit_auth']){
-//		die('invlad request!');
-		var_dump($_SESSION['edit_auth']);
+		die('invlad request!');
 	}
 	$user = member::current();
 	if(!$user){

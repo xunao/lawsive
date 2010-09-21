@@ -26,15 +26,32 @@ function inupt_vaild(){
 }
 
 $(function(){
+	var dia_edit_auth = $('#dia_edit_auth').val();
+	$('.input').change(function(){
+		$(this).addClass('changed');
+	});
+	$('#ct_edit').click(function(){
+		$('#form').find('input').remove();
+		$('.input.changed').each(function(){
+			var cat_id = $(this).parent().parent().find('.category_id').val();
+			var cat_name = $(this).val();
+			$('#form').append('<input type="hidden" name="ids[]" value="'+cat_id+'" />');
+			$('#form').append('<input type="hidden" name="values[]" value="'+cat_name+'" />');
+		});
+		$('#form').append('<input type="hidden" name="dia_edit_auth" value="'+dia_edit_auth+'" />');
+		$('#form').submit();
+		
+	});
 	$('.dc_name').click(function(){
+		var cat_id = $(this).find('.category_id').val();
 		var url = new Array();
 		url.push('id=' + $('#id').val());
-		url.push('file_category=' + $(this).attr('value'));
+		url.push('file_category=' + cat_id);
 		url = "?" + url.join('&');
 		window.location.href=url;
 	});
 	
-	$('#ed_sub').click(function(){
+	$('#dia_edit').click(function(){
 		return inupt_vaild();
 	});
 	$('#return').click(function(){
@@ -43,8 +60,8 @@ $(function(){
 	$('#sub_category').live('click',function(){
 		var value = $('#category_name').val().trim();
 		if(value != ""){
-			$.post('ct_edit.post.php',{'type':'category','post[category_type]':'diary','post[name]':$('#category_name').val(),'post[parent_id]':$('#id').val()},function(data){
-				if(data == true){
+			$.post('ct_edit.post.php',{'type':'category','dia_edit_auth':$('#dia_edit_auth').val(),'post[name]':$('#category_name').val()},function(data){
+					if(data == true){
 					alert('添加成功！');
 					$.post('ajax.ct_edit.php',function(data){
 						$('#ed_post').html(data);
@@ -59,12 +76,13 @@ $(function(){
 	});
 	$('.del').click(function(e){
 		e.preventDefault();
+		var dia_id = $(this).parent().find('#diary_id').val();
 		if(!window.confirm("确定要删除吗"))
 		{
 			return false;
 		}
 		else{
-			$.post('dia_del.post.php',{'id':$(this).attr('value')},function(data){
+			$.post('dia_del.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':dia_id},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{
@@ -80,7 +98,7 @@ $(function(){
 			return false;
 		}
 		else{
-			$.post('ct_del.post.php',{'id':$(this).attr('value')},function(data){
+			$.post('ct_del.post.php',{'dia_edit_auth':$('#dia_edit_auth').val(),'id':$(this).parent().parent().find('.category_id').val()},function(data){
 				if(data == true){
 					window.location.reload(true);
 					}else{
@@ -88,5 +106,14 @@ $(function(){
 						}
 			});
 		}
+	});
+	$('.up').click(function(e){
+		e.preventDefault();
+		$.post('dia_up.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':$(this).parent().find('#diary_id').val()},function(data){
+			alert(data);
+			//			if(data == true){
+//				alert('点评成功！');
+//			}
+		});
 	});
 });
