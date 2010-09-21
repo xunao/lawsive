@@ -51,7 +51,7 @@
       		</div>
       		<div id="d_m">
       			<div id="dm_t_l"></div>
-      			<div id="dm_t_m">全部日记<?php echo ?></div>
+      			<div id="dm_t_m">全部日记<?php echo ;?></div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
       			<?php if($id==$user->id){echo "<a href='/home/application/diary/edit.php'>写新日记</a>";}?></div>
