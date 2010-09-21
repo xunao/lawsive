@@ -4,6 +4,7 @@
 #main{width:100%}	
 #send_link{margin-top:10px; margin-bottom: 10px; width:100%}
 .block_a{display:block;color:#336699; text-decoration: underline;}
+.delete{display:block;color:#336699; text-decoration: underline; cursor:pointer;}
 #msg_list{width:800px;}
 .msg_box{width:800px; height: 100px;  margin-left:10px; padding-top:10px; line-height:20px;border-bottom: 1px solid #D8DFEA}
 	.sender_info{width:180px;}
