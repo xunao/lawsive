@@ -17,13 +17,13 @@
 		exit;
 	}
 	$id=$_GET['id'];
-	$record=$db->query("select sender_id,content from lawsive.message where id='{$id}' and receiver_id='{$member->id}' limit 1");
+	$db = get_db();
+	$record=$db->query("select sender_id,content ,created_at from lawsive.message where id='{$id}' and receiver_id='{$member->id}' limit 1");
 	if (!$record) {
 		die('invalid request');
 	}
-	$r_id=$record->sender_id;
+	$r_id=$record[0]->sender_id;
 	if(is_numeric($r_id)){
-		$db = get_db();
 		$db->query("select avatar,name from member where id=$r_id");
 		if($db->record_count > 0 ){
 			$avatar = $db->field_by_name('avatar') ? $db->field_by_name('avatar') : '/images/home/default_avatar.jpg';
@@ -34,7 +34,6 @@
 	}
 	$send_msg_auth = rand_str();
 	$_SESSION['send_msg_auth'] = $send_msg_auth;
-		
   	?>
 <body>
       <div id="ibody">
@@ -50,20 +49,21 @@
       					<a href="/home/message/send.php">发送短消息</a>
       				</div>
       			</div>
-      			<div></div>
-      			<div id="receiver_container">
+      			<div id="reply">
+      				<div style="width:100%">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?php echo $name?>&nbsp; &nbsp; &nbsp; &nbsp; <div style="margin-right:500px;float:right;"><?php echo $record[0]->created_at;?></div></div>
+      				<div id="reply_t"><?php echo $record[0]->content;?></div>
+      			</div>
+      			<!--<div id="receiver_container">
       				<label for="receiver">回复给:</label>
       				<input type="text" name="receiver" id="receiver" style="width:400px;" value="<?php echo $name;?>" />
       				<?php if($avatar){?>
       				<a href="/home/member.php?id=<?php echo $r_id;?>" target="_blank"><img src="<?php echo $avatar;?>" /></a>
       				<?php }?>
-      			</div>
+      			</div>-->
       			<form action="send.post.php" method="post">
       			<div style="float:left;">内　容: </div>
-      			
       			<div id="content">
       				<textarea rows="10" style="width:400px;" id="msg_content" name="content"></textarea>
-      				
       			</div>
       			<div style="width:50%; text-align:left; margin-top:10px; margin-left:200px;">
       				<button id="submit">发送</button>

@@ -80,7 +80,7 @@
       				<div class="tool_box">
       					<a href="show.php?id=<?php echo $msgs[$i]->id;?>" class="block_a">查看</a>
       					<?php if($msgs[$i]->sender_id !=0 ){?>
-      					<a href="reply.php?r_id=<?php echo $msgs[$i]->sender_id;?>" class="block_a">回复</a>
+      					<a href="reply.php?id=<?php echo $msgs[$i]->id;?>" class="block_a">回复</a>
       					<?php }?>
       					<a name="<?php echo $msgs[$i]->id?>" class="delete">删除</a>
       				</div>
