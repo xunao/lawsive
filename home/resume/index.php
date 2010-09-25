@@ -38,7 +38,7 @@
       				<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
       			</div>
       			<div id="e_avatar">
-      				<a href=""><img src="<?php if($report->photo !=''){echo $report->photo;}else{echo '../../images/person/head.jpg';}?>" border=0 /></a>
+      				<img src="<?php if($report->photo !=''){echo $report->photo;}else{echo '../../images/person/head.jpg';}?>" border=0 />
       				<font>(请上传62X62大小的图片)</font>
       				<input type="file" name="post[photo]" value="" size="8"> 
       			</div>

@@ -30,13 +30,13 @@
 		$conditions = array();
 		$conditions[] = "resource_type = 'diary'";
 		$conditions[] = "admin_user_id='{$id}'";
-		if( $file_category != '-1'){
+		if( $file_category != '0'){
 			$conditions[] = "category = '$file_category'";
 		}
 		$diarys = new Table("article");
-		$diary = $diarys->paginate('all',array('conditions' => join(' and ', $conditions),'order by' => "created_at desc"),4);
+		$diary = $diarys->paginate('all',array('conditions' => join(' and ', $conditions),'order' => "created_at desc"),4);
 		$total = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}'")));
-		$total2 = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}' and category = '0'")));
+		$total2 = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}' and category = '-1'")));
 		if($diary === false) die('数据库执行失败');
   	?>
 <body>
@@ -52,8 +52,8 @@
       		<div id="d_m">
       			<div id="dm_t_l"></div>
       			<div id="dm_t_m">
-      			<?php if($file_category == '0'){?>未分类日志
-      			<?php }elseif($file_category == '-1'){?>全部日志
+      			<?php if($file_category == '0'){?>全部日志
+      			<?php }elseif($file_category == '-1'){?>未分类日志
       			<?php }else{
       				$cat_name= new Table('member_category');
       				$cat_name->find($file_category);
@@ -69,7 +69,6 @@
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
       				<div class="dc_name">
       					全部日志（<?php echo count($total)?>）
-      					<input class="category_id" type="hidden" value="-1" />
       				</div>
       				<?php 
       					$categorys = $db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$id'");
@@ -83,7 +82,10 @@
       					</div>
       				<?php }?>
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
-      				<div class="dc_name">未分类日志（<?php echo count($total2)?>）</div>
+      				<div class="dc_name">
+	      				未分类日志（<?php echo count($total2)?>）
+	      				<input class="category_id" type="hidden" value="-1" />
+      				</div>
       				<?php if($id == $user->id){?>
       					<div id="add_more"><a href="category_edit.php">分类管理&gt;&gt;</a></div>
       				<?php }?>
@@ -116,7 +118,7 @@
       				</div>
       				<div class="dia_cont">
       					<div class="dia_word"><?php echo mb_substr(htmlspecialchars_decode($diary[$i]->content),0,600,utf8);?></div>
-      				<?php if($id==$user->id){?>
+      				<?php if($id!=$user->id){?>
       					<div class="dia_add">
       						<a href="show.php?id=<?php echo $diary[$i]->id;?>">评论</a>　<font>|</font>　<a class = "up" href="#">赞</a>
       						<input  id="diary_id" type="hidden" value="<?php echo $diary[$i]->id;?>" />

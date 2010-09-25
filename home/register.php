@@ -9,6 +9,12 @@
 		use_jquery_ui();
 		css_include_tag('login');
 		js_include_tag('register');
+		$user = member::current();
+		if($user)
+		{
+			alert('对不起，您已登录，不需要新的注册！');
+			redirect("/");
+		}
   	?>
 <body>
 	<div id="ibody">

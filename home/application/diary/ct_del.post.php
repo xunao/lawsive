@@ -20,7 +20,7 @@
     	if(count($sql)=='1'){
     		$diary = new Table('member_category');
     		$diary->delete($del_id);
-    		$db->execute("update lawsive.article set category = '0' where resource_type = 'diary' and admin_user_id = '{$user->id}' and category = '$del_id'");
+    		$db->execute("update lawsive.article set category = '-1' where resource_type = 'diary' and admin_user_id = '{$user->id}' and category = '$del_id'");
     		echo true;
     	}
 ?>
