@@ -55,7 +55,7 @@
 				  		}
 				  	?>
 				</td>
-				<td><a href="audit_role.php">查看申请</a></td>
+				<td><a href="audit_role.php?id=<?php echo $application[$i]->id; ?>">查看申请</a></td>
 				<td>	
 					<a href="edit.php?id=<?php echo $application[$i]->id;?>" title="编辑" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_edit.png" border="0"></a>
 					<span name="<?php echo $application[$i]->id;?>" class="del" title="删除" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_delete.png" border="0"></span> 

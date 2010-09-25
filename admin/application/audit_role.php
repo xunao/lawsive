@@ -14,8 +14,9 @@
 		js_include_tag('admin/application/audit');
 		$auth = rand_str();
 		$_SESSION['edit_auth'] = $auth;
+		$id = intval($_GET['id']);
 		$db = get_db();
-		$application = $db->query("select a.*,m.login_name,m.role from application_apply_log a left join member m on a.member_id=m.id");
+		$application = $db->query("select a.*,m.login_name,m.role from application_apply_log a left join member m on a.member_id=m.id where a.application_id=".$id);
 		$count = count($application);
 		
 	?>
@@ -42,11 +43,11 @@
 				<td><?php echo $application[$i]->admin_date; ?></td>
 				<td>	
 					<?php if($application[$i]->status==0){ ?>
-						<span param=<?php echo $application[$i]->id;?>" param1="<?php echo $url[0]->is_default; ?>" class="pass" title="通过审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_apply.png" border="0"></span>
+						<span param=<?php echo $application[$i]->id;?>"  class="pass" title="通过审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_apply.png" border="0"></span>
 					<?php }else if($application[$i]->status==1){?>
 						<span param=<?php echo $application[$i]->id;?>" class="unpass" title="取消审核" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_unapply.png" border="0"></span>
 					<?php }?>
-					<span name="<?php echo $application[$i]->id;?>" param="<?php echo $application[$i]->member_id;?>" param1="<?php echo $application[$i]->application_id;?>" class="del" title="删除" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_delete.png" border="0"></span> 
+					<span name="<?php echo $application[$i]->id;?>" class="del" title="删除" style="color:#000000; text-decoration:none"><img src="/images/admin/btn_delete.png" border="0"></span> 
 				</td>
 			</tr>
 			<? }?>
