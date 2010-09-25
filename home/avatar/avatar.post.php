@@ -18,10 +18,32 @@
 	if($_POST['type'] == 'avatar'){
 		$member = new Table('member');
 		$member->find($user->id);
-		$member->avatar = $_POST['avatar'];
-		if($member->save()){
+		$img = $_POST['avatar'];
+		
+		
+		$imghdler = new ImageHandler();
+		$imghdler->load(ROOT_DIR.$img);
+		$middle= '/upload/user_'.$user->id .'_middle.jpg';
+		$imghdler->resize_image(ROOT_DIR.$middle, 70);
+		$member->avatar = $middle;
+		$sql1 =$member->save();
+//		var_dump($img);
+		$imghdler = new ImageHandler();
+		$imghdler->load(ROOT_DIR.$img);
+		$min= '/upload/user_'.$user->id .'_min.jpg';
+		$imghdler->resize_image(ROOT_DIR.$min, 50);
+		$member->avatar = $min;
+		$sql2 =$member->save();
+		
+		$imghdler = new ImageHandler();
+		$imghdler->load(ROOT_DIR.$img);
+		$large= '/upload/user_'.$user->id .'_large.jpg';
+		$imghdler->resize_image(ROOT_DIR.$large,100);
+		$member->avatar = $large;
+		$sql3 =$member->save();
+		
+		if($sql1&&$sql2&&$sql3){
 			echo true;
-			exit;
 		}	
 	}
 	if($_POST['type'] == 'upfile'){

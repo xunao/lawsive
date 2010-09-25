@@ -10,12 +10,16 @@ $(function(){
 		if(file == '../../../images/person/head.jpg'){
 			alert('您需要一张新的图片！');
 			return false;
+		}else{
+			if(file == undefined){
+			var	file = $('#0').find('img').attr('src');
+			}
 		}
 		$.post('avatar.post.php',{'type':'avatar','upfile_auth':$('#upfile_auth').val(),'avatar':file},function(data){
-			if(data == true){
+				if(data == true){
 				alert('修改成功！');
 				$('#pic_left').find('img').attr('src',file);
-			}
+			}else{alert(data);}
 		});
 	});
 	$('#submit').click(function(){

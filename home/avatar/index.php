@@ -57,9 +57,9 @@
       				<div id="ph_t_s"><font><a href="#">[选择图片]</a></font></div>
       			</div>
       			<?php if(!$avatar[0]){?>
-      				<div class="photo select" id="0"><img src="../../../images/person/head.jpg" /></div>
+      				<div class="photo select"><img src="../../../images/person/head.jpg" /></div>
       			<?php }else{?>
-      				<div class="photo select"><img src="<?php echo $avatar[0]->member_avatar;?>" /></div>
+      				<div class="photo select" id="0"><img src="<?php echo $avatar[0]->member_avatar;?>" /></div>
       			<?
       				}
       				for($i=1; $i<$num; $i++){
