@@ -3,6 +3,10 @@
  */
 $(function(){
 	$("#sub").click(function(){
+		if($('#info_name').val() == ''){
+			alert('请填写您的名字!');
+			return false;
+		}
 		if($("#email").val()!="")
 		{
 			if(!isEmail($("#email").val()))

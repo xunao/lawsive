@@ -20,7 +20,11 @@
 	$info->update_attributes($_POST['post'],false);
 	$info->member_id= $member->id;
 	$info->save();
-	$member->base_info_id = $info->id;
+	if(!$member->base_info_id || $member->name != $info->name){
+		$member->base_info_id = $info->id;
+		$member->name = $info->name;
+		$member->save();
+	}
 	alert('修改成功！');
 	redirect('/home/');
 ?>
