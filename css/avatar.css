@@ -1,0 +1,10 @@
+#avatar_box{width:806px; margin:-41px 0 0 24px; border-right:1px solid #dfdede;}
+	#avatar_title{width:785px; height:35px; font-size:16px; font-weight:bold; line-height:30px; margin-top:25px; border-bottom:1px solid #dfdede; }
+		#avatar_title img{margin-left:15px; margin:5px 5px 0 15px;float:left; display:inline;}
+		
+	#pic{width:781px; height: 400px; margin-top:25px; border:1px solid #dfdede;}
+		#pic_left{width:360px; height:300px; margin:20px;  border:1px solid #dfdede;}
+		#pic_left img{width:360px; height:300px; }
+		#pic_r_t{width:350px; height:24px; line-height:20px; font-size:16px; font-weight:bold; margin-top:80px;}
+		#pic_r_d{width:350px; height:24px; line-height:20px; font-size:14px;}
+	#pic input{width:350px; height:30px; line-height:24px;}
