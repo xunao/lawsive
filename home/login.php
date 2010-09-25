@@ -8,7 +8,12 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('login');
-		js_include_tag('login','login_auto');
+		js_include_tag('login');
+		if($_REQUEST['last_url']){
+			$last_url = $_REQUEST['last_url'];
+		}else{
+			$last_url = "/";
+		}
   	?>
 <body>
 	<div id="ibody">
@@ -16,10 +21,16 @@
 		    <div id="logo"><img alt="" src="/images/login/logo.jpg"></div>
 	    	<div id="cen_l">
 		    	<div id="login">
-				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" /></div></div>
-				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password"/></div></div>
-				     <div id="chc_box"><input type="checkbox" name="time" value="1">记住登录状态</div>
-				     <div id="login_btn2"><img src = "/images/login/login.jpg" /></div><div id="submit"><a href="#">忘记密码？</a></div>
+				     <div><div class="log_t" >邮箱：</div><div class="log_in"><input id="name" type="text" name="login_name" value="<?php echo $_COOKIE['email'];?>" /></div></div>
+				     <div><div class="log_t" >密码：</div><div class="log_in"><input id="password" type="password" name="password" value="<?php echo $_COOKIE['password'];?>"/></div></div>
+				     <div id="chc_box"><input type="checkbox" name="time" value="365" checked="checked">记住登录状态</div>
+				     <div id="login_btn2">
+				     	<img src = "/images/login/login.jpg" />
+				     	<input id="last_url" type="hidden" value="<?php echo $last_url;?>" />
+				     </div>
+				     <div id="submit">
+				     	<a href="#">忘记密码？</a>
+				     </div>
 	            </div>
 	            <div id="rigister">
 	            	<div id="rig_t"><img src="/images/login/point.jpg"><font>还没有开通律氏？点这里</font></div>

@@ -15,20 +15,27 @@ if(!$member){
 //	redirect('/home/login.php?last_url={$last_url}');
 }
 $db = get_db();
-$record=@$db->query("select * from lawsive.message where id='{$id}' limit 1 ");
+$record=@$db->query("select * from lawsive.message where id='{$id}' and (receiver_id={$member->id} or sender_id={$member->id})  limit 1 ");
 if(count($record)<=0){
 	echo 'invalid request!';
 	exit();	
 }
-if($control==1) {
-	 @$db->query("update lawsive.message set receiver_delete=1 where id=$id");
-  }elseif ($control==2){
-	 @$db->query("update lawsive.message set sender_delete=1 where id=$id");
+$msg = $record[0];
+if($msg->sender_id == $member->id){
+	if($msg->receiver_delete == 1){
+		$sql = "delete from message where id=$id";
+	}else{
+		$sql = "update message set sender_delete = 1 where id=$id";
+	}
+}else{
+	if($msg->sender_delete == 1){
+		$sql = "delete from message where id=$id";
+	}else{
+		$sql = "update message set receiver_delete = 1 where id=$id";
+	}
 }
-if($record[0]->sender_delete==1 && $record[0]->receiver_delete==1){
-	@$db->query("delete from lawsive.message where id=$id");
-}
-if(mysql_affected_rows()>0){
+$db->execute($sql);
+if($db->affect_count){
 	echo '删除短信成功!';
 }else{
 	echo '删除短信失败!';

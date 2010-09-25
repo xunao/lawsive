@@ -15,7 +15,9 @@
 		$db=get_db();
 		if(!$user)
 		{
-			die('对不起，您的登录已过期！请重新登录！');
+			alert('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/resume/');
+			exit();
 		}
 		$resume = new Table('member_resume');
 		$report = $resume->find($user->member_resume_id);
@@ -68,7 +70,7 @@
       				</div>
       				<?php for($i=0; $i<$numj; $i++){?>
       				<div class="er_info">
-      					<div class="er_i" id="er_add"><?php echo $i+1;?>#：自<font><?php echo htmlspecialchars($job[$i]->start_date); ?></font>至<font><?php echo htmlspecialchars($job[$i]->end_date); ?></font>在<font><?php echo $job[$i]->company; ?></font>担任<font><?php echo $job[$i]->title; ?></font></div>
+      					<div class="er_i" id="er_add"><b><?php echo $i+1;?>#</b>：自<font><?php echo htmlspecialchars($job[$i]->start_date); ?></font>至<font><?php echo htmlspecialchars($job[$i]->end_date); ?></font>在<font><?php echo $job[$i]->company; ?></font>担任<font><?php echo $job[$i]->title; ?></font></div>
       					<div class="job_edit" title="编辑"><img src="../../images/admin/btn_edit.png" /></div>
       					<div class="del_job" title="删除"><img src="../../images/admin/btn_delete.png" /></div>
       					<input class="job_id" type="hidden" value="<?php echo $job[$i]->id; ?>" />

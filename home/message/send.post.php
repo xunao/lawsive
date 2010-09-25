@@ -18,7 +18,6 @@ if($db->record_count <=0){
 	die('invalid param!');	
 }
 $content = htmlspecialchars($_POST['content']);
-echo $content;
 if(send_msg($member->id, $r_id, $content)){
 	alert('发送短信成功!');
 }else{
