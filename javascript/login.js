@@ -31,13 +31,18 @@ $(function(){
 		var login_name = $("#name");
 		var password = $("#password");
 		var time=$("#time");
-		if(checkInput(login_name,password) != false){
-			$.post("login.post.php",{"login_name":login_name.val(),"password":password.val()},function(data){
-				if(data != true){alert('您输入的帐号密码有误！');}else{window.location.href="/";}
-			});
+		var expire = 0;
+		if(time.attr('checked')){
+			expire = 365;
 		}
-	else{
-			return false;
+		if(checkInput(login_name,password) != false){
+			$.post("login.post.php",{"login_name":login_name.val(),"password":password.val(),'time': expire},function(data){
+				if(data){
+					alert(data);
+				}else{
+					window.location.href = $('#last_url').val();
+				}
+			});
 		}
 	});
 });

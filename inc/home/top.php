@@ -1,5 +1,11 @@
 <?php 
-$member = member::current(); 
+$member = member::current();
+$info = $member->get_base_info();
+if(!$info->id && $_SERVER['PHP_SELF'] != '/home/info.php'){
+	alert('请填写您的个人资料!');
+	redirect('/home/info.php');
+	exit;
+}
 if(!$member){
 	alert('请先登录！');
 	redirect('/home/login.php?last_url=' . get_current_url());
@@ -25,7 +31,7 @@ if(!$member){
 				<div class="context"><a href="">邀请</a></div>
 				<div class="context"><a href="">找人</a></div>
 				<div class="context"><a href="">设置</a></div>
-				<div class="context"><a href="">退出</a></div>
+				<div class="context"><a href="/home/logout.php">退出</a></div>
 			</div>
 		</div>
 	</div>

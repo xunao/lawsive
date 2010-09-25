@@ -21,7 +21,7 @@ $content = htmlspecialchars($_POST['content']);
 if(send_msg($member->id, $r_id, $content)){
 	alert('发送短信成功!');
 }else{
-	alert('发送短信失败!');
+	alert('发送短信失败!'. mysql_error());
 }
 exit();
-//redirect('/home/message/send_list.php');
+redirect('/home/message/send_list.php');

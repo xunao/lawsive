@@ -14,7 +14,7 @@
 		<img src="/images/index/log_in.jpg" border="0"/>
 	</div>
 	<div id="zhuce">
-		<a href=""><font  color="#BBBBBB">注册</font></a>
+		<a href="/home/register.php"><font  color="#BBBBBB">注册</font></a>
 	</div>	
 	
 	<?php 	

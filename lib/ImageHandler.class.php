@@ -20,7 +20,7 @@
     $t->setDstImg("tmp/new_test.jpg");
     $t->createImg(300,200); 
 */
-class image_handler_class
+class ImageHandler
 {
     var $dst_img;// 目标文件
     var $h_src; // 图片资源句柄

@@ -18,7 +18,7 @@
 			redirect('/home/login.php?last_url=/home/info.php');
 			exit;
 		}
-		$info=$db->query('select * from member_base_info where member_id='.$member->id);
+		$info=$member->get_base_info();
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;
   	?>
@@ -35,93 +35,93 @@
       	 		<table align="left">
 	      	 		<tr>
 	      	 			<td width="15%" align="right">用户名：</td>
-	      	 			<td width="85%"><?php echo $member->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info[0]->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member->id; ?>"></td>
+	      	 			<td width="85%"><?php echo $member->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member->id; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">姓名：</td>
-	      	 			<td><input type="text" name="post[name]" value="<?php echo $info[0]->name; ?>"></td></tr>
+	      	 			<td><input type="text" id="info_name" name="post[name]" value="<?php echo $info->name; ?>"><span style="color:red">*</span></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">first name：</td>
-	      	 			<td><input type="text" name="post[first_name]" value="<?php echo $info[0]->first_name; ?>"></td></tr>
+	      	 			<td><input type="text" name="post[first_name]" value="<?php echo $info->first_name; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">middle name：</td>
-	      	 			<td><input type="text" name="post[middle_name]" value="<?php echo $info[0]->middle_name; ?>"></td></tr>
+	      	 			<td><input type="text" name="post[middle_name]" value="<?php echo $info->middle_name; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">last name：</td>
-	      	 			<td><input type="text" name="post[last_name]" value="<?php echo $info[0]->last_name; ?>"></td></tr>
+	      	 			<td><input type="text" name="post[last_name]" value="<?php echo $info->last_name; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">律师事务所：</td>
-	      	 			<td><input type="text" name="post[office]" value="<?php echo $info[0]->office; ?>"></td></tr>
+	      	 			<td><input type="text" name="post[office]" value="<?php echo $info->office; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">职务：</td>
-	      	 			<td><input type="text"  name="post[title]" value="<?php echo $info[0]->title; ?>"></td></tr>
+	      	 			<td><input type="text"  name="post[title]" value="<?php echo $info->title; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">性别：</td>
-	      	 			<td><select name="post[gender]"><option <?php if($info[0]->gender==1){ ?>selected="selected"<?php }?> value="1">男</option><option <?php if($info[0]->gender==0){ ?>selected="selected"<?php }?> value="0">女</option></select></td></tr>
+	      	 			<td><select name="post[gender]"><option <?php if($info->gender==1){ ?>selected="selected"<?php }?> value="1">男</option><option <?php if($info->gender==0){ ?>selected="selected"<?php }?> value="0">女</option></select></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">生日：</td>
-	      	 			<td><input type="text" class="date_jquery" name="birthday" value="<?php echo $info[0]->birthday; ?>" ></td></tr>
+	      	 			<td><input type="text" class="date_jquery" name="post[birthday]" value="<?php echo $info->birthday; ?>" ></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">国籍：</td>
-	      	 			<td><input type="text" name="post[nationality]" value="<?php echo $info[0]->nationality; ?>"></td></tr>
+	      	 			<td><input type="text" name="post[nationality]" value="<?php echo $info->nationality; ?>"></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">备注：</td>
-	      	 			<td><textarea name="post[remark]"><?php echo $info[0]->remark; ?></textarea></td></tr>
+	      	 			<td><textarea name="post[remark]"><?php echo $info->remark; ?></textarea></td></tr>
 	      	 		<tr>
 	      	 			<td align="right">联系方式一：</td>
-	      	 			<td><textarea name="post[contact]"><?php echo $info[0]->contact; ?></textarea></td>
+	      	 			<td><textarea name="post[contact]"><?php echo $info->contact; ?></textarea></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">公司地址：</td>
-	      	 			<td><input type="text" name="post[address]" value="<?php echo $info[0]->address; ?>"></td>
+	      	 			<td><input type="text" name="post[address]" value="<?php echo $info->address; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">联系电话：</td>
-	      	 			<td><input type="text" name="post[phone]" value="<?php echo $info[0]->phone; ?>"></td>
+	      	 			<td><input type="text" name="post[phone]" value="<?php echo $info->phone; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">电子邮箱：</td>
-	      	 			<td><input type="text" id="email" name="post[email]" value="<?php echo $info[0]->email; ?>"></td>
+	      	 			<td><input type="text" id="email" name="post[email]" value="<?php echo $info->email; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">传真：</td>
-	      	 			<td><input type="text" name="post[fax]" value="<?php echo $info[0]->fax; ?>"></td>
+	      	 			<td><input type="text" name="post[fax]" value="<?php echo $info->fax; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">邮编：</td>
-	      	 			<td><input type="text" id="zip" name="post[zip]" value="<?php echo $info[0]->zip; ?>"></td>
+	      	 			<td><input type="text" id="zip" name="post[zip]" value="<?php echo $info->zip; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">移动电话：</td>
-	      	 			<td><input type="text" id="mobile" name="post[mobile]" value="<?php echo $info[0]->mobile; ?>"></td>
+	      	 			<td><input type="text" id="mobile" name="post[mobile]" value="<?php echo $info->mobile; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">联系方式二：</td>
-	      	 			<td><textarea name="post[contact2]"><?php echo $info[0]->contact2; ?></textarea></td>
+	      	 			<td><textarea name="post[contact2]"><?php echo $info->contact2; ?></textarea></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">公司地址：</td>
-	      	 			<td><input type="text" name="post[address2]" value="<?php echo $info[0]->address2; ?>"></td>
+	      	 			<td><input type="text" name="post[address2]" value="<?php echo $info->address2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">联系电话：</td>
-	      	 			<td><input type="text" name="post[phone2]" value="<?php echo $info[0]->phone2; ?>"></td>
+	      	 			<td><input type="text" name="post[phone2]" value="<?php echo $info->phone2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">电子邮箱：</td>
-	      	 			<td><input type="text" id="email2" name="post[email2]" value="<?php echo $info[0]->email2; ?>"></td>
+	      	 			<td><input type="text" id="email2" name="post[email2]" value="<?php echo $info->email2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">传真：</td>
-	      	 			<td><input type="text" name="post[fax2]" value="<?php echo $info[0]->fax2; ?>"></td>
+	      	 			<td><input type="text" name="post[fax2]" value="<?php echo $info->fax2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">邮编：</td>
-	      	 			<td><input type="text" id="zip2" name="post[zip2]" value="<?php echo $info[0]->zip2; ?>"></td>
+	      	 			<td><input type="text" id="zip2" name="post[zip2]" value="<?php echo $info->zip2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td align="right">移动电话：</td>
-	      	 			<td><input type="text" id="mobile2" name="post[mobile2]" value="<?php echo $info[0]->mobile2; ?>"></td>
+	      	 			<td><input type="text" id="mobile2" name="post[mobile2]" value="<?php echo $info->mobile2; ?>"></td>
 	      	 		</tr>
 	      	 		<tr>
 	      	 			<td style="border-bottom:none;"></td>
