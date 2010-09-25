@@ -10,6 +10,4 @@ CREATE TABLE `lawsive`.`friend_news` (
   `photo` VARCHAR(500)  CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT '用户照片',
   PRIMARY KEY (`id`)
 )
-ENGINE = MyISAM
-CHARACTER SET utf8 COLLATE utf8_general_ci
-COMMENT = '好友动态';
+ENGINE = MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT = '好友动态';

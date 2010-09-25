@@ -6,7 +6,7 @@
 	    	<a href=""><font style="margin-left:2px;">咨询</font></a><font>|</font>
 	        <a href=""><font>中文网</font></a><font>|</font>
 	        <a href=""><font>法学院</font></a><font>|</font>
-			<a href=""><font>个人服务</font></a>
+			<a href="/home/"><font>个人服务</font></a>
 		</div>
 		<div id="t_l_r">
 		</div>
@@ -75,7 +75,7 @@
 				<div class="nav" id="12"><a href="">订阅</a></div>
 			</div>
 		</div>
-		<div id="head_r"><a href="">我的律氏</a></div>
+		<div id="head_r"><a href="/home/">我的律氏</a></div>
 	</div>
 	<div id="cbx"><div id="center_h"></div></div>
 </div>

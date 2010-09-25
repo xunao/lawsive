@@ -6,7 +6,7 @@
 .block_a{display:block;color:#336699; text-decoration: underline;}
 .delete{display:block;color:#336699; text-decoration: underline; cursor:pointer;}
 #msg_list{width:800px;}
-.msg_box{width:800px; height: 100px;  margin-left:10px; padding-top:10px; line-height:20px;border-bottom: 1px solid #D8DFEA}
+.msg_box{width:800px;  margin-left:10px; padding-top:10px; line-height:20px;border-bottom: 1px solid #D8DFEA}
 	.sender_info{width:180px;}
 	.sender_info .date {color:#AFAFAF}
 	.avatar{width:70px; text-align: center;}
@@ -14,5 +14,6 @@
 		.a_sender{margin-top:5px;}
 	
 	.message_content{width:550px; height:100px; overflow: hidden;}
+	.message_content_show{width:550px;overflow: hidden;}
 	
-	.tool_box{width:50px;}
+	.tool_box{width:50px; text-align: right;}

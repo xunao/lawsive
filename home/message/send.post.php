@@ -18,10 +18,11 @@ if($db->record_count <=0){
 	die('invalid param!');	
 }
 $content = htmlspecialchars($_POST['content']);
+echo $content;
 if(send_msg($member->id, $r_id, $content)){
 	alert('发送短信成功!');
 }else{
-	alert('发送短信失败!');
+	alert('发送短信失败!'. mysql_error());
 }
 exit();
-//redirect('/home/message/send_list.php');
+redirect('/home/message/send_list.php');

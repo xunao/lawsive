@@ -56,9 +56,11 @@ class TableImage extends Table
 	
 	public function create_thumb($name,$width,$height=null){
 
-		$handler = new image_handler_class();
-		$handler->load(ROOT_DIR_NONE . $this->src);		
-		$thum_name = ROOT_DIR_NONE .$this->_thumb_name($this->src, $name);	
+		$src;
+		
+		$handler = new ImageHandler();
+		$handler->load(ROOT_DIR . $this->src);		
+		$thum_name = ROOT_DIR .$this->_thumb_name($this->src, $name);	
 		$handler->resize_image($thum_name,$width,$height);
 		if(in_array($name,$this->thumb_names) ===false){
 			$this->thumb_names[] = $name;
