@@ -16,6 +16,7 @@
 		exit;	
 	}
 	$db=get_db();
+	$id=$member->id;
 	$name=$db->query("select a.name,a.url,r.is_free from application a left join application_role r on a.id=r.application_id where r.application_id=".$_POST['id'].' and r.role='.$member->role);
 	$data=$db->query("select * from application_apply_log where application_id=".$_POST['id']." and member_id=".$member->id);
 	$date=$db->query('select now() as time');
@@ -23,7 +24,7 @@
 	$app_name=$name[0]->name;
 	$time=$date[0]->time;
 	$url=$name[0]->url;
-	$id=$member->id;
+	
 	if($_POST['type']=="add")
 	{
 		if(count($name)>0&&$name[0]->is_free==0)
