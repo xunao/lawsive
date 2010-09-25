@@ -5,6 +5,6 @@
 	#pic{width:781px; height: 400px; margin-top:25px; border:1px solid #dfdede;}
 		#pic_left{width:360px; height:300px; margin:20px;  border:1px solid #dfdede;}
 		#pic_left img{width:360px; height:300px; }
-		#pic_r_t{width:350px; height:24px; line-height:20px; font-size:16px; font-weight:bold; margin-top:80px;}
+		#pic_r_t{width:350px; height:24px; line-height:20px; font-size:16px; font-weight:bold; margin-top:100px;}
 		#pic_r_d{width:350px; height:24px; line-height:20px; font-size:14px;}
-	#pic input{width:350px; height:30px; line-height:24px;}
+	#pic input{width:350px; height:30px; line-height:30px;}
