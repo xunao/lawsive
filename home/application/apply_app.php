@@ -8,6 +8,7 @@
 		include ('../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_info');
+		js_include_tag('app');
 		$member = member::current();
 		session_start(); 		
 		$db=get_db();
@@ -15,7 +16,7 @@
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 		}
-		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where r.role='.$member->role.' and a.id not in (select application_id from member_appliaction where member_id='.$member->id.')');
+		$application=$db->query('select a.*,r.is_free from application a left join application_role r on a.id=r.application_id where r.role='.$member->role);
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;
   	?>
@@ -26,35 +27,37 @@
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
-      	 			申请应用<a href="">&gt;&gt;返回上一页</a>
+      	 			添加应用<a href="">&gt;&gt;返回上一页</a>
       	 		</div>
-      	 		<form method="post" action="apply.post.php">
       	 		<table align="left">
+      	 			<?php for($i=0; $i<count($application);$i++){ ?>
 	      	 		<tr>
-	      	 			<td width="20%" align="right">用户名：</td>
-	      	 			<td width="80%"><?php echo $member->login_name; ?><input type="hidden" name="info_id" value="<?php echo $info[0]->id; ?>"><input type="hidden" name="member_id" value="<?php echo $member->id; ?>"></td>
-	      	 		</tr>
-	      	 		<tr>
-	      	 			<td align="right">可申请应用名称：</td>
-	      	 			<td>
-	      	 				<?php
-	      	 				 for($i=0;$i<count($application);$i++){
-	      	 					if(strpos($application[$i]->role,$member->role)>=0){
+	      	 			<td width="10%" align="right">
+	      	 				<img width="60" height="60" src="<?php echo $application[$i]->photo_src; ?>" />
+	      	 			</td>
+	      	 			<td width="65%" style="padding-left:10px;">
+	      	 				<span class="span1"><?php echo $application[$i]->name; ?></span><br>
+	      	 				<?php echo $application[$i]->description; ?>
+	      	 			</td>
+	      	 			<td width="20%" align="center">
+	      	 				<?php 
+	      	 					$status=$db->query('select status from member_appliaction where member_id='.$member->id.' and application_id='.$application[$i]->id); 
+	      	 					if(count($status)==0||$status[0]->status==0)
+	      	 					{
 	      	 				?>
-	      	 					<input type="radio" name="radio" value="<?php echo $application[$i]->id; ?>"><?php echo $application[$i]->name; ?>(<?php if($application[$i]->is_free==1){echo "<span style='color:red;'>免费</span>";}else if($application[$i]->is_free==0){echo "<span style='color:red;'>付费</span>";} ?>)<br>
-	      	 				<?php }}?>
+	      	 				<span class="add" param="<?php echo $application[$i]->id; ?>">我要添加</span>
+	      	 				<?php 
+	      	 					}
+	      	 					else
+	      	 					{?>
+	      	 				<span class="span2">已添加</span>　<img src="/images/home/ico_del.gif"><span class="del" param="<?php echo $application[$i]->id; ?>">删除</span>	
+	      	 				<?php }?>
 	      	 			</td>
 	      	 		</tr>
-	      	 		<tr>
-	      	 			<td style="border-bottom:none;"></td>
-	      	 			<td style="border-bottom:none;">
-	      	 				<button id="sub">提交</button>
-	      	 				<input type="hidden" id="info_auth" name="info_auth" value="<?php echo $auth;?>" />
-	      	 			</td>
-	      	 		</tr>
+	      	 		<?php } ?>
       	 		</table>
-      	 		</form>
       	 	</div>
+      	 	<input type="hidden" id="edit_auth" value="<?php echo $auth; ?>">
       	 </div>
       	
       	 

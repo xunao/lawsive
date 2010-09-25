@@ -2,7 +2,7 @@
 body{width:1000px; margin: 0 auto;  line-height:14px;  font-size:12px; font-family:宋体,Arial; color:#000000; background:#00121E; }
 body div{float:left;  display:inline; }
 body a{text-decoration:none; color:#666666}
-#ibody{width:1000px; background:#00121E; }
+#ibody{width:1000px; background:#00121E;}
 
 #center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px;padding-bottom:20px; color:#666666; letter-spacing:1px; }
 #center_l{width:585px; margin:16px 0 0 16px; }

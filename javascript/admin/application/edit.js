@@ -129,6 +129,7 @@ $(function(){
 		}
 	});
 	$("#sub").click(function(){
+		
 		var ary = "";
 		var ary1="";
 		var ary2="";
@@ -156,12 +157,14 @@ $(function(){
 				}
 			}
 		});
+		
 		if(iNumChecked==0)
 		{
 			alert('请选择该应用的使用角色权限！');
 			return false;
 		}
 		$("#check_role").attr('value',ary.substring(0,ary.lastIndexOf(',')));
+		alert($("#check_role").val());
 		$("#check_is_default").attr('value',ary1.substring(0,ary1.lastIndexOf(',')));
 		$("#check_is_free").attr('value',ary2.substring(0,ary2.lastIndexOf(',')));
 		//$("#application_form").submit();
