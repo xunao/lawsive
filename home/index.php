@@ -10,16 +10,9 @@
 		css_include_tag('person_public','person_index');
 		js_include_tag('login','home');
 		$user = member::current();
-<<<<<<< HEAD
-		if(!$user)
-		{
-			alert('对不起,登录已超时，请重新登录！');
-			redirect('/home/login.php?last_url=/home/index.php');
-=======
 		if(!$user ){
 			alert('您尚未登录或登录已过期，请登录！');
 			redirect('/home/login.php?last_url=/home/');
->>>>>>> 5320e65a9c2b1f2f54063fed230734dc2a350cb2
 		}
 		$info = $user->get_base_info();
   	?>
