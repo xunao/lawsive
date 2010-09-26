@@ -26,7 +26,7 @@
 			$cates = ($category->children_map($filter_category));
 			$cats = join(',',$cates);
 			if($cats){
-				$conditions[] = "category_id in ($cats)";
+				$conditions[] = "category in ($cats)";
 			}
 		}
 //		if($filter_category ){			
@@ -51,7 +51,7 @@
 		$record=$article->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');
-        $category_name =$db->query('select a.category_id, c.name  from category c,article a where a.category_id = c.id;');
+        $category_name =$db->query('select a.category, c.name  from category c,article a where a.category = c.id;');
 //		$category->find($record[0]->category_id);
 //		echo $cate->name;
 	?>
@@ -101,7 +101,7 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/view/column.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->category;?>" style="color:#0000FF"><?php $cate = $category->find($record[$i]->category_id); echo $cate->name;?></a></td>-->
+			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php $cate = $category->find($record[$i]->category_id); echo $cate->name;?></a></td>-->
 			<td><?php  echo $category_name[$i]->name;?></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
