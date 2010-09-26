@@ -29,5 +29,4 @@
 		.al_bx{width:350px;}
 		#text{width:305px; margin-left:45px; margin-top:10px; font-size:14px;}
 		#text textarea{width:90%;}
-		#submit{width:75px; height:23px; color:#ffffff; line-height:24px; boder:1px solid #FCC7A4; margin:15px; float:right; background:url("/images/person/pe_sub.jpg") no-repeat;}
-		#return{width:60px; height:23px; line-height:24px; margin:15px; float:right;}
+		#submit{width:100px; height:28px; color:#ffffff; line-height:24px; boder:1px solid #FCC7A4; margin-top:25px; float:right; background:url("/images/album/sub.jpg") no-repeat;}

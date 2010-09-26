@@ -8,7 +8,7 @@
 		#pic_r_t{width:350px; height:24px; line-height:20px; font-size:16px; font-weight:bold; margin-top:100px;}
 		#pic_r_d{width:350px; height:24px; line-height:20px; font-size:14px;}
 	#pic input{width:350px; height:30px; line-height:30px;}
-	#pic button{width:75px; height:23px; color:#ffffff; margin-top:20px; margin-left:180px; background:url("/images/person/pe_sub.jpg") no-repeat;}
+	#pic button{width:100px; height:28px; color:#ffffff; margin-top:20px; margin-left:180px; background:url("/images/album/sub.jpg") no-repeat;}
 	
 	#photo_show{width:781px; margin-top:25px;}
 		#ph_t{width:765px; font-size:16px; line-height:30px; font-weight:bold; padding-left:16px; border-bottom:4px solid #a3c1cd;}

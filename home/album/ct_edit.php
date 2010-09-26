@@ -48,8 +48,7 @@
 	      		<div class="al_bx">
 		      		<div class="al">专辑描述：</div>
 		      		<div id="text"><textarea name="post[description]"></textarea></div>
-		      		<input type="button" id="return" value="取消"/>
-		      		<button type="submit" id="submit">保存</button>
+		      		<button type="submit" id="submit">保存修改</button>
 		      	</div>
 	      		
 	      	</form>
