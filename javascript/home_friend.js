@@ -14,7 +14,14 @@ $(function(){
 		var id=$(this).attr('name');
 		$.post("add_friend.post.php",{"f_id":$(this).attr('name'),"str_auto":$("#str_auto").val()},function(data){
 		alert(data);
-		window.location.href="index.php";
+		window.location.reload(true);	
+		});
+		
+	});
+	$("#friend_add").click(function(){
+		$.post("./friend/add_friend.post.php",{"f_id":$("#id").val(),"str_auto":$("#str_auto").val()},function(data){
+		alert(data);
+		window.location.reload(true);	
 		});
 		
 	});
