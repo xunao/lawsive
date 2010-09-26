@@ -5,6 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+        session_start();
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_index');
@@ -15,6 +16,8 @@
 			redirect('/home/login.php?last_url=/home/');
 		}
 		$info = $user->get_base_info();
+		$send_msg_auth = rand_str();
+	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
 <body>
       <div id="ibody">
@@ -27,7 +30,7 @@
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
 	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span></div>
 	      	 		<div id="state">
-	      	 			<input type="text">
+	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
 	      	 				<a href="">传照片</a>　　<a href="/home/application/diary/">写日志</a>　　<a href="">写记录</a>　　<a href="">发转帖</a>
 	      	 			</div>
@@ -148,6 +151,7 @@
       	 
       	 </div>
       	<?php include_once(dirname(__FILE__).'/../inc/home/bottom.php'); ?>
+      	<input type="hidden" id="send_msg_auth" value="<?php echo $send_msg_auth?>" />
       </div>
 </body>
 </html>
