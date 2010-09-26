@@ -101,7 +101,7 @@
 		<tr class=tr3 id=<?php echo $record[$i]->id;?> >
 			<td style="text-align:left; text-indent:12px;"><a href="<?php echo "/view/column.php?id={$record[$i]->id}";?>" target="_blank"><?php echo strip_tags($record[$i]->title);?></a></td>
 			<td><?php echo $record[$i]->author;?></td>
-			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->category_id;?>" style="color:#0000FF"><?php $cate = $category->find($record[$i]->category_id); echo $cate->name;?></a></td>-->
+			<!--<td><a href="index.php?filter_category=<?php echo $record[$i]->category;?>" style="color:#0000FF"><?php $cate = $category->find($record[$i]->category_id); echo $cate->name;?></a></td>-->
 			<td><?php  echo $category_name[$i]->name;?></td>
 			<td><?php echo $record[$i]->created_at;?></td>
 			<td>
