@@ -9,7 +9,17 @@
 		use_jquery_ui();
 		css_include_tag('person_public','person_index');
 		js_include_tag('login');
+		$id = intval($_GET['id']);
 		$user = member::current();
+		if(!$user){
+			alert('您尚未登录或登录已过期，请登录！');
+			redirect('/home/login.php?last_url=/home/member.php?id='.$id);
+			exit;
+		}
+		$target = member::find($id);
+		if(!$target){
+			die('invalid param!');
+		}
   	?>
 <body>
       <div id="ibody">
