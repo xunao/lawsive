@@ -7,6 +7,11 @@
 		session_start();
 		include_once('../../frame.php');
 		judge_admin();
+		$user = AdminUser::current_user();
+		if(!$user){
+			redirect('login.php');
+			die();
+		}
 	?>
 	<title><?php echo $_g_site_name;?>-专栏文章管理</title>
 	<?php
