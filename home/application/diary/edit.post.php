@@ -55,9 +55,12 @@
 		}
 		
 		if($diary->save()){
-					alert('更新日志成功！');
-				}else{
-					alert('更新日志失败');
-				}
+			alert('更新日志成功！');
+			$news = new FriendNews();
+			$news->generat($user->id, 'diary', $diary->id);
+			$news->save();
+		}else{
+			alert('更新日志失败');
+		}
 		redirect('/home/application/diary');
 ?>
