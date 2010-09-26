@@ -41,8 +41,8 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 	    <div>
-		      	 		<div id="pic"><img src="/images/person/head.jpg"></div>
-		      	 		<div id="name"><?php echo $f_info->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span></div>
+		      	 		<div id="pic"><img src="<?php if ($record[0]->avatar =='') {echo '/images/person/head.jpg';}else {echo $record[0]->avatar;}?>" border="0"></div>
+		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
@@ -80,12 +80,15 @@
 	      	 	</div>
 	      	 </div>
 	      	 
-	      	 <div id="person_index_right" style="padding-bottom:30px;">
+	      	 <div id="person_index_right" style="height:720px; padding-bottom:30px;">
       		<div id="title">
       			<div id="t_l">他的好友<font size="1" color="#999999">（<?php echo count($friend)?>）</font></div>
       			
       		</div>
       		<div id="content">
+      		    <?php if (count($friend)==0) { ?>
+      		    	<div style="margin-left:5px;">用户暂无好友</div>
+      		    <?php }?>
       			<?php for($i=0;$i<count($friend) ; $i++){ ?>
 	      		<div class="pic">
 	      			<div class="top">
