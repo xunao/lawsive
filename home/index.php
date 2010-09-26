@@ -25,7 +25,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $user->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span></div>
 	      	 		<div id="state">
 	      	 			<input type="text">
 	      	 			<div id="content">
@@ -113,13 +113,30 @@
       			</div>
       		</div>
       		<div id="content">
-      			<?php for($i=0;$i<12; $i++){ ?>
+      			<?php
+      			/*
+      			 * get friends 
+      			 */ 
+      			$sql = "select b.id,b.name,b.avatar from friend a left join member b on b.id=a.f_id  where u_id={$user->id}  limit 12";
+      			$friends = $db->query($sql);
+      			$rand_count = 12 - $db->record_count;
+      			if($rand_count > 0 ){
+      				$sql = "select id,name,avatar from member where id!={$user->id} and id not in(select u_id from friend where u_id={$user->id}) order by rand() limit $rand_count";
+      				$friends_rand = $db->query($sql);
+      				if($friends_rand){
+      					$friends = array_merge($friends,$friends_rand);
+      				}
+      			}
+      		
+      			foreach($friends as $friend){ 
+      				$avatar = $friend->avatar ? $friend->avatar : '/images/home/default_avatar.jpg';
+      			?>
 	      		<div class="pic">
 	      			<div class="top">
-	      				<a href=""><img src=""></a>
+	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><img src="<?php echo $avatar?>"></a>
 	      			</div>
 	      			<div class="name">
-	      				<img border=0 src="/images/person/online.jpg"><a href="">盛志峰</a>
+	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">
 	      				前天23：13

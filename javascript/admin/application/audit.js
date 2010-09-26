@@ -12,7 +12,7 @@ $(function(){
 			else if(data=="out time")
 			{
 				alert('对不起您登录已超时，请重新登录！');
-				redirect('/admin/login.php?last_url=/admin/application/audit_role.php');
+				window.location.href='/admin/login.php?last_url=/admin/application/audit_role.php?id='+$(this).attr('param');
 				return false;
 			}
 			else if(data=="error")
@@ -20,15 +20,21 @@ $(function(){
 				alert('请选择要审批的申请！');
 				return false;
 			}
+			else if(data=="invlad request!")
+			{
+				alert('请从网站提交！');
+				return false;
+			}
 			else
 			{
-				alert('请正常进入网站！');
+				alert('审核成功！');
 				return false;
 			}
 		});
 	});
 	$(".unpass").click(function(){
 		$.post("audit_role.post.php",{'post_type':'unapply','id':$(this).attr('param'),'edit_auth':$('#edit_auth').val()},function(data){
+			alert(data);
 			if(data=="OK")
 			{
 				alert('取消审核成功！');
@@ -37,7 +43,7 @@ $(function(){
 			else if(data=="out time")
 			{
 				alert('对不起您登录已超时，请重新登录！');
-				redirect('/admin/login.php?last_url=/admin/application/audit_role.php');
+				window.location.href='/admin/login.php?last_url=/admin/application/audit_role.php?id='+$(this).attr('param');
 				return false;
 			}
 			else if(data=="error")
@@ -45,9 +51,14 @@ $(function(){
 				alert('请选择要审批的申请！');
 				return false;
 			}
+			else if(data=="invlad request!")
+			{
+				alert('请从网站提交！');
+				return false;
+			}
 			else
 			{
-				alert('请正常进入网站！');
+				alert('取消审核失败！');
 				return false;
 			}
 		});
@@ -58,11 +69,11 @@ $(function(){
 			return false;
 		}
 
-		$.post("audit_role.post.php",{'post_type':'del','id':$(this).attr('name'),'edit_auth':$('#edit_auth').val(),'member_id':$(this).attr('param'),'app_id':$(this).attr('param1')},function(data){
+		$.post("audit_role.post.php",{'post_type':'del','id':$(this).attr('name'),'edit_auth':$('#edit_auth').val()},function(data){
 			if(data=="out time")
 			{
 				alert('对不起您登录已超时，请重新登录！');
-				redirect('/admin/login.php?last_url=/admin/application/audit_role.php');
+				window.location.href='/admin/login.php?last_url=/admin/application/audit_role.php?id='+$(this).attr('param');
 				return false;
 			}
 			else if(data=="invlad request!")

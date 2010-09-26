@@ -129,6 +129,7 @@ $(function(){
 		}
 	});
 	$("#sub").click(function(){
+		
 		var ary = "";
 		var ary1="";
 		var ary2="";
@@ -156,6 +157,7 @@ $(function(){
 				}
 			}
 		});
+		
 		if(iNumChecked==0)
 		{
 			alert('请选择该应用的使用角色权限！');

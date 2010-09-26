@@ -51,3 +51,8 @@ body a{text-decoration:none;}
 .block a{color:black; font-size:14px;}
 .block.selected{border-bottom:1px solid white;}
 .block.selected a{color:#336699}
+
+.span1{font-weight:bold; color:#336699;}
+.add{cursor:pointer; color:#336699; text-decoration:underline;}
+.span2{color:#666666;}
+.del{cursor:pointer; color:#336699; text-decoration:underline;}

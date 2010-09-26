@@ -71,6 +71,17 @@
 			<td class=td1 width=15%>应用链接</td>
 			<td><input type="text" name="post[url]" value="<?php echo $application[0]->url;?>" ></td>
 		</tr>
+		<tr class=tr4>
+			<td class=td1 width=15%>应用图片</td>
+			<td>
+				
+				<input type="file" name="post[photo_src]">
+				<?php if($application[0]->photo_src){?>
+				<a href="<?php echo $application[0]->photo_src?>" target="_blank">查看</a>
+				<?php }?>
+				<span style="color:blue;">支持格式：jpg,png,gif，小于100K</span>
+			</td>
+		</tr>
 		<tr class="tr4">
 			<td class="td1"><b>权限配置</b></td>
 			<td>

@@ -348,7 +348,7 @@ class Table{
 				$result =  false;
 			}
 			$save_name = rand_str() .'.'.$extension;
-			$save = ROOT_DIR_NONE .$$save_dir . '/'. $save_name;
+			$save = ROOT_DIR .$$save_dir . '/'. $save_name;
 			if(move_uploaded_file($_FILES[$name]['tmp_name'][$key],$save)){
 				$this->$key = $$save_dir .'/' . $save_name;
 			}else{
