@@ -45,7 +45,7 @@
       			</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
-      				<a href="">新的专辑</a>
+      				<a href="ct_edit.php">新的专辑</a>
       				<a href="">新的照片</a>
       			</div>
       		</div>

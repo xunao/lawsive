@@ -6,9 +6,9 @@
 	<meta name="description" content="律氏" />
 <?php	
 		session_start();
-		include ('../../../frame.php');
+		include ('../../frame.php');
 		use_jquery_ui();
-		css_include_tag('person_public','diary');
+		css_include_tag('person_public','album','diary');
 		js_include_tag('login','diary');
 //		$user = member::current();
 //		$db=get_db();
@@ -20,12 +20,23 @@
 //		$_SESSION['dia_edit_auth'] = $auth;
   	?>
 <body>
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/top.php'); ?>
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
-      	<div id="diary_box">
-      		<div id="diary_title">
-      			<img src="../../../images/diary/logo_diary.jpg" />日记
-      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
+     	<?php include_once(INC_DIR.'/home/top.php'); ?>
+      	<?php include_once(INC_DIR.'/home/left.php'); ?>
+      	<div id="album">
+			<div id="al_t">
+				我的相册
+				<img src="../../images/album/zp.gif" />
+				<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
+			</div>
+			<div id="d_m">
+      			<div id="dm_t_l"></div>
+      			<div id="dm_t_m">
+      				新增专辑
+      			</div>
+      			<div id="dm_t_r"></div>
+      			<div id="dm_t_o">
+      				<a href="index.php">返回相册首页</a>
+      			</div>
       		</div>
       		<div id="ct_rt"><a href="/home/application/diary">返回我的日记</a></div>
       		<div id="ct_add">
@@ -58,7 +69,7 @@
 	      			<input type="hidden" id="dia_edit_auth" value="<?php echo $auth;?>" />
 	      		</div>
       	</div>
-      	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
+      	<?php include_once(INC_DIR.'/home/bottom.php'); ?>
 </body>
 <script type="text/javascript">
 $(function(){

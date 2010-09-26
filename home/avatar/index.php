@@ -47,7 +47,7 @@
       		</div>
       		<?php 
       				$db=get_db();
-      				$avatar = $db->query("select member_avatar from lawsive.member_avatar where member_id='{$user->id}' order by created desc limit 5");
+      				$avatar = $db->query("select member_avatar from lawsive.member_avatar where member_id='{$user->id}' and member_avatar != '{$user->avatar}' order by created desc limit 4");
       				$num = count($avatar);
       				$db->query("select count(*) as count from lawsive.member_avatar where member_id='{$user->id}'");
       				$total = $db->field_by_name('count');
@@ -56,10 +56,10 @@
       			<div id="ph_t">我的图片库(<font><?php echo $total;?></font>张)
       				<div id="ph_t_s"><font><a href="#">[选择图片]</a></font></div>
       			</div>
-      			<?php if($avatar[0]){?>
-      				<div class="photo select" id="0"><img src="<?php echo $avatar[0]->member_avatar;?>" /></div>
+      			<?php if($user->avatar){?>
+      				<div class="photo select" id="0"><img src="<?php echo $user->avatar;?>" /></div>
       			<?php }
-      				for($i=1; $i<$num; $i++){
+      				for($i=0; $i<$num; $i++){
       			?>
       			<div class="photo"><img src="<?php echo $avatar[$i]->member_avatar?>" /></div>
       			<?php }?>
