@@ -13,13 +13,11 @@
 	$user = AdminUser::current_user();
 	if(!$user){
 		echo "out time";
-		redirect('/home/login.php?last_url=/home/edit.php');
 		exit;	
 	}
     $db = get_db();
     $id = intval($_POST['id']);
     $member=$db->query('select member_id,application_id from application_apply_log where id='.$id);
-    $date=$db->query('select now() as time');;
     if($_POST['post_type']=="del"){
 		$application = new Table('application_apply_log');
 		$application -> delete($id);
@@ -37,7 +35,7 @@
 		}
 		else
 		{
-			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date="'.$date[0]->time.'",status=1 where id='.$id;;
+			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date=now(),status=1 where id='.$id;;
 			if($_POST['is_default']==0)
 			{
 				$sql='update member_appliaction set status=2 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
@@ -62,7 +60,7 @@
 		}
 		else
 		{
-			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date="'.$date[0]->time.'", status=0 where id='.$id;;
+			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date=now(), status=0 where id='.$id;;
 			$sql='update member_appliaction set status=0 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;;
 			if($db->execute($sql)&&$db->execute($sql1))
 			{
