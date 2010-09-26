@@ -40,9 +40,9 @@
 	      	 		</div>
 	      	 		<div id="operate">
 	      	 			 <a href="./message/send.php?r_id=<?php echo $user->id?>">发短消息</a><a href="">加为好友</a>
-	      	 			 <div class="operate_t">他的照片（0）</div>
-	      	 			 <div class="operate_t">他的日记（1）</div>
-	      	 			 <div class="operate_t">他的记录（0）</div>
+	      	 			 <div class="operate_t"><a href="">他的照片（0）</a></div>
+	      	 			 <div class="operate_t"><a href="">他的日记（1）</a></div>
+	      	 			 <div class="operate_t"><a href="">他的记录（0）</a></div>
 	      	 		</div>
 	      	 		 <div class="title">
 	      	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">最新动态</div>
