@@ -6,7 +6,7 @@ CREATE  TABLE `lawsive`.`mood` (
   `u_name` VARCHAR(45) NOT NULL COMMENT '用户昵称' ,
   `comment_count` INT(10) NOT NULL DEFAULT 0 COMMENT '评论数' ,
   PRIMARY KEY (`id`) )
-ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8
-COMMENT = '一句话心情';
+ ENGINE = MyISAM 
+ DEFAULT CHARACTER SET = utf8 
+ COMMENT = '一句话心情'; 
 
