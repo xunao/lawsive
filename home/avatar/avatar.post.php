@@ -18,40 +18,48 @@
 	if($_POST['type'] == 'avatar'){
 		$member = new Table('member');
 		$member->find($user->id);
-		$img = $_POST['avatar'];
-		
-		
-		$imghdler = new ImageHandler();
-		$imghdler->load(ROOT_DIR.$img);
-		$middle= '/upload/user_'.$user->id .'_middle.jpg';
-		$imghdler->resize_image(ROOT_DIR.$middle, 70);
-//		var_dump($img);
-		$imghdler = new ImageHandler();
-		$imghdler->load(ROOT_DIR.$img);
-		$min= '/upload/user_'.$user->id .'_min.jpg';
-		$imghdler->resize_image(ROOT_DIR.$min, 50);
-		
-		$imghdler = new ImageHandler();
-		$imghdler->load(ROOT_DIR.$img);
-		$large= '/upload/user_'.$user->id .'_large.jpg';
-		$imghdler->resize_image(ROOT_DIR.$large,100);
-		
-		$member->avatar = $img;
+		$member->avatar = $_POST['avatar'];
 		
 		if($member->save()){
 			echo true;
 		}	
 	}
 	if($_POST['type'] == 'upfile'){
-		$avatar = new Table('member_avatar');
-		$avatar->update_file_attributes('post');
-		$avatar->update_attributes($_FILES['post'],false);
-		$avatar->member_id = $user->id;
-		$avatar->created = now();
+		$db=get_db();
+		$db->query("select count(*) as count from lawsive.member_avatar where member_id='{$user->id}'");
+      	$total = $db->field_by_name('count');
+      	if($total <10){
+	      	$avatar->update_file_attributes('post');
+			$avatar->update_attributes($_FILES['post'],false);
+			$avatar->member_id = $user->id;
+			$avatar->created = now();
+			
+			$img = $avatar->member_avatar;
+			$imgs = mb_substr($avatar->member_avatar, 8, 18);
+			
+			$imghdler = new ImageHandler();
+			$imghdler->load(ROOT_DIR.$img);
+			$middle= '/upload/middle_' .$imgs ;
+			$imghdler->resize_image(ROOT_DIR.$middle, 70);
+			
+			if($avatar->save()){
+				alert('上传成功！');
+				redirect('index.php');
+			}
+      	}else{
+      		die ('非法操作！');
+      	}
 		
-		if($avatar->save()){
-			alert('上传成功！');
-			redirect('/home/avatar');
-		};
 	}
+	if($_POST['type']== 'del'){
+		$id = intval($_POST['id']);
+		$avatar = new Table('member_avatar');
+		$avatar->find($id);
+		if($avatar->member_id == $user->id){
+		$avatar->delete($id);
+		echo true;
+		}else{
+			die ('非法操作！');
+		}
+	} 
 ?>

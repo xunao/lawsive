@@ -47,21 +47,24 @@
       		</div>
       		<?php 
       				$db=get_db();
-      				$avatar = $db->query("select member_avatar from lawsive.member_avatar where member_id='{$user->id}' and member_avatar != '{$user->avatar}' order by created desc limit 4");
+      				if($user->avatar){$t = 9;}else{$t = 10;}
+      				$avatar = $db->query("select id,member_avatar from lawsive.member_avatar where member_id='{$user->id}' and member_avatar != '{$user->avatar}' order by created desc limit $t");
       				$num = count($avatar);
       				$db->query("select count(*) as count from lawsive.member_avatar where member_id='{$user->id}'");
       				$total = $db->field_by_name('count');
       		?>
       		<div id="photo_show">
       			<div id="ph_t">我的图片库(<font><?php echo $total;?></font>张)
-      				<div id="ph_t_s"><font><a href="#">[选择图片]</a></font></div>
+      				<input type="hidden" id="total" value="<?php echo $total;?>">
+      				<div id="ph_t_s"><font><a id="del" href="#">[删除图片]</a></font></div>
+      				<div id="ph_t_s"><font><a id="select" href="#">[选择图片]</a></font></div>
       			</div>
       			<?php if($user->avatar){?>
-      				<div class="photo select" id="0"><img src="<?php echo $user->avatar;?>" /></div>
+      				<div class="photo select" id="0"><img name="select" src="<?php echo $user->avatar;?>" /></div>
       			<?php }
       				for($i=0; $i<$num; $i++){
       			?>
-      			<div class="photo"><img src="<?php echo $avatar[$i]->member_avatar?>" /></div>
+      			<div class="photo"><img name="<?php echo  $avatar[$i]->id;?>" src="<?php echo $avatar[$i]->member_avatar;?>" /></div>
       			<?php }?>
       		</div>
       	</form>
