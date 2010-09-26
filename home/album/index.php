@@ -53,7 +53,7 @@
       		<div class="album_box">
 	      		<div class="al_box">
 	      			<div class="title">1230000000000000000000000000000000000</div>
-	      			<a href=""><img src="../../../images/person/head.jpg" border=0 /></a>
+	      			<div class="image"><a href=""><img src="../../../images/person/head.jpg" border=0 /></a></div>
 	      			<div class="created">创建于：2010-10-10</div>
 	      			<div class="description">123</div>
 	      			<div class="total"><font><?php echo 1;?></font>张</div>

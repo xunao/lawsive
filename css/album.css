@@ -13,8 +13,9 @@
 		
 	.album_box{width:140px; height:209px; margin-top:10px; margin-left:30px; padding-right:20px; padding-bottom:10px; background:url("/images/album/albumbox.jpg") no-repeat;}
 		.al_box{width:120px; line-height:16px; margin-top:15px; margin-left:10px;}
-		.al_box img{width:100px; height:100px; font-size:14px; margin-left:10px;}
 			.title{width:120px; height:14px; font-size:14px; color:#336699; font-weight:bold;  padding-bottom:5px; overflow:hidden;}
+			.image{width:100px; height:100px;}
+			.image img{width:100px; height:100px; margin-left:10px;}
 			.created{width:120px; height:16px; font-size:12px; color:#6d6d6d; margin-top:5px; text-align:center }
 			.description{width:120px; height:32px; font-size:14px; text-align:justify; color:#6d6d6d; line-height:16px;}
 			.total{font-size:12px; line-height:}
@@ -23,3 +24,10 @@
 			.edit a{font-size:12px; color:#0000ff;}
 			.del{float:right;}
 			.del img{width:14px; height:14px; margin-top:2px; cursor:pointer;}
+			
+		.al{width:350px; margin-left:25px; line-height:24px; font-size:16px; margin-top:25px;}
+		.al_bx{width:350px;}
+		#text{width:305px; margin-left:45px; margin-top:10px; font-size:14px;}
+		#text textarea{width:90%;}
+		#submit{width:75px; height:23px; color:#ffffff; line-height:24px; boder:1px solid #FCC7A4; margin:15px; float:right; background:url("/images/person/pe_sub.jpg") no-repeat;}
+		#return{width:60px; height:23px; line-height:24px; margin:15px; float:right;}

@@ -38,36 +38,21 @@
       				<a href="index.php">返回相册首页</a>
       			</div>
       		</div>
-      		<div id="ct_rt"><a href="/home/application/diary">返回我的日记</a></div>
-      		<div id="ct_add">
-      			<input id="category_name" name="post[category]" type="text" value="">
-		      	<input id="ct_sub" class="ed_sub" name="" type="button" value="增加分类">
-		      	<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
-      		</div>
-      		<div class="ct_manager">
-      			<div class="ct_name">名称</div>
-      			<div class="ct_num">日记数目</div>
-      			<div class="ct_work">操作</div>
-      		</div>
-	      		<?php 
-	      			$category=$db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$user->id'");
-	      			for($i=0; $i<count($category); $i++){
-	      			$count = count($db->query("select id from lawsive.article where category = '{$category[$i]->id}'"));
-	      		?>
-	      		<div class="ct_manager">
-	      			<div class="ct_name">
-	      				<input class="input" type="text" name="post[category]" value="<?php echo $category[$i]->name;?>">
-	      			</div>
-	      			<div class="ct_num"><?php echo $count;?></div>
-	      			<div class="ct_work">{<a class="del2" name="category" href="#">删除</a>}</div>
-	      			<input class="category_id" type="hidden" value="<?php echo $category[$i]->id;?>" />
+      		<form id="resum_form" method="post" enctype="multipart/form-data" action="ct_edit.post.php">
+	      		<div class="al_bx">
+	      			<div class="al">专辑名称：<input type="text" name="post[name]" value="<?php echo 'name' ;?>" /></div>
+		      		<div id="text">(最多不超过15字)</div>
+		      		<div class="al">封面照片：<input type="file" name="post[front_cover]" size="12"value="" /></div>
+		      		<div id="text">(支持JPG、JPEG、GIF和PNG文件，最大2M。)</div>
 	      		</div>
-	      		<?php }?>
-	      		<div id="ct_add">
-	      			<form action="ct_edit.post.php" method="post" id="form"></form>
-	      			<button type="submit"  class="ed_sub" id="ct_edit">保存修改</button>
-	      			<input type="hidden" id="dia_edit_auth" value="<?php echo $auth;?>" />
-	      		</div>
+	      		<div class="al_bx">
+		      		<div class="al">专辑描述：</div>
+		      		<div id="text"><textarea name="post[description]"></textarea></div>
+		      		<input type="button" id="return" value="取消"/>
+		      		<button type="submit" id="submit">保存</button>
+		      	</div>
+	      		
+	      	</form>
       	</div>
       	<?php include_once(INC_DIR.'/home/bottom.php'); ?>
 </body>
