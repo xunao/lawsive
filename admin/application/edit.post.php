@@ -33,6 +33,7 @@
 			if($id){
 				$application->find($id);
 			}
+			$application->update_file_attributes2('post','/application');
 			$application->update_attributes($_POST['post'],false);
 			$application->role=$_POST['role_role'];
 			$application->save();
@@ -50,7 +51,7 @@
 	  			else
 	  			{
 	  				$sql='update application_role set is_default='.$sub_role_is_default[$i].',is_free='.$sub_role_is_free[$i].' where role='.$sub_role_str[$i].' and application_id='.$id;
-	  			}		
+	  			}
 	  			if(!$db->execute($sql))
 	  			{
 	  				alert('插入应用权限失败！');

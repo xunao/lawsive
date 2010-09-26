@@ -18,12 +18,12 @@
 	}
     $db = get_db();
     $id = intval($_POST['id']);
-    $date=$db->query('select now() as time');
+    $member=$db->query('select member_id,application_id from application_apply_log where id='.$id);
+    $date=$db->query('select now() as time');;
     if($_POST['post_type']=="del"){
-    	$mem_id=$_POST['member_id'];
 		$application = new Table('application_apply_log');
 		$application -> delete($id);
-		$sql='delete from member_appliaction where member_id='.$mem_id.' and application_id='.$_POST['app_id'];
+		$sql='delete from member_appliaction where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
 		if(!$db->execute($sql))
 		{
 			echo "";
@@ -32,42 +32,46 @@
 		echo $id;
 	}		
 	if($_POST['post_type']=="apply"){
-			$application = new Table('application_apply_log');
-			if(!$id){
-				echo "error";
+		if(!$id){
+			echo "error";
+		}
+		else
+		{
+			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date="'.$date[0]->time.'",status=1 where id='.$id;;
+			if($_POST['is_default']==0)
+			{
+				$sql='update member_appliaction set status=2 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
+			}
+			else if($_POST['is_default']==1)
+			{
+				$sql='update member_appliaction set status=1 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
+			}
+			if($db->execute($sql)&&$db->execute($sql1))
+			{
+				echo "OK";
 			}
 			else
 			{
-				$application->find($id);
-				$application->admin_id=$user->id;
-				$application->admin_date=$date[0]->time;
-				$application->status=1;
-				$application->save();
-				if($_POST['is_default']==0)
-				{
-					$db->execute('update member_appliaction set status=2 where member_id='.$user->id.' and appliaction_id='.$id);
-				}
-				else if($_POST['is_default']==1)
-				{
-					$db->execute('update member_appliaction set status=1 where member_id='.$user->id.' and appliaction_id='.$id);
-				}
-				echo "OK";
+				echo "error";
 			}
+		}
 	}
 	if($_POST['post_type']=="unapply"){
-			$application = new Table('application_apply_log');
-			if(!$id){
-				echo "error";
+		if(!$id){
+			echo "error";
+		}
+		else
+		{
+			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date="'.$date[0]->time.'", status=0 where id='.$id;;
+			$sql='update member_appliaction set status=0 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;;
+			if($db->execute($sql)&&$db->execute($sql1))
+			{
+				echo "OK";
 			}
 			else
 			{
-				$application->find($id);
-				$application->admin_id=$user->id;
-				$application->admin_date=$date[0]->time;
-				$application->status=0;
-				$application->save();
-				$db->execute('update member_appliaction set status=0 where member_id='.$user->id.' and appliaction_id='.$id);
-				echo "OK";
+				echo "error";
 			}
+		}
 	}
 ?>

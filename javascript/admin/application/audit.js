@@ -20,7 +20,7 @@ $(function(){
 				alert('请选择要审批的申请！');
 				return false;
 			}
-			else
+			else if(data=="invlad request!")
 			{
 				alert('请正常进入网站！');
 				return false;
@@ -58,7 +58,7 @@ $(function(){
 			return false;
 		}
 
-		$.post("audit_role.post.php",{'post_type':'del','id':$(this).attr('name'),'edit_auth':$('#edit_auth').val(),'member_id':$(this).attr('param'),'app_id':$(this).attr('param1')},function(data){
+		$.post("audit_role.post.php",{'post_type':'del','id':$(this).attr('name'),'edit_auth':$('#edit_auth').val()},function(data){
 			if(data=="out time")
 			{
 				alert('对不起您登录已超时，请重新登录！');
