@@ -22,29 +22,14 @@
 	      	 	    <div>
 		      	 		<div id="pic"><img src="/images/person/head.jpg"></div>
 		      	 		<div id="name">南瓜小姐—— ——</div>
-		      	 		<div id="from">
-		      	 			<table border=0 cellspacing="5" cellpadding="0">
-		      	 				<tr>
-		      	 					<td width="65" align="right">性别：</td>
-		      	 					<td>女</td>
-		      	 				</tr>
-		      	 				<tr>
-		      	 					<td width="65" align="right">出生日期：</td>
-		      	 					<td>1992年06月16日</td>
-		      	 				</tr>
-		      	 				<tr>
-		      	 					<td width="65" align="right">家乡：</td>
-		      	 					<td>湖南</td>
-		      	 				</tr>
-		      	 				<tr>
-		      	 					<td width="65" align="right">现居住地：</td>
-		      	 					<td>上海</td>
-		      	 				</tr>
-		      	 			</table>
+	                    <div id="from">
+		      	 			<?php 
+		      	 				require $user->head_info_path();
+		      	 			?>
 		      	 		</div>
 	      	 		</div>
 	      	 		<div id="operate">
-	      	 			 <a href="">发短消息</a><a href="">加为好友</a>
+	      	 			 <a href="./message/send.php?r_id=<?php echo $user->id?>">发短消息</a><a href="">加为好友</a>
 	      	 			 <div class="operate_t">他的照片（0）</div>
 	      	 			 <div class="operate_t">他的日记（1）</div>
 	      	 			 <div class="operate_t">他的记录（0）</div>
