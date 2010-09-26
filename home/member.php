@@ -14,16 +14,21 @@
 		if(!$user)
 		{
 			alert('对不起，您的登录已过期！请重新登录！');
-			redirect('/home/login.php?last_url=/home/member.php?id='.$id);
+			redirect('/home/login.php?last_url=/home/friend/friend.php');
 			exit;
 		}
 		$id=$_GET['id'];
-		if (!$id) {
-			$id=$user->id;
+		if (!$id || !is_numeric($id)) {
+			die('非法访问');
 		}
         $record=member::find(array('conditions' => "id='$id'"));
+        if (!$record) {
+			die('非法访问');
+		}
+		$f_info = $record[0]->get_base_info();
         $db=get_db();
         $friend=$db->query("select * from lawsive.friend where u_id='{$id}'");
+        $dairy=$db->query("select id from lawsive.article where resource_type='diary' and admin_user_id='{$id}'");
         $str_auto=rand_str();
         $_SESSION['str_auto']=$str_auto;
   	?>
@@ -37,7 +42,7 @@
 	      	 	<div id="info">
 	      	 	    <div>
 		      	 		<div id="pic"><img src="/images/person/head.jpg"></div>
-		      	 		<div id="name"><?php echo $record[0]->name?></div>
+		      	 		<div id="name"><?php echo $f_info->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
@@ -46,9 +51,9 @@
 	      	 		</div>
 	      	 		<div id="operate">
 	      	 			 <div id="operate_a"><a href="./message/send.php?r_id=<?php echo $id?>">发短消息</a><font   id="friend_add">添加好友</font></div>
-	      	 			 <div class="operate_t"><a href="">他的照片（0）</a></div>
-	      	 			 <div class="operate_t"><a href="./application/diary/index.php?id=<?php echo $id?>">他的日记（1）</a></div>
-	      	 			 <div class="operate_t"><a href="">他的记录（0）</a></div>
+	      	 			 <div class="operate_t"><a style="width:100%; color:#999999; text-decoration:none;" href="">他的照片（0）</a></div>
+	      	 			 <div class="operate_t"><a style="width:100%; color:#999999; text-decoration:none;" href="./application/diary/index.php?id=<?php echo $id?>">他的日记（<?php echo count($dairy)?>）</a></div>
+	      	 			 <div class="operate_t"><a style="width:100%; color:#999999; text-decoration:none;" href="">他的记录（0）</a></div>
 	      	 		</div>
 	      	 		 <div class="title">
 	      	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">最新动态</div>
@@ -75,13 +80,13 @@
 	      	 	</div>
 	      	 </div>
 	      	 
-	      	 <div id="person_index_right" style="height:720px;">
+	      	 <div id="person_index_right" style="padding-bottom:30px;">
       		<div id="title">
       			<div id="t_l">他的好友<font size="1" color="#999999">（<?php echo count($friend)?>）</font></div>
       			
       		</div>
       		<div id="content">
-      			<?php for($i=0;$i<count($friend) && $id<24; $i++){ ?>
+      			<?php for($i=0;$i<count($friend) ; $i++){ ?>
 	      		<div class="pic">
 	      			<div class="top">
 	      				<a href="./member.php?id=<?php echo $friend[$i]->f_id?>"><img src="<?php if ($friend[$i]->f_avatar =='') {echo '/images/home/default_avatar.jpg';}else {echo $friend[$i]->f_avatar;}?>" border="0" ></a>

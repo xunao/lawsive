@@ -29,6 +29,7 @@
 #person_index_center #info #state #btn{width:51px; height:25px; margin-top:5px; margin-right:6px; float:right;}
 #person_index_center #info #state #btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; background:url(/images/person/submit_bg.jpg) no-repeat;}
 #person_index_center #info #operate{width:138px; margin-top:5px; line-height:20px;}
+#person_index_center #info #operate a{color:#336699; text-decoration:underline; width:50%; float:left;}
 #person_index_center #info #operate_a{width:100%; line-height:20px;}
 #person_index_center #info #operate_a a{color:#336699; text-decoration:underline; width:50%; float:left;}
 #person_index_center #info #operate_a font{color:#336699; text-decoration:underline; width:50%; cursor:pointer; float:left;}
