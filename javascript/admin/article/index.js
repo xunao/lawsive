@@ -64,7 +64,7 @@ $(function(){
 	$('.publish_news').click(function(e){
 		var id = $(this).parentsUntil('tr').parent().attr('id');
 		e.preventDefault();
-		$.post('/admin/column/ajax.post.php',{'op':'publish','id':id},function(data){
+		$.post('ajax.post.php',{'op':'publish','id':id},function(data){
 			if(data){
 				alert(data);
 			}
