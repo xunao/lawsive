@@ -33,7 +33,18 @@
 			if($id){
 				$application->find($id);
 			}
-			$application->update_file_attributes2('post','/application');
+			if(!$application->update_file_attributes2('post','/application'))
+			{
+				alert('上传失败，请检查图片类型和大小！');
+				if($id)
+				{
+					redirect('edit.php?id='.$_POST['id']);
+				}
+				else
+				{
+					redirect('edit.php');
+				}
+			}
 			$application->update_attributes($_POST['post'],false);
 			$application->role=$_POST['role_role'];
 			$application->save();
@@ -54,6 +65,7 @@
 	  			}
 	  			if(!$db->execute($sql))
 	  			{
+	  				alert($sql);
 	  				alert('插入应用权限失败！');
 	  				exit;
 	  			}
@@ -66,6 +78,6 @@
   				exit;
   			}
 			alert('提交成功！');
-			redirect('index.php');
+			//redirect('index.php');
 	}
 ?>

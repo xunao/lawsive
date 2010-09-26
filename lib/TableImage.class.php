@@ -1,6 +1,6 @@
 <?php
-include_once(dirname(__FILE__) ."/Table.class.php");
-include_once(dirname(__FILE__) ."/image_handler_class.php");
+include_once(LIB_DIR."/Table.class.php");
+include_once(LIB_DIR."/ImageHandler.class.php");
 
 class TableImage extends Table
 {

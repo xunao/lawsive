@@ -20,7 +20,19 @@
 			}
 			$image->publisher = $_SESSION['admin_user_id'];
 			
-			$image->update_file_attributes('image');
+			if(!$image->update_file_attributes('image'))
+			{
+				alert('上传图片失败，请检查图片类型或是否大小不符合规定！');
+				if($_POST['id']!='')
+				{
+					redirect('edit.php?id='.$_POST['id']);
+				}
+				else
+				{
+					redirect('edit.php');
+				}
+				exit;
+			}
 			if($_POST['image']["priority"]==null){$image->update_attribute("priority","100");}
 			$image->update_attributes($_POST['image']);
 			if($image->category_id!=''){
