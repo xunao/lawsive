@@ -74,7 +74,7 @@
 			$cache_name=rand_str(20);
 			@setcookie("cache_name",$cache_name,0,'/');
 			$db = get_db();
-			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record[0]->id}'");
+			$db->execute("update lawsive.member set cache_name='{$cache_name}',last_login_time=now() where id='{$record[0]->id}'");
 			if ($s_expire!=0){
 				$s_expire = time() + $s_expire;
 			}else{

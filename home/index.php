@@ -117,11 +117,11 @@
       			/*
       			 * get friends 
       			 */ 
-      			$sql = "select b.id,b.name,b.avatar from friend a left join member b on b.id=a.f_id  where u_id={$user->id}  limit 12";
+      			$sql = "select b.id,b.name,b.avatar,b.last_login_time from friend a left join member b on b.id=a.f_id  where u_id={$user->id}  limit 12";
       			$friends = $db->query($sql);
       			$rand_count = 12 - $db->record_count;
       			if($rand_count > 0 ){
-      				$sql = "select id,name,avatar from member where id!={$user->id} and id not in(select u_id from friend where u_id={$user->id}) order by rand() limit $rand_count";
+      				$sql = "select id,name,avatar,last_login_time from member where id!={$user->id} and id not in(select u_id from friend where u_id={$user->id}) order by rand() limit $rand_count";
       				$friends_rand = $db->query($sql);
       				if($friends_rand){
       					$friends = array_merge($friends,$friends_rand);
@@ -139,7 +139,7 @@
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">
-	      				前天23：13
+	      				<?php echo $friend->last_login_time;?>
 	      			</div>
 	      		</div>
 	      		<?php }?>

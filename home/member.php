@@ -14,7 +14,7 @@
 		if(!$user)
 		{
 			alert('对不起，您的登录已过期！请重新登录！');
-			redirect('/home/login.php?last_url=/home/friend/friend.php');
+			redirect('/home/login.php?last_url=/home/member.php?id='.$id);
 			exit;
 		}
 		$id=$_GET['id'];
