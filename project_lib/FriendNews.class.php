@@ -15,6 +15,7 @@ class FriendNews {
 	public $title;
 	
 	static public function load($db_items){
+		if (!is_array($db_items)) return array();
 		foreach ($db_items as $db_item) {
 			$tmp = new self();
 			$tmp->id = $db_item->id;
