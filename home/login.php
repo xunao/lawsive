@@ -61,4 +61,21 @@
 	    </div>
 	</div>
 </body>
+<script type="text/javascript">
+$(function(){
+	$('#name').live('keypress',function(e){
+		if(e.keyCode == 13){
+			if(check_login_name($(this))){
+				$('#password').focus();
+			}
+		}
+	});
+	
+	$('#password').live('keypress',function(e){
+		if(e.keyCode == 13){
+			$('#login_btn2').click();
+		}
+	});
+});
+</script>
 </html>

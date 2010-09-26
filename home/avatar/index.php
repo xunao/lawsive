@@ -56,23 +56,13 @@
       			<div id="ph_t">我的图片库(<font><?php echo $total;?></font>张)
       				<div id="ph_t_s"><font><a href="#">[选择图片]</a></font></div>
       			</div>
-      			<?php if(!$avatar[0]){?>
-      				<div class="photo select"><img src="../../../images/person/head.jpg" /></div>
-      			<?php }else{?>
+      			<?php if($avatar[0]){?>
       				<div class="photo select" id="0"><img src="<?php echo $avatar[0]->member_avatar;?>" /></div>
-      			<?
-      				}
+      			<?php }
       				for($i=1; $i<$num; $i++){
       			?>
       			<div class="photo"><img src="<?php echo $avatar[$i]->member_avatar?>" /></div>
       			<?php }?>
-      			<?php 
-      				if($num <5){
-      					$x = 5-$num;
-      					for($t = 0; $t<$x;$t++){
-      			?>
-      			<div class="photo"><img src="../../../images/person/head.jpg" /></div>
-      			<?php }}?>
       		</div>
       	</form>
       	</div>

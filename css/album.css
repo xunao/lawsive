@@ -1,0 +1,25 @@
+#album{width:806px; margin:-41px 0 0 24px; border-right:1px solid #dfdede;}
+	#al_t{width:785px; height:35px; font-size:16px; font-weight:bold; line-height:30px; margin-top:25px; border-bottom:1px solid #dfdede; }
+	#al_t img{margin-left:15px; margin:5px 5px 0 15px;float:left; display:inline;}
+	#e_ret{float:right; margin-right:20px;}
+	#e_ret a{font-weight:normal; font-size:14px; color:#999999; text-decoration:underline;}
+	
+	#d_m{width:772px; margin-left:13px; margin-top:27px;}
+		#dm_t_l{width:4px; height:29px; background:url('/images/diary/t_t_left.gif') no-repeat;}
+		#dm_t_m{width:90px; height:28px; font-size:16px; line-height:28px; text-align:center; overflow:hidden;border-top:1px solid #8f8f8f;}
+		#dm_t_r{width:4px; height:29px; background:url('/images/diary/t_t_right.gif') no-repeat;}
+		#dm_t_o{width:674px; height:29px;text-align:right; border-bottom:1px solid #e7e7e7; overflow:hidden;}
+		#dm_t_o a{font-size:16px; line-height:24px; margin-left:15px; corlor:#598caa; text-decoration:underline;}
+		
+	.album_box{width:140px; height:209px; margin-top:10px; margin-left:30px; padding-right:20px; padding-bottom:10px; background:url("/images/album/albumbox.jpg") no-repeat;}
+		.al_box{width:120px; line-height:16px; margin-top:15px; margin-left:10px;}
+		.al_box img{width:100px; height:100px; font-size:14px; margin-left:10px;}
+			.title{width:120px; height:14px; font-size:14px; color:#336699; font-weight:bold;  padding-bottom:5px; overflow:hidden;}
+			.created{width:120px; height:16px; font-size:12px; color:#6d6d6d; margin-top:5px; text-align:center }
+			.description{width:120px; height:32px; font-size:14px; text-align:justify; color:#6d6d6d; line-height:16px;}
+			.total{font-size:12px; line-height:}
+			.total font{font-size:12px; padding:0 2px; color:#ff0000;}
+			.edit{float:right; margin-top:1px;}
+			.edit a{font-size:12px; color:#0000ff;}
+			.del{float:right;}
+			.del img{width:14px; height:14px; margin-top:2px; cursor:pointer;}

@@ -155,7 +155,6 @@ $(function(){
 			}
 		});
 		
-		
 		$('.nav').hover(function(){
 			var selected =$('.nav').index($(this));
 			show_submenu(selected);

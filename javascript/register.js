@@ -35,7 +35,7 @@ $(function(){
 				if(data != true){alert(data);}
 				else{
 					$.post("login.post.php",{"login_name": $("#name").val(),"password": $("#password").val()},function(data){
-						if(data == true){window.location.href = "/";}
+						if(data == ''){window.location.href = "/";}else{alert(data);}
 					});
 				}
 			});
