@@ -19,16 +19,16 @@ $(function(){
 	});
 	$('#del').click(function(e){
 		e.preventDefault();
+		var id = $('.photoselect').find('img').attr('name');
+		if(id == undefined || id == 'select'){
+			alert('该头像正在使用中！');
+			return false;
+		}
 		if(!window.confirm("确定要删除吗"))
 		{
 			return false;
 		}
 		else{
-			var id = $('.photoselect').find('img').attr('name');
-			if(id == undefined || id == 'select'){
-				alert('该头像正在使用中！');
-				return false;
-			}
 			$.post('avatar.post.php',{'type':'del','upfile_auth':$('#upfile_auth').val(),'id':id},function(data){
 				if(data == true){
 					alert('删除成功！');

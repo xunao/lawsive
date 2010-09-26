@@ -29,6 +29,7 @@
 		$db->query("select count(*) as count from lawsive.member_avatar where member_id='{$user->id}'");
       	$total = $db->field_by_name('count');
       	if($total <10){
+      		$avatar = new Table('member_avatar');
 	      	$avatar->update_file_attributes('post');
 			$avatar->update_attributes($_FILES['post'],false);
 			$avatar->member_id = $user->id;
