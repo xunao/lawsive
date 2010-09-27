@@ -30,7 +30,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<font color="#666666" size="2"><?php echo $record[0]->content?></font></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<font ><?php echo $record[0]->content?></font></div>
 	      	 		<div id="state">
 	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
