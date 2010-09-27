@@ -23,7 +23,6 @@
 		
 		$id=intval($_GET['id']);
 		$db=get_db();
-		$file_category = intval($_GET['file_category']);
 		if(!$id){
 			$id=$user->id;
 		}
@@ -34,7 +33,18 @@
       	<?php include_once(INC_DIR.'/home/left.php'); ?>
 		<div id="album">
 			<div id="al_t">
-				我的相册
+			<?php if($id == $user->id){
+				echo '我的相册';
+			}else{
+				$member = new Table('member');
+				$member->find($id);
+				if($member->name){
+					echo $member->name .'的相册';
+				}else{
+					echo $member->login_name .'的相册';
+				}
+			}?>
+				
 				<img src="../../images/album/zp.gif" />
 				<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
 			</div>
@@ -45,20 +55,25 @@
       			</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
+			<?php if($id == $user->id){ ?>
       				<a href="ct_edit.php">新的专辑</a>
-      				<a href="">新的照片</a>
+      				<a href="pho_edit.php">新的照片</a>
+      		<?php }?>
       			</div>
       		</div>
-      	<?php for($i=0;$i<1;$i++){?>
+      	<?php 
+      		$album = $db->query("select * from lawsive.album where member_id = '{$id}'");
+      		$num = count($album);
+      		for($i=0;$i<$num;$i++){?>
       		<div class="album_box">
 	      		<div class="al_box">
-	      			<div class="title">1230000000000000000000000000000000000</div>
-	      			<div class="image"><a href=""><img src="../../../images/person/head.jpg" border=0 /></a></div>
-	      			<div class="created">创建于：2010-10-10</div>
-	      			<div class="description">123</div>
+	      			<div class="title"><?php echo htmlspecialchars($album[$i]->name);?></div>
+	      			<div class="image"><a href=""><img src="<?php echo $album[$i]->front_cover;?>" border=0 /></a></div>
+	      			<div class="created">创建于：<?php echo mb_substr($album[$i]->created_at, 0, 10);?></div>
+	      			<div class="description"><?php echo htmlspecialchars($album[$i]->description);?></div>
 	      			<div class="total"><font><?php echo 1;?></font>张</div>
 	      			<div class="del"><img src="../../../images/album/delete.jpg"></div>
-	      			<div class="edit"><a href="">编辑相册</a></div>
+	      			<div class="edit"><a href="ct_edit.php?album_id=<?php echo $album[$i]->id;?>">编辑专辑</a></div>
 	      		</div>
       		</div>
 		<?php }?>

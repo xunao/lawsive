@@ -69,7 +69,6 @@
       		</div>
       	</form>
       	</div>
-      	
       	<?php include(INC_DIR.'/home/bottom.php'); ?>
       </div>
 </body>
