@@ -43,7 +43,7 @@
 	      	 	<div id="info">
 	      	 	    <div>
 		      	 		<div id="pic"><img src="<?php if ($record[0]->avatar =='') {echo '/images/person/head.jpg';}else {echo $record[0]->avatar;}?>" border="0"></div>
-		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span>&nbsp;<a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content?></a></div>
+		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span>&nbsp;<a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content;?> &nbsp; <?php echo date("Y-m-d",strtotime($mood[0]->created_at));?></a></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
