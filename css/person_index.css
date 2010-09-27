@@ -12,8 +12,8 @@
 #person_index_right .pic{width:45px; height:70px; margin-top:10px; margin-left:18px; overflow:hidden;}
 #person_index_right .pic .top{width:45px; height:46px;  overflow:hidden;}
 #person_index_right .pic .top img{width:39px; height:39px; margin:3px; border:none;}
-#person_index_right .pic .name{width:45px; height:14px; font-size:10px; text-align:center; line-height:14px; overflow:hidden;}
-#person_index_right .pic .name a{color:#3783B6; text-decoration:underline;}
+#person_index_right .pic .name_c{width:45px; height:14px; font-size:10px; text-align:center; line-height:14px; overflow:hidden;}
+#person_index_right .pic .name_c a{color:#3783B6; text-decoration:underline;}
 #person_index_right .pic .lastonline{width:45px; height:10px; font-size:8px; color:#666666; text-align:center; line-height:10px; overflow:hidden;}
 
 
@@ -49,11 +49,11 @@
 #person_index_center #info .content{width:561px; margin-top:10px; color:#757575;}
 #person_index_center #info .content table{margin-left:30px;}
 #person_index_center #info .context{width:552px; margin-top:20px; padding-bottom:10px; border-bottom:1px solid #eeeeee; line-height:25px;}
-#person_index_center #info .context .c_title{width:506px; height:25px; font-size:14px; color:#000000; margin-left:23px; overflow:hidden;}
+#person_index_center #info .context .c_title{width:490px; height:25px; font-size:14px; color:#000000; margin-left:23px; overflow:hidden;}
 #person_index_center #info .context .c_title a{color:#3366CC;}
-#person_index_center #info .context .day{height:25px; font-size:12px; float:right;}
+#person_index_center #info .context .day{height:25px; font-size:12px; float:left;}
 #person_index_center #info .context .day img{margin-right:5px; cursor:pointer;}
-#person_index_center #info .context .day a{color:#000000; font-size:12px; line-height:25px;}
+#person_index_center #info .context .day a{color:#444444; font-size:12px; line-height:25px;}
 #person_index_center #info .context .cc{width:506px; margin-left:23px; font-size:14px;}
 #person_index_center #info .context .comment{widht:506px; margin-left:23px;}
 #person_index_center #info .context .comment a{font-size:12px; color:#000000; text-decoration:underline;}

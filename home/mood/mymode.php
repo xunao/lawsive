@@ -17,7 +17,7 @@
 		}
 		$info = $user->get_base_info();
 		$db = get_db(); 
-		$record=$db->query("select * from lawsive.mood where u_id='{$user->id}' order by created_at DESC");
+		$record=$db->query("select * from lawsive.mood where u_id='{$user->id}' order by created_at DESC limit 20");
 		$send_msg_auth = rand_str();
 	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
@@ -30,7 +30,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<font style="color:#444444"><?php echo $record[0]->content?></font> <font> &nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<font style="color:#444444"><?php echo $record[0]->content?></font> <font style="font-size:10px;"> &nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
 	      	 		<div id="state">
 	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
@@ -83,7 +83,7 @@
 	      			<div class="top">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><img src="<?php echo $avatar?>"></a>
 	      			</div>
-	      			<div class="name">
+	      			<div class="name_c">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">

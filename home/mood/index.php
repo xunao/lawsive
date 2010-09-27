@@ -20,7 +20,7 @@
 			die('invalid request');
 		}
 		$db=get_db();
-		$record=$db->query("select * from lawsive.mood where u_id='{$u_id}' order by created_at DESC");
+		$record=$db->query("select * from lawsive.mood where u_id='{$u_id}' order by created_at DESC limit 20");
 		$f_member=member::find(array('conditions' => "id='$u_id'"));
         if (!$f_member) {
 			die('非法访问');
@@ -37,7 +37,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $f_member[0]->avatar ? $f_member[0]->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span> &nbsp; <font style="color:#444444"><?php echo $record[0]->content?> </font><font>&nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
+	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span> &nbsp; <font style="color:#444444"><?php echo $record[0]->content?> </font><font style="font-size:10px;">&nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
 	      	 		<div id="from">
 	      	 			<?php 
 	      	 				require $f_member[0]->head_info_path();
@@ -52,8 +52,8 @@
 	      	 		<?php for ($i = 0; $i < count($record); $i++) { ?>
 	      	 		 <div class="context">
 	      	 		 	<div class="c_title">
-	      	 		 		<div style="width:460px;"><a href="../member.php?id=<?php echo $record[$i]->u_id;?>"><?php echo $record[$i]->u_name?>:</a> &nbsp; <?php echo $record[$i]->content;?><div class="day"><a href="show.php?id=<?php echo  $record[$i]->id?>">评论</a></div> </div>
-	      	 		 	</div>
+	      	 		 		<div style="width:460px;"><a href="../member.php?id=<?php echo $record[$i]->u_id;?>"><?php echo $record[$i]->u_name?>:</a> &nbsp; <?php echo $record[$i]->content;?></div>
+	      	 		 	</div><div class="day"><a href="show.php?id=<?php echo  $record[$i]->id?>">评论</a></div>
 	      	 		 	<div class="comment"><?php echo $record[$i]->created_at?></div>
 	      	 		 </div>
 	      	 		 <?php }?>
@@ -91,7 +91,7 @@
 	      			<div class="top">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><img src="<?php echo $avatar?>"></a>
 	      			</div>
-	      			<div class="name">
+	      			<div class="name_c">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">

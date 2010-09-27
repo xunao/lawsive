@@ -43,7 +43,7 @@
 	      	 	<div id="info">
 	      	 	    <div>
 		      	 		<div id="pic"><img src="<?php if ($record[0]->avatar =='') {echo '/images/person/head.jpg';}else {echo $record[0]->avatar;}?>" border="0"></div>
-		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span> &nbsp; <a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content;?></a> &nbsp; <font ><?php echo date("Y-m-d",strtotime($mood[0]->created_at));?></font></div>
+		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span> &nbsp; <a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content;?></a> &nbsp; <font style="font-size:10px;"><?php echo date("Y-m-d",strtotime($mood[0]->created_at));?></font></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
@@ -60,7 +60,7 @@
 	      	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">最新动态</div>
 	      	 		 </div>
 	      	 		 <?php 
-	      	 		    $friend_news=$db->query("select * from lawsive.friend_news where member_id='{$record[0]->id}' order by created_at DESC");
+	      	 		    $friend_news=$db->query("select * from lawsive.friend_news where member_id='{$record[0]->id}' order by created_at DESC limit 20");
 	      	 		 	//$friend_news = $record[0]->get_friend_news();
 	      	 		 	foreach ($friend_news as $friendnews){
 	      	 		 ?>
@@ -92,7 +92,7 @@
 	      			<div class="top">
 	      				<a href="./member.php?id=<?php echo $friend[$i]->f_id?>"><img src="<?php if ($friend[$i]->f_avatar =='') {echo '/images/home/default_avatar.jpg';}else {echo $friend[$i]->f_avatar;}?>" border="0" ></a>
 	      			</div>
-	      			<div class="name">
+	      			<div class="name_c">
 	      				<img border=0 src="/images/person/online.jpg" border="0"><a href="./member.php?id=<?php echo $friend[$i]->f_id?>"><?php echo $friend[$i]->f_name?></a>
 	      			</div>
 	      			<div class="lastonline">
