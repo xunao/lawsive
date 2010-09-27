@@ -20,7 +20,7 @@ if($record){
 			$news = new FriendNews();
 			$id=$db->query("select id from lawsive.mood where u_id='$member->id' and created_at='{$created_at}' limit 1");
 			$news->generat($member->id, 'mood', $id[0]->id);
-			if($news->save()){echo '加动态成功';}else {echo '加动态失败';};
+			if($news->mood_save()){echo '加动态成功';}else {echo '加动态失败';};
 		}else{
 			echo '心情发布失败!';
 		}

@@ -101,5 +101,12 @@ class FriendNews {
 		return $db->execute($sql);
 
 	}
+    function mood_save(){
+		$db = get_db();
+		$sql = "insert into friend_news (member_id,description,content,created_at,resource_type,resource_id) values(";
+		$sql .= $this->member_id .",'".addslashes($this->title)."','".addslashes($this->content)."','{$this->created_at}','{$this->resource_type}',{$this->resource_id})";
+		echo $sql;
+		return $db->execute($sql);
+	}
 	
 }
