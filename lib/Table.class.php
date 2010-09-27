@@ -334,17 +334,14 @@ class Table{
 			if(!isset($$save_dir)) $$save_dir = $default_save_dir;
 			
 			if($_FILES[$name]['error'][$key] != UPLOAD_ERR_OK){
-				alert($msg_fail);
 				$result =  false;
 			}
 			if($_FILES[$name]['size'][$key] > $$limit & $this->max_file_size > 0){
-				alert($msg_max_size);
 				$result =  false;
 			}		
 			$path_info = pathinfo($val);
 			$extension = strtolower($path_info['extension']);
-			if(!in_array($extension,$$filter)){
-				alert($msg_error_type);
+			if(!in_array($extension,$$filter)){;
 				$result =  false;
 			}
 			$save_name = rand_str() .'.'.$extension;
@@ -352,7 +349,7 @@ class Table{
 			if(move_uploaded_file($_FILES[$name]['tmp_name'][$key],$save)){
 				$this->$key = $$save_dir .'/' . $save_name;
 			}else{
-				debug_info('fail to upload file:' .$val,'js');
+				//debug_info('fail to upload file:' .$val,'js');
 			}
 		}
 		return $result;
@@ -383,17 +380,14 @@ class Table{
 			if(!isset($$save_dir)) $$save_dir = $default_save_dir;
 			
 			if($_FILES[$name]['error'][$key] != UPLOAD_ERR_OK){
-				alert($msg_fail);
 				$result =  false;
 			}
 			if($_FILES[$name]['size'][$key] > $$limit & $this->max_file_size > 0){
-				alert($msg_max_size);
 				$result =  false;
 			}		
 			$path_info = pathinfo($val);
 			$extension = strtolower($path_info['extension']);
 			if(!in_array($extension,$$filter)){
-				alert($msg_error_type);
 				$result =  false;
 			}
 			$save_name = rand_str() .'.'.$extension;
@@ -401,7 +395,7 @@ class Table{
 			if(move_uploaded_file($_FILES[$name]['tmp_name'][$key],$save)){
 				$this->$key = $$save_dir .'/' . $save_name;
 			}else{
-				debug_info('fail to upload file:' .$val,'js');
+				//debug_info('fail to upload file:' .$val,'js');
 			}
 		}
 		return $result;

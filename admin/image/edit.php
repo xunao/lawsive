@@ -14,7 +14,7 @@
 	$user = AdminUser::current_user();
 	css_include_tag('admin/base');
 	use_jquery_ui();
-	js_include_tag('admin/member/index');
+	js_include_tag('admin/member/index','category');
 	use_ckeditor();
 	
 	$id = $_GET['id'];

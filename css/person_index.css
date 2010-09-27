@@ -21,13 +21,17 @@
 #person_index_center #info{width:561px; margin-top:10px; }
 #person_index_center #info #pic{width:138px; height:140px; background:url(/images/person/center_pic_bg.jpg) no-repeat;}
 #person_index_center #info #pic img{width:120px; height:120px; margin:7px 0 0 9px; overflow:hidden;}
-#person_index_center #info #name{width:410px; height:18px; margin-top:7px; font-size:14px; color:#000000; font-weight:bold; line-height:18px; float:right;}
+#person_index_center #info #name{width:410px; margin-top:7px; font-size:14px; color:#000000; font-weight:bold; line-height:18px; float:right;}
+#person_index_center #info #name a{font-size:12px; color:#666666; line-height:18px; font-weight:200;}
+#person_index_center #info #name font{font-size:12px; color:#666666; line-height:18px; font-weight:200;}
 #person_index_center #info #state{width:408px; height:73px; margin-top:10px; border:1px solid #cbcbcb; background:#f7f7f7; float:right;}
 #person_index_center #info #state input{width:394px; height:29px; margin-top:5px; margin-left:6px; border:1px solid #bcbcbc;}
 #person_index_center #info #state #content{width:300px; height:25px; margin-top:5px; margin-left:10px; line-height:25px;}
 #person_index_center #info #state #content a{color:#336699;}
 #person_index_center #info #state #btn{width:51px; height:25px; margin-top:5px; margin-right:6px; float:right;}
-#person_index_center #info #state #btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; background:url(/images/person/submit_bg.jpg) no-repeat;}
+#person_index_center #info #state #btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; cursor:pointer; background:url(/images/person/submit_bg.jpg) no-repeat;}
+#person_index_center #info #state #mood_btn{width:51px; height:25px; margin-top:5px; margin-right:6px; float:right;}
+#person_index_center #info #state #mood_btn button{width:51px; height:25px;  border:none; color:#ffffff; line-height:25px; text-align:center; cursor:pointer; background:url(/images/person/submit_bg.jpg) no-repeat;}
 #person_index_center #info #operate{width:138px; margin-top:5px; line-height:20px;}
 #person_index_center #info #operate a{color:#336699; text-decoration:underline; width:50%; float:left;}
 #person_index_center #info #operate_a{width:100%; line-height:20px;}
@@ -52,3 +56,4 @@
 #person_index_center #info .context .cc{width:506px; margin-left:23px; font-size:14px;}
 #person_index_center #info .context .comment{widht:506px; margin-left:23px;}
 #person_index_center #info .context .comment a{font-size:12px; color:#000000; text-decoration:underline;}
+#person_index_center #info .context .delete{height:25px; font-size:12px; cursor:pointer; float:right;}

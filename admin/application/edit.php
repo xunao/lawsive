@@ -74,7 +74,7 @@
 		<tr class=tr4>
 			<td class=td1 width=15%>应用图片</td>
 			<td>
-				
+				<input type="hidden" name="MAX_FILE_SIZE1" value="102400">
 				<input type="file" name="post[photo_src]">
 				<?php if($application[0]->photo_src){?>
 				<a href="<?php echo $application[0]->photo_src?>" target="_blank">查看</a>
@@ -90,7 +90,9 @@
 				<input type="checkbox" id="all_is_free" style="float:none;" />全部免费产品 
 			</td>
 		</tr>
-		<?php 
+		<?php
+			$is_default="";
+			$is_free="";
 			foreach ($roles as $role_id => $name){
 			$item = role_by_id($role_id);
 			$class_name = $item ? 'exists' : 'new';
@@ -99,7 +101,7 @@
 			<td class="td1" width="15%"><?php echo $name;?></td>
 			<td class="<?php echo $class_name;?>">
 				<input type="checkbox" class="enabled" name="check_enabled" value="<?php echo $role_id; ?>" <?php if($item) echo "checked='checked'";?> style="float:none;"/>可用 
-				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default) echo "checked='checked'";?> style="float:none;" />默认显示 
+				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default){ echo "checked='checked'"; $is_default=$is_default.'1,';}else{$is_default=$is_default.'0,';}?> style="float:none;" />默认显示 
 				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free) echo "checked='checked'";?> style="float:none;" />免费产品
 			</td>
 		</tr>
@@ -108,7 +110,7 @@
 			<td colspan="2">
 				<button id="sub">提 交</button>
 				<input type="hidden" name="id" value="<?php echo $id;?>">
-				<input type="hidden" id="check_role" name="role_role" value="">
+				<input type="hidden" id="check_role" name="role_role" value="<?php echo $application[0]->role; ?>">
 				<input type="hidden" id="check_is_default" name="role_is_default" value="">
 				<input type="hidden" id="check_is_free" name="role_is_free" value="">
 				<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
