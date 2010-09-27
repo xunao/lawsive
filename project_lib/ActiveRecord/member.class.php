@@ -74,7 +74,7 @@
 			$cache_name=rand_str(20);
 			@setcookie("cache_name",$cache_name,0,'/');
 			$db = get_db();
-			$db->execute("update lawsive.member set cache_name='{$cache_name}' where id='{$record[0]->id}'");
+			$db->execute("update lawsive.member set cache_name='{$cache_name}',last_login_time=now() where id='{$record[0]->id}'");
 			if ($s_expire!=0){
 				$s_expire = time() + $s_expire;
 			}else{
@@ -192,7 +192,7 @@
 	function get_apps(){
 		$db = get_db();
 		//get the system default applications
-		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and is_free=1 and (role =0 or role={$this->role})");
+		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and (role =0 or role={$this->role})");
 		!$apps && $apps = array();
 		//get the user applications
 		$user_apps = $db->query("select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1");

@@ -19,21 +19,48 @@
 		$member = new Table('member');
 		$member->find($user->id);
 		$member->avatar = $_POST['avatar'];
+		
 		if($member->save()){
 			echo true;
-			exit;
 		}	
 	}
 	if($_POST['type'] == 'upfile'){
-		$avatar = new Table('member_avatar');
-		$avatar->update_file_attributes('post');
-		$avatar->update_attributes($_FILES['post'],false);
-		$avatar->member_id = $user->id;
-		$avatar->created = now();
+		$db=get_db();
+		$db->query("select count(*) as count from lawsive.member_avatar where member_id='{$user->id}'");
+      	$total = $db->field_by_name('count');
+      	if($total <10){
+      		$avatar = new Table('member_avatar');
+	      	$avatar->update_file_attributes('post');
+			$avatar->update_attributes($_FILES['post'],false);
+			$avatar->member_id = $user->id;
+			$avatar->created = now();
+			
+			$img = $avatar->member_avatar;
+			$imgs = mb_substr($avatar->member_avatar, 8, 18);
+			
+			$imghdler = new ImageHandler();
+			$imghdler->load(ROOT_DIR.$img);
+			$middle= '/upload/middle_' .$imgs ;
+			$imghdler->resize_image(ROOT_DIR.$middle, 70);
+			
+			if($avatar->save()){
+				alert('上传成功！');
+				redirect('index.php');
+			}
+      	}else{
+      		die ('非法操作！');
+      	}
 		
-		if($avatar->save()){
-			alert('上传成功！');
-			redirect('/home/avatar');
-		};
 	}
+	if($_POST['type']== 'del'){
+		$id = intval($_POST['id']);
+		$avatar = new Table('member_avatar');
+		$avatar->find($id);
+		if($avatar->member_id == $user->id){
+		$avatar->delete($id);
+		echo true;
+		}else{
+			die ('非法操作！');
+		}
+	} 
 ?>

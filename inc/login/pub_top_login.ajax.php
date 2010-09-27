@@ -19,7 +19,7 @@
 	
 	<?php 	
 	}else{ ?>
-	<div class="t_l_r_c" >欢迎您，<?php if($user->name != ''){echo $user->name;}else{echo $user->login_name;} ;?></div>
-	<div class="logout">退出登录</div>
+	<div class="logout" id="tr">退出登录</div>
+	<div class="t_l_r_c" id="tr">欢迎您，<?php if($user->name != ''){echo $user->name;}else{echo $user->login_name;} ;?></div>
 	<?php 	
 	}

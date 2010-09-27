@@ -16,23 +16,14 @@
 		js_include_tag('category','jquery.colorbox','admin/article/edit','pubfun');
 		use_ckeditor();
 		$article=new Table('article');
-		//$news = new News();
 		$id = intval($_GET['id']);
 		if($id){
 			$article =$article->find($id);
-			//$news = $news->find($id);
-			$category_id = $article->category_id;
-			//$resource_type=$article->resource_type;
+			$category_id = $article->category;
 		}
 		if(empty($category_id)) $category_id = -1;
-		//if(empty($category_id)) $category_id = -1;
-//		if (!$article->news_type){
-//			$news->news_type = 1;
-//		}
 		$href="index.php";
-		//$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 		$sub_headline = $article->category  ? explode(',',$article->category) : array();
-		//initialize the categroy;
 		$category = new Category('column');
 		$category->echo_jsdata();
 	?>
@@ -69,14 +60,14 @@
 			
 			<tr class="tr4">
 				<td class="td1">分类</td>
-				<td><span id="span_category"></span><a href="#" id="copy_news" style="color:blue">复制到其他分类</a></td>
+				<td><span id="span_category" name=news[category] ></span></td>
 			</tr>
 			
-			<tr class="tr4" style="display:none;" id="tr_copy_news">
-				<td class="td1">复制到分类</td>
-				<td><span id="span_category_copy"></span><a href="#" id="delete_copy_news" style="color:blue">删除</a><input type="hidden" name="copy_news" id="hidden_copy_news" value="0"></input></td>
-			</tr>	
-				
+<!--			<tr class="tr4" style="display:none;" id="tr_copy_news">-->
+<!--				<td class="td1">复制到分类</td>-->
+<!--				<td><span id="span_category_copy"></span><a href="#" id="delete_copy_news" style="color:blue">删除</a><input type="hidden" name="copy_news" id="hidden_copy_news" value="0"></input></td>-->
+<!--			</tr>	-->
+
 			<tr class="tr4">
 				<td class="td1">优先级</td>
 				<td><input type="text" name=news[priority] id="priority"  class="number" value="<?php echo $article->priority;?>">(0~100)</td>

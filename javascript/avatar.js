@@ -4,21 +4,44 @@ $(function(){
 		$('.photoselect').attr('class','photo');
 		$(this).attr('class','photoselect');
 	});
-	$('#ph_t_s').click(function(e){
+	$('#select').click(function(e){
 		e.preventDefault();
 		var file = $('.photoselect').find('img').attr('src');
-		if(file == '../../../images/person/head.jpg'){
-			alert('您需要一张新的图片！');
-			return false;
+		if(file == undefined){
+			var	file = $('#0').find('img').attr('src');
 		}
 		$.post('avatar.post.php',{'type':'avatar','upfile_auth':$('#upfile_auth').val(),'avatar':file},function(data){
-			if(data == true){
+				if(data == true){
 				alert('修改成功！');
-				$('#pic_left').find('img').attr('src',file);
-			}
+				window.location.reload(true);
+			}else{alert(data);}
 		});
 	});
+	$('#del').click(function(e){
+		e.preventDefault();
+		var id = $('.photoselect').find('img').attr('name');
+		if(id == undefined || id == 'select'){
+			alert('该头像正在使用中！');
+			return false;
+		}
+		if(!window.confirm("确定要删除吗"))
+		{
+			return false;
+		}
+		else{
+			$.post('avatar.post.php',{'type':'del','upfile_auth':$('#upfile_auth').val(),'id':id},function(data){
+				if(data == true){
+					alert('删除成功！');
+					window.location.reload(true);
+				}
+			});
+		}
+	});
 	$('#submit').click(function(){
+		if($('#total').val() >= 10){
+			alert('您最多只能拥有10个头像');
+			return false;
+		}
 		if($("#upfile").val()!=''){
 			var upfile1 = $("#upfile").val();
 			var upload_file_extension=upfile1.substring(upfile1.length-4,upfile1.length);

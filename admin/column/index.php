@@ -7,6 +7,11 @@
 		session_start();
 		include_once('../../frame.php');
 		judge_admin();
+		$user = AdminUser::current_user();
+		if(!$user){
+			redirect('login.php');
+			die();
+		}
 	?>
 	<title><?php echo $_g_site_name;?>-专栏文章管理</title>
 	<?php
@@ -26,7 +31,7 @@
 			$cates = ($category->children_map($filter_category));
 			$cats = join(',',$cates);
 			if($cats){
-				$conditions[] = "category_id in ($cats)";
+				$conditions[] = "category in ($cats)";
 			}
 		}
 //		if($filter_category ){			
@@ -51,7 +56,7 @@
 		$record=$article->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');
-        $category_name =$db->query('select a.category_id, c.name  from category c,article a where a.category_id = c.id;');
+        $category_name =$db->query('select a.category, c.name  from category c,article a where a.category = c.id;');
 //		$category->find($record[0]->category_id);
 //		echo $cate->name;
 	?>

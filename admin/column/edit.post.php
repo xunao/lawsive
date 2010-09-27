@@ -69,17 +69,13 @@
 		$article->save();
 	}
 
-	if($_POST['copy_news']){
-		//$news->copy_from = $news->id;
-		//$article->id = 0;
-		//echo count($_POST['copy_news']);
-		//$article->category = $_POST['copy_news'];
-		$news->category_id = intval($_POST['copy_news']);
+	if($_POST['search_category']){
+		$article->category= intval($_POST['search_category']);
 		$article->save();
 	}
 	$href = "index.php";
 	//redirect($href);
-	redirect($href.'?category='.$_POST['news']['category_id']);
+	redirect($href.'?category='.$_POST['news']['category']);
 	#var_dump($news);
 	
 ?>

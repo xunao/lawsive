@@ -5,6 +5,7 @@
 <meta name="keywords" content="律氏" />
 	<meta name="description" content="律氏" />
 <?php	
+        session_start();
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_index');
@@ -15,6 +16,10 @@
 			redirect('/home/login.php?last_url=/home/');
 		}
 		$info = $user->get_base_info();
+		$db=get_db();
+		$record=$db->query("select * from lawsive.mood where u_id='$user->id' order by created_at DESC limit 1");
+		$send_msg_auth = rand_str();
+	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
 <body>
       <div id="ibody">
@@ -25,9 +30,9 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<a href="./mood/mymode.php" color="#666666"><?php echo $record[0]->content?></a></div>
 	      	 		<div id="state">
-	      	 			<input type="text">
+	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
 	      	 				<a href="">传照片</a>　　<a href="/home/application/diary/">写日志</a>　　<a href="">写记录</a>　　<a href="">发转帖</a>
 	      	 			</div>
@@ -117,11 +122,11 @@
       			/*
       			 * get friends 
       			 */ 
-      			$sql = "select b.id,b.name,b.avatar from friend a left join member b on b.id=a.f_id  where u_id={$user->id}  limit 12";
+      			$sql = "select b.id,b.name,b.avatar,b.last_login_time from friend a left join member b on b.id=a.f_id  where u_id={$user->id}  limit 12";
       			$friends = $db->query($sql);
       			$rand_count = 12 - $db->record_count;
       			if($rand_count > 0 ){
-      				$sql = "select id,name,avatar from member where id!={$user->id} and id not in(select u_id from friend where u_id={$user->id}) order by rand() limit $rand_count";
+      				$sql = "select id,name,avatar,last_login_time from member where id!={$user->id} and id not in(select u_id from friend where u_id={$user->id}) order by rand() limit $rand_count";
       				$friends_rand = $db->query($sql);
       				if($friends_rand){
       					$friends = array_merge($friends,$friends_rand);
@@ -139,7 +144,7 @@
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">
-	      				前天23：13
+	      				<?php echo $friend->last_login_time;?>
 	      			</div>
 	      		</div>
 	      		<?php }?>
@@ -148,6 +153,7 @@
       	 
       	 </div>
       	<?php include_once(dirname(__FILE__).'/../inc/home/bottom.php'); ?>
+      	<input type="hidden" id="send_msg_auth" value="<?php echo $send_msg_auth?>" />
       </div>
 </body>
 </html>
