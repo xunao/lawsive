@@ -8,20 +8,23 @@
         session_start();
 		include ('../../frame.php');
 		use_jquery_ui();
-		css_include_tag('person_public','person_index');
-		js_include_tag('login','home_mood');
+		css_include_tag('person_public','person_index','comment');
+		js_include_tag('login','home_mood','comment');
 		$user = member::current();
 		if(!$user ){
 			alert('您尚未登录或登录已过期，请登录！');
-			redirect('../home/login.php?last_url=/home/');
+			redirect('../home/login.php?last_url=/home/mood/show.php');
 		}
-		$u_id=$_GET['u_id'];
-		if (!is_numeric($u_id) || !$u_id) {
+		$id=$_GET['id'];
+		if (!is_numeric($id) || !$id) {
 			die('invalid request');
 		}
 		$db=get_db();
-		$record=$db->query("select * from lawsive.mood where u_id='{$u_id}' order by created_at DESC limit 20");
-		$f_member=member::find(array('conditions' => "id='$u_id'"));
+		$record=$db->query("select * from lawsive.mood where id='{$id}' limit 1");
+		if (!$record) {
+			die('无此心情，非法访问');
+		}
+		$f_member=member::find(array('conditions' => "id='{$record[0]->u_id}'"));
         if (!$f_member) {
 			die('非法访问');
 		}
@@ -37,7 +40,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $f_member[0]->avatar ? $f_member[0]->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span> &nbsp; <font style="color:#444444"><?php echo $record[0]->content?> </font><font style="font-size:10px;">&nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
+	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span> &nbsp; <font ><?php echo $record[0]->content?></font><font style="font-size:10px;"> &nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
 	      	 		<div id="from">
 	      	 			<?php 
 	      	 				require $f_member[0]->head_info_path();
@@ -46,17 +49,20 @@
 	      	 		<div class="title">
 	      	 			<div class="t_l"><?php echo $f_member[0]->name?>的心情</div>
 	      	 		</div>
-	      	 		<?php if (count($record)==0) { ?>
-	      	 			<div style="width:100%;margin-top:20px;">该用户暂无心情</div>
-	      	 		<?php } ?>
-	      	 		<?php for ($i = 0; $i < count($record); $i++) { ?>
 	      	 		 <div class="context">
 	      	 		 	<div class="c_title">
-	      	 		 		<div style="width:460px;"><a href="../member.php?id=<?php echo $record[$i]->u_id;?>"><?php echo $record[$i]->u_name?>:</a> &nbsp; <?php echo $record[$i]->content;?></div>
-	      	 		 	</div><div class="day"><a href="show.php?id=<?php echo  $record[$i]->id?>">评论</a></div>
-	      	 		 	<div class="comment"><?php echo $record[$i]->created_at?></div>
+	      	 		 		<div style="width:460px;"><a href="../member.php?id=<?php echo $record[0]->u_id;?>"><?php echo $record[0]->u_name?>:</a> &nbsp; <?php echo $record[0]->content;?></div>
+	      	 		 	</div>
+	      	 		 	<div class="comment"><?php echo $record[0]->created_at?></div>
 	      	 		 </div>
-	      	 		 <?php }?>
+	      	 		 <div id="comment">
+		          		<div class="c_title" ><div class="c_t_n" ><font>读者评论</font><div class="c_t_b" style="width:510px;"></div></div></div>
+						<div id="pub_comment_box">
+						</div>
+						<script type="text/javascript">
+							 	pub_comment('mood',<?php echo $record[0]->id;?>,'pub_comment_box');
+						</script>
+          	         </div>
 	      	 	</div>
 	      	 </div>
 	      	 

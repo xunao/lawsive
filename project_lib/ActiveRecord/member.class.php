@@ -296,4 +296,33 @@
 		}
 		return $return;
 	}
+	
+	function get_friend_news($type='all',$limit=20){
+		$db = get_db();
+		if($type == 'all'){
+			$sql = "select * from friend_news where member_id in (select f_id from friend where u_id={$this->id}) order by created_at desc limit $limit";
+		}else{
+			$sql = "select * from friend_news where resource_type='$type' and member_id in (select f_id from friend where u_id={$this->id}) order by created_at desc limit $limit";
+		}
+		$items = $db->query($sql);
+		$news = FriendNews::load($items);
+		!$news && $news = array();
+		$len = count($news);
+		if($len < $limit){
+			$limit = $limit - $len;
+			if($type == 'all'){
+				$sql = "select * from friend_news where member_id != {$this->id} and member_id not in (select f_id from friend where u_id={$this->id}) order by created_at desc limit $limit";
+			}
+			else{
+				$sql = "select * from friend_news where resource_type='$type' and member_id != {$this->id} and member_id not in (select f_id from friend where u_id={$this->id}) order by created_at desc limit $limit";
+			}
+			$items = $db->query($sql);
+			$news1 = FriendNews::load($items);
+			!$news1 && $news1 = array();
+			$news = array_merge($news,$news1);
+		}
+		return $news;
+		
+	}
+	
 }

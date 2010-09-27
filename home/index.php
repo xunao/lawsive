@@ -9,7 +9,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_index');
-		js_include_tag('login','home');
+		js_include_tag('login','home','home_mood');
 		$user = member::current();
 		if(!$user ){
 			alert('您尚未登录或登录已过期，请登录！');
@@ -30,7 +30,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<a href="./mood/mymode.php" ><?php echo $record[0]->content?></a></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<a href="./mood/mymode.php" ><?php echo $record[0]->content?></a><font style="font-size:10px;">  &nbsp; <?php echo date("Y-m-d",strtotime($record[0]->created_at));?></font></div>
 	      	 		<div id="state">
 	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
@@ -88,24 +88,21 @@
 	      	 			<div class="lable2"></div>
 	      	 			<div class="t_r" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;"></div>
 	      	 		 </div>
+	      	 		 <?php 
+	      	 		 	$friend_news = $user->get_friend_news();
+	      	 		 	foreach ($friend_news as $friendnews){
+	      	 		 ?>
 	      	 		 <div class="context">
 	      	 		 	<div class="c_title">
-	      	 		 		<a href="">偶尔试着妥协</a>　发表了１篇随便说说<div class="day">今天 09:07</div>
+	      	 		 		<?php echo $friendnews->title?>
+	      	 		 		<div class="day"><?php echo $friendnews->created_at?></div>
 	      	 		 	</div>
 	      	 		 	<div class="cc">
-	      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
+	      	 		 		<?php echo $friendnews->content;?>
 	      	 		 	</div>
-	      	 		 	<div class="comment"><a href="">发表评论</a></div>
+	      	 		 	<!-- <div class="comment"><a href="">发表评论</a></div>  -->
 	      	 		 </div>
-	      	 		  <div class="context">
-	      	 		 	<div class="c_title">
-	      	 		 		<a href="">偶尔试着妥协</a>　发表了１篇随便说说<div class="day"><img src="/images/person/del.jpg"><img src="/images/person/set.jpg">今天 09:07</div>
-	      	 		 	</div>
-	      	 		 	<div class="cc">
-	      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
-	      	 		 	</div>
-	      	 		 	<div class="comment"><a href="">发表评论</a></div>
-	      	 		 </div>
+	      	 		 <?php }?>
 	      	 	</div>
 	      	 </div>
 	      	 
@@ -140,7 +137,7 @@
 	      			<div class="top">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><img src="<?php echo $avatar?>"></a>
 	      			</div>
-	      			<div class="name">
+	      			<div class="name_c">
 	      				<a href="/home/member.php?id=<?php echo $friend->id?>"><?php echo $friend->name;?></a>
 	      			</div>
 	      			<div class="lastonline">

@@ -15,6 +15,7 @@ class FriendNews {
 	public $title;
 	
 	static public function load($db_items){
+		if (!is_array($db_items)) return array();
 		foreach ($db_items as $db_item) {
 			$tmp = new self();
 			$tmp->id = $db_item->id;
@@ -67,6 +68,14 @@ class FriendNews {
 						$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
 						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论到：";
 					break;
+					case 'mood':
+						$sql = "select a.id,a.u_id,a.content,a.created_at,b.name from mood a left join member b on a.u_id = b.id where a.id ={$comment_resource_id}";
+						$result = $db->query($sql);
+						$result = $result[0];
+						$this->title = "<a href='/home/member.php?id={$result->u_id}'>{$result->name}</a>　的心情　";
+						$this->title .="<a href='/home/mood/show.php?id={$result->id}'>". mb_substr($result->content, 0,10,'utf-8') ."</a>";
+						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论到：";
+					break;
 					
 					default:
 						;
@@ -74,6 +83,16 @@ class FriendNews {
 				}
 				$this->created_at = $comment->created_at;
 				$this->content = mb_substr($comment->comment, 0,200,'utf-8');
+			break;
+			case 'mood':
+				$sql = "select a.id,a.u_id,a.content,a.created_at,b.name from mood a left join member b on a.u_id = b.id where a.id ={$resource_id}";
+				$result = $db->query($sql);
+				$result = $result[0];
+				if(!$result) return false;
+				$this->title = "<a href='/home/member.php?id={$result->u_id}'>{$result->name}</a>　发布了一个心情　";
+				$this->title .="<a href='/home/mood/show.php?id={$result->id}'>". mb_substr($result->content, 0,10,'utf-8') ."</a>";
+				$this->created_at = $result->created_at;
+				$this->content = mb_substr($result->content, 0,200,'utf-8');
 			break;
 			
 			default:

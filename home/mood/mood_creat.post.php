@@ -16,7 +16,11 @@ $db = get_db();
 $created_at=now();
 $record=$db->execute("insert into lawsive.mood (u_id,content,created_at,u_name)values('$member->id','{$content}','{$created_at}','{$member->name}')");
 if($record){
-	echo '心情发布成功!';
-}else{
-	echo '心情发布失败!';
-}
+			echo '心情发布成功!';
+			$news = new FriendNews();
+			$id=$db->query("select id from lawsive.mood where u_id='$member->id' and created_at='{$created_at}' limit 1");
+			$news->generat($member->id, 'mood', $id[0]->id);
+			if(!$news->save()){die('心情动态添加失败');};
+		}else{
+			echo '心情发布失败!';
+		}
