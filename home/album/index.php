@@ -8,22 +8,22 @@
 		session_start();
 		include ('../../frame.php');
 		use_jquery_ui();
-		css_include_tag('person_public','album','comment');
+		css_include_tag('person_public','album');
 		js_include_tag('diary');
 		use_ckeditor();
 		$user = member::current();
 		
-//		if(!$user)
-//		{
-//			die('对不起，您的登录已过期！请重新登录！');
-//			redirect('/home/login.php?last_url=/home/application/dairy');
-//		}
-//		$auth = rand_str();
-//		$_SESSION['dia_del_auth'] = $auth;
+		if(!$user)
+		{
+			die('对不起，您的登录已过期！请重新登录！');
+			redirect('/home/login.php?last_url=/home/application/dairy');
+		}
+		$auth = rand_str();
+		$_SESSION['dia_del_auth'] = $auth;
 		
 		$id=intval($_GET['id']);
 		$db=get_db();
-		if(!$id){
+		if($id == '0'){
 			$id=$user->id;
 		}
   	?>
@@ -64,16 +64,36 @@
       	<?php 
       		$album = $db->query("select * from lawsive.album where member_id = '{$id}'");
       		$num = count($album);
-      		for($i=0;$i<$num;$i++){?>
+      		for($i=0;$i<$num;$i++){
+      		$photo = $db->query("select src from lawsive.member_photo where member_id = '{$id}' and category_id = '{$album[$i]->id}' order by id asc");
+      		$pho_num= count($photo);
+      	?>
       		<div class="album_box">
 	      		<div class="al_box">
-	      			<div class="title"><?php echo htmlspecialchars($album[$i]->name);?></div>
-	      			<div class="image"><a href=""><img src="<?php echo $album[$i]->front_cover;?>" border=0 /></a></div>
+	      			<div class="title">
+	      				<a href="pho_show.php?album_id=<?php echo $album[$i]->id;?>">
+	      				<?php echo htmlspecialchars($album[$i]->name);?></a>
+	      			</div>
+	      			
+	      			<div class="image"><a href="pho_show.php?album_id=<?php echo $album[$i]->id;?>"><img src="
+	      			<?php 
+	      			if($album[$i]->front_cover != null){
+	      				echo $album[$i]->front_cover;
+	      			}elseif($pho_num > 0){
+	      				echo $photo[0]->src;
+	      			}else{
+	      				echo '../../../images/person/head.jpg';
+	      			}
+	      				?>
+	      			" border = 0/></a></div>
 	      			<div class="created">创建于：<?php echo mb_substr($album[$i]->created_at, 0, 10);?></div>
 	      			<div class="description"><?php echo htmlspecialchars($album[$i]->description);?></div>
-	      			<div class="total"><font><?php echo 1;?></font>张</div>
+	      			<div class="total"><font><?php echo $pho_num;?></font>张</div>
+	      			<?php if($id == $user->id){?>
 	      			<div class="del"><img src="../../../images/album/delete.jpg"></div>
 	      			<div class="edit"><a href="ct_edit.php?album_id=<?php echo $album[$i]->id;?>">编辑专辑</a></div>
+	      			<?php }?>
+	      			
 	      		</div>
       		</div>
 		<?php }?>

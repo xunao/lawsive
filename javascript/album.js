@@ -1,3 +1,10 @@
+function next_image(i){
+	$('#test').attr('value',i);
+	var cat_id =$('#cat_id').val();
+  	$.post('pho_show.ajax.php',{"cat_id":cat_id,"i":i},function(data){
+  		$('#pho_aj').html(data);
+	});
+}
 $(function(){
 	$('#submit1').click(function(){
 		var name = $('#album_name').val();
@@ -56,10 +63,22 @@ $(function(){
 				alert("上传图片类型错误");
 				return false;
 			}
-		}else{
-			alert('请选择要上传的照片！');
-			return false;
+		}else{ 
+			if($('#src').val() == null){
+				alert('请选择要上传的照片！');
+				return false;
+			}
 		}
 	});
-	
+	$('#pho_del').live('click',function(){
+		if(!window.confirm("确定要删除吗"))
+		{
+			return false;
+		}
+		else{
+			$.post('pho_edit.post.php',{"pho_id":$('#pho_id').val(),"type":'del',"ct_edit_auth":$('#ct_edit_auth').val()},function(data){
+		  		$('#pho_aj').html(data);
+			});
+		}
+	});
 });

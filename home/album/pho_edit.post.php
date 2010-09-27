@@ -17,7 +17,7 @@
 	}
 	if($_POST['type'] == 'photo'){
 		$photo = new Table('member_photo');
-		$id = intval($_POST['id']);
+		$id = intval($_POST['pho_id']);
 		if($id != '0'){
 			$photo->find($id);
 		}
@@ -53,13 +53,25 @@
 		}else{
 			$photo->member_name = $user->name;
 		}
-		
+//		var_dump($photo->src)		;
 		if($photo->save()){
-			alert('添加成功！');
+			alert('更新成功！');
 			redirect('index.php');
 		}else{
-			alert('添加失败');
-			redirect('ct_edit.php');
+			alert('更新失败');
+			redirect('pho_edit.php');
+		}
+	}
+	if($_POST['type'] == 'del'){
+		$photo = new Table('member_photo');
+		$id = intval($_POST['pho_id']);
+		$photo->find($id);
+		$album_id = $photo->category_id;
+		if($photo->member_id != $user->id){
+			alert('非法操作！');
+		}else{
+			$photo->delete($id);
+			redirect('pho_show.php?album_id='.$album_id);
 		}
 	}
 ?>

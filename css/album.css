@@ -25,12 +25,34 @@
 			.del{float:right;}
 			.del img{width:14px; height:14px; margin-top:2px; cursor:pointer;}
 			
-		.al_bx{width:720px; margin:30px 0 0 20px; padding-bottom:10px; border:1px solid #e7e7e7;}
+		.al_bx{width:720px; margin:30px 0 0 20px; text-align:center; padding-bottom:10px; border:1px solid #e7e7e7;}
 			.al{width:350px; margin-left:25px; line-height:24px; font-size:16px; margin-top:10px; padding-bottom:20px;}
 			.al input{width:240px;}
 			.al select{width:240px;}
+		.al_bx font{ color:#336699; font-size:20px; line-height:60px;}
+		.al_bx font a{color:#336699; text-decoration:underline;}
 			
 			#text{width:305px; margin-left:15px; margin-top:15px; font-size:14px; line-height:16px; padding-bottom:10px;}
 			#text2{width:505px; margin-top:15px;}
 			#text2 textarea{width:100%;}
 			.submit{width:100px; height:28px; color:#ffffff; line-height:24px; boder:1px solid #FCC7A4; margin-top:25px; margin-right:40px; float:right; background:url("/images/album/sub.jpg") no-repeat;}
+			
+		#ps_t{width:772px; line-height:24px; margin-left:13px; margin-top:16px;}
+		#ps_t a{font-size:16px;}
+			#ps_total{font-size:14px; padding:0 20px; border-right:1px dotted #000000;}
+			.ps_work{padding-right:15px; margin-left:10px;  overflow:hidden;}
+			.ps_work a{color:#336699;}
+			.ps_work2 {padding-left:5px; margin-right:10px;  overflow:hidden;}
+			.ps_work2 a{color:#336699; text-decoration:underline;}
+			.ps_info{font-size:14px; padding:0 20px;}
+			.ps_info font{font-size:14px; color:#336699;}
+			.ps_des{width:752px; font-size:14px; margin-left:20px; padding-bottom:16px; overflow:hidden;}
+			#tr{float:right;}
+		
+		#imgbx{width:772px; margin-left:13px; text-align:center; margin-top:16px; overflow:hidden; border:1px solid #e7e7e7;}
+		#imgbx img{cursor:pointer;}
+		#good{float:right; font-size:20px; line-height:22px;  color:#336699; cursor:pointer; margin-right:70px;}
+			#comment{width:772px; font-size:14px; line-height:20px; margin-left:13px;  margin-top:16px; font-weight:bold;}
+			#pub_comment_box{width:95%;}
+			.comment1{padding-left:20px; color:#336699;}
+			

@@ -8,7 +8,7 @@
 		session_start();
 		include ('../../frame.php');
 		use_jquery_ui();
-		css_include_tag('person_public','album','diary');
+		css_include_tag('person_public','album');
 		js_include_tag('login','album');
 		$user = member::current();
 		$db=get_db();
