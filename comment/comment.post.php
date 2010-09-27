@@ -47,4 +47,8 @@ $comment->ip = $_SERVER["REMOTE_ADDR"];
 
 $comment->save();
 
+$news = new FriendNews();
+$news->generat($user->id, 'comment', $comment->id);
+$news->save();
+
 echo 'ok';
