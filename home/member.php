@@ -60,7 +60,8 @@
 	      	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">最新动态</div>
 	      	 		 </div>
 	      	 		 <?php 
-	      	 		 	$friend_news = $record[0]->get_friend_news();
+	      	 		    $friend_news=$db->query("select * from lawsive.friend_news where member_id='{$record[0]->id}' order by created_at DESC");
+	      	 		 	//$friend_news = $record[0]->get_friend_news();
 	      	 		 	foreach ($friend_news as $friendnews){
 	      	 		 ?>
 	      	 		 <div class="context">
