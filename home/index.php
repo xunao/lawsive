@@ -16,6 +16,8 @@
 			redirect('/home/login.php?last_url=/home/');
 		}
 		$info = $user->get_base_info();
+		$db=get_db();
+		$record=$db->query("select * from lawsive.mood where u_id='$user->id' order by created_at DESC limit 1");
 		$send_msg_auth = rand_str();
 	    $_SESSION['send_msg_auth'] = $send_msg_auth;
   	?>
@@ -28,7 +30,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $user->avatar ? $user->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span></div>
+	      	 		<div id="name"><?php echo $info->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $user->role_name();?>)</span>&nbsp;<a href="./mood/mymode.php" ><?php echo $record[0]->content?></a></div>
 	      	 		<div id="state">
 	      	 			<input type="text" id="mood">
 	      	 			<div id="content">

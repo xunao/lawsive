@@ -37,7 +37,7 @@
 	      	 <div id="person_index_center">
 	      	 	<div id="info">
 	      	 		<div id="pic"><img src="<?php echo $f_member[0]->avatar ? $f_member[0]->avatar : '/images/person/head.jpg';?>"></div>
-	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span></div>
+	      	 		<div id="name"><?php echo $f_member[0]->name;?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $f_member[0]->role_name();?>)</span>&nbsp;<font ><?php echo $record[0]->content?></font></div>
 	      	 		<div id="from">
 	      	 			<?php 
 	      	 				require $f_member[0]->head_info_path();

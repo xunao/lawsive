@@ -29,6 +29,7 @@
         $db=get_db();
         $friend=$db->query("select * from lawsive.friend where u_id='{$id}'");
         $dairy=$db->query("select id from lawsive.article where resource_type='diary' and admin_user_id='{$id}'");
+        $mood=$db->query("select * from lawsive.mood where u_id='$id' order by created_at DESC limit 1");
         $str_auto=rand_str();
         $_SESSION['str_auto']=$str_auto;
   	?>
@@ -42,7 +43,7 @@
 	      	 	<div id="info">
 	      	 	    <div>
 		      	 		<div id="pic"><img src="<?php if ($record[0]->avatar =='') {echo '/images/person/head.jpg';}else {echo $record[0]->avatar;}?>" border="0"></div>
-		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span></div>
+		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span>&nbsp;<a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content?></a></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
