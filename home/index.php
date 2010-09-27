@@ -9,7 +9,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_index');
-		js_include_tag('login','home_mood');
+		js_include_tag('login','home','home_mood');
 		$user = member::current();
 		if(!$user ){
 			alert('您尚未登录或登录已过期，请登录！');
