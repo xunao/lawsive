@@ -43,7 +43,7 @@
 	      	 	<div id="info">
 	      	 	    <div>
 		      	 		<div id="pic"><img src="<?php if ($record[0]->avatar =='') {echo '/images/person/head.jpg';}else {echo $record[0]->avatar;}?>" border="0"></div>
-		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span>&nbsp;<a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content;?> &nbsp; <?php echo date("Y-m-d",strtotime($mood[0]->created_at));?></a></div>
+		      	 		<div id="name"><?php echo $record[0]->name?><span style="font-size:12px; font-weight: normal; color: gray;">(<?php echo $record[0]->role_name();?>)</span> &nbsp; <a href="./mood/index.php?u_id=<?php echo $mood[0]->u_id?>"><?php echo $mood[0]->content;?></a> &nbsp; <font ><?php echo date("Y-m-d",strtotime($mood[0]->created_at));?></font></div>
 	                    <div id="from">
 		      	 			<?php 
 		      	 				require $record[0]->head_info_path();
@@ -59,25 +59,21 @@
 	      	 		 <div class="title">
 	      	 			<div class="t_l" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;">最新动态</div>
 	      	 		 </div>
+	      	 		 <?php 
+	      	 		 	$friend_news = $record[0]->get_friend_news();
+	      	 		 	foreach ($friend_news as $friendnews){
+	      	 		 ?>
 	      	 		 <div class="context">
 	      	 		 	<div class="c_title">
-	      	 		 		发表了１篇随便说说<div class="day">今天 09:07</div>
+	      	 		 		<?php echo $friendnews->title?>
+	      	 		 		<div class="day"><?php echo $friendnews->created_at?></div>
 	      	 		 	</div>
 	      	 		 	<div class="cc">
-	      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
+	      	 		 		<?php echo $friendnews->content;?>
 	      	 		 	</div>
-	      	 		 	<div class="comment"><a href="">发表评论</a></div>
+	      	 		 	<!-- <div class="comment"><a href="">发表评论</a></div>  -->
 	      	 		 </div>
-	      	 		  <div class="context">
-	      	 		 	<div class="c_title">
-	      	 		 		发表了１篇随便说说<div class="day"><img src="/images/person/del.jpg"><img src="/images/person/set.jpg">今天 09:07</div>
-	      	 		 	</div>
-	      	 		 	<div class="cc">
-	      	 		 		每天都这样吵架，我想总有一天我们都会厌倦。	
-	      	 		 	</div>
-	      	 		 	<div class="comment" style="width:100%"><a href="">发表评论</a></div>
-	      	 		 	<div class="comment"><a href="">查看更多</a></div>
-	      	 		 </div>
+	      	 		 <?php }?>
 	      	 	</div>
 	      	 </div>
 	      	 

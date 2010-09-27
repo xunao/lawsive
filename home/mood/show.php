@@ -60,7 +60,7 @@
 						<div id="pub_comment_box">
 						</div>
 						<script type="text/javascript">
-							 	pub_comment('mood',<?php echo $id;?>,'pub_comment_box');
+							 	pub_comment('mood',<?php echo $record[0]->id;?>,'pub_comment_box');
 						</script>
           	         </div>
 	      	 	</div>

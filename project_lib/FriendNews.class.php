@@ -68,6 +68,14 @@ class FriendNews {
 						$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
 						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论到：";
 					break;
+					case 'mood':
+						$sql = "select a.id,a.u_id,a.content,a.created_at,b.name from mood a left join member b on a.u_id = b.id where a.id ={$comment_resource_id}";
+						$result = $db->query($sql);
+						$result = $result[0];
+						$this->title = "<a href='/home/member.php?id={$result->u_id}'>{$result->name}</a>　的心情　";
+						$this->title .="<a href='/home/mood/show.php?id={$result->id}'>". mb_substr($result->content, 0,10,'utf-8') ."</a>";
+						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论到：";
+					break;
 					
 					default:
 						;
@@ -100,13 +108,6 @@ class FriendNews {
 		$sql .= $this->member_id .",'".addslashes($this->title)."','".addslashes($this->photo)."','".addslashes($this->description)."','".addslashes($this->content)."','{$this->created_at}','{$this->resource_type}',{$this->resource_id})";
 		return $db->execute($sql);
 
-	}
-    function mood_save(){
-		$db = get_db();
-		$sql = "insert into friend_news (member_id,description,content,created_at,resource_type,resource_id) values(";
-		$sql .= $this->member_id .",'".addslashes($this->title)."','".addslashes($this->content)."','{$this->created_at}','{$this->resource_type}',{$this->resource_id})";
-		echo $sql;
-		return $db->execute($sql);
 	}
 	
 }
