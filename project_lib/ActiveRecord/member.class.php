@@ -203,7 +203,7 @@
 		$sql="select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1";
 		if($apps_id!="")
 		{
-			$sql.=" and b.id not in (".substr($apps_id,0,strlen($apps_id)-1);
+			$sql.=" and b.id not in (".substr($apps_id,0,strlen($apps_id)-1).")";
 		}
 		$user_apps = $db->query($sql);
 		!$user_apps && $user_apps = array();
