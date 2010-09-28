@@ -101,8 +101,8 @@
 			<td class="td1" width="15%"><?php echo $name;?></td>
 			<td class="<?php echo $class_name;?>">
 				<input type="checkbox" class="enabled" name="check_enabled" value="<?php echo $role_id; ?>" <?php if($item){ echo "checked='checked'"; }?> style="float:none;"/>可用 
-				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default){ echo "checked='checked'"; $isdefault=$isdefault.'1,';}else{$isdefault=$isdefault.'0,';}?> style="float:none;" />默认显示 
-				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free){ echo "checked='checked'"; $isfree=$isfree.'1,';}else{$isfree=$isfree.'0,';}?> style="float:none;" />免费产品
+				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default){ echo "checked='checked'"; $isdefault=$isdefault.'1,';}else if($item){ $isdefault=$isdefault.'0,';}?> style="float:none;" />默认显示 
+				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free){ echo "checked='checked'"; $isfree=$isfree.'1,';}else if($item){$isfree=$isfree.'0,';}?> style="float:none;" />免费产品
 			</td>
 		</tr>
 		<?php }?>
