@@ -36,7 +36,7 @@
 			<div id="d_m">
       			<div id="dm_t_l"></div>
       			<div id="dm_t_m">
-      			<?php if(pho_id != '0'){echo '编辑照片';}else{echo '添加照片';}?>
+      			<?php if($pho_id != '0'){echo '编辑照片';}else{echo '添加照片';}?>
       			</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
@@ -49,7 +49,7 @@
 		      		<div id="text">(最多不超过50字)</div>
 		      		<div class="al">所属专辑：
 			      		<select id="pho_ct" name="post[category_id]">
-			      			<option value="-1">请选择分类</option>
+			      			<option value="0">请选择分类</option>
 			      			<?php for($i=0;$i<$num;$i++){?>
 			      			<option value="<?php echo $album[$i]->id;?>"><?php echo $album[$i]->name;?></option>
 			      			<?php }?>

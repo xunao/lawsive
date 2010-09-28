@@ -54,7 +54,13 @@
 		}else{
 			$album->member_name = $user->name;
 		}
+//		$album->save();
 		if($album->save()){
+			if($album->front_cover){
+				$db =get_db();
+				$photo = $db->execute("insert into lawsive.member_photo (member_id,member_name,name,category_id,src,created_at,last_edit_at)values('{$user->id}','{$album->member_name}','font_cover','{$album->id}','{$album->front_cover}','{$album->created_at}','{$album->last_edit_at}')");
+//				var_dump($photo);
+			}
 			$news = new FriendNews();
 			$news->generat($user->id, 'album', $album->id);
 			$news->save();
@@ -79,7 +85,7 @@
 			$num = count($pho_id);
 			$photo = new Table('member_photo');
 			for($i=0;$i<$num;$i++){
-				$photo->delete($pho_id[$i]);
+				$photo->delete($pho_id[$i]->id);
 			}
 			$news = new FriendNews();
 			$news->generat($user->id, 'album_del', $id);

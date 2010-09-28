@@ -141,7 +141,7 @@ class FriendNews {
 				$time = now();
 				if(!$result) return false;
 				$this->title = "<a href='/home/member.php?id={$result->member_id}'>{$result->member_name}</a>　删除了专辑　";
-				$this->title .= mb_substr($result->name, 0,10,'utf-8');
+				$this->title .= mb_substr($result->name, 0,10,'utf-8') ."以及其中的照片";
 				$this->created_at = $time;
 			break;
 			

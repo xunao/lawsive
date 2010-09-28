@@ -64,7 +64,7 @@ $(function(){
 				return false;
 			}
 		}else{ 
-			if($('#src').val() == null){
+			if($('#src').val() == ''){
 				alert('请选择要上传的照片！');
 				return false;
 			}
