@@ -25,6 +25,7 @@
 <body>
 	<div id=icaption>
 	    <div id=title>应用申请审核</div>
+	    <a href="index.php" id=btn_back></a>
 	</div>
 	<div id="itable">
 		<table cellspacing=1 border="0">
