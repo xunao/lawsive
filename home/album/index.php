@@ -9,7 +9,7 @@
 		include ('../../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','album');
-		js_include_tag('diary');
+		js_include_tag('album');
 		use_ckeditor();
 		$user = member::current();
 		
@@ -19,7 +19,7 @@
 			redirect('/home/login.php?last_url=/home/application/dairy');
 		}
 		$auth = rand_str();
-		$_SESSION['dia_del_auth'] = $auth;
+		$_SESSION['ct_edit_auth'] = $auth;
 		
 		$id=intval($_GET['id']);
 		$db=get_db();
@@ -55,6 +55,7 @@
       			</div>
       			<div id="dm_t_r"></div>
       			<div id="dm_t_o">
+      			<input id="ct_edit_auth" type="hidden"value="<?php echo $auth;?>" />
 			<?php if($id == $user->id){ ?>
       				<a href="ct_edit.php">新的专辑</a>
       				<a href="pho_edit.php">新的照片</a>
@@ -74,7 +75,6 @@
 	      				<a href="pho_show.php?album_id=<?php echo $album[$i]->id;?>">
 	      				<?php echo htmlspecialchars($album[$i]->name);?></a>
 	      			</div>
-	      			
 	      			<div class="image"><a href="pho_show.php?album_id=<?php echo $album[$i]->id;?>"><img src="
 	      			<?php 
 	      			if($album[$i]->front_cover != null){
@@ -91,10 +91,11 @@
 	      			<div class="total"><font><?php echo $pho_num;?></font>张</div>
 	      			<?php if($id == $user->id){?>
 	      			<div class="del"><img src="../../../images/album/delete.jpg"></div>
+	      			<input type="hidden" class="album_id" value="<?php echo $album[$i]->id;?>" />
 	      			<div class="edit"><a href="ct_edit.php?album_id=<?php echo $album[$i]->id;?>">编辑专辑</a></div>
 	      			<?php }?>
-	      			
 	      		</div>
+	      		
       		</div>
 		<?php }?>
 		</div>

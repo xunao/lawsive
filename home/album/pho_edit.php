@@ -70,8 +70,9 @@
 		      		<?php }?>
 		      		<div class="al" style="width:80px; margin-top:25px;">照片描述：</div>
 		      		<div id="text2"><textarea id="des" name="post[description]"><?php echo htmlspecialchars($photo->description);?></textarea></div>
-		      		<button type="submit" class="submit" id="submit2">上传照片</button>
-		      		
+		      		<button type="submit" class="submit" id="submit2">
+		      			<?php if($pho_id !='0'){echo '保存修改';}else{echo '上传照片';}?>
+		      		</button>
 		      		<input type="hidden" name="type" value="photo" />
 		      		<input type="hidden" id="src" value="<?php echo $photo->src;?>" />
 		      		<input type="hidden" name="pho_id" value="<?php echo $pho_id;?>" />
