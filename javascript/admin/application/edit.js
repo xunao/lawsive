@@ -183,7 +183,7 @@ $(function(){
 });
 function each_checkbox(name)
 {
-	var ary="";
+	var check_num=0;
 	$(name).each(function(){
 		if($(this).attr('checked'))
 		{

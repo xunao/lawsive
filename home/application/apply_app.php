@@ -50,7 +50,7 @@
 	      	 					}
 	      	 					else
 	      	 					{?>
-	      	 				<span class="span2">已添加</span>　<?php if($application[$i]->is_free!=1||application[$i]->is_default!=1){ ?><img src="/images/home/ico_del.gif"><span class="del" param="<?php echo $application[$i]->id; ?>">删除</span><?php }?>	
+	      	 				<span class="span2">已添加</span>　<?php if($application[$i]->is_free!=1 || $application[$i]->is_default!=1){ ?><img src="/images/home/ico_del.gif"><span class="del" param="<?php echo $application[$i]->id; ?>">删除</span><?php }?>	
 	      	 				<?php }?>
 	      	 			</td>
 	      	 		</tr>
