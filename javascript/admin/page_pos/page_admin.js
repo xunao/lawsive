@@ -20,6 +20,10 @@ $(function(){
 			admin_pannel.css('top',y);
 			admin_pannel.css('width',$(this).outerWidth()+'px');
 			admin_pannel.css('height',$(this).outerHeight()+'px');
+			admin_pannel.attr('page',$(this).attr('page'));
+			admin_pannel.attr('pos_tag',$(this).attr('pos_tag'));
+			admin_pannel.attr('pos_name',$(this).attr('pos'));
+			admin_pannel.html("<img style='cursor: pointer;width:16px;height:16px;' width=16 height=16 src='/images/admin/btn_edit.png' >");
 			admin_pannel.show();
 			//alert(admin_pannel.attr('id'));
 		},function(){
@@ -42,7 +46,7 @@ $(function(){
 		*/
 	});
 	
-	$('#admin_edit_div img').live('click',function(e){
+	$('#admin_pannel img').live('click',function(e){
 		e.preventDefault();
 		var $this = $(this);
 		parent.$.fn.colorbox({
