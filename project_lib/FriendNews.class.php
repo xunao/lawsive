@@ -14,6 +14,8 @@ class FriendNews {
 	public $photo;
 	public $title;
 	
+	private $can_save =false;
+	
 	static public function load($db_items){
 		if (!is_array($db_items)) return array();
 		foreach ($db_items as $db_item) {
@@ -33,6 +35,7 @@ class FriendNews {
 	}
 	
 	function generat($member_id,$resource_type,$resource_id){
+		$this->can_save = false;
 		$this->member_id = $member_id;
 		$this->resource_id = $resource_id;
 		$this->resource_type = $resource_type;
@@ -86,7 +89,7 @@ class FriendNews {
 					break;
 					
 					default:
-						;
+						return false;
 					break;
 				}
 				$this->created_at = $comment->created_at;
@@ -146,13 +149,15 @@ class FriendNews {
 			break;
 			
 			default:
-				;
+				return  false;;
 			break;
 		}
 		
+		$this->can_save =true;
 	}
 	
 	function save(){
+		if($this->can_save == false) return false;
 		$db = get_db();
 		$sql = "insert into friend_news (member_id,title,photo,description,content,created_at,resource_type,resource_id) values(";
 		$sql .= $this->member_id .",'".addslashes($this->title)."','".addslashes($this->photo)."','".addslashes($this->description)."','".addslashes($this->content)."','{$this->created_at}','{$this->resource_type}',{$this->resource_id})";

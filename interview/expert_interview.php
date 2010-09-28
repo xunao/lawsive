@@ -11,6 +11,7 @@
 	js_include_tag('login','index');
 	$user = member::current();
 	init_page_items('expert_interview');
+	
 ?>
 <body>
 	<div id="ibody">

@@ -34,7 +34,7 @@
 	      	 		<div id="state">
 	      	 			<input type="text" id="mood">
 	      	 			<div id="content">
-	      	 				<a href="">传照片</a>　　<a href="/home/application/diary/">写日志</a>　　<a href="">写记录</a>　　<a href="">发转帖</a>
+	      	 				<a href="/home/album/">传照片</a>　　<a href="/home/application/diary/">写日志</a>　　<a href="">写记录</a>　　<a href="">发转帖</a>
 	      	 			</div>
 	      	 			<div id="btn"><button>发布</button></div>
 	      	 		</div>
