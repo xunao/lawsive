@@ -75,7 +75,7 @@
 			<td class=td1 width=15%>应用图片</td>
 			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="102400">
-				<input type="file" name="post[photo_src]">
+				<input type="file" id="upfile" name="post[photo_src]">
 				<?php if($application[0]->photo_src){?>
 				<a href="<?php echo $application[0]->photo_src?>" target="_blank">查看</a>
 				<?php }?>
