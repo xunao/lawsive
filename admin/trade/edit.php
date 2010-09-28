@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<meta http-equiv=Content-Language content=zh-CN>
-	<title><?php echo $_g_sitename;?>发布新闻</title>
+	<title><?php echo $_g_sitename;?>发布交易</title>
 	<?php 
 		judge_admin();
 		css_include_tag('admin/base','colorbox');
@@ -31,18 +31,23 @@
 		<form id="news_edit" action="edit.post.php" method="post"> 
 		<table cellspacing="1" align="center">
 			<tr class="tr4">
+				<td class=td1 width="15%">交易名称</td>
+				<td><input type="text" name="trade[trade_name]" id="trade_name" value="<?php echo strip_tags($trade->trade_name);?>"></td>
+			</tr>
+			<tr class="tr4">
 				<td class=td1 width="15%">客户名称</td>
 				<td><input type="text" name="trade[client]" id="trade_client" value="<?php echo strip_tags($trade->client);?>"></td>
 			</tr>
 			<tr class="tr4">
+				<td class="td1">交易角色</td>
+				<td> 
+					<input type="text" name="trade[trade_role]" value="<?php echo strip_tags($trade->trade_role);?>">
+				</td>
+			</tr>
+			<tr class="tr4">
 				<td class="td1">交易类型</td>
 				<td> 
-					<select name="trade[trade_type]" id="sel_trade_type">
-						<option value="normal">请选择类别</option>
-						<option value="lawyer">律师</option>
-						<option value="office">律所</option>
-					</select>
-					<script type="text/javascript">$("#sel_trade_type").val("<?php echo strip_tags($trade->trade_type);?>");</script>
+					<input type="text" name="trade[trade_type]" value="<?php echo strip_tags($trade->trade_type);?>">
 				</td>
 			</tr>
 			<tr class="tr4">
