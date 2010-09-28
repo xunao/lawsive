@@ -101,6 +101,11 @@
 				        <div class="cc">
 				        <?php echo $friendnews->content;?>
 				        </div>
+				        <?php if($friendnews->photo){?>
+					        <div class="photo">
+					        <?php echo $friendnews->photo;?>
+					        </div>
+					    <?php }?>
 				        <!-- <div class="comment"><a href="">发表评论</a></div>  -->
 				        </div>
 				        <?php }?>

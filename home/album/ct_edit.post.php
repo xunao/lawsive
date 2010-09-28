@@ -58,7 +58,7 @@
 		if($album->save()){
 			if($album->front_cover){
 				$db =get_db();
-				$photo = $db->execute("insert into lawsive.member_photo (member_id,member_name,name,category_id,src,created_at,last_edit_at)values('{$user->id}','{$album->member_name}','font_cover','{$album->id}','{$album->front_cover}','{$album->created_at}','{$album->last_edit_at}')");
+				$photo = $db->execute("insert into lawsive.member_photo (member_id,member_name,name,category_id,src,created_at,last_edit_at)values('{$user->id}','{$album->member_name}','封面照片','{$album->id}','{$album->front_cover}','{$album->created_at}','{$album->last_edit_at}')");
 //				var_dump($photo);
 			}
 			$news = new FriendNews();

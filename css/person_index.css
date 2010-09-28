@@ -63,3 +63,5 @@
 #person_index_center #info #comment .c_title{width:100%; font-size:14px; line-height:18px;}
 #person_index_center #info #comment #pub_comment_box{width:95%;}
 .comment1{padding-left:20px; color:#336699;}
+.photo{margin-left:23px; height:75px; overflow:hidden;}
+.photo img{height:75px;}

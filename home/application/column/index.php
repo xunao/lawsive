@@ -12,14 +12,14 @@
 		js_include_tag('diary');
 		use_ckeditor();
 		$user = member::current();
-		
-		if(!$user)
-		{
-			die('对不起，您的登录已过期！请重新登录！');
-			redirect('/home/login.php?last_url=/home/application/dairy');
-		}
-		$auth = rand_str();
-		$_SESSION['dia_del_auth'] = $auth;
+//		
+//		if(!$user)
+//		{
+//			die('对不起，您的登录已过期！请重新登录！');
+//			redirect('/home/login.php?last_url=/home/application/dairy');
+//		}
+//		$auth = rand_str();
+//		$_SESSION['dia_del_auth'] = $auth;
 		
 		$id=intval($_GET['id']);
 		$db=get_db();
@@ -28,7 +28,7 @@
 			$id=$user->id;
 		}
 		$conditions = array();
-		$conditions[] = "resource_type = 'diary'";
+		$conditions[] = "resource_type = 'column'";
 		$conditions[] = "admin_user_id='{$id}'";
 		if( $file_category != '0'){
 			$conditions[] = "category = '$file_category'";
@@ -83,7 +83,7 @@
       				<?php }?>
       				<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
       				<div class="dc_name">
-	      				未分类日志（<?php echo count($total2)?>）
+	      				未分类文章（<?php echo count($total2)?>）
 	      				<input class="category_id" type="hidden" value="-1" />
       				</div>
       				<?php if($id == $user->id){?>
