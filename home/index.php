@@ -90,7 +90,7 @@
 	      	 		 </div>
 	      	 		 <div id="b_contest">
 		      	 		<?php 
-			      	 		$friend_news = $user->get_friend_news();
+		      	 		    $friend_news = $user->get_friend_news();
 					        foreach ($friend_news as $friendnews){
 				        ?>
 				        <div class="context">
