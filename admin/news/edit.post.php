@@ -43,30 +43,31 @@
 	}
 	
 	//handle the publish schedule
+	$record=$db->query("select id from lawsive.publish_schedule where resource_id='$news_id' and resource_type='news'");
+	$schedule = new Table('publish_schedule');
+	if($news_id){
+		$schedule->find($record[0]->id);
+	}
 	if(isset($_POST['publish_schedule_date'])){
-		$schedule = new Table('publish_schedule');
-		if($id){
-			$schedule->find_by_resource_id($id);
-		}
 		if($_POST['publish_schedule_date']){
 			$schedule->publish_date = $_POST['publish_schedule_date'];
 			$schedule->resource_id = $news->id;
 			$schedule->resource_type= 'news';
 			$schedule->save();
-		}else{
+			if ($schedule->publish_date<=time()) {
+				$news->is_adopt=1;
+			}else {
+				$news->is_adopt=0;
+			}
+			
+		}
+		$news->last_edited_att=now();
+		$news->save();
+	}else{
 			if($schedule->id){
 				$schedule->delete();
 			}
 		}
-		if ($schedule->publish_date<=time()) {
-			$news->is_adopt=1;
-		}else {
-			$news->is_adopt=0;
-			$news->created_at=time();
-			$news->last_edited_at=$schedule->publish_date;
-		}
-		$news->save();
-	}
 
 	if($_POST['copy_news']){
 		$news->copy_from = $news->id;
