@@ -23,5 +23,4 @@ if(send_msg($member->id, $r_id, $content)){
 }else{
 	alert('发送短信失败!'. mysql_error());
 }
-exit();
 redirect('/home/message/send_list.php');
