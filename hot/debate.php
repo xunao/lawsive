@@ -34,7 +34,6 @@
                             </div>
                             </div>
                             <?php }?>
-                            <div id="discuss"><img src="/images/view/discuss.jpg"></div>
                        </div>
                        <div id="center_r">
                        	<?php 
