@@ -1,0 +1,1 @@
+ALTER TABLE `lawsive`.`member_appliaction` RENAME TO `lawsive`.`member_application`;

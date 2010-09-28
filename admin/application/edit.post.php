@@ -65,7 +65,6 @@
 	  			}
 	  			if(!$db->execute($sql))
 	  			{
-	  				alert($sql);
 	  				alert('插入应用权限失败！');
 	  				exit;
 	  			}
@@ -78,6 +77,6 @@
   				exit;
   			}
 			alert('提交成功！');
-			//redirect('index.php');
+			redirect('index.php');
 	}
 ?>

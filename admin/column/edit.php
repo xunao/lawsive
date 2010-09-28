@@ -60,7 +60,7 @@
 			
 			<tr class="tr4">
 				<td class="td1">分类</td>
-				<td><span id="span_category" name=news[category] ></span></td>
+				<td><span id="span_category" ></span></td>
 			</tr>
 			
 <!--			<tr class="tr4" style="display:none;" id="tr_copy_news">-->
@@ -129,7 +129,8 @@
 			<tr class="btools">
 				<td colspan="2">
 					<input id="submit" type="submit" value="提交">
-					<input type="hidden" name="news[category_id]" id="category_id" value="<?php echo $article->category_id;?>">
+					<input type="hidden" name="news[category]" id="category_id" value="<?php echo $article->category_id;?>">
+					<input type="hidden" name="news[resource_type]" value="column" />
 					<input type="hidden" name="id" id="hidden_news_id" value="<?php echo $article->id; ?>">
 <!--					<input type="hidden" name="news[related_news]" id="hidden_related_news" value="<?php echo $article->related_news ? $article->related_news : "";?>"></input>-->
 					<input type="hidden" name="news[is_adopt] value="<?php $article->is_adopt;?>"></input>	

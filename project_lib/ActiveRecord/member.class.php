@@ -192,7 +192,7 @@
 	function get_apps(){
 		$db = get_db();
 		//get the system default applications
-		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and (role =0 or role={$this->role})");
+		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and a.role={$this->role}");
 		!$apps && $apps = array();
 		//get the user applications
 		$user_apps = $db->query("select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1");

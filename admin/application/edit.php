@@ -53,7 +53,7 @@
 <body>
 	<div id=icaption>
     <div id=title><?php if($id){echo "修改应用";}else{echo "添加应用";}?></div>
-	  <a href="index.php?member_id=<?php echo $member_id; ?>" id=btn_back></a>
+	  <a href="index.php" id=btn_back></a>
 	</div>
 	<div id=itable>
 	<form id="application_form" method="post" enctype="multipart/form-data" action="edit.post.php">
@@ -75,7 +75,7 @@
 			<td class=td1 width=15%>应用图片</td>
 			<td>
 				<input type="hidden" name="MAX_FILE_SIZE1" value="102400">
-				<input type="file" name="post[photo_src]">
+				<input type="file" id="upfile" name="post[photo_src]">
 				<?php if($application[0]->photo_src){?>
 				<a href="<?php echo $application[0]->photo_src?>" target="_blank">查看</a>
 				<?php }?>
@@ -91,18 +91,18 @@
 			</td>
 		</tr>
 		<?php
-			$is_default="";
-			$is_free="";
+			$isdefault="";
+			$isfree="";
 			foreach ($roles as $role_id => $name){
 			$item = role_by_id($role_id);
-			$class_name = $item ? 'exists' : 'new';
+			$class_name = $item ? 'exists' : 'new';	
 		?>
 		<tr class="tr4">
 			<td class="td1" width="15%"><?php echo $name;?></td>
 			<td class="<?php echo $class_name;?>">
-				<input type="checkbox" class="enabled" name="check_enabled" value="<?php echo $role_id; ?>" <?php if($item) echo "checked='checked'";?> style="float:none;"/>可用 
-				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default){ echo "checked='checked'"; $is_default=$is_default.'1,';}else{$is_default=$is_default.'0,';}?> style="float:none;" />默认显示 
-				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free) echo "checked='checked'";?> style="float:none;" />免费产品
+				<input type="checkbox" class="enabled" name="check_enabled" value="<?php echo $role_id; ?>" <?php if($item){ echo "checked='checked'"; }?> style="float:none;"/>可用 
+				<input type="checkbox" class="is_default" name="is_default" disabled=true value="1" <?php if($item->is_default){ echo "checked='checked'"; $isdefault=$isdefault.'1,';}else if($item){ $isdefault=$isdefault.'0,';}?> style="float:none;" />默认显示 
+				<input type="checkbox" class="is_free" name="is_free" disabled=true value="1" <?php if($item->is_free){ echo "checked='checked'"; $isfree=$isfree.'1,';}else if($item){$isfree=$isfree.'0,';}?> style="float:none;" />免费产品
 			</td>
 		</tr>
 		<?php }?>
@@ -111,8 +111,8 @@
 				<button id="sub">提 交</button>
 				<input type="hidden" name="id" value="<?php echo $id;?>">
 				<input type="hidden" id="check_role" name="role_role" value="<?php echo $application[0]->role; ?>">
-				<input type="hidden" id="check_is_default" name="role_is_default" value="">
-				<input type="hidden" id="check_is_free" name="role_is_free" value="">
+				<input type="hidden" id="check_is_default" name="role_is_default" value="<?php echo substr($isdefault,0,strlen($isdefault)-1);?>">
+				<input type="hidden" id="check_is_free" name="role_is_free" value="<?php echo substr($isfree,0,strlen($isfree)-1);?>">
 				<input type="hidden" id="edit_auth" name="edit_auth" value="<?php echo $auth;?>" />
 				<input type="hidden" id="max_role" value="<?php echo count($roles); ?>">
 				<input type="hidden" name="post_type" value="application">

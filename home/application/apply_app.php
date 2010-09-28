@@ -16,7 +16,7 @@
 		{
 			die('对不起，您的登录已过期！请重新登录！');
 		}
-		$application=$db->query('select a.*,r.is_free,r.is_default from application a left join application_role r on a.id=r.application_id where r.role='.$member->role);
+		$application=$db->query('select a.*,r.is_free,r.is_default from application a left join application_role r on a.id=r.application_id where r.role='.$member->role.' and (r.is_default<>1 or r.is_free<>1)');
 		$auth = rand_str();
 		$_SESSION['info_auth'] = $auth;
   	?>
@@ -27,7 +27,7 @@
       	<div id="person_info_center">
       	 	<div id="info">
       	 		<div id="title">
-      	 			添加应用<a href="">&gt;&gt;返回上一页</a>
+      	 			添加应用<a href="../index.php">&gt;&gt;返回我的首页</a>
       	 		</div>
       	 		<table align="left">
       	 			<?php for($i=0; $i<count($application);$i++){ ?>
@@ -42,15 +42,20 @@
 	      	 			<td width="20%" align="center">
 	      	 				<?php 
 	      	 					$status=$db->query('select status from member_appliaction where member_id='.$member->id.' and application_id='.$application[$i]->id); 
-	      	 					if(count($status)==0||$status[0]->status==0)
+	      	 					$apply_status=$db->query('select status from application_apply_log where member_id='.$member->id.' and  application_id='.$application[$i]->id);
+	      	 					if((count($status)==0||$status[0]->status==0)&&count($apply_status)==0)
 	      	 					{
 	      	 				?>
 	      	 				<span class="add" param="<?php echo $application[$i]->id; ?>">我要添加</span>
 	      	 				<?php 
 	      	 					}
+	      	 					else if($apply_status[0]->status==0)
+	      	 					{?>
+	      	 					<span class="span2">审核中</span>
+	      	 					<?php }
 	      	 					else
 	      	 					{?>
-	      	 				<span class="span2">已添加</span>　<?php if($application[$i]->is_free!=1||application[$i]->is_default!=1){ ?><img src="/images/home/ico_del.gif"><span class="del" param="<?php echo $application[$i]->id; ?>">删除</span><?php }?>	
+	      	 				<span class="span2">已添加</span>　<?php if($application[$i]->is_free!=1 || $application[$i]->is_default!=1){ ?><img src="/images/home/ico_del.gif"><span class="del" param="<?php echo $application[$i]->id; ?>">删除</span><?php }?>	
 	      	 				<?php }?>
 	      	 			</td>
 	      	 		</tr>

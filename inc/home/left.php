@@ -41,4 +41,5 @@
 	<?php for($i=0;$i<5;$i++){ ?>
 	<div class="servercontent"><a href="">个人动态信息</a></div>
 	<?php }?>
+	<div class="servertitle"><a href="<?php echo '../../home/application/apply_app.php' ?>">添加插件</a></div>
 </div>

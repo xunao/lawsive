@@ -80,7 +80,7 @@
 	      	 			<div class="lable select">全部</div>
 	      	 			<div class="lable">照片</div>
 	      	 			<div class="lable">日记</div>
-	      	 			<div class="lable">记录</div>
+	      	 			<div class="lable">评论</div>
 	      	 			<div class="lable">转帖</div>
 	      	 			<div class="lable">状态</div>
 	      	 			<div class="lable">对话</div>
@@ -88,24 +88,25 @@
 	      	 			<div class="lable2"></div>
 	      	 			<div class="t_r" style="height:27px; line-height:27px; border-bottom:1px solid #cccccc;"></div>
 	      	 		 </div>
-	      	 		 <?php 
-	      	 		 	$friend_news = $user->get_friend_news();
-	      	 		 	foreach ($friend_news as $friendnews){
-	      	 		 ?>
-	      	 		 <div class="context">
-	      	 		 	<div class="c_title">
-	      	 		 		<?php echo $friendnews->title?>
-	      	 		 		<div class="day"><?php echo $friendnews->created_at?></div>
-	      	 		 	</div>
-	      	 		 	<div class="cc">
-	      	 		 		<?php echo $friendnews->content;?>
-	      	 		 	</div>
-	      	 		 	<!-- <div class="comment"><a href="">发表评论</a></div>  -->
+	      	 		 <div id="b_contest">
+		      	 		<?php 
+		      	 		    $friend_news = $user->get_friend_news();
+					        foreach ($friend_news as $friendnews){
+				        ?>
+				        <div class="context">
+				        <div class="c_title">
+				        <?php echo $friendnews->title?>
+				        <div class="day"><?php echo $friendnews->created_at?></div>
+				        </div>
+				        <div class="cc">
+				        <?php echo $friendnews->content;?>
+				        </div>
+				        <!-- <div class="comment"><a href="">发表评论</a></div>  -->
+				        </div>
+				        <?php }?>
 	      	 		 </div>
-	      	 		 <?php }?>
 	      	 	</div>
 	      	 </div>
-	      	 
 	      	 <div id="person_index_right">
       		<div id="title">
       			<div id="t_l">最新动态</div>
