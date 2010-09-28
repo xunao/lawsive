@@ -9,9 +9,10 @@
 	if($article_id){
 		$article->find($article_id);
 	}
-	
+	$category=$_POST['news']['category_id'];
 	$article->update_attributes($_POST['news'],false);
 	$article->update_file_attributes('news');
+	$article->category=$category;
 	if(!$article->admin_user_id){
 		$article->admin_user_id = $user->id;
 	}
@@ -69,13 +70,13 @@
 		$article->save();
 	}
 
-	if($_POST['search_category']){
-		$article->category= intval($_POST['search_category']);
+	if($_POST['copy_news']){
+		$article->category= intval($_POST['copy_news']);
 		$article->save();
 	}
 	$href = "index.php";
 	//redirect($href);
-	redirect($href.'?category='.$_POST['news']['category']);
+	redirect($href.'?category='.$_POST['news']['category_id']);
 	#var_dump($news);
 	
 ?>

@@ -60,7 +60,7 @@
 			
 			<tr class="tr4">
 				<td class="td1">分类</td>
-				<td><span id="span_category" name=news[category] ></span></td>
+				<td><span id="span_category" ></span></td>
 			</tr>
 			
 <!--			<tr class="tr4" style="display:none;" id="tr_copy_news">-->
