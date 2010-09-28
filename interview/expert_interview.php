@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>律氏-律师访谈</title>
+<title>律氏-高端访谈</title>
 <meta name="keywords" content="律氏" />
 <meta name="coverperson" content="律氏" />
 <?php
@@ -10,7 +10,7 @@
 	css_include_tag('index','public','c_index');
 	js_include_tag('login','index');
 	$user = member::current();
-	init_page_items('interview');
+	init_page_items('expert_interview');
 ?>
 <body>
 	<div id="ibody">
@@ -18,7 +18,7 @@
 		<div id="center">
 			<div id="middlebox">
 				<div class="i_title">
-					<a href="#">律氏访谈视频&gt;&gt;</a>
+					<a href="#">高端访谈视频&gt;&gt;</a>
 				</div>
 				<?php for($i=0;$i<3;$i++){?>
 				<div class="itv"<?php $pos="left_interview_$i";show_page_pos($pos,'interview_headline')?>>
@@ -29,7 +29,7 @@
 				<?php }?>
 				<div class="int_box" style="padding-right: 7px;">
 					<div>
-						<div class="c_title" style="font-size: 14px; width: 75px;">律氏访谈</div>
+						<div class="c_title" style="font-size: 14px; width: 75px;">高端访谈</div>
 						<div class="line" style="width: 207px;"></div>
 					</div>
 					<?php for($i=0;$i<4;$i++){?>
