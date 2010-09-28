@@ -21,7 +21,7 @@
     if($_POST['post_type']=="del"){
 		$application = new Table('application_apply_log');
 		$application -> delete($id);
-		$sql='delete from member_appliaction where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
+		$sql='delete from member_application where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
 		if(!$db->execute($sql))
 		{
 			echo "";
@@ -36,14 +36,7 @@
 		else
 		{
 			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date=now(),status=1 where id='.$id;;
-			if($_POST['is_default']==0)
-			{
-				$sql='update member_appliaction set status=2 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
-			}
-			else if($_POST['is_default']==1)
-			{
-				$sql='update member_appliaction set status=1 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
-			}
+			$sql='update member_application set status=1 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;
 			if($db->execute($sql)&&$db->execute($sql1))
 			{
 				echo "OK";
@@ -61,7 +54,7 @@
 		else
 		{
 			$sql1="update application_apply_log set admin_id=".$user->id.',admin_date=now(), status=0 where id='.$id;;
-			$sql='update member_appliaction set status=0 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;;
+			$sql='update member_application set status=0 where member_id='.$member[0]->member_id.' and application_id='.$member[0]->application_id;;
 			if($db->execute($sql)&&$db->execute($sql1))
 			{
 				echo "OK";

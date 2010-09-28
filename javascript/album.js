@@ -64,10 +64,26 @@ $(function(){
 				return false;
 			}
 		}else{ 
-			if($('#src').val() == null){
+			if($('#src').val() == ''){
 				alert('请选择要上传的照片！');
 				return false;
 			}
+		}
+	});
+	$('.del').click(function(){
+		var album_id = $(this).parent().find('.album_id').val();
+		if(!window.confirm("删除专辑将同时删除其中的相片，您确定要删除吗"))
+		{
+			return false;
+		}
+		else{
+			$.post('ct_edit.post.php',{'ct_edit_auth':$('#ct_edit_auth').val(),'album_id':album_id,'type':'del'},function(data){
+				if(data == true){
+					window.location.reload(true);
+					}else{
+						alert('删除失败！');
+						}
+			});
 		}
 	});
 	$('#pho_del').live('click',function(){
@@ -80,5 +96,10 @@ $(function(){
 		  		$('#pho_aj').html(data);
 			});
 		}
+	});
+	$('#good').live('click',function(){
+		$.post('pho_up.post.php',{'ct_edit_auth':$('#ct_edit_auth').val(),'pho_id':$('#pho_id').val()},function(data){
+			alert(data);
+		});
 	});
 });

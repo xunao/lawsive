@@ -53,7 +53,7 @@
 <body>
 	<div id=icaption>
     <div id=title><?php if($id){echo "修改应用";}else{echo "添加应用";}?></div>
-	  <a href="index.php?member_id=<?php echo $member_id; ?>" id=btn_back></a>
+	  <a href="index.php" id=btn_back></a>
 	</div>
 	<div id=itable>
 	<form id="application_form" method="post" enctype="multipart/form-data" action="edit.post.php">

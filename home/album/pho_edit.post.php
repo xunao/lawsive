@@ -12,7 +12,7 @@
 	$user = member::current();
 	if(!$user){
 		alert('对不起您登录已经超时，请重新登录，修改个人信息！');
-		redirect('/home/login.php?last_url=/home/application/diary');
+		redirect('/home/login.php?last_url=/home/album/pho_edit.php');
 		exit;	
 	}
 	if($_POST['type'] == 'photo'){
@@ -55,12 +55,16 @@
 		}
 //		var_dump($photo->src)		;
 		if($photo->save()){
+			$news = new FriendNews();
+			$news->generat($user->id, 'photo', $photo->id);
+			$news->save();
 			alert('更新成功！');
 			redirect('index.php');
 		}else{
 			alert('更新失败');
 			redirect('pho_edit.php');
 		}
+			
 	}
 	if($_POST['type'] == 'del'){
 		$photo = new Table('member_photo');
@@ -70,6 +74,9 @@
 		if($photo->member_id != $user->id){
 			alert('非法操作！');
 		}else{
+			$news = new FriendNews();
+			$news->generat($user->id, 'photo_del', $photo->id);
+			$news->save();
 			$photo->delete($id);
 			redirect('pho_show.php?album_id='.$album_id);
 		}

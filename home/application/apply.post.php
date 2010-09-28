@@ -20,7 +20,7 @@
 	$name=$db->query("select a.name,a.url,r.is_free from application a left join application_role r on a.id=r.application_id where r.application_id=".$_POST['id'].' and r.role='.$member->role);
 	$data=$db->query("select * from application_apply_log where application_id=".$_POST['id']." and member_id=".$member->id);
 	$date=$db->query('select now() as time');
-	$app_id=$db->query('select id from member_appliaction where member_id='.$id.' and application_id='.$_POST['id']);
+	$app_id=$db->query('select id from member_application where member_id='.$id.' and application_id='.$_POST['id']);
 	$app_name=$name[0]->name;
 	$time=$date[0]->time;
 	$url=$name[0]->url;
@@ -30,8 +30,7 @@
 		if(count($name)>0&&$name[0]->is_free==0)
 		{
 			if(count($data)==0)
-			{
-				
+			{	
 				$app_log = new Table('application_apply_log');
 				$app_log->application_id=$_POST['id'];
 				$app_log->application_name=$app_name;
@@ -39,7 +38,7 @@
 				$app_log->apply_date=$time;
 				$app_log->status=0;
 				$app_log->save();
-				$member_app=new Table('member_appliaction');
+				$member_app=new Table('member_application');
 				if(count($app_id)>0)
 				{
 					$member_app->find($app_id[0]->id);
@@ -60,7 +59,7 @@
 		}
 		else if($name[0]->is_free==1)
 		{
-			$member_app=new Table('member_appliaction');
+			$member_app=new Table('member_application');
 			if(count($app_id)>0)
 			{
 				$member_app->find($app_id[0]->id);
@@ -83,11 +82,11 @@
 	{
 		if(count($data)>0)
 		{
-			$sql='update member_appliaction set status=2 where member_id='.$member->id.' and application_id='.$_POST['id'];
+			$sql='update member_application set status=2 where member_id='.$member->id.' and application_id='.$_POST['id'];
 		}
 		else
 		{
-			$sql='update member_appliaction set status=0 where member_id='.$member->id.' and application_id='.$_POST['id'];
+			$sql='update member_application set status=0 where member_id='.$member->id.' and application_id='.$_POST['id'];
 		}
 		if($db->execute($sql))
 		{
@@ -95,6 +94,7 @@
 		}
 		else
 		{
+			echo $sql1;
 			echo "error";
 		}
 	}

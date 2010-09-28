@@ -20,13 +20,13 @@
 		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 		$conditions = array();
-//		if($filter_category > 0){
-//			$cates = ($category->children_map($filter_category));
-//			$cats = join(',',$cates);
-//			if($cats){
-//				$conditions[] = "category_id in ($cats)";
-//			}
-//		}
+		if($filter_category > 0){
+			$cates = ($category->children_map($filter_category));
+			$cats = join(',',$cates);
+			if($cats){
+				$conditions[] = "category_id in ($cats)";
+			}
+		}
 		if($filter_adopt >=0){
 			$conditions[] = "is_adopt = $filter_adopt";
 		}
@@ -34,9 +34,8 @@
 			$conditions[] = "recommand = $filter_recommand";
 		}
 		if($filter_search){
-			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%'";
+			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%')";
 		}
-		
 		$db = get_db();
 		$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');

@@ -34,7 +34,6 @@ $(function(){
 	});
 	$(".unpass").click(function(){
 		$.post("audit_role.post.php",{'post_type':'unapply','id':$(this).attr('param'),'edit_auth':$('#edit_auth').val()},function(data){
-			alert(data);
 			if(data=="OK")
 			{
 				alert('取消审核成功！');
