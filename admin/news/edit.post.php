@@ -66,6 +66,7 @@
 	}else{
 			if($schedule->id){
 				$schedule->delete();
+				
 			}
 		}
 
