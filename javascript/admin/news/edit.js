@@ -37,7 +37,7 @@ function refresh_related_news(){
 function save_related_news(ids){
 	$('#hidden_related_news').val(ids);
 	refresh_related_news();
-	parent.$.fn.colorbox({href:'news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
+	parent.$.fn.colorbox({href:'/admin/news/news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 	//$('#a_related_news').colorbox({href:'/admin/news/news_filter.php?show_div=1&selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 }
 
@@ -158,7 +158,7 @@ $(function(){
 	}
 	//$('#a_related_news').colorbox({'href':'../index.php'});
 	$('#a_related_news').click(function(e){
-		parent.$.fn.colorbox({href:'news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
+		parent.$.fn.colorbox({href:'/admin/news/news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 		//$.fn.colorbox({href:'/admin/news/news_filter.php?selected_news=' + $('#hidden_related_news').val()+'&call_back=save_related_news'});
 	});
 	$('.publish_schedule').datepicker({
