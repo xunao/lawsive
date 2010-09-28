@@ -195,9 +195,20 @@
 		$apps = $db->query("select b.* from application_role a left join application b on a.application_id = b.id where a.is_default=1 and a.role={$this->role}");
 		!$apps && $apps = array();
 		//get the user applications
-		$user_apps = $db->query("select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1");
+		$apps_id="";
+		for($i=0;$i<count($apps);$i++)
+		{
+			$apps_id=$apps_id.$apps[$i]->id.',';
+		}
+		$sql="select b.* from member_application a left join application b on a.application_id = b.id where a.member_id={$this->id} and a.status = 1";
+		if($apps_id!="")
+		{
+			$sql.=" and b.id not in (".substr($apps_id,0,strlen($apps_id)-1).")";
+		}
+		$user_apps = $db->query($sql);
 		!$user_apps && $user_apps = array();
 		$apps = array_merge($apps,$user_apps);
+		$apps = array_reverse($apps);
 		return $apps;
 	}
 	

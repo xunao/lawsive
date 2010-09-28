@@ -30,8 +30,7 @@
 		if(count($name)>0&&$name[0]->is_free==0)
 		{
 			if(count($data)==0)
-			{
-				
+			{	
 				$app_log = new Table('application_apply_log');
 				$app_log->application_id=$_POST['id'];
 				$app_log->application_name=$app_name;
@@ -95,6 +94,7 @@
 		}
 		else
 		{
+			echo $sql1;
 			echo "error";
 		}
 	}

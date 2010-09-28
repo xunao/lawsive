@@ -41,15 +41,16 @@
 	      	 			</td>
 	      	 			<td width="20%" align="center">
 	      	 				<?php 
-	      	 					$status=$db->query('select status from member_appliaction where member_id='.$member->id.' and application_id='.$application[$i]->id); 
+	      	 					$status=$db->query('select status from member_application where member_id='.$member->id.' and application_id='.$application[$i]->id); 
+	      	 					
 	      	 					$apply_status=$db->query('select status from application_apply_log where member_id='.$member->id.' and  application_id='.$application[$i]->id);
-	      	 					if((count($status)==0||$status[0]->status==0)&&count($apply_status)==0)
+	      	 					if((count($status)==0||$status[0]->status==0)&&(count($apply_status)==0))
 	      	 					{
 	      	 				?>
 	      	 				<span class="add" param="<?php echo $application[$i]->id; ?>">我要添加</span>
 	      	 				<?php 
 	      	 					}
-	      	 					else if($apply_status[0]->status==0)
+	      	 					else if(count($apply_status)>0&&$apply_status[0]->status==0)
 	      	 					{?>
 	      	 					<span class="span2">审核中</span>
 	      	 					<?php }
