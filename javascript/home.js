@@ -27,18 +27,18 @@ $(function(){
 			});		
 		}
 		if(select == '4'){
-			
+			$('#b_contest').html('');
 		}
 		if(select == '5'){
 			$.post('friend_news.post.php',{'type':'mood'},function(data){
 				$('#b_contest').html(data);
 			});		
 		}
-		if(select == '6'){
-					
+		if(select == '6'){	
+			$('#b_contest').html('');
 		}
 		if(select == '7'){
-					
+			$('#b_contest').html('');		
 		}
 	});
 });
