@@ -15,7 +15,7 @@
 		$auth = rand_str();
 		$_SESSION['edit_auth'] = $auth;
 		$db = get_db();
-		$application = $db->query("select * from application ");
+		$application = $db->query("select * from application order by id desc");
 		$count = count($application);
 	?>
 	
