@@ -52,10 +52,10 @@ function show_submenu(index){
 			$("#cbx").html("<div id='center_h'><a href='/news/lawyer/' >律所/律师</a>|<a href='/news/job/'>职位</a>|<a href='/news/topic/topic.php'>专题</a>|<a href='/news/research&report'>调研/报告</a>|<a href='#'>新法速递</a></div>");
 			break;
 		case 2:
-			$("#cbx").html("<div id='center_h' style='margin-left:24px;'><a href='/interview/halloffame.php' >人物墙</a>|<a href='/interview/cover.php'>封面人物</a>|<a href='/interview/interview.php'>高端访谈</a>|<a href='#'>律氏访谈</a></div>");
+			$("#cbx").html("<div id='center_h' style='margin-left:24px;'><a href='/interview/halloffame.php' >人物墙</a>|<a href='/interview/cover.php'>封面人物</a>|<a href='/interview/expert_interview.php'>高端访谈</a>|<a href='/interview/interview.php'>律氏访谈</a></div>");
 			break;
 		case 3:
-			$("#cbx").html("<div id='center_h' style='margin-left:160px;'><a href='/hot/hot.php' >聚焦</a>|<a href='#'>事件</a>|<a href=''>辩论</a></div>");
+			$("#cbx").html("<div id='center_h' style='margin-left:160px;'><a href='/hot/focus.php' >聚焦</a>|<a href='events'>事件</a>|<a href='debate.php'>辩论</a></div>");
 			break;
 		case 4:
 			$("#cbx").html("<div id='center_h' style='margin-left:145px;'><a href='/view/column.php' >特约专栏</a>|<a href='/view/analysis.php'>分析</a>|<a href='#'>评论</a>|<a href=''>书评</a>|<a href='/news/regulation.php'>法规解读</a></div>");
