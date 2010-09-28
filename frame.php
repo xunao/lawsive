@@ -430,7 +430,7 @@ function init_page_items($page){
 	$page_type = get_page_type();
 	if($page_type == 'admin'){
 		js_include_tag('jquery.colorbox-min');
-		css_include_tag('colorbox');
+		css_include_tag('colorbox','admin/page_pos');
 		js_include_tag('admin/page_pos/page_admin');	
 	}
 }
