@@ -20,7 +20,7 @@
 		//$trade->paginate(20);
 //		$category->echo_jsdata();
 //		$filter_category = intval($_GET['filter_category']);
-		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
+/*		$filter_adopt = isset($_GET['filter_adopt']) ?  intval($_GET['filter_adopt']) : -1;
 		switch ($filter_adopt){
 			case 0;
 			$conditions[] = "trade_type = 'office'";
@@ -30,7 +30,7 @@
 			break;
 			default:
 				break;
-		}
+		}*/
 //		$filter_recommand = isset($_GET['filter_recommand']) ?  intval($_GET['filter_recommand']) : -1;
 		$filter_search = urldecode($_GET['filter_search']);
 //		if($filter_category > 0){
@@ -64,11 +64,6 @@
 <div id=isearch>
 		<input id="filter_search" type="text" value="<?php echo $filter_search;?>">
 		<span id="span_category"></span>
-		<select id="adopt" style="width:90px" class="sau_search">
-				<option value="-1">交易类型</option>
-				<option value="1">律师</option>
-				<option value="0">律所</option>
-		</select>
 		<script type="text/javascript">
 			$('#adopt').val('<?php echo $filter_adopt;?>');
 			$('#up').val('<?php echo $filter_recommand;?>');
@@ -79,15 +74,15 @@
 <div id=itable>
 	<table cellspacing="1" align="center">
 		<tr class=itable_title>
-			<td width="25%">客户</td><td width="20%">交易类型</td><td width="20%">交易金额</td><td width="20%">发布日期</td><td width="15%">操作</td>
+			<td width="25%">交易名称</td><td width="20%">客户名称</td><td width="20%">交易金额</td><td width="20%">发布日期</td><td width="15%">操作</td>
 		</tr>
 		<?php
 			//--------------------
 			for($i=0;$i<count($trade);$i++){
 		?>
 		<tr class=tr3 id=<?php echo $trade[$i]->id;?> >
+			<td><?php echo strip_tags($trade[$i]->trade_name);?></td>
 			<td><?php echo strip_tags($trade[$i]->client);?></td>
-			<td><?php echo $trade[$i]->trade_type == "office" ? "律所":"律师";?></td>
 			<td><?php echo $trade[$i]->trade_value;?></td>
 			<td><?php echo $trade[$i]->created_at;?></td>
 			<td>
