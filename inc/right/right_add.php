@@ -1,8 +1,3 @@
-<?php	
-//		include_once(dirname(__FILE__).'./../../frame.php'); 
-//		use_jquery_ui();
-//		init_page_items('index');
-  	?>
 <style>
 	#add{margin:5px; }
 </style>

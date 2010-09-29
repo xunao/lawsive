@@ -11,7 +11,27 @@
 	#right_exp_d font{margin:0 5px 0px 32px;float:left;font-size:12px; line-height:14px; }
 </style>
 <div id="right_expert">
-	<div id="right_exp_h"><div ><a href="">热点案例</a></div><div ><a href="">专家库</a></div><div><a href="">专业指南</a></div></div>  
-	<div id="right_exp_c"><a href=""><img src="/images/index/alb.jpg" border="0"></a><a href=""><img src="/images/index/alb.jpg" border="0"></a><a href=""><img src="/images/index/alb.jpg" border="0"></a></div>
+	<div id="right_exp_h">
+		<div >
+			<a href="">热点案例</a>
+		</div>
+		<div >
+			<a href="">专家库</a>
+		</div>
+		<div>
+			<a href="">专业指南</a>
+		</div>
+	</div>  
+	<div id="right_exp_c">
+		<a href="">
+			<img src="/images/index/alb.jpg" border="0">
+		</a>
+		<a href="">
+			<img src="/images/index/alb.jpg" border="0">
+		</a>
+		<a href="">
+			<img src="/images/index/alb.jpg" border="0">
+		</a>
+	</div>
 	<div id="right_exp_d"><font>律师事务所</font><font>律师事务所</font><font>律师事务所</font></div>
 </div>
