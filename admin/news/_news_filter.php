@@ -143,7 +143,7 @@
 		
 		$('#news_sort').click(function(e){
 			e.preventDefault();
-			$('#result_box').load('_news_filter_sort.php',{'selected_news':selected_news.join(',')});
+			$('#result_box').load('/admin/news/_news_filter_sort.php',{'selected_news':selected_news.join(',')});
 		});
 		
 		$('.tr3 input:checkbox').each(function(){
@@ -161,8 +161,7 @@
 				}
 			}
 		}
-		        
-		
+
 		function send_search(){
 			var filter_category = $('.news_category:last').attr('value');
 			var category_count = $('.news_category').length;

@@ -46,7 +46,7 @@ class FriendNews {
 				$result = $db->query($sql);
 				$result = $result[0];
 				if(!$result) return false;
-				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->name}</a>　发布了一篇日记　";
+				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'> {$result->name} </a>　发布了一篇日记　";
 				$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
 				$this->created_at = $result->created_at;
 				$this->content = mb_substr($result->content, 0,200,'utf-8');
@@ -69,7 +69,7 @@ class FriendNews {
 						$result = $result[0];
 						$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->name}</a>　的日记　";
 						$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
-						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论道：";
+						$this->title .="　被  <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论道：";
 					break;
 					case 'column':
 						$sql = "select * from article where id ={$comment_resource_id}";

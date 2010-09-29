@@ -8,7 +8,7 @@
 		include ('../frame.php');
 		use_jquery_ui();
 		css_include_tag('person_public','person_info');
-		js_include_tag('date','person_info');
+		js_include_tag('person_info');
 		$member = member::current();
 		session_start(); 		
 		$db=get_db();
@@ -126,7 +126,7 @@
 	      	 		<tr>
 	      	 			<td style="border-bottom:none;"></td>
 	      	 			<td style="border-bottom:none;">
-	      	 				<button id="sub">保存设置</button>
+	      	 				<button  id="sub">保存设置</button>
 	      	 				<input type="hidden" name="info_auth" value="<?php echo $auth;?>" />
 	      	 			</td>
 	      	 		</tr>

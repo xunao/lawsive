@@ -2,7 +2,6 @@
 	session_start(); 
 	include_once '../frame.php';
 	
-	set_charset('utf8');
 	if(!is_post()){
 		die('invlad request!');
 	}
@@ -17,6 +16,9 @@
 	}
 	$info = new Table('member_base_info');
 	$info->find($member->base_info_id);
+	if ($info->id) {
+		alert($info->id);
+	}
 	$info->update_attributes($_POST['post'],false);
 	$info->member_id= $member->id;
 	$info->save();
@@ -25,6 +27,6 @@
 		$member->name = $info->name;
 		$member->save();
 	}
-	alert('修改成功！');
+	alert("修改成功！");
 	redirect('/home/');
 ?>
