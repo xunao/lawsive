@@ -5,7 +5,7 @@
 <meta name="keywords" content="律氏" />
 <meta name="description" content="律氏" />
 <?php	
-		include_once(dirname(__FILE__).'/frame.php'); 
+		include_once(dirname(__FILE__).'/frame.php');
 		use_jquery_ui();
 		css_include_tag('index','public','colorbox');
 		js_include_tag('login','logout','jquery.colorbox-min');
@@ -17,7 +17,7 @@
               <?php include_once(dirname(__FILE__).'/inc/top.php'); ?>
               <div id="center">
                        <div id="center_l">
-                                <div id="c_people"> 
+                                <div id="c_people">
                                         <div class="c_title" ><div class="c_t_n" ><font>本期人物</font><div class="c_t_b" style="width:450px;"></div><img src="/images/index/c_t_right.jpg"><img src="/images/index/c_t_left.jpg"></div></div>
                                         <div class='c_banner' <?php $pos="index_people";show_page_pos($pos,'index_people');?>>
 	                                        <a href="">
