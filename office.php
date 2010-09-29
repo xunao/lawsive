@@ -10,6 +10,14 @@
 		css_include_tag('public','office');
 		js_include_tag('login','index');
 		$user = member::current();
+		$category=new Category();
+		$category->find_by_name('lawyer');
+		$lawyer_id=$category->id;
+		$category->find_by_name('lawfirm');
+		$lawfirm_id=$category->id;
+		$db=get_db();
+		$lawyer=$db->query("select id ,title ,content, photo from lawsive.plug  where category_id='$lawyer_id' and is_adopt=1 order by priority DESC , lasted_at DESC limit 4");
+		$lawfirm=$db->query("select id ,title ,content, photo from lawsive.plug  where category_id='$lawfirm_id' and is_adopt=1 order by priority DESC , lasted_at DESC limit 4");
   	?>
 <body>
       <div id="ibody">
@@ -19,13 +27,13 @@
            	<div class="office_recommend">
            		<div class="c_title"><div class="c_t_n" ><font>本期律师事务所推荐</font><div class="c_t_b" style="width:119px;"></div></div></div>
 				<div class="office_content">
-					<a href=""><img src="/images/office/image.jpg"></a><p><a href=""><span>南瓜律师事务所</span><br>南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所</a></p>
+					<a href=""><img src="<?php echo $lawfirm[0]->photo;?>"></a><p><a href=""><span><?php echo $lawfirm[0]->title;?></span><br><?php echo $lawyer[0]->content;?></a></p>
 				</div>
            	</div>
            	<div class="lawyer_recommend">
            		<div class="c_title"><div class="c_t_n" ><font>本期律师推荐</font><div class="c_t_b" style="width:170px;"></div></div></div>
            		<div class="office_content">
-					<a href=""><img src="/images/office/image.jpg"></a><p><a href=""><span>南瓜律师</span><br>南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所</a></p>
+					<a href=""><img src="<?php echo $lawyer[0]->photo?>"></a><p><a href=""><span><?php echo $lawyer[0]->title;?></span><br><?php echo $lawyer[0]->content;?></a></p>
 				</div>
            	</div>
            	<div class="c_title search"><div class="c_t_n" ><font>本期律师推荐</font></div></div>
@@ -67,9 +75,9 @@
            	</div>
            	<div class="office_recommend">
            		<div class="c_title"><div class="c_t_n" ><font>本期律师事务所推荐</font><div class="c_t_b" style="width:119px;"></div></div></div>
-           		<?php for($i=0;$i<3;$i++){ ?>
+           		<?php for($i=1;$i<4;$i++){ ?>
 				<div class="office_content">
-					<a href=""><img src="/images/office/image.jpg"></a><p><a href=""><span>南瓜律师事务所</span><br>南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所</a></p>
+					<a href=""><img src="<?php echo $lawfirm[$i]->photo;?>"></a><p><a href=""><span><?php echo $lawfirm[$i]->title?></span><br><?php echo $lawfirm[$i]->content;?></a></p>
 				</div>
 				<?php }?>
 				<div class="office_more">
@@ -78,9 +86,9 @@
            	</div>
            	<div class="lawyer_recommend">
            		<div class="c_title"><div class="c_t_n" ><font>本期律师推荐</font><div class="c_t_b" style="width:170px;"></div></div></div>
-           		<?php for($i=0;$i<3;$i++){ ?>
+           		<?php for($i=1;$i<4;$i++){ ?>
 				<div class="office_content">
-					<a href=""><img src="/images/office/image.jpg"></a><p><a href=""><span>南瓜律师事务所</span><br>南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所南瓜律师事务所</a></p>
+					<a href=""><img src="<?php echo $lawyer[$i]->photo;?>"></a><p><a href=""><span><?php echo $lawyer[$i]->title?></span><br><?php echo $lawyer[$i]->content?></a></p>
 				</div>
 				<?php }?>
 				<div class="office_more">
