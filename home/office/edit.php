@@ -35,14 +35,12 @@
       		</div>
       		<div id="d_m">
 	      		<form method="post" enctype="multipart/form-data" action="edit.post.php">
-	      		    <div style="width:100%;">
-		      		    <select style="width:80px;" name="" id="">
-							<option value="lawyer">律师推荐</option>
-							<option value="lawfirm">律所推荐</option>
-						</select>
-					</div>
+	      		    
 	      			<div id="ed_t">标题：</div>
 	      			<div id="ed_input"><input id="title" name="post[title]" value="<?php echo $article->title;?>"></div>
+	      			<div class="al">照片路径：<input id="upfile" type="file" name="post[src]" value="<?php echo $photo->src;?>" /></div>
+		      		<div id="text">(支持JPG、JPEG、GIF和PNG文件，最大2M。)</div>
+		      		<div id="text"></div>
 	      			<div id="ed_box">
 	      				<div id="ed_nr">内容：</div>
 	      				<div id="ed_cont">
@@ -52,6 +50,13 @@
 	      					<?php show_fckeditor('x','Front',true,"0");?>
 	      				</div>
 	      				<div id="ed_post"></div>
+	      				<div>选择推荐分类</div>
+		      		    <div style="width:100%;">
+			      		    <select style="width:80px;" name="" id="">
+								<option value="lawyer">律师推荐</option>
+								<option value="lawfirm">律所推荐</option>
+							</select>
+						</div>
 	      				<div id="ed_nr">
 	      					<button type="submit" id="dia_edit" class="ed_sub">发布日记</button>
 	      					<input type="button" id="return" value="返回日志">
@@ -59,7 +64,9 @@
 	      					<input type="hidden" id="article_id" name="article_id" value="<?php echo $article_id?>">
 	      					<input type="hidden" id="category_id" value="<?php echo $article->category;?>">
 	      				</div>
+	      				
 	      			</div>
+	      			
       			</form>
       		</div>
       	</div>
