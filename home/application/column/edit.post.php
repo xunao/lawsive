@@ -6,7 +6,7 @@
     if(!is_post()){
 		die('invlad request!');
 	}
-	if($_SESSION['dia_edit_auth'] != $_POST['dia_edit_auth']){
+	if($_SESSION['column_edit_auth'] != $_POST['column_edit_auth']){
 		die('invlad request!');
 	}
 	$user = member::current();
@@ -17,50 +17,52 @@
 	}
     	$id = intval($_POST['article_id']);
     	$db = get_db();
-		$diary = new Table('article');
-		$diary->find($id);
-		$diary->update_file_attributes('post');
-		$diary->update_attributes($_POST['post'],false);
-		if(!$diary->title){
+		$column = new Table('article');
+		$column->find($id);
+		$column->update_file_attributes('post');
+		$column->update_attributes($_POST['post'],false);
+		if(!$column->title){
 			alert( '请输入标题！');
-			redirect('/home/application/diary');
+			redirect('edit.php');
 			return false;
 		}
-		if(mb_strlen($diary->title)>120){
+		if(mb_strlen($column->title)>120){
 			alert( '输入的标题太长了！');
-			redirect('/home/application/diary');
+			redirect('edit.php');
 			return false;
 		}
-		if($diary->category == '-1'){
+		if($column->category == '-1'){
 			alert( '请选择分类！');
-			redirect('/home/application/diary');
+			redirect('edit.php');
 			return false;
 		}
-		if(!$diary->admin_user_id){
-			$diary->admin_user_id = $user->id;
+		if(!$column->admin_user_id){
+			$column->admin_user_id = $user->id;
 		}
-		if(!$diary->resource_type){
-			$diary->resource_type = diary;
+		if(!$column->resource_type){
+			$column->resource_type = 'column';
 		}
-		if(!$diary->id){
-			$diary->created_at = now();
-		}else{
-			$diary->last_edit_at = now();
+		if(!$column->id){
+			$column->created_at = now();
 		}
-		if(!$diary->author && $user->name != ''){
-			$diary->author =  $user->name;
-		}elseif(!$diary->author && !$user->name)
+		$column->last_edit_at = now();
+		
+		if(!$column->author && $user->name != ''){
+			$column->author =  $user->name;
+		}elseif(!$column->author && !$user->name)
 		{
-			$diary->author =  $user->login_name;
+			$column->author =  $user->login_name;
 		}
 		
-		if($diary->save()){
-			alert('更新日志成功！');
+		if($column->save()){
+			alert('更新专栏成功！');
 			$news = new FriendNews();
-			$news->generat($user->id, 'diary', $diary->id);
+			$news->generat($user->id, 'column', $column->id);
 			$news->save();
+			redirect('index.php');
 		}else{
-			alert('更新日志失败');
+			alert('更新专栏失败');
+			redirect('edit.php');
 		}
-		redirect('/home/application/diary');
+		
 ?>

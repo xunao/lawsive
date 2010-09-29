@@ -19,10 +19,9 @@
 		}
 		$article = new Table('article');
 		$auth = rand_str();
-		$_SESSION['dia_edit_auth'] = $auth;
+		$_SESSION['column_edit_auth'] = $auth;
 		$article_id=intval($_GET['a_id']);
 		$article = $article->find($article_id);
-		$db=get_db();
   	?>
 <body>
 	<div id="ibody">
@@ -31,7 +30,7 @@
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />专栏
-      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
+      			<div id="e_ret"><a href="/home/application/column">&gt;&gt;返回我的专栏首页</a></div>	
       		</div>
       		<div id="d_m">
 	      		<form method="post" enctype="multipart/form-data" action="edit.post.php">
@@ -45,11 +44,26 @@
 	      				<div id="test">
 	      					<?php show_fckeditor('x','Front',true,"0");?>
 	      				</div>
-	      				<div id="ed_post"></div>
+	      				<div id="ed_post">
+	      				专栏分类：
+	      				<?php 
+	      					$db= get_db();
+	      					$categorys = $db->query("select id,name from lawsive.category where category_type = 'column'");
+	      				?>
+							<select id="dia_category" name="post[category]">
+								<option value="-1">请选择分类</option>
+						<?php for($i=0;$i<5;$i++){ ?>
+							<option value="<?php echo $categorys[$i]->id;?>"><?php echo $categorys[$i]->name;?></option>
+						<?php }?>
+							</select>
+						<script>
+							$('#dia_category').val(<?php echo $article->category;?>);
+						</script>
+	      				</div>
 	      				<div id="ed_nr">
 	      					<button type="submit" id="dia_edit" class="ed_sub">发布专栏</button>
 	      					<input type="button" id="return" value="返回专栏">
-	      	 				<input type="hidden" id="dia_edit_auth" name="dia_edit_auth" value="<?php echo $auth;?>" />
+	      	 				<input type="hidden" id="column_edit_auth" name="column_edit_auth" value="<?php echo $auth;?>" />
 	      					<input type="hidden" id="article_id" name="article_id" value="<?php echo $article_id?>">
 	      					<input type="hidden" id="category_id" value="<?php echo $article->category;?>">
 	      				</div>
@@ -60,19 +74,4 @@
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/bottom.php'); ?>
       </div>
 </body>
-<script type="text/javascript">
-$(function(){
-	var category_id=$('#category_id').val();
-	var info_auth = $('#dia_edit_auth').val();
-	$.post('ajax.ct_edit.php',{"category_id":category_id},function(data){
-		$('#ed_post').html(data);
-	});
-	$('#ed_post img').live('click',function(){
-		var value = $('#ed_post select option:selected').val().trim();
-		$.post('ajax.ct_add.php',{"type":"insert","category_id":category_id,"dia_edit_auth":info_auth},function(data){
-			$('#ed_post').html(data);
-		});
-	});
-});
-</script>
 </html>

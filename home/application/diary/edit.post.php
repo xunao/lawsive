@@ -44,9 +44,9 @@
 		}
 		if(!$diary->id){
 			$diary->created_at = now();
-		}else{
-			$diary->last_edit_at = now();
 		}
+		$diary->last_edit_at = now();
+		
 		if(!$diary->author && $user->name != ''){
 			$diary->author =  $user->name;
 		}elseif(!$diary->author && !$user->name)

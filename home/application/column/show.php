@@ -15,7 +15,7 @@
 		if(!$user)
 		{
 			echo('对不起，您的登录已过期！请重新登录！');
-			redirect('/home/login.php?last_url=/home/application/dairy');
+			redirect('/home/login.php?last_url=/home/application/column');
 		}
 		$article = new Table('article');
 		$auth = rand_str();
@@ -30,19 +30,20 @@
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />
-      			<?php if($user->id == $article->admin_user_id){?>我的日志展示
+      			<?php if($user->id == $article->admin_user_id){?>我的专栏展示
       			<?php }else{ 
       				echo $article->author;
-      			?>的日志展示
+      			?>的专栏展示
       			<?php }?>
       			<div id="e_ret">
-	      			<a href="/home/">
-		      			<?php if($user->id == $article->admin_user_id){?>&gt;&gt;返回我的日志首页
-		      			<?php }else{ 
-		      				echo '&gt;&gt;返回'.$article->author.'';
-		      			?>的日志首页
-		      			<?php }?>
-	      			</a>
+      			<?php if($user->id == $article->admin_user_id){?>
+	      			<a href="/home/application/column">
+		      			&gt;&gt;返回我的专栏首页</a>
+		      			<?php }else{ ?>
+		      			<a href="/home/application/column/index.php?id=<?php echo $article->admin_user_id;?>">
+		      			<?php 
+		      				echo "&gt;&gt;返回".$article->author."的专栏首页";
+		      			}?></a>
       			</div>	
       		</div>
       		<div id="com">
@@ -57,7 +58,7 @@
 				<div id="pub_comment_box">
 				</div>
 				<script type="text/javascript">
-					 	pub_comment('diary',<?php echo $article_id;?>,'pub_comment_box');
+					 	pub_comment('column',<?php echo $article_id;?>,'pub_comment_box');
 				</script>
           	</div>
       	</div>

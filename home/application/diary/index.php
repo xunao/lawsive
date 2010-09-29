@@ -35,8 +35,8 @@
 		}
 		$diarys = new Table("article");
 		$diary = $diarys->paginate('all',array('conditions' => join(' and ', $conditions),'order' => "created_at desc"),4);
-		$total = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}'")));
-		$total2 = $diarys->paginate('all',array('conditions'=>("resource_type = 'diary' and admin_user_id='{$id}' and category = '-1'")));
+		$total = $db->query("select * from lawsive.article where resource_type = 'diary' and admin_user_id='{$id}'");
+		$total2 = $db->query("select * from lawsive.article where resource_type = 'diary' and admin_user_id='{$id}'and category = '-1'");
 		if($diary === false) die('数据库执行失败');
   	?>
 <body>
@@ -45,7 +45,15 @@
       	<?php include_once(dirname(__FILE__).'/../../../inc/home/left.php'); ?>
       	<div id="diary_box">
       		<div id="diary_title">
-      			<img src="../../../images/diary/logo_diary.jpg" />日志
+      			<img src="../../../images/diary/logo_diary.jpg" />
+      			<?php if($id == $user->id){
+      				echo '我';
+      			}else{
+      				$member = new Table('member');
+      				$member->find($id);
+      				echo $member->name;
+      			}?>
+      			的日志
       			<input type="hidden" id="id" value="<?php echo $id ?>">
       			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>
       		</div>
@@ -73,7 +81,7 @@
       				<?php 
       					$categorys = $db->query("select id,name from lawsive.member_category where resource_type = 'diary' and member_id = '$id'");
       					for($i=0; $i<count($categorys);$i++){
-      					$count = count($db->query("select id from lawsive.article where category = '{$categorys[$i]->id}'"));
+      					$count = count($db->query("select id from lawsive.article where category = '{$categorys[$i]->id}' and resource_type ='diary'"));
       				?>
       					<div class="dc_t"><img style="display:inline" src="/../../../images/diary/dc_t.jpg"></div>
       					<div class="dc_name">
@@ -94,21 +102,21 @@
       			<?php 
       				if(count($diary) != '0'){
       				for($i=0; $i<count($diary);$i++){
-      				if($diary[$i]->category != '0'){
+      				if($diary[$i]->category != '-1'){
       					$cat_name2= new Table('member_category');
       					$cat_name2->find($diary[$i]->category);
       					$cat_name = $cat_name2->name;
       					$cat_id = $cat_name2->id;
       				}else{
       					$cat_name = '未指定';
-      					$cat_id = '0';
+      					$cat_id = '-1';
       				}
       				
       				?>
       			<div id="dia_box">
       				<div class="dm_diary">
       					<div style="width:470px;"><div class="dia_t"><a href="show.php?id=<?php echo $diary[$i]->id;?>"><?php echo htmlspecialchars($diary[$i]->title);?></a></div>
-      					<div class="dia_info"><?php echo mb_substr($diary[$i]->created_at,0,16);?>发表	分类：<a href = "index.php?id=<?php echo $id;?>&file_category=<?php echo $cat_id;?>"><?php echo $cat_name?></a></div></div>
+      					<div class="dia_info"><?php echo mb_substr($diary[$i]->last_edit_at,0,16);?>发表	分类：<a href = "index.php?id=<?php echo $id;?>&file_category=<?php echo $cat_id;?>"><?php echo $cat_name?></a></div></div>
       				<?php if($id==$user->id){?>
       					<div class="dia_edit">
       						<a href="edit.php?a_id=<?php echo $diary[$i]->id;?>">编辑</a>　<font>|</font><a class="del" href="#">删除</a>

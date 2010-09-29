@@ -32,7 +32,7 @@
       	<div id="diary_box">
       		<div id="diary_title">
       			<img src="../../../images/diary/logo_diary.jpg" />日记
-      			<div id="e_ret"><a href="/home/">&gt;&gt;返回我的首页</a></div>	
+      			<div id="e_ret"><a href="/home/application/diary">&gt;&gt;返回我的日志首页</a></div>	
       		</div>
       		<div id="d_m">
 	      		<form method="post" enctype="multipart/form-data" action="edit.post.php">
@@ -65,6 +65,7 @@
 $(function(){
 	var category_id=$('#category_id').val();
 	var info_auth = $('#dia_edit_auth').val();
+	
 	$.post('ajax.ct_edit.php',{"category_id":category_id},function(data){
 		$('#ed_post').html(data);
 	});

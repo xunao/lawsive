@@ -36,7 +36,7 @@
       			?>的日志展示
       			<?php }?>
       			<div id="e_ret">
-	      			<a href="/home/">
+	      			<a href="/home/application/diary">
 		      			<?php if($user->id == $article->admin_user_id){?>&gt;&gt;返回我的日志首页
 		      			<?php }else{ 
 		      				echo '&gt;&gt;返回'.$article->author.'';

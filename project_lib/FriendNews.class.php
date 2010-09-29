@@ -71,6 +71,14 @@ class FriendNews {
 						$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
 						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论道：";
 					break;
+					case 'column':
+						$sql = "select * from article where a.id ={$comment_resource_id}";
+						$result = $db->query($sql);
+						$result = $result[0];
+						$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->author}</a>　的日记　";
+						$this->title .="<a href='/home/application/column/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
+						$this->title .="　被 <a href='/home/member.php?id={$comment->user_id}'>{$comment->nick_name}</a>　评论道：";
+					break;
 					case 'mood':
 						$sql = "select a.id,a.u_id,a.content,a.created_at,b.name from mood a left join member b on a.u_id = b.id where a.id ={$comment_resource_id}";
 						$result = $db->query($sql);
@@ -145,6 +153,46 @@ class FriendNews {
 				if(!$result) return false;
 				$this->title = "<a href='/home/member.php?id={$result->member_id}'>{$result->member_name}</a>　删除了专辑　";
 				$this->title .= mb_substr($result->name, 0,10,'utf-8') ."以及其中的照片";
+				$this->created_at = $time;
+			break;
+			case 'column':
+				$sql = "select * from article where id ={$resource_id}";
+				$result = $db->query($sql);
+				$result = $result[0];
+				if(!$result) return false;
+				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->author}</a>　更新了专栏";
+				$this->title .="<a href='/home/application/column/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
+				$this->created_at = $result->last_edit_at;
+				$this->content = mb_substr($result->content, 0,200,'utf-8');
+			break;
+			case 'column_del':
+				$sql = "select * from article where id ={$resource_id}";
+				$result = $db->query($sql);
+				$result = $result[0];
+				$time = now();
+				if(!$result) return false;
+				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->author}</a>　删除了专栏文章　";
+				$this->title .= mb_substr($result->title, 0,10,'utf-8');
+				$this->created_at = $time;
+			break;
+			case 'diary':
+				$sql = "select * from article where id ={$resource_id}";
+				$result = $db->query($sql);
+				$result = $result[0];
+				if(!$result) return false;
+				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->author}</a>　更新了日志　";
+				$this->title .="<a href='/home/application/diary/show.php?id={$result->id}'>". mb_substr($result->title, 0,10,'utf-8') ."</a>";
+				$this->created_at = $result->last_edit_at;
+				$this->content = mb_substr($result->content, 0,200,'utf-8');
+			break;
+			case 'diary_del':
+				$sql = "select * from article where id ={$resource_id}";
+				$result = $db->query($sql);
+				$result = $result[0];
+				$time = now();
+				if(!$result) return false;
+				$this->title = "<a href='/home/member.php?id={$result->admin_user_id}'>{$result->author}</a>　删除了日志　";
+				$this->title .= mb_substr($result->title, 0,10,'utf-8');
 				$this->created_at = $time;
 			break;
 			
