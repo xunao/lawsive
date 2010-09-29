@@ -2,6 +2,7 @@
 	session_start();
 	include_once('../../frame.php');
     set_charset("utf-8");
+    $db=get_db();
     
     if(!is_post()){
 		die('invlad request!');
@@ -68,15 +69,17 @@
 	}
 	if($_POST['type'] == 'del'){
 		$photo = new Table('member_photo');
+		$news = new Table('friend_news');
 		$id = intval($_POST['pho_id']);
 		$photo->find($id);
 		$album_id = $photo->category_id;
 		if($photo->member_id != $user->id){
 			alert('非法操作！');
 		}else{
-			$news = new FriendNews();
-			$news->generat($user->id, 'photo_del', $photo->id);
-			$news->save();
+			$sql3 = $db->query("select id from lawsive.friend_news where resource_id ='$id' and resource_type='photo' and member_id ='{$user->id}'");
+				for($i=0;$i<count($sql3);$i++){
+	    			$news->delete($sql3[$i]->id);
+	    		}
 			$photo->delete($id);
 			redirect('pho_show.php?album_id='.$album_id);
 		}

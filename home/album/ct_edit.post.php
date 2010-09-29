@@ -82,16 +82,18 @@
 		}else{
 			$db=get_db();
 			$pho_id= $db->query("select id from lawsive.member_photo where category_id = '$id'");
-			$num = count($pho_id);
+			$news = new Table('friend_news');
 			$photo = new Table('member_photo');
-			for($i=0;$i<$num;$i++){
+			for($i=0;$i<count($pho_id);$i++){
+				$sql3 = $db->query("select id from lawsive.friend_news where resource_id ='{$pho_id[$i]->id}' and resource_type='photo' and member_id ='{$user->id}'");
+				$news->delete($sql3[0]->id);
 				$photo->delete($pho_id[$i]->id);
 			}
-			$news = new FriendNews();
-			$news->generat($user->id, 'album_del', $id);
-			$news->save();
+    		$sql2 = $db->query("select id from lawsive.friend_news where resource_id='$id' and resource_type = 'album' and member_id = '{$user->id}'");
+    		for($i=0;$i<count($sql2);$i++){
+    			$news->delete($sql2[$i]->id);
+    		}
 			$album->delete($id);
-			echo true;
 		}
 	}
 ?>

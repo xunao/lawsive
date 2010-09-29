@@ -78,11 +78,7 @@ $(function(){
 		}
 		else{
 			$.post('ct_edit.post.php',{'ct_edit_auth':$('#ct_edit_auth').val(),'album_id':album_id,'type':'del'},function(data){
-				if(data == true){
 					window.location.reload(true);
-					}else{
-						alert('删除失败！');
-						}
 			});
 		}
 	});

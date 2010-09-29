@@ -83,7 +83,7 @@ $(function(){
 		}
 		else{
 			$.post('dia_del.post.php',{'dia_del_auth':$('#dia_del_auth').val(),'id':dia_id},function(data){
-				if(data == true){
+				if(data == ''){
 					window.location.reload(true);
 					}else{
 						alert('删除失败！');
