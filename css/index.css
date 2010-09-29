@@ -7,6 +7,7 @@ body a{text-decoration:none; color:#666666}
 #center{width:1000px; background:#ECF1FF; font-size:14px; line-height:18px;padding-bottom:20px; color:#666666; letter-spacing:1px; }
 #center_l{width:585px; margin:16px 0 0 16px; }
 #new_ad{margin-bottom:30px; }
+.c_banner{width:100%; height:136px; overflow:hidden; float:left; display:inline;}
 
 #c_people{width:585px; height:162px; }
 #c_p_i{width:204px; height:131px; float:left; margin:0 10px 14px 0; }
@@ -17,6 +18,7 @@ body a{text-decoration:none; color:#666666}
 #c_p_r_3{font-size:14px; line-height:18px; font-weight:100; color:red; letter-spacing:1px; margin-top:5px;}
 #c_p_r_4{width:370px; font-size:14px; line-height:18px; font-weight:200; color:#333333; letter-spacing:1px; margin-top:5px;}
 #c_p_r_5{font-size:12px; line-height:15px; font-weight:200; letter-spacing:1px; margin-top:5px;}
+#d_c_p_r_5{width:340px; height:80px; font-size:12px; line-height:16px; overflow:hidden; font-weight:200; letter-spacing:1px; margin-top:5px; float:left; display:inline;}
 .point{color:black; font-size:16px; margin:0 5px 0 0; }
 #c_p_r_l{margin-bottom:5px;width:370px; }
 .c_p_r_r{margin-top:5px; color:black; width:100%}
@@ -33,6 +35,7 @@ body a{text-decoration:none; color:#666666}
 .l_add{font-size:12px;margin-left:10px;float:left;}
 .change_b{background:#E1EADB; padding:5px 0;}
 .change_t{float:left; padding: 5px ; width:200px;}
+.change_t img{width:80px; height:50px;}
 .change_t font{float:left; margin: 5px  0;}
 .change_t1{width:210px;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left; }
 .cha_tt{font-size:14px; line-height:24px; color:black;font-weight:600;width:100%;}
@@ -52,13 +55,14 @@ body a{text-decoration:none; color:#666666}
 #column{width:585px; margin-top:20px;}
 #column_c{width:585px; text-align:center;}
 .column_d{width:150px; margin:15px 0 15px 37px; text-align:center;}
-.column_d_h{width:150px;;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left;}
+.column_d img {width:126px; height:99px;}
+.column_d_h{width:150px;font-size:14px; line-height:18px; font-weight:600; color:black; letter-spacing:2px; float:left;}
 
 .talk{width:100%; margin-top:10px;}
 .talk_t{width:280px;}
 .talk_h{width:100px; height:24px; background:#5088AA; color:white;font-size:16px; line-height:24px;font-weight:bold; text-align:center; }
 .talk_c{width:100%;margin-top:10px;}
-.talk_c img{float:left;}
+.talk_c img{width:57px; height:62px;float:left;}
 .talk1{color:black; margin-left:10px; font-weight:bold; width:200px; }
 .talk2{color:#666666; margin-left:10px;  margin-top:5px; width:200px; }
 .ylawyer{width:585px; margin-top:20px;}
@@ -84,4 +88,4 @@ body a{text-decoration:none; color:#666666}
 .s_r_h  font{float:left; margin-left:5px; }
 
 
-
+.index_img_a img{width:350px; height:200px; border: 0px solid red;}

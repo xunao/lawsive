@@ -61,16 +61,16 @@
 			<td width="10%">选择</td><td width="50%">短标题</td><td width="20%">发表时间</td><td width="20%">所属类别</td>
 		</tr>
 		<?php
-			$subject = new Table("eb_news");
+			$subject = new Table("news");
 
-			$items = search_content($_REQUEST['key'],'eb_news',$conditions,25,$order);
-			$count_record = count($items);			
+			$items = search_content($_REQUEST['key'],'news',$conditions,25,$order);
+			$count_record = count($items);	
+//			var_dump($items);
 			//--------------------		
-			for($i=0;$i<$count_record;$i++)	{
-				
+			for($i=0;$i<$count_record;$i++)	{				
 		?>
 		<tr class=tr3>
-					<td><input type="checkbox" id="<?php echo $items[$i]->id;?>" value="<?php echo $items[$i]->id;?>" name="subject" style="width:12px;"></td>
+					<td><input type="checkbox" id="<?php echo $items[$i]->id;?>" value="<?php echo $items[$i]->id;?>"  name="subject" style="width:12px;"></td>
 					<td style="text-indent:24px; text-align:left;"><?php echo strip_tags($items[$i]->title);?></td>
 					<td><?php echo strip_tags($items[$i]->created_at);?></td>					
 					<td><?php echo $category->find($items[$i]->category_id)->name; ?></td>
@@ -152,6 +152,16 @@
 				}
 			});
 		});
+
+		function array_remove(array,val){
+			icount = array.length;
+			for(i=0;i<icount;i++){
+				if(array[i] == val){
+					array.splice(i,1);
+				}
+			}
+		}
+		        
 		
 		function send_search(){
 			var filter_category = $('.news_category:last').attr('value');

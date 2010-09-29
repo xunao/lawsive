@@ -25,6 +25,8 @@
 		$fields['interview_intrduction']=array("律师","律所","链接","","图片","","关键字","内容");
 		$fields['topic_topic_up']=array("标题","律师","律所","链接","图片","","关键字","内容");
 		$fields['topic_topic']=array("","律师","律所","链接","图片","","关键字","内容");
+		$fields['index_people']=array("律师","标题","链接","","图片","","律所","内容");
+		$fields['index_column']=array("标题","描述","链接","","图片","","分类","");
 		$names = array_key_exists($_GET['name'],$fields) ?  $fields[$_GET['name']] : $fields['default'];
 	?>
 </head>

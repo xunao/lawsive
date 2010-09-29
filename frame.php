@@ -365,9 +365,11 @@ function search_content($key,$table_name='news',$conditions=null,$page_count = 1
 		}
 		$key = implode('|',$key);
 	}
-	$sql = "select * from {$table_name} where language_tag = 0 ";
+	$sql = "select * from {$table_name} where ";
 	if($conditions){
-		$sql .= " and {$conditions}";
+		$sql .= " {$conditions}";
+	}else {
+	    $sql .= " 1=1 ";
 	}
 	if($key){
 		$sql .= " and (title regexp '{$key}' or short_title regexp '{$key}' or keywords regexp '{$key}'";

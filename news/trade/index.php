@@ -10,6 +10,9 @@
 		css_include_tag('public','trading');
 		js_include_tag('login','index');
 		$user = member::current();
+		$db=get_db();
+		$newtrade=$db->query('select * from trade order by trade_at desc limit 8');
+		$count_num=count($newtrade)-1;
   	?>
 <body>
       <div id="ibody">
@@ -23,17 +26,17 @@
 	              			<div id=case>案件</div>
 	              			<div id=money>金额</div>
 	              		</div>
-	              		<?php for($i=0;$i<7;$i++){ ?>
+	              		<?php for($i=0;$i<$count_num;$i++){ ?>
 	              		<div class=content>
-	              			<div class=time>2010年5月</div>
-	              			<div class=case> 外资所 IPO<br>金石律师事务所  <span>王晓晓</span> 律师</div>
-	              			<div class=money>2000万</div>
+	              			<div class=time><?php echo substr($newtrade[$i]->trade_at,0,10); ?></div>
+	              			<div class=case><?php echo strip_tags($newtrade[$i]->trade_name); ?></div>
+	              			<div class=money><?php echo $newtrade[$i]->trade_value; ?></div>
 	              		</div>
 	              		<?php } ?>
 	              		<div class=content style="border:none;">
-	              			<div class=time>2010年5月</div>
-	              			<div class=case> 外资所 IPO<br>金石律师事务所  <span>王晓晓</span> 律师</div>
-	              			<div class=money>2000万</div>
+	              			<div class=time><?php echo substr($newtrade[$count_num]->trade_at,0,10); ?></div>
+	              			<div class=case><?php echo strip_tags($newtrade[$count_num]->trade_name); ?></div>
+	              			<div class=money><?php echo $newtrade[$count_num]->trade_value; ?></div>
 	              			<div id=more><a href="">更多&gt;&gt;</a></div>
 	              		</div>
 	              	 </div>
@@ -52,9 +55,9 @@
 	             	 		<div class="law">律所</div>
 	             	 		<div class="change">金额</div>
 	             	 	</div>
-	             	 	<?php for($i=1;$i<6;$i++){ ?>
+	             	 	<?php for($i=0;$i<5;$i++){ ?>
 	             	 	<div class="context">
-	             	 		<div class="rank"><?php echo $i; ?></div>
+	             	 		<div class="rank"><?php echo $i+1; ?></div>
 	             	 		<div class="law">上海东方律师事务所</div>
 	             	 		<div class="change">30000</div>
 	             	 	</div>
@@ -68,9 +71,9 @@
 	             	 		<div class="law">律所</div>
 	             	 		<div class="change">数量</div>
 	             	 	</div>
-	             	 	<?php for($i=1;$i<6;$i++){ ?>
+	             	 	<?php for($i=0;$i<5;$i++){ ?>
 	             	 	<div class="context">
-	             	 		<div class="rank"><?php echo $i; ?></div>
+	             	 		<div class="rank"><?php echo $i+1; ?></div>
 	             	 		<div class="law">上海东方律师事务所</div>
 	             	 		<div class="change">20</div>
 	             	 	</div>
@@ -84,15 +87,15 @@
 	             	 		<div class="law">律所</div>
 	             	 		<div class="change">金额</div>
 	             	 	</div>
-	             	 	<?php for($i=1;$i<6;$i++){ ?>
+	             	 	<?php for($i=0;$i<5;$i++){ ?>
 	             	 	<div class="context">
-	             	 		<div class="rank"><?php echo $i; ?></div>
+	             	 		<div class="rank"><?php echo $i+1; ?></div>
 	             	 		<div class="law">上海东方律师事务所</div>
 	             	 		<div class="change">20</div>
 	             	 	</div>
 	             	 	<?php } ?>
 	             	 	<div class="content_title">
-	             	 		<div class=title_l>已完成（根据金额）</div>
+	             	 		<div class=title_l>已完成（根据数量）</div>
 	             	 		<div class=title_r><a href=""><img border=0 src="/images/trade/ranking_title_icon.gif"></a></div>
 	             	 	</div>
 	             	 	<div class="context_title">
@@ -100,9 +103,9 @@
 	             	 		<div class="law">律所</div>
 	             	 		<div class="change">金额</div>
 	             	 	</div>
-	             	 	<?php for($i=1;$i<6;$i++){ ?>
+	             	 	<?php for($i=0;$i<5;$i++){ ?>
 	             	 	<div class="context">
-	             	 		<div class="rank"><?php echo $i; ?></div>
+	             	 		<div class="rank"><?php echo $i+1; ?></div>
 	             	 		<div class="law">上海东方律师事务所</div>
 	             	 		<div class="change">20</div>
 	             	 	</div>

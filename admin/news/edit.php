@@ -29,6 +29,8 @@
 		$related_news = $news->related_news  ? explode(',',$news->related_news) : array();
 		$sub_headline = $news->sub_headline  ? explode(',',$news->sub_headline) : array();
 		//initialize the categroy;
+		$db=get_db();
+		$publish_date=$db->query("select publish_date from lawsive.publish_schedule where resource_id='$id' and resource_type='news' ");
 		$category = new Category('news');
 		$category->echo_jsdata();
 	?>
@@ -45,7 +47,7 @@
 			<?php if($g_admin->has_rights('schedule_news')){?>
 			<tr class="tr4">
 				<td class="td1" width="15%" >定时发布</td>
-				<td width="85%"><input type="text" name="publish_schedule_date" id="publish_schedule" class="publish_schedule" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date;?>"></input><input style="width:20px;" type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input>(格式：2010-03-03 16:00:00)</td>
+				<td width="85%"><input type="text" name="publish_schedule_date" id="publish_schedule" class="publish_schedule" <?php if(!$publish_date) echo "disabled=true;";?> value="<?php echo $publish_date[0]->publish_date;?>"></input><input style="width:20px;" type="checkbox" id="publish_schedule_select" <?php if($publish_date) echo "checked='checked'"?>></input>(格式：2010-03-03 16:00:00)</td>
 			</tr>
 			<?php }?>
 			<tr class="tr4">
@@ -130,7 +132,7 @@
 	
 			<tr class="tr4 normal news_content">
 				<td class="td1">相关新闻关联</td>
-				<td id="td_related_news">已关联　<span id="span_related_news"></span>　条新闻 <a href="#" id="a_related_news" style="color:blue">编辑</a></td>
+				<td id="td_related_news">已关联　<?php echo count($related_news);?>　条新闻 <a href="#" id="a_related_news" style="color:blue">编辑</a></td>
 			</tr>
 			
 			<tr class="tr4 normal news_content">
