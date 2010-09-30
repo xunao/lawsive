@@ -56,7 +56,6 @@
 		$record=$plug->paginate('all',array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		//$record = News::paginate(array('conditions' => join(' and ', $conditions),'per_page'=>20));
 		if($record === false) die('数据库执行失败');
-		var_dump($conditions);
        // $category_name =$db->query('select a.category, c.name  from category c,article a where a.category = c.id;');
 //		$category->find($record[0]->category_id);
 //		echo $cate->name;
