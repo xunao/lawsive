@@ -49,6 +49,7 @@
 		if($filter_search){
 			$conditions[] = "(title like '%$filter_search%' or content like '%$filter_search%')";
 		}
+		//$conditions[] = ' order by priority DESC , lasted_at DESC ';
 		$db = get_db();
 		//$article=new Table('article');
 		$plug=new Table('plug');

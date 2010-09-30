@@ -13,11 +13,12 @@
 		$category=new Category();
 		$category->find_by_name('lawyer');
 		$lawyer_id=$category->id;
-		$category->find_by_name('lawfirm');
-		$lawfirm_id=$category->id;
+		//$category->find_by_name('lawfirm');
+		//$lawfirm_id=$category->id;
 		$db=get_db();
+		alert($lawyer_id);
 		$lawyer=$db->query("select id ,title ,content, photo from lawsive.plug  where category_id='$lawyer_id' and is_adopt=1 order by priority DESC , lasted_at DESC limit 4");
-		$lawfirm=$db->query("select id ,title ,content, photo from lawsive.plug  where category_id='$lawfirm_id' and is_adopt=1 order by priority DESC , lasted_at DESC limit 4");
+		$lawfirm=$db->query("select id ,title ,content, photo from lawsive.plug  where category_id='$lawfirm_id' and is_adopt=1 order by priority , lasted_at DESC limit 4");
   	?>
 <body>
       <div id="ibody">
